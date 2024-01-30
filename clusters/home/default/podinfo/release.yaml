@@ -8,8 +8,6 @@ spec:
   chart:
     spec:
       chart: podinfo
-      semver:
-        range: '>=5.0.0'
       sourceRef:
         kind: HelmRepository
         name: podinfo
