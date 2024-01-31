@@ -12,9 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: metallb
-        namespace: flux-system
       interval: 1m
   install:
     createNamespace: true
-    remediation:
-      retries: 1
+  targetNamespace: metallb-system
