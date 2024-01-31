@@ -15,5 +15,6 @@ spec:
         namespace: flux-system
       interval: 1m
   install:
-    createNamespace: true # references targetNamespace value to create
-  targetNamespace: metallb-system
+    createNamespace: true
+    remediation:
+      retries: 1
