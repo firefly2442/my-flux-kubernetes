@@ -15,4 +15,5 @@ spec:
         namespace: metallb-system
       interval: 1m
   install:
-    createNamespace: true
+    createNamespace: true # references targetNamespace value to create
+  targetNamespace: metallb-system
