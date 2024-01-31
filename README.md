@@ -1,5 +1,8 @@
 # my-flux-kubernetes
 
+My personal Kubernetes cluster using [k3s](https://k3s.io/), [flux](https://fluxcd.io/),
+[renovate](https://github.com/renovatebot/renovate), and more.
+
 ## Development Notes
 
 ## Debugging
@@ -37,3 +40,4 @@ https://github.com/onedr0p/cluster-template#-debugging
 * [renovate Github](https://github.com/renovatebot/renovate)
 * [TechnoTime Tutorial on Renovate](https://technotim.live/posts/renovate-bot-kubernetes/)
 * [My Renovate Developer Profile](https://developer.mend.io/github/firefly2442)
+* [k3s Kubernetes](https://k3s.io/)
