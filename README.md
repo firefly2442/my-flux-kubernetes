@@ -28,3 +28,12 @@ flux resume hr my-helmrelease -n myhelmrelease-ns
 https://github.com/onedr0p/cluster-template#-debugging
 
 ## References
+
+* [home-ops](https://github.com/onedr0p/home-ops)
+* [flux Github](https://github.com/fluxcd/flux2)
+* [flux](https://fluxcd.io/)
+* [Tutorial on Flux](https://anaisurl.com/full-tutorial-getting-started-with-flux-cd/)
+* [TechnoTim Tutorial on Flux](https://technotim.live/posts/flux-devops-gitops/)
+* [renovate Github](https://github.com/renovatebot/renovate)
+* [TechnoTime Tutorial on Renovate](https://technotim.live/posts/renovate-bot-kubernetes/)
+* [My Renovate Developer Profile](https://developer.mend.io/github/firefly2442)
