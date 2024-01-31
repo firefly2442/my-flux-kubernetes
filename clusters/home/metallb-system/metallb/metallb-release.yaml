@@ -5,6 +5,7 @@ metadata:
   namespace: metallb-system
 spec:
   interval: 5m
+  createNamespace: true
   chart:
     spec:
       chart: metallb
