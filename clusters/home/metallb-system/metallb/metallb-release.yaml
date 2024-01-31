@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: metallb
-        namespace: metallb-system
+        namespace: flux-system
       interval: 1m
   install:
     createNamespace: true # references targetNamespace value to create
