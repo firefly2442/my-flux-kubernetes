@@ -5,9 +5,9 @@ metadata:
   namespace: metallb-system
 spec:
   interval: 5m
-  createNamespace: true
   chart:
     spec:
+      createNamespace: true
       chart: metallb
       version: '0.14.3'
       sourceRef:
