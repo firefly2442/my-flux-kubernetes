@@ -14,5 +14,3 @@ spec:
         name: metallb
         namespace: flux-system
       interval: 1m
-      valuesFiles:
-        - metallb-values.yaml
