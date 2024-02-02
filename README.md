@@ -3,6 +3,19 @@
 My personal Kubernetes cluster using [k3s](https://k3s.io/), [flux](https://fluxcd.io/),
 [renovate](https://github.com/renovatebot/renovate), and more.
 
+## Setup
+
+```shell
+# run this once at the very beginning
+# Github PAT: https://github.com/settings/tokens
+# full "repo" and "admin:org" permissions seemed to be sufficient
+# creates the Github repo if it doesn't exist
+# creates the "flux-system" namespace in our Kubernetes cluster and some pods, see: kubectl get pods -n flux-system
+# https://github.com/firefly2442/my-flux-kubernetes
+export GITHUB_TOKEN=secret
+flux bootstrap github --token-auth --owner=firefly2442 --repository=my-flux-kubernetes --branch=master --path=clusters/home --personal --private=false
+```
+
 ## Development Notes
 
 ## Debugging
@@ -34,7 +47,8 @@ https://fluxcd.io/flux/cheatsheets/troubleshooting/
 
 ## References
 
-* [home-ops](https://github.com/onedr0p/home-ops)
+* [home-ops example](https://github.com/onedr0p/home-ops)
+* [pikluster example](https://github.com/dvignoles/pikluster)
 * [flux Github](https://github.com/fluxcd/flux2)
 * [flux](https://fluxcd.io/)
 * [Tutorial on Flux](https://anaisurl.com/full-tutorial-getting-started-with-flux-cd/)
@@ -44,3 +58,4 @@ https://fluxcd.io/flux/cheatsheets/troubleshooting/
 * [My Renovate Developer Profile](https://developer.mend.io/github/firefly2442)
 * [k3s Kubernetes](https://k3s.io/)
 * [metallb with flux tutorial](https://geek-cookbook.funkypenguin.co.nz/kubernetes/loadbalancer/metallb/)
+* [awesome k8s resources](https://github.com/tomhuang12/awesome-k8s-resources)

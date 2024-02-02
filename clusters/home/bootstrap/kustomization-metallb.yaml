@@ -12,5 +12,5 @@ spec:
   timeout: 2m
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: metallb-configs
   retryInterval: 1m
