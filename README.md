@@ -30,6 +30,8 @@ flux resume hr my-helmrelease -n myhelmrelease-ns
 
 https://github.com/onedr0p/cluster-template#-debugging
 
+https://fluxcd.io/flux/cheatsheets/troubleshooting/
+
 ## References
 
 * [home-ops](https://github.com/onedr0p/home-ops)
