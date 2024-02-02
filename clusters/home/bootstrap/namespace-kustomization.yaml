@@ -8,4 +8,3 @@ resources:
   - ./namespaces/namespace-metallb-system.yaml
   - ./namespaces/namespace-cert-manager.yaml
   - ./namespaces/namespace-podinfo.yaml
-  

@@ -18,6 +18,12 @@ flux bootstrap github --token-auth --owner=firefly2442 --repository=my-flux-kube
 
 ## Development Notes
 
+```shell
+pip3 install pre-commit
+# lint and check all files
+pre-commit run --all-files
+```
+
 ## Debugging
 
 ```shell
