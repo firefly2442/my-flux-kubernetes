@@ -41,3 +41,4 @@ https://github.com/onedr0p/cluster-template#-debugging
 * [TechnoTime Tutorial on Renovate](https://technotim.live/posts/renovate-bot-kubernetes/)
 * [My Renovate Developer Profile](https://developer.mend.io/github/firefly2442)
 * [k3s Kubernetes](https://k3s.io/)
+* [metallb with flux tutorial](https://geek-cookbook.funkypenguin.co.nz/kubernetes/loadbalancer/metallb/)
