@@ -16,4 +16,5 @@ spec:
       interval: 1m
   values:
     service:
-      type: LoadBalancer
+      ui:
+        type: LoadBalancer
