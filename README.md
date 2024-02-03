@@ -5,6 +5,9 @@ My personal Kubernetes cluster using [k3s](https://k3s.io/), [flux](https://flux
 
 ## Setup
 
+Use [Ansible](https://github.com/firefly2442/myhomelab-ansible) to setup OS level applications,
+software, and Kubernetes deployment of k3s.
+
 ```shell
 # run this once at the very beginning
 # Github PAT: https://github.com/settings/tokens
@@ -22,6 +25,12 @@ flux bootstrap github --token-auth --owner=firefly2442 --repository=my-flux-kube
 pip3 install pre-commit
 # lint and check all files
 pre-commit run --all-files
+```
+
+```shell
+# convert a 'ClusterIP' type to a 'LoadBalancer' type so it gets an IP address from metallb
+kubectl patch svc <service-name> -n <namespace> -p '{"spec": {"type": "LoadBalancer"}}'
+kubectl get svc -A
 ```
 
 ## Debugging
@@ -47,9 +56,8 @@ flux suspend hr my-helmrelease -n myhelmrelease-ns
 flux resume hr my-helmrelease -n myhelmrelease-ns
 ```
 
-https://github.com/onedr0p/cluster-template#-debugging
-
-https://fluxcd.io/flux/cheatsheets/troubleshooting/
+* [onedr0p debugging tips](https://github.com/onedr0p/cluster-template#-debugging)
+* [flux troubleshooting cheatsheet](https://fluxcd.io/flux/cheatsheets/troubleshooting/)
 
 ## References
 
