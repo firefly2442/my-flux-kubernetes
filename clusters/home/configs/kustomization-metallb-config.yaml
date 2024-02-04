@@ -6,8 +6,8 @@ metadata:
 spec:
   interval: 15m
   dependsOn:
-  - name: metallb
-  path: ./configs/metallb/
+  - name: metallb-metallb-system
+  path: ./clusters/home/configs/metallb/
   prune: true # remove any elements later removed from the above path
   timeout: 2m
   sourceRef:
