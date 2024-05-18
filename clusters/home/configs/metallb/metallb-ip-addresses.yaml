@@ -7,3 +7,5 @@ spec:
   addresses:
   # OpenWRT starts handing out DHCP addresses at 192.168.1.100
   - 192.168.1.10-192.168.1.99
+  autoAssign: true
+  avoidBuggyIPs: false
