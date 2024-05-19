@@ -65,6 +65,7 @@ flux resume hr my-helmrelease -n myhelmrelease-ns
 * [pikluster example](https://github.com/dvignoles/pikluster)
 * [untouchedwagons example](https://github.com/UntouchedWagons/K3S-Cluster-Setup)
 * [red-lichtie example](https://github.com/red-lichtie/homelab-cluster)
+* [budimanjojo example](https://github.com/budimanjojo/home-cluster)
 * [flux Github](https://github.com/fluxcd/flux2)
 * [flux](https://fluxcd.io/)
 * [Tutorial on Flux](https://anaisurl.com/full-tutorial-getting-started-with-flux-cd/)
