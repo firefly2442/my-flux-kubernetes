@@ -7,7 +7,7 @@ spec:
   interval: 15m
   dependsOn:
   - name: metallb-app
-  path: ./clusters/home/configs/metallb/
+  path: ./clusters/home/metallb-system/metallb/
   prune: true # remove any elements later removed from the above path
   timeout: 2m
   sourceRef:
@@ -15,8 +15,3 @@ spec:
     name: flux-system
   wait: true
   retryInterval: 1m
-  healthChecks:
-    - apiVersion: apps/v1
-      kind: Deployment
-      name: metallb-controller
-      namespace: metallb-system
