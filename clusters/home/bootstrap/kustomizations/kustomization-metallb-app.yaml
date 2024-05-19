@@ -7,7 +7,7 @@ spec:
   targetNamespace: metallb-system
   dependsOn:
   - name: metallb-metallb-system
-  path: ./clusters/home/bootstrap/helmrepositories/
+  path: ./clusters/home/metallb-system/metallb/
   prune: true
   sourceRef:
     kind: GitRepository
