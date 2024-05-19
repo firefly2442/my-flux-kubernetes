@@ -14,3 +14,5 @@ spec:
         name: metallb
         namespace: flux-system
       interval: 1m
+  install:
+    crds: CreateReplace
