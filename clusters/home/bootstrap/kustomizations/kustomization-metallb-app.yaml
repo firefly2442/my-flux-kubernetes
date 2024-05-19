@@ -5,6 +5,8 @@ metadata:
   namespace: flux-system
 spec:
   targetNamespace: metallb-system
+  dependsOn:
+  - name: metallb-metallb-system
   path: ./clusters/home/bootstrap/helmrepositories/
   prune: true
   sourceRef:
