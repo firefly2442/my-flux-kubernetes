@@ -56,6 +56,10 @@ flux suspend hr my-helmrelease -n myhelmrelease-ns
 flux resume hr my-helmrelease -n myhelmrelease-ns
 ```
 
+```shell
+kubectl describe kustomization flux-system -n flux-system
+```
+
 * [onedr0p debugging tips](https://github.com/onedr0p/cluster-template#-debugging)
 * [flux troubleshooting cheatsheet](https://fluxcd.io/flux/cheatsheets/troubleshooting/)
 

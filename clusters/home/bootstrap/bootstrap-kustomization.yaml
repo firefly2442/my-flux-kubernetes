@@ -10,4 +10,4 @@ resources:
   - ./namespaces/namespace-longhorn-system.yaml
   - ./namespaces/namespace-cattle-system.yaml
   # Helm Repositories
-  - ./repositories/cilium-repository.yaml
+  - ./repositories/helm/cilium-repository.yaml

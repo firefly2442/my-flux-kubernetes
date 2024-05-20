@@ -11,7 +11,7 @@ spec:
     labels:
       app.kubernetes.io/name: *app
   dependsOn:
-    - name: cilium
+    - name: cilium-app
   path: ./clusters/home/apps/kube-system/cilium/config
   prune: false # never should be deleted
   sourceRef:
