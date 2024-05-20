@@ -27,52 +27,51 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: cilium-helm-values
-  values:
-    installCRDs: true
-    hubble:
-      enabled: true
-      metrics:
-        enabled:
-          - dns:query
-          - drop
-          - tcp
-          - flow
-          - port-distribution
-          - icmp
-          - http
-        # serviceMonitor:
-        #   enabled: true
-        # dashboards:
-        #   enabled: true
-        #   annotations:
-        #     grafana_folder: Cilium
-      relay:
-        enabled: true
-        rollOutPods: true
-        # prometheus:
-        #   serviceMonitor:
-        #     enabled: true
-      ui:
-        enabled: true
-        rollOutPods: true
-        ingress:
-          enabled: true
-          className: internal
-    # operator:
-    #   prometheus:
-    #     enabled: true
-    #     serviceMonitor:
-    #       enabled: true
-    #   dashboards:
-    #     enabled: true
-    #     annotations:
-    #       grafana_folder: Cilium
-    # prometheus:
-    #   enabled: true
-    #   serviceMonitor:
-    #     enabled: true
-    #     trustCRDsExist: true
-    # dashboards:
-    #   enabled: true
-    #   annotations:
-    #     grafana_folder: Cilium
+  # values:
+  #   hubble:
+  #     enabled: true
+  #     metrics:
+  #       enabled:
+  #         - dns:query
+  #         - drop
+  #         - tcp
+  #         - flow
+  #         - port-distribution
+  #         - icmp
+  #         - http
+  #       # serviceMonitor:
+  #       #   enabled: true
+  #       # dashboards:
+  #       #   enabled: true
+  #       #   annotations:
+  #       #     grafana_folder: Cilium
+  #     relay:
+  #       enabled: true
+  #       rollOutPods: true
+  #       # prometheus:
+  #       #   serviceMonitor:
+  #       #     enabled: true
+  #     ui:
+  #       enabled: true
+  #       rollOutPods: true
+  #       ingress:
+  #         enabled: true
+  #         className: internal
+  #   # operator:
+  #   #   prometheus:
+  #   #     enabled: true
+  #   #     serviceMonitor:
+  #   #       enabled: true
+  #   #   dashboards:
+  #   #     enabled: true
+  #   #     annotations:
+  #   #       grafana_folder: Cilium
+  #   # prometheus:
+  #   #   enabled: true
+  #   #   serviceMonitor:
+  #   #     enabled: true
+  #   #     trustCRDsExist: true
+  #   # dashboards:
+  #   #   enabled: true
+  #   #   annotations:
+  #   #     grafana_folder: Cilium
