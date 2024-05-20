@@ -5,7 +5,6 @@ metadata:
   name: namespace-bootstrap
 resources:
   # Pre Flux-Kustomizations
-  - ./namespaces/namespace-metallb-system.yaml
   - ./namespaces/namespace-cert-manager.yaml
   - ./namespaces/namespace-podinfo.yaml
   - ./namespaces/namespace-longhorn-system.yaml
