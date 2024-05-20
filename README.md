@@ -66,6 +66,7 @@ flux resume hr my-helmrelease -n myhelmrelease-ns
 * [untouchedwagons example](https://github.com/UntouchedWagons/K3S-Cluster-Setup)
 * [red-lichtie example](https://github.com/red-lichtie/homelab-cluster)
 * [budimanjojo example](https://github.com/budimanjojo/home-cluster)
+* [chamburr example](https://github.com/chamburr/homelab)
 * [dvignoles example](https://github.com/dvignoles/pikluster/tree/main)
 * [Flux Gitops Experiences](https://dvignoles.github.io/blog/post-flux-gitops/)
 * [flux Github](https://github.com/fluxcd/flux2)
@@ -80,3 +81,4 @@ flux resume hr my-helmrelease -n myhelmrelease-ns
 * [metallb with flux tutorial](https://geek-cookbook.funkypenguin.co.nz/kubernetes/loadbalancer/metallb/)
 * [metallb with flux discussion](https://forum.funkypenguin.co.nz/t/metallb/1546/9)
 * [awesome k8s resources](https://github.com/tomhuang12/awesome-k8s-resources)
+* [awesome self-hosted resources](https://github.com/awesome-selfhosted/awesome-selfhosted)
