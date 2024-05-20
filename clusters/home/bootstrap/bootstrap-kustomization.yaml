@@ -9,3 +9,5 @@ resources:
   - ./namespaces/namespace-podinfo.yaml
   - ./namespaces/namespace-longhorn-system.yaml
   - ./namespaces/namespace-cattle-system.yaml
+  # Helm Repositories
+  - ./repositories/cilium-repository.yaml

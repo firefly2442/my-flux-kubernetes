@@ -82,3 +82,4 @@ flux resume hr my-helmrelease -n myhelmrelease-ns
 * [metallb with flux discussion](https://forum.funkypenguin.co.nz/t/metallb/1546/9)
 * [awesome k8s resources](https://github.com/tomhuang12/awesome-k8s-resources)
 * [awesome self-hosted resources](https://github.com/awesome-selfhosted/awesome-selfhosted)
+* [migrating from metallb to cilium](https://isovalent.com/blog/post/migrating-from-metallb-to-cilium/)
