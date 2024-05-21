@@ -15,15 +15,21 @@
 #   hostRoot: /sys/fs/cgroup
 # cluster:
 #   id: 1
-#   name: main
+#   name: home
 # containerRuntime:
 #   integration: containerd
 # devices: enp+
 # enableRuntimeDeviceDetection: true
 # endpointRoutes:
 #   enabled: true
-# hubble:
-#   enabled: false
+hubble:
+  enabled: true
+  relay:
+    enabled: true
+    rollOutPods: true
+  ui:
+    enabled: true
+    rollOutPods: true
 # ipam:
 #   mode: kubernetes
 # ipv4NativeRoutingCIDR: 10.42.0.0/16
@@ -43,6 +49,10 @@ l2announcements:
 operator:
   rollOutPods: true
 rollOutCiliumPods: true
+# Increase rate limit when doing L2 announcements
+k8sClientRateLimit:
+  qps: 50
+  burst: 200
 # routingMode: native
 # securityContext:
 #   capabilities:
