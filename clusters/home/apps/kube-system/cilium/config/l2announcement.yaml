@@ -6,7 +6,4 @@ metadata:
   name: l2-policy
 spec:
   loadBalancerIPs: true
-  interfaces: ["^enp.*"]
-  nodeSelector:
-    matchLabels:
-      kubernetes.io/os: linux
+  externalIPs: true
