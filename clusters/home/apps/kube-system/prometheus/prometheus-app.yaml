@@ -13,7 +13,7 @@ spec:
   dependsOn:
     - name: prometheus-helm
   path: ./clusters/home/apps/kube-system/prometheus/app
-  prune: false # never should be deleted
+  prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
