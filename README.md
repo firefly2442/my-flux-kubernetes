@@ -74,6 +74,7 @@ kubectl describe kustomization flux-system -n flux-system
 * [dvignoles example](https://github.com/dvignoles/pikluster/tree/main)
 * [vehagn example](https://github.com/vehagn/homelab/tree/main/infra/cilium)
 * [chrede88 example](https://github.com/chrede88/home-ops)
+* [mischavandenburg example](https://github.com/mischavandenburg/homelab)
 * [Flux Gitops Experiences](https://dvignoles.github.io/blog/post-flux-gitops/)
 * [flux Github](https://github.com/fluxcd/flux2)
 * [flux](https://fluxcd.io/)
