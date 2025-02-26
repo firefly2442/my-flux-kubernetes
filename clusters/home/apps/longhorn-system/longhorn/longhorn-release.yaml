@@ -20,3 +20,32 @@ spec:
     service:
       ui:
         type: LoadBalancer
+    defaultSettings:
+      createDefaultDiskLabeledNodes: false
+    persistence:
+      defaultClass: true
+      defaultFsType: ext4
+    customResource:
+      node:
+        # use kubectl get nodes to get the appropriate reference names
+        # don't use trailing slashes at the end of the disk locations
+        - name: "alienware"
+          disks:
+            "/data":
+              storageReserved: 50Gi
+        - name: "antecbackup"
+          disks:
+            "/var/lib/longhorn":
+              storageReserved: 50Gi
+        - name: "blueantec"
+          disks:
+            "/mnt/bdbfc45e-71e2-45d3-accc-d4fd0b4159a7":
+              storageReserved: 50Gi
+            "/mnt/980b31eb-1a92-46ec-9cc9-d86e2bfbe91e":
+              storageReserved: 50Gi
+            "/mnt/a7389102-bf95-41b2-b229-c6834067ede7":
+              storageReserved: 50Gi
+        - name: "minisforum"
+          disks:
+            "/data":
+              storageReserved: 50Gi
