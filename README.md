@@ -33,6 +33,10 @@ kubectl patch svc <service-name> -n <namespace> -p '{"spec": {"type": "LoadBalan
 kubectl get svc -A
 ```
 
+Cilium requires a compatible BGP router and seems pretty complicated to setup.
+Metallb seems a lot easier to setup and will assign IP addresses from an available
+range specified which then are routable.
+
 ## Debugging
 
 ```shell

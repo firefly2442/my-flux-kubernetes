@@ -9,5 +9,10 @@ resources:
   - ./namespaces/namespace-podinfo.yaml
   - ./namespaces/namespace-longhorn-system.yaml
   - ./namespaces/namespace-cattle-system.yaml
+  - ./namespaces/namespace-metallb-system.yaml
   # Helm Repositories
-  - ./repositories/helm/cilium-repository.yaml
+  - ./repositories/helm/metallb-repository.yaml
+  # metallb
+  - ./repositories/helm/metallb-release.yaml
+  - ./metallb/metallb-ipaddress-pool.yaml
+  - ./metallb/metallb-l2advertisement.yaml
