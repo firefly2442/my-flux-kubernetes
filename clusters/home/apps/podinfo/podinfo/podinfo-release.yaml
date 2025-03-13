@@ -18,3 +18,4 @@ spec:
     replicaCount: 2
     service:
       type: LoadBalancer
+      httpPort: 80
