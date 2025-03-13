@@ -19,5 +19,4 @@ spec:
     # https://github.com/kubernetes/dashboard/blob/master/charts/kubernetes-dashboard/values.yaml
     web:
       service:
-        ui:
-          type: LoadBalancer
+        type: LoadBalancer
