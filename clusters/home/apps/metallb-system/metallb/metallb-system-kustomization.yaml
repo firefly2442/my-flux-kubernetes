@@ -5,9 +5,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 15m
-  path: ./repo/
+  path: ./clusters/home/apps/metallb-system
   dependsOn:
-  - name: metallb
+  - name: flux-system
   prune: true # remove any elements later removed from the above path
   timeout: 2m # if not set, this defaults to interval duration, which is 1h
   sourceRef:
