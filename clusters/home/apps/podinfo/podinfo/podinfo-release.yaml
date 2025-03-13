@@ -19,3 +19,4 @@ spec:
     service:
       type: LoadBalancer
       httpPort: 80
+      externalPort: 80
