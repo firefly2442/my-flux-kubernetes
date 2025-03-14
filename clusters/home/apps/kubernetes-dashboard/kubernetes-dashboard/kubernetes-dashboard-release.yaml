@@ -25,7 +25,6 @@ spec:
       #     - name: web
       #       containerPort: 80
       containers:
-        dashboard:
-          extraArgs:
-            - "--enable-skip-login"
-            - "--disable-authentication"
+        args:
+          - "--enable-skip-login"
+          - "--disable-authentication"
