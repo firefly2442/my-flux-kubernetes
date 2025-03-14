@@ -20,10 +20,10 @@ spec:
     web:
       service:
         type: LoadBalancer
-      containers:
-        ports:
-          - name: web
-            containerPort: 80
+      # containers:
+      #   ports:
+      #     - name: web
+      #       containerPort: 80
     extraArgs:
       --enable-skip-login
       --disable-authentication
