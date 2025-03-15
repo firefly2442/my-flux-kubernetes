@@ -1,0 +1,11 @@
+apiVersion: longhorn.io/v1beta2
+kind: Node
+metadata:
+  name: alienware
+  namespace: longhorn-system
+spec:
+  allowScheduling: true
+  disks:
+    disk1:
+      path: /data
+      storageReserved: 50Gi

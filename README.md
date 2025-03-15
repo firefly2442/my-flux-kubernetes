@@ -37,6 +37,12 @@ Cilium requires a compatible BGP router and seems pretty complicated to setup.
 Metallb seems a lot easier to setup and will assign IP addresses from an available
 range specified which then are routable.
 
+To get the generated Kubernetes Dashboard token to login:
+
+```shell
+kubectl get secret admin-user-token -n kubernetes-dashboard -o jsonpath="{.data.token}" | base64 --decode
+```
+
 ## Debugging
 
 ```shell

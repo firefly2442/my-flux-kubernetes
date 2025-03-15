@@ -1,0 +1,15 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: longhorn-disks
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: ./disks/
+  prune: true
+  dependsOn:
+    - name: longhorn
+  wait: true # wait until longhorn is fully deployed
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
