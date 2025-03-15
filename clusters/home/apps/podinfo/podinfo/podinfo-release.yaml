@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: podinfo
         namespace: flux-system
-      interval: 1m
+      interval: 5m
   values:
     replicaCount: 2
     service:

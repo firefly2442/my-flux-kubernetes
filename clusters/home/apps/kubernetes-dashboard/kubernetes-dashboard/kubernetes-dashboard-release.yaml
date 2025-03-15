@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: kubernetes-dashboard
         namespace: kubernetes-dashboard
-      interval: 1m
+      interval: 5m
   values:
     # see stock version
     # https://github.com/kubernetes/dashboard/blob/master/charts/kubernetes-dashboard/values.yaml
