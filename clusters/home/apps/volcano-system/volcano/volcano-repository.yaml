@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: volcano
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://volcano-sh.github.io/helm-charts
