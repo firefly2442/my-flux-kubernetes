@@ -70,6 +70,12 @@ flux resume hr my-helmrelease -n myhelmrelease-ns
 kubectl describe kustomization flux-system -n flux-system
 ```
 
+Exec into a running pod:
+
+```shell
+kubectl exec -it <pod-name> -- /bin/bash
+```
+
 * [onedr0p debugging tips](https://github.com/onedr0p/cluster-template#-debugging)
 * [flux troubleshooting cheatsheet](https://fluxcd.io/flux/cheatsheets/troubleshooting/)
 
