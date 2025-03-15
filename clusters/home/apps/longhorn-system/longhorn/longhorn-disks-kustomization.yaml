@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: ./disks/
+  path: ./clusters/home/apps//longhorn-system/longhorn/disks
   prune: true
   dependsOn:
     - name: longhorn
