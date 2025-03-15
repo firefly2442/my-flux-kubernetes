@@ -10,4 +10,4 @@ spec:
   disks:
     disk1:
       path: /var/lib/longhorn
-      storageReserved: 50Gi
+      storageReserved: 53687091200
