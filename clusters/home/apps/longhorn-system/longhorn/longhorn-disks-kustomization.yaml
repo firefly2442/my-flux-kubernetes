@@ -9,6 +9,7 @@ spec:
   prune: true
   dependsOn:
     - name: longhorn
+      namespace: longhorn-system
   wait: true # wait until longhorn is fully deployed
   sourceRef:
     kind: GitRepository
