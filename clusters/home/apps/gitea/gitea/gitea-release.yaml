@@ -21,3 +21,4 @@ spec:
     service:
       http:
         type: LoadBalancer
+        clusterIP:
