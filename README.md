@@ -43,6 +43,13 @@ To get the generated Kubernetes Dashboard token to login:
 kubectl get secret admin-user-token -n kubernetes-dashboard -o jsonpath="{.data.token}" | base64 --decode
 ```
 
+DNS and Fully Qualified Domain Names (FQDN):
+
+Split DNS is setup.  Pi-hole is the primary external resolver.  Conditional forwarding is setup
+so anything for `*.homelab.local` gets forwarded to CoreDNS running in Kubernetes.  This ensures
+basic Internet works as normal, but for this specific domain or sub-domains they get forwarded
+to Kubernetes and CoreDNS to resolve and route.
+
 ## Debugging
 
 ```shell

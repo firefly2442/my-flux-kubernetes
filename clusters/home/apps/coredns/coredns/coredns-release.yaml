@@ -16,3 +16,17 @@ spec:
         namespace: flux-system
       interval: 5m
   # https://github.com/coredns/helm/blob/master/charts/coredns/values.yaml
+  values:
+    configMap:
+      name: coredns-configmap
+    extraArgs:
+      - "-conf"
+      - "/etc/coredns/Corefile"
+  valuesFrom:
+    - configMapKeyRef:
+        name: coredns-configmap
+        key: Corefile
+  dependsOn:
+    # create the configmap first
+    - name: coredns-configmap
+      namespace: coredns
