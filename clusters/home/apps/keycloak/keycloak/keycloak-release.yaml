@@ -11,8 +11,8 @@ spec:
       # https://artifacthub.io/packages/helm/bitnami/keycloak
       version: '24.4.13'
       sourceRef:
-        kind: HelmRepository
-        name: keycloak
+        kind: OCIRepository
+        name: bitnami-keycloak
         namespace: flux-system
       interval: 5m
   # https://artifacthub.io/packages/helm/bitnami/keycloak
