@@ -114,3 +114,4 @@ kubectl exec -it <pod-name> -- /bin/bash
 * [awesome k8s resources](https://github.com/tomhuang12/awesome-k8s-resources)
 * [awesome self-hosted resources](https://github.com/awesome-selfhosted/awesome-selfhosted)
 * [migrating from metallb to cilium](https://isovalent.com/blog/post/migrating-from-metallb-to-cilium/)
+* [Setting up Authentik Tutorial](https://www.youtube.com/watch?v=N5unsATNpJk)
