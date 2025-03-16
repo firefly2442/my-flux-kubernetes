@@ -12,3 +12,6 @@ spec:
         enabled: true
         matchRule: Host(`traefik.homelab.rivetcode.com`)
         entryPoints: ["web", "websecure"]
+    logs:
+      access:
+        enabled: true
