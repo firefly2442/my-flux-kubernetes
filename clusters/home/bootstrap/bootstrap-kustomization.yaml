@@ -13,3 +13,4 @@ resources:
   - ./namespaces/namespace-volcano-system.yaml
   - ./namespaces/namespace-kubernetes-dashboard.yaml
   - ./namespaces/namespace-gitea.yaml
+  - ./namespaces/namespace-keycloak.yaml
