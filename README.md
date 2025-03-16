@@ -45,11 +45,9 @@ kubectl get secret admin-user-token -n kubernetes-dashboard -o jsonpath="{.data.
 
 DNS and Fully Qualified Domain Names (FQDN):
 
-Split DNS is setup.  Pi-hole is the primary external resolver.  Conditional forwarding is setup
-so anything for `*.homelab.local` gets forwarded to CoreDNS running in Kubernetes.  This ensures
-basic Internet works as normal, but for this specific domain or sub-domains they get forwarded
-to Kubernetes and CoreDNS to resolve and route.
-TODO: add this to the CoreFile for included stock CoreDNS with k3s
+`homelab.rivetcode.com` and `*.homelab.rivetcode.com` point to my external
+Raspberry Pi HAProxy load balancer.  This routes traffic for the Kubernetes
+control plane as well as regular HTTP and HTTPS traffic for services.
 
 ## Debugging
 

@@ -32,7 +32,7 @@ spec:
         ingressClassName: traefik
         enabled: true
         hosts:
-          - authentik.homelab.local
+          - authentik.homelab.rivetcode.com
     postgresql:
       enabled: true
       auth:
