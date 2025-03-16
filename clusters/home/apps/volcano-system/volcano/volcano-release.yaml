@@ -7,11 +7,11 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: volcano-sh/volcano
+      chart: volcano
       version: '1.11.0'
       sourceRef:
         kind: HelmRepository
-        name: volcano
+        name: volcano-sh/volcano
         namespace: flux-system
       interval: 5m
   values:
