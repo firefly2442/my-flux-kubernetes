@@ -14,3 +14,4 @@ resources:
   - ./namespaces/namespace-kubernetes-dashboard.yaml
   - ./namespaces/namespace-gitea.yaml
   - ./namespaces/namespace-authentik.yaml
+  - ./namespaces/namespace-coredns.yaml
