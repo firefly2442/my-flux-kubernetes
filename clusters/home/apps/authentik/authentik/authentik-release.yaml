@@ -8,14 +8,11 @@ spec:
   chart:
     spec:
       chart: authentik
-      # https://coredns.github.io/helm/index.yaml
-      version: '1.38.1'
+      # https://charts.goauthentik.io/index.yaml
+      version: '2025.2.1'
       sourceRef:
         kind: HelmRepository
         name: authentik-repo
         namespace: flux-system
       interval: 5m
-  # https://github.com/coredns/helm/blob/master/charts/coredns/values.yaml
-  values:
-    service:
-      type: LoadBalancer
+  # https://github.com/goauthentik/helm/blob/main/charts/authentik/values.yaml
