@@ -49,6 +49,7 @@ Split DNS is setup.  Pi-hole is the primary external resolver.  Conditional forw
 so anything for `*.homelab.local` gets forwarded to CoreDNS running in Kubernetes.  This ensures
 basic Internet works as normal, but for this specific domain or sub-domains they get forwarded
 to Kubernetes and CoreDNS to resolve and route.
+TODO: add this to the CoreFile for included stock CoreDNS with k3s
 
 ## Debugging
 
