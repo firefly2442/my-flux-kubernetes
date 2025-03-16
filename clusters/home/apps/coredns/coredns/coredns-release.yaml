@@ -17,15 +17,17 @@ spec:
       interval: 5m
   # https://github.com/coredns/helm/blob/master/charts/coredns/values.yaml
   values:
-    configMap:
-      name: coredns-configmap
     extraArgs:
       - "-conf"
       - "/etc/coredns/Corefile"
-  valuesFrom:
-    - configMapKeyRef:
-        name: coredns-configmap
-        key: Corefile
+    volumes:
+      - name: coredns-config-volume
+        configMap:
+          name: coredns-configmap
+    volumeMounts:
+      - mountPath: /etc/coredns
+        name: coredns-config-volume  # Mount the volume to the CoreDNS container
+        subPath: Corefile  # Ensure Corefile is used from the ConfigMap
   dependsOn:
     # create the configmap first
     - name: coredns-configmap
