@@ -4,12 +4,11 @@ metadata:
   name: traefik
   namespace: kube-system
 spec:
+  # https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml
   valuesContent: |-
-    dashboard:
-      enabled: true
-    ports:
-      traefik:
-        expose: true
+    ingressRoute:
+      dashboard:
+        enabled: true
     logs:
       access:
         enabled: true
