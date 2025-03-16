@@ -28,7 +28,8 @@ spec:
     server:
       ingress:
         # Specify kubernetes ingress controller class name
-        ingressClassName: nginx
+        # we're using the built-in traefik ingress controller from k3s
+        ingressClassName: traefik
         enabled: true
         hosts:
           - authentik.homelab.local
