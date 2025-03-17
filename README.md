@@ -45,9 +45,15 @@ kubectl get secret admin-user-token -n kubernetes-dashboard -o jsonpath="{.data.
 
 DNS and Fully Qualified Domain Names (FQDN):
 
-`homelab.rivetcode.com` and `*.homelab.rivetcode.com` point to my external
-Raspberry Pi HAProxy load balancer.  This routes traffic for the Kubernetes
-control plane as well as regular HTTP and HTTPS traffic for services.
+`homelab.rivetcode.com` and `*.homelab.rivetcode.com` point to the k3s Traefik
+ingress controller at `192.168.1.10`.  HAProxy on the Raspberry Pi routes traffic for the Kubernetes
+control plane so that we can use `kubectl` on any machine.
+
+## Application URL List
+
+* [Application Portal](http://portal.homelab.rivetcode.com)
+* [Traefik Dashboard](http://traefik.homelab.rivetcode.com)
+* [Authentik](http://authentik.homelab.rivetcode.com)
 
 ## Debugging
 
