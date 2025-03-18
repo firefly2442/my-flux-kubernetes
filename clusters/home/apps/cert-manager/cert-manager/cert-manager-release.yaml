@@ -14,5 +14,13 @@ spec:
         name: cert-manager
         namespace: flux-system
       interval: 5m
+  # https://github.com/cert-manager/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml
   values:
-    installCRDs: true
+    namespace: "cert-manager"
+    crds:
+      enabled: true
+    # https://cert-manager.io/docs/configuration/acme/dns01/
+    # this prevents any issues with the local pihole DNS
+    extraArgs:
+      - --dns01-recursive-nameservers-only
+      - --dns01-recursive-nameservers=8.8.8.8:53,1.1.1.1:53

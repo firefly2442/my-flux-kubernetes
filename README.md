@@ -49,6 +49,12 @@ DNS and Fully Qualified Domain Names (FQDN):
 ingress controller at `192.168.1.10`.  HAProxy on the Raspberry Pi routes traffic for the Kubernetes
 control plane so that we can use `kubectl` on any machine.
 
+CloudFlare provides the DNS nameservers.  These are setup in Westhost for the `rivetcode.com`
+domain name.  This way Cloudflare handles DNS, not Westhost.
+We use dns01 and an API token from Cloudflare to leverage cert-manager
+to request certificates and have them be properly signed.  Otherwise, we would have to
+use self-signed certs which would be annoying in the web-browser.
+
 ## Application URL List
 
 * [Application Portal](http://portal.homelab.rivetcode.com)
