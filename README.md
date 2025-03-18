@@ -54,6 +54,7 @@ control plane so that we can use `kubectl` on any machine.
 * [Application Portal](http://portal.homelab.rivetcode.com)
 * [Traefik Dashboard](http://traefik.homelab.rivetcode.com)
 * [Authentik](http://authentik.homelab.rivetcode.com)
+* [Headlamp Dashboard](http://headlamp.homelab.rivetcode.com)
 
 ## Debugging
 
