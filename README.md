@@ -55,6 +55,36 @@ We use dns01 and an API token from Cloudflare to leverage cert-manager
 to request certificates and have them be properly signed.  Otherwise, we would have to
 use self-signed certs which would be annoying in the web-browser.
 
+Secrets are managed using sealed secrets.  This way we can store the actual values
+in Git and the values are decrypted upon deployment and usage.  To create new secrets:
+
+```shell
+kubectl create secret generic my-api-token \
+  --namespace kube-system \
+  --from-literal=api-token='MY_SECRET_TOKEN' \
+  --dry-run=client -o yaml > secret.yaml
+```
+
+This unencrypted secret then needs to be encrypted using `kubeseal`:
+
+```shell
+kubeseal < secret.yaml > sealed-secret.yaml --format=yaml
+```
+
+This `sealed-secret.yaml` file can then be safely added to Flux since the only
+way to get to the plaintext value is by decrypting it with the sealed secrets private key.
+
+The private key for all sealed secrets can be exported and backed up using:
+
+```shell
+kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > sealed-secrets-key-backup.yaml
+```
+
+This should be secured and saved in a password manager.
+
+When the cluster is deleted and re-instantiated from scratch, this file can be applied
+using `kubectl` and then the sealed secrets pod restarted.
+
 ## Application URL List
 
 * [Application Portal](http://portal.homelab.rivetcode.com)
