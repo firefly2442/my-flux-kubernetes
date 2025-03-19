@@ -3,6 +3,8 @@ kind: IngressRoute
 metadata:
   name: podinfo-ingressroute
   namespace: podinfo
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare-clusterissuer # the ClusterIssuer
 spec:
   entryPoints:
     - websecure
