@@ -2,6 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
   name: cloudflare-clusterissuer
+  namespace: cert-manager
 spec:
   acme:
     email: firefly2442@gmail.com
@@ -9,8 +10,12 @@ spec:
     privateKeySecretRef:
       name: cloudflare-clusterissuer-account-key
     solvers:
-    - dns01:
-        cloudflare:
-          apiTokenSecretRef:
-            name: cloudflare-api-token-secret
-            key: api-token
+      - dns01:
+          cloudflare:
+            email: firefly2442@gmail.com
+            apiTokenSecretRef:
+              name: cloudflare-api-token-secret
+              key: api-token
+        selector:
+          dnsZones:
+            - 'rivetcode.com'
