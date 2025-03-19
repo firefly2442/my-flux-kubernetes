@@ -68,7 +68,7 @@ kubectl create secret generic my-api-token \
 This unencrypted secret then needs to be encrypted using `kubeseal`:
 
 ```shell
-kubeseal < secret.yaml > sealed-secret.yaml --format=yaml
+kubeseal --controller-namespace kube-system --controller-name sealed-secrets < secret.yaml > sealed-secret.yaml --format=yaml
 ```
 
 This `sealed-secret.yaml` file can then be safely added to Flux since the only
