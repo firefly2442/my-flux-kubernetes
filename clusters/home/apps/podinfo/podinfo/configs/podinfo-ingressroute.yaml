@@ -13,6 +13,6 @@ spec:
     - name: podinfo
       port: 80
   tls:
-    certResolver: cloudflare
+    certResolver: letsencrypt
     domains:
       - main: "podinfo.homelab.rivetcode.com"
