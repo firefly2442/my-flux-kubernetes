@@ -5,10 +5,14 @@ metadata:
   namespace: podinfo
 spec:
   entryPoints:
-    - web
+    - websecure
   routes:
   - match: Host(`podinfo.homelab.rivetcode.com`)
     kind: Rule
     services:
     - name: podinfo
       port: 80
+  tls:
+    certResolver: letsencrypt
+    domains:
+      - main: "podinfo.homelab.rivetcode.com"

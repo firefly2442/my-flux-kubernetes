@@ -15,3 +15,10 @@ spec:
     logs:
       access:
         enabled: true
+    additionalArguments:
+    - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
+    - "--certificatesresolvers.letsencrypt.acme.email=your-email@example.com"
+    - "--certificatesresolvers.letsencrypt.acme.storage=/data/acme.json"
+    - "--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare"
+    - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+    - "--entrypoints.websecure.address=:443"
