@@ -16,6 +16,12 @@ spec:
       access:
         enabled: true
     # setup cert manager and lets encrypt
+    env:
+    - name: CF_DNS_API_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: cloudflare-api-token-secret
+          key: api-token
     additionalArguments:
     - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
     - "--certificatesresolvers.letsencrypt.acme.email=firefly2442@gmail.com"
