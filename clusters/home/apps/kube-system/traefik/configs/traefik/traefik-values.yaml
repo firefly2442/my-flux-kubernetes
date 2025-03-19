@@ -22,10 +22,16 @@ spec:
         secretKeyRef:
           name: cloudflare-api-token-secret
           key: api-token
-    additionalArguments:
-    - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
-    - "--certificatesresolvers.letsencrypt.acme.email=firefly2442@gmail.com"
-    - "--certificatesresolvers.letsencrypt.acme.storage=/data/acme.json"
-    - "--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare"
-    - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
-    - "--entrypoints.websecure.address=:443"
+    certificatesResolvers:
+      cloudflare:
+        acme:
+          email: firefly2442@gmail.com
+          storage: /data/acme.json
+          httpChallenge:
+            entryPoint: web
+          dnsChallenge:
+            provider: cloudflare
+            delayBeforeCheck: 0
+            resolvers:
+              - "1.1.1.1:53"
+              - "8.8.8.8:53"
