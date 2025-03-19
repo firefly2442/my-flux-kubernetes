@@ -65,6 +65,9 @@ kubectl create secret generic my-api-token \
   --dry-run=client -o yaml > secret.yaml
 ```
 
+The above api token from Cloudflare is allowed DNS edit permissions on
+only the `rivetcode.com` domain name.
+
 This unencrypted secret then needs to be encrypted using `kubeseal`:
 
 ```shell
