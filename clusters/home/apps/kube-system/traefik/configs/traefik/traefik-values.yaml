@@ -6,10 +6,6 @@ metadata:
 spec:
   # https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml
   valuesContent: |-
-    # https://hub.docker.com/r/rancher/mirrored-library-traefik/tags
-    # Rancher has their own registry for supported versions of traefik with k3s
-    image:
-      tag: 3.3.3
     # Create an IngressRoute for the dashboard
     ingressRoute:
       dashboard:
