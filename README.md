@@ -91,9 +91,12 @@ using `kubectl` and then the sealed secrets pod restarted.
 ## Application URL List
 
 * [Application Portal](http://portal.homelab.rivetcode.com)
-* [Traefik Dashboard](http://traefik.homelab.rivetcode.com)
-* [Authentik](http://authentik.homelab.rivetcode.com)
-* [Headlamp Dashboard](http://headlamp.homelab.rivetcode.com)
+* [Traefik Dashboard](https://traefik.homelab.rivetcode.com)
+* [Authentik](https://authentik.homelab.rivetcode.com)
+* [Headlamp Dashboard](https://headlamp.homelab.rivetcode.com)
+* [Gitea](https://gitea.homelab.rivetcode.com)
+* [Podinfo](https://podinfo.homelab.rivetcode.com)
+* [Longhorn Storage](https://longhorn.homelab.rivetcode.com)
 
 ## Debugging
 
