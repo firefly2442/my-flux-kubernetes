@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: longhorn-cert
+  namespace: longhorn-system
+spec:
+  secretName: longhorn-certificate-secret
+  dnsNames:
+    - "longhorn.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
