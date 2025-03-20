@@ -16,8 +16,8 @@ spec:
       web:
         redirections:
           entryPoint:
-            to: "websecure"
-            scheme: "https"
+            to: websecure
+            scheme: https
             permanent: true
     logs:
       access:
