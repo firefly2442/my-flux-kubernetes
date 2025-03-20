@@ -162,6 +162,7 @@ kubectl exec -it <pod-name> -- /bin/bash
 * [awesome self-hosted resources](https://github.com/awesome-selfhosted/awesome-selfhosted)
 * [migrating from metallb to cilium](https://isovalent.com/blog/post/migrating-from-metallb-to-cilium/)
 * [Setting up Authentik Tutorial](https://www.youtube.com/watch?v=N5unsATNpJk)
-* [Setting up Traefik and Cert Manager](https://www.youtube.com/watch?v=vJweuU6Qrgo&t=926s)
+* [Setting up Traefik and Cert Manager](https://www.youtube.com/watch?v=vJweuU6Qrgo)
 * [Tutorial on Authentik and Traefik](https://github.com/brokenscripts/authentik_traefik)
 * [Tutorial Combining Authentik and Traefik Middleware](https://www.youtube.com/watch?v=_I3hUI1JQP4)
+* [TechnoTim Tutorial on cert-manager and Lets Encrypt](https://www.youtube.com/watch?v=G4CmbYL9UPg)
