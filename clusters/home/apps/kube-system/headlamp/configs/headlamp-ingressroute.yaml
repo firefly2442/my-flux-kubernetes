@@ -3,12 +3,16 @@ kind: IngressRoute
 metadata:
   name: headlamp-ingressroute
   namespace: kube-system
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare-clusterissuer
 spec:
   entryPoints:
-    - web
+    - websecure
   routes:
   - match: Host(`headlamp.homelab.rivetcode.com`)
     kind: Rule
     services:
     - name: headlamp
       port: 80
+  tls:
+    secretName: headlamp-certificate-secret
