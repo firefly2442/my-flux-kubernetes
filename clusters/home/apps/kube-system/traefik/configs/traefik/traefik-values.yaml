@@ -19,6 +19,8 @@ spec:
             to: websecure
             scheme: https
             permanent: true
+      websecure:
+        asDefault: true
     logs:
       access:
         enabled: true
