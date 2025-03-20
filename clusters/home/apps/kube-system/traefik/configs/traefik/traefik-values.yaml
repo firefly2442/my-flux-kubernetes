@@ -6,6 +6,8 @@ metadata:
 spec:
   # https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml
   valuesContent: |-
+    image:
+      tag: v3.3.4
     # Create an IngressRoute for the dashboard
     ingressRoute:
       dashboard:
