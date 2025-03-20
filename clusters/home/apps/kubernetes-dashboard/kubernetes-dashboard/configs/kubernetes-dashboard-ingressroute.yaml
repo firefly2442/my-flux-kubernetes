@@ -1,0 +1,18 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: kubernetes-dashboard-ingressroute
+  namespace: kubernetes-dashboard
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`kubernetes-dashboard.homelab.rivetcode.com`)
+    kind: Rule
+    services:
+    - name: kubernetes-dashboard-web
+      port: 8000
+  tls:
+    secretName: kubernetes-dashboard-certificate-secret

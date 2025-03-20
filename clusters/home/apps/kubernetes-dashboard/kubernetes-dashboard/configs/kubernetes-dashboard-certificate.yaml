@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: kubernetes-dashboard-cert
+  namespace: longhorn-system
+spec:
+  secretName: kubernetes-dashboard-certificate-secret
+  dnsNames:
+    - "kubernetes-dashboard.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
