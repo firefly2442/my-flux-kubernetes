@@ -16,13 +16,13 @@ spec:
         enabled: true
         matchRule: Host(`traefik.homelab.rivetcode.com`)
         entryPoints: ["web", "websecure"]
-    ports:
-      web:
-        redirections:
-          entryPoint:
-            to: websecure
-            scheme: https
-            permanent: true
+    # ports:
+    #   web:
+    #     redirections:
+    #       entryPoint:
+    #         to: websecure
+    #         scheme: https
+    #         permanent: true
     logs:
       access:
         enabled: true
