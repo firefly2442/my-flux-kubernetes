@@ -25,14 +25,6 @@ spec:
         enabled: false
       postgresql:
         password: "secret"
-    server:
-      ingress:
-        # Specify kubernetes ingress controller class name
-        # we're using the built-in traefik ingress controller from k3s
-        ingressClassName: traefik
-        enabled: true
-        hosts:
-          - authentik.homelab.rivetcode.com
     postgresql:
       enabled: true
       auth:
