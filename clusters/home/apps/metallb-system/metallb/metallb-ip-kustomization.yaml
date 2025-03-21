@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   targetNamespace: metallb-system
-  path: ./clusters/home/apps/metallb-system/ip
+  path: ./ip/
   sourceRef:
     kind: GitRepository
     name: flux-system
