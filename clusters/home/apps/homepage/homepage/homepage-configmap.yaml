@@ -21,9 +21,9 @@ data:
   bookmarks.yaml: ""
   services.yaml: |
     - Kubernetes:
-        - Homepage:
-            href: https://homepage.homelab.rivetcode.com
-            description: Homepage
+        - Heimdall:
+            href: https://portal.homelab.rivetcode.com
+            description: Heimdall
   widgets.yaml: |
     - kubernetes:
         cluster:
