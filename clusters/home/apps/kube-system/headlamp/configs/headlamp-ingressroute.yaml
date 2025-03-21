@@ -5,6 +5,16 @@ metadata:
   namespace: kube-system
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+    gethomepage.dev/href: "https://headlamp.homelab.rivetcode.com"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Headlamp
+    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/icon: headlamp.png
+    gethomepage.dev/app: headlamp # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
+    gethomepage.dev/name: Headlamp
+    gethomepage.dev/widget.type: "headlamp"
+    gethomepage.dev/widget.url: "https://headlamp.homelab.rivetcode.com"
+    gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
     - websecure

@@ -5,6 +5,16 @@ metadata:
   namespace: gitea
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+    gethomepage.dev/href: "https://gitea.homelab.rivetcode.com"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Gitea
+    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/icon: gitea.png
+    gethomepage.dev/app: gitea # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
+    gethomepage.dev/name: Gitea
+    gethomepage.dev/widget.type: "gitea"
+    gethomepage.dev/widget.url: "https://gitea.homelab.rivetcode.com"
+    gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
     - websecure

@@ -5,6 +5,16 @@ metadata:
   namespace: podinfo
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+    gethomepage.dev/href: "https://podinfo.homelab.rivetcode.com"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Podinfo
+    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/icon: podinfo.png
+    gethomepage.dev/app: podinfo # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
+    gethomepage.dev/name: Podinfo
+    gethomepage.dev/widget.type: "podinfo"
+    gethomepage.dev/widget.url: "https://podinfo.homelab.rivetcode.com"
+    gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
     - websecure

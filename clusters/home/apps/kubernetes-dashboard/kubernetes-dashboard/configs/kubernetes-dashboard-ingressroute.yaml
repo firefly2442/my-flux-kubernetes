@@ -5,6 +5,16 @@ metadata:
   namespace: kubernetes-dashboard
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+    gethomepage.dev/href: "https://kubernetes-dashboard.homelab.rivetcode.com"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Kubernetes Dashboard
+    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/icon: kubernetes-dashboard.png
+    gethomepage.dev/app: kubernetes-dashboard # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
+    gethomepage.dev/name: Kubernetes Dashboard
+    gethomepage.dev/widget.type: "kubernetes-dashboard"
+    gethomepage.dev/widget.url: "https://kubernetes-dashboard.homelab.rivetcode.com"
+    gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
     - websecure
