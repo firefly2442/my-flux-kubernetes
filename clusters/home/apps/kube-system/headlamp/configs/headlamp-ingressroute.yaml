@@ -12,8 +12,8 @@ metadata:
     gethomepage.dev/icon: headlamp.png
     gethomepage.dev/app: headlamp # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Headlamp
-    gethomepage.dev/widget.type: "headlamp"
-    gethomepage.dev/widget.url: "https://headlamp.homelab.rivetcode.com"
+    #gethomepage.dev/widget.type: "headlamp"
+    #gethomepage.dev/widget.url: "https://headlamp.homelab.rivetcode.com"
     gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
