@@ -15,3 +15,4 @@ resources:
   - ./namespaces/namespace-gitea.yaml
   - ./namespaces/namespace-authentik.yaml
   - ./namespaces/namespace-gatus.yaml
+  - ./namespaces/namespace-homepage.yaml
