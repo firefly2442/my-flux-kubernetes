@@ -5,6 +5,16 @@ metadata:
   namespace: authentik
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+    gethomepage.dev/href: "https://authentik.homelab.rivetcode.com"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Authentik
+    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/icon: authentik.png
+    gethomepage.dev/app: authentik # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
+    gethomepage.dev/name: Authentik
+    gethomepage.dev/widget.type: "authentik"
+    gethomepage.dev/widget.url: "https://authentik.homelab.rivetcode.com"
+    gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
     - websecure

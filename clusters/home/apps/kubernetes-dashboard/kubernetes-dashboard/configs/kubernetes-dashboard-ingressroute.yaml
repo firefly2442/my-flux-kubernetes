@@ -12,7 +12,7 @@ metadata:
     gethomepage.dev/icon: kubernetes-dashboard.png
     gethomepage.dev/app: kubernetes-dashboard # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Kubernetes Dashboard
-    gethomepage.dev/widget.type: "kubernetes-dashboard"
+    #gethomepage.dev/widget.type: "kubernetes-dashboard"
     gethomepage.dev/widget.url: "https://kubernetes-dashboard.homelab.rivetcode.com"
     gethomepage.dev/pod-selector: ""
 spec:

@@ -12,7 +12,7 @@ metadata:
     gethomepage.dev/icon: longhorn.png
     gethomepage.dev/app: longhorn # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Longhorn
-    gethomepage.dev/widget.type: "longhorn"
+    #gethomepage.dev/widget.type: "longhorn"
     gethomepage.dev/widget.url: "https://longhorn.homelab.rivetcode.com"
     gethomepage.dev/pod-selector: ""
 spec:
