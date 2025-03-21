@@ -1,13 +1,16 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: metallb-ip-config
-  namespace: flux-system
+  name: metallb-ip
+  namespace: kube-system
 spec:
-  targetNamespace: metallb-system
+  interval: 15m
+  dependsOn:
+  - name: metallb
   path: ./ip/
+  prune: true # remove any elements later removed from the above path
+  timeout: 2m
   sourceRef:
     kind: GitRepository
-    name: flux-system
-  prune: true
-  interval: 10m
+    name: metallb-ip
+  retryInterval: 1m
