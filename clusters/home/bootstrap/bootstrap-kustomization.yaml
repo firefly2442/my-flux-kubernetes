@@ -14,5 +14,6 @@ resources:
   - ./namespaces/namespace-kubernetes-dashboard.yaml
   - ./namespaces/namespace-gitea.yaml
   - ./namespaces/namespace-authentik.yaml
+  - ./namespaces/namespace-gatus.yaml
   # secrets
   - ./secrets/cloudflare-secret.yaml
