@@ -15,16 +15,12 @@ data:
   #      url: https://longhorn.my.network
   custom.css: ""
   custom.js: ""
-  bookmarks.yaml: |
-    - Developer:
-        - Github:
-            - abbr: GH
-              href: https://github.com/
+  bookmarks.yaml: ""
   services.yaml: |
-    - My First Group:
-        - My First Service:
-            href: http://localhost/
-            description: Homepage is awesome
+    - Kubernetes:
+        - Homepage:
+            href: https://homepage.homelab.rivetcode.com
+            description: Homepage
   widgets.yaml: |
     - kubernetes:
         cluster:
