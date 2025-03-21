@@ -12,7 +12,7 @@ spec:
   - match: Host(`gatus.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: gatus-http
-      port: 3000
+    - name: gatus
+      port: 80
   tls:
     secretName: gatus-certificate-secret
