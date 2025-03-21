@@ -8,6 +8,7 @@ spec:
   chart:
     spec:
       chart: metallb
+      # https://metallb.github.io/frr-k8s/index.yaml
       version: "0.14.9"
       sourceRef:
         kind: HelmRepository
@@ -16,6 +17,7 @@ spec:
       interval: 5m
   install:
     crds: CreateReplace
+  # https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml
   values:
     prometheus:
       metrics:

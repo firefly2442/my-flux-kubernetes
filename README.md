@@ -90,7 +90,8 @@ using `kubectl` and then the sealed secrets pod restarted.
 
 ## Application URL List
 
-* [Application Portal](http://portal.homelab.rivetcode.com)
+* [Heimdall Application Portal](http://portal.homelab.rivetcode.com)
+* [Homepage Portal](https://homepage.homelab.rivetcode.com)
 * [Traefik Dashboard](https://traefik.homelab.rivetcode.com)
 * [Authentik](https://authentik.homelab.rivetcode.com)
 * [Headlamp Dashboard](https://headlamp.homelab.rivetcode.com)

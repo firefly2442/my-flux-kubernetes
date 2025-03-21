@@ -11,5 +11,3 @@ spec:
     name: flux-system
   prune: true
   interval: 10m
-  dependsOn:
-    - name: metallb-metallb-system
