@@ -44,3 +44,4 @@ data:
         cpu: true
         memory: true
         network: default
+  docker.yaml: ""
