@@ -98,6 +98,7 @@ using `kubectl` and then the sealed secrets pod restarted.
 * [Podinfo](https://podinfo.homelab.rivetcode.com)
 * [Longhorn Storage](https://longhorn.homelab.rivetcode.com)
 * [Kubernetes Dashboard](https://kubernetes-dashboard.homelab.rivetcode.com)
+* [Gatus Service Status Dashboard](https://gatus.homelab.rivetcode.com)
 
 ## Debugging
 
