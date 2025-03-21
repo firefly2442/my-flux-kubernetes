@@ -22,11 +22,36 @@ spec:
     persistence:
       enabled: false
     # Gatus configuration
-    # ref: https://github.com/TwiN/gatus#configuration
+    # https://github.com/TwiN/gatus#configuration
     config:
       endpoints:
         - name: podinfo
           url: https://podinfo.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: authentik
+          url: https://authentik.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: longhorn
+          url: https://longhorn.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: gitea
+          url: https://gitea.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: headlamp
+          url: https://headlamp.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: kubernetes-dashboard
+          url: https://kubernetes-dashboard.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
