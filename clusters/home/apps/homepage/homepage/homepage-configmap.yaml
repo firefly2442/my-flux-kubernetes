@@ -24,6 +24,7 @@ data:
         - Heimdall:
             href: https://portal.homelab.rivetcode.com
             description: Heimdall
+            icon: heimdall.png
   widgets.yaml: |
     - kubernetes:
         cluster:
