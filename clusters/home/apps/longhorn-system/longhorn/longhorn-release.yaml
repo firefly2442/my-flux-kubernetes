@@ -17,6 +17,9 @@ spec:
   values:
     # see stock version
     # https://github.com/longhorn/longhorn/blob/master/chart/values.yaml
+    metrics:
+      ServiceMonitor:
+        enabled: true
     service:
       ui:
         type: LoadBalancer

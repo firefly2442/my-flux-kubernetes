@@ -18,6 +18,9 @@ spec:
       interval: 5m
   # https://gitea.com/gitea/helm-gitea/src/branch/main/values.yaml
   values:
+    gitea:
+      metrics:
+        enabled: true
     service:
       http:
         type: LoadBalancer
