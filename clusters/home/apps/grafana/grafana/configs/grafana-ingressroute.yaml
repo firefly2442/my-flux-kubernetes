@@ -22,7 +22,7 @@ spec:
   - match: Host(`grafana.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: grafana-http
-      port: 3000
+    - name: grafana
+      port: 80
   tls:
     secretName: grafana-certificate-secret
