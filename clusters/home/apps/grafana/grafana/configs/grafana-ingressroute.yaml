@@ -1,0 +1,28 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: grafana-ingressroute
+  namespace: grafana
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+    gethomepage.dev/href: "https://grafana.homelab.rivetcode.com"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Grafana
+    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/icon: grafana.png
+    gethomepage.dev/app: grafana # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
+    gethomepage.dev/name: Grafana
+    gethomepage.dev/widget.type: "grafana"
+    gethomepage.dev/widget.url: "https://grafana.homelab.rivetcode.com"
+    gethomepage.dev/pod-selector: ""
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`grafana.homelab.rivetcode.com`)
+    kind: Rule
+    services:
+    - name: grafana-http
+      port: 3000
+  tls:
+    secretName: grafana-certificate-secret

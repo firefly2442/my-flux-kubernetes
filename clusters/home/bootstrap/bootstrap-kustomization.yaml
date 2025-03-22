@@ -17,3 +17,4 @@ resources:
   - ./namespaces/namespace-gatus.yaml
   - ./namespaces/namespace-homepage.yaml
   - ./namespaces/namespace-prometheus.yaml
+  - ./namespaces/namespace-grafana.yaml
