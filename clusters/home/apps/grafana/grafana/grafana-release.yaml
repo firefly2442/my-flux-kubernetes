@@ -24,7 +24,8 @@ spec:
         datasources:
         - name: Prometheus
           type: prometheus
-          url: http://prometheus.homelab.rivetcode.com
+          # <service-name>.<namespace>.svc.cluster.local
+          url: http://prometheus-server.prometheus.svc.cluster.local
     # Provision grafana-dashboards-kubernetes
     dashboardProviders:
       dashboardproviders.yaml:
