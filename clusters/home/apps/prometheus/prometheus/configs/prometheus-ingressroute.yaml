@@ -22,7 +22,7 @@ spec:
   - match: Host(`prometheus.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: prometheus
+    - name: prometheus-server
       port: 80
   tls:
     secretName: prometheus-certificate-secret
