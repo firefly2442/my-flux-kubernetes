@@ -17,6 +17,9 @@ spec:
       interval: 5m
   # https://github.com/goauthentik/helm/blob/main/charts/authentik/values.yaml
   values:
+    server:
+      metrics:
+        enabled: true
     authentik:
       secret_key: "secret"
       # This sends anonymous usage-data, stack traces on errors and
