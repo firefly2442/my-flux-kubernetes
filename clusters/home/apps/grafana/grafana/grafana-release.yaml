@@ -18,6 +18,13 @@ spec:
       interval: 5m
   # https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
   values:
+    datasources:
+      datasources.yaml:
+        apiVersion: 1
+        datasources:
+        - name: Prometheus
+          type: prometheus
+          url: http://prometheus.homelab.rivetcode.com
     # Provision grafana-dashboards-kubernetes
     dashboardProviders:
       dashboardproviders.yaml:
