@@ -20,5 +20,4 @@ spec:
   # https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml
   values:
     prometheus:
-      metrics:
-        enabled: false
+      namespace: prometheus
