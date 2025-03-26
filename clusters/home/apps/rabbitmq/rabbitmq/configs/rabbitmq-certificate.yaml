@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: rabbitmq-cert
+  namespace: rabbitmq
+spec:
+  secretName: rabbitmq-certificate-secret
+  dnsNames:
+    - "rabbitmq.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
