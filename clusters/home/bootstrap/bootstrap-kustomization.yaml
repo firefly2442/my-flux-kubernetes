@@ -18,3 +18,4 @@ resources:
   - ./namespaces/namespace-homepage.yaml
   - ./namespaces/namespace-prometheus.yaml
   - ./namespaces/namespace-grafana.yaml
+  - ./namespaces/namespace-rabbitmq.yaml
