@@ -102,6 +102,7 @@ using `kubectl` and then the sealed secrets pod restarted.
 * [Gatus Service Status Dashboard](https://gatus.homelab.rivetcode.com)
 * [Prometheus Logging Dashboard](https://prometheus.homelab.rivetcode.com)
 * [Grafana Dashboard](https://grafana.homelab.rivetcode.com)
+* [Rabbitmq Dashboard](https://rabbitmq.homelab.rivetcode.com)
 
 ## Debugging
 
