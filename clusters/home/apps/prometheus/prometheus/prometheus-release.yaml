@@ -21,3 +21,8 @@ spec:
     server:
       service:
         type: LoadBalancer
+    prometheus:
+      prometheusSpec:
+        serviceMonitorSelectorNilUsesHelmValues: false
+        serviceMonitorSelector: {}
+        serviceMonitorNamespaceSelector: {}
