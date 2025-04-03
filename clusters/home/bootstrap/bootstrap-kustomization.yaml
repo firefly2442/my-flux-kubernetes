@@ -19,3 +19,4 @@ resources:
   - ./namespaces/namespace-prometheus.yaml
   - ./namespaces/namespace-grafana.yaml
   - ./namespaces/namespace-rabbitmq.yaml
+  - ./namespaces/namespace-trivy.yaml
