@@ -9,6 +9,7 @@ spec:
     spec:
       chart: trivy-operator
       # https://aquasecurity.github.io/helm-charts/index.yaml
+      # https://aquasecurity.github.io/trivy-operator/latest/getting-started/installation/helm/
       version: '0.27.0'
       sourceRef:
         kind: HelmRepository
@@ -18,3 +19,6 @@ spec:
   install:
     crds: CreateReplace
   # https://github.com/aquasecurity/trivy-operator/blob/main/deploy/helm/values.yaml
+  values:
+    serviceMonitor:
+      enabled: true
