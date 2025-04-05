@@ -20,3 +20,4 @@ resources:
   - ./namespaces/namespace-grafana.yaml
   - ./namespaces/namespace-rabbitmq.yaml
   - ./namespaces/namespace-trivy-system.yaml
+  - ./namespaces/namespace-defectdojo.yaml
