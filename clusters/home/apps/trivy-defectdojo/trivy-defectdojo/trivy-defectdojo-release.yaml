@@ -19,3 +19,4 @@ spec:
   values:
     defectDojoApiCredentials:
       createSecret: false
+    reports: "vulnerabilityreports,rbacassessmentreports,infraassessmentreports,configauditreports,exposedsecretreports"
