@@ -20,3 +20,6 @@ spec:
     createSecret: true
     createRedisSecret: true
     createPostgresqlSecret: true
+    extraEnv:
+    - name: "DD_ALLOWED_HOSTS"
+      value: "defectdojo.homelab.rivetcode.com"
