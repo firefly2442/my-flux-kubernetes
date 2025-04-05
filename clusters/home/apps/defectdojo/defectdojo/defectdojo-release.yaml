@@ -16,3 +16,7 @@ spec:
         namespace: flux-system
       interval: 5m
   # https://github.com/DefectDojo/django-DefectDojo/blob/master/helm/defectdojo/values.yaml
+  values:
+    createSecret: true
+    createRedisSecret: true
+    createPostgresqlSecret: true

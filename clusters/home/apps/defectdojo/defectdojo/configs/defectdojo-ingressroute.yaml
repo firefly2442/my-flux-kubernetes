@@ -22,7 +22,7 @@ spec:
   - match: Host(`defectdojo.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: defectdojo-server
+    - name: defectdojo-django
       port: 80
   tls:
     secretName: defectdojo-certificate-secret
