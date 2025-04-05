@@ -24,3 +24,6 @@ spec:
       enabled: true
     trivy:
       ignoreUnfixed: false
+    service:
+      # this way we get a ClusterIP address
+      headless: false
