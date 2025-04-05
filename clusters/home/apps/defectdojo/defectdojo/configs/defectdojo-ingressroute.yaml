@@ -12,8 +12,8 @@ metadata:
     gethomepage.dev/icon: defectdojo.png
     gethomepage.dev/app: defectdojo # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Defectdojo
-    gethomepage.dev/widget.type: "defectdojo"
-    gethomepage.dev/widget.url: "https://defectdojo.homelab.rivetcode.com"
+    # gethomepage.dev/widget.type: "defectdojo"
+    # gethomepage.dev/widget.url: "https://defectdojo.homelab.rivetcode.com"
     gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
