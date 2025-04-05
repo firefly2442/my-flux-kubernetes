@@ -22,5 +22,5 @@ spec:
     createPostgresqlSecret: true
     extraEnv:
     - name: "DD_ALLOWED_HOSTS"
-      value: "defectdojo.homelab.rivetcode.com"
+      value: "defectdojo-django.defectdojo.svc.cluster.local,defectdojo.homelab.rivetcode.com"
     host: defectdojo-django.defectdojo.svc.cluster.local
