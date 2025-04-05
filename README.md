@@ -88,6 +88,11 @@ This should be secured and saved in a password manager.
 When the cluster is deleted and re-instantiated from scratch, this file can be applied
 using `kubectl` and then the sealed secrets pod restarted.
 
+Trivy security scans are done automatically through the Trivy Operator.  These
+are picked up by the Trivy DefectDojo Report Operator which passes them
+to the DefectDojo web-ui.  This requires a secret API key setup
+in DefectDojo and setup within the Trivy DefectDojo Report Operator.
+
 ## Application URL List
 
 * [Heimdall Application Portal](http://portal.homelab.rivetcode.com)
@@ -103,6 +108,7 @@ using `kubectl` and then the sealed secrets pod restarted.
 * [Prometheus Logging Dashboard](https://prometheus.homelab.rivetcode.com)
 * [Grafana Dashboard](https://grafana.homelab.rivetcode.com)
 * [Rabbitmq Dashboard](https://rabbitmq.homelab.rivetcode.com)
+* [DefectDojo Dashboard](https://defectdojo.homelab.rivetcode.com)
 
 ## Debugging
 
