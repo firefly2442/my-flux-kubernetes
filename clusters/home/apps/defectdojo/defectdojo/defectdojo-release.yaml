@@ -9,7 +9,7 @@ spec:
     spec:
       chart: defectdojo
       # https://github.com/DefectDojo/django-DefectDojo/tree/master/helm/defectdojo
-      version: '1.6.188'
+      version: '1.6.189'
       sourceRef:
         kind: HelmRepository
         name: defectdojo
