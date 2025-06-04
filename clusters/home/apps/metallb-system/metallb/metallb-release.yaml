@@ -9,7 +9,7 @@ spec:
     spec:
       chart: metallb
       # https://metallb.github.io/frr-k8s/index.yaml
-      version: "0.14.9"
+      version: "0.15.2"
       sourceRef:
         kind: HelmRepository
         name: metallb
