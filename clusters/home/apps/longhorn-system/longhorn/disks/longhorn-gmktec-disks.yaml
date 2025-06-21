@@ -3,11 +3,11 @@ kind: Node
 metadata:
   # use kubectl get nodes to get the appropriate reference names
   # don't use trailing slashes at the end of the disk locations
-  name: minisforum
+  name: gmktec
   namespace: longhorn-system
 spec:
   allowScheduling: true
   disks:
     disk1:
-      path: /data
+      path: /var/lib/longhorn
       storageReserved: 53687091200
