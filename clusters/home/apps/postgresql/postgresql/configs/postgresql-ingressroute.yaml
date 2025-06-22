@@ -20,7 +20,6 @@ spec:
     - tcp
   routes:
   - match: Host(`postgresql.homelab.rivetcode.com`)
-    kind: Rule
     services:
     - name: postgresql-server
       port: 5432
