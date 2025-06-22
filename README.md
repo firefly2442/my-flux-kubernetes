@@ -93,6 +93,19 @@ are picked up by the Trivy DefectDojo Report Operator which passes them
 to the DefectDojo web-ui.  This requires a secret API key setup
 in DefectDojo and setup within the Trivy DefectDojo Report Operator.
 
+To get the postgresql password:
+
+```shell
+kubectl get secret postgresql -n postgresql -o jsonpath="{.data.postgres-password}" | base64 -d; echo
+```
+
+Then connect via:
+
+```shell
+psql -h postgresql.homelab.rivetcode.com -U postgres
+# then enter the password from above
+```
+
 ## Application URL List
 
 * [Heimdall Application Portal](http://portal.homelab.rivetcode.com)
