@@ -13,7 +13,7 @@ metadata:
     gethomepage.dev/name: Postgresql
 spec:
   entryPoints:
-    - tcp
+    - postgres
   routes:
     - match: HostSNI(`*`)  # or use HostSNI(`postgresql.homelab.rivetcode.com`) if TLS is configured
       services:
