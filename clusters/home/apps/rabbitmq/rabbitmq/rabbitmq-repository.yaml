@@ -1,9 +1,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
+kind: OCIRepository
 metadata:
   name: rabbitmq
-  namespace: flux-system
 spec:
   interval: 5m
   url: oci://registry-1.docker.io/bitnamicharts/rabbitmq
-  type: oci
+  ref:
+    semver: ">=16.0.8"
