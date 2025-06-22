@@ -86,7 +86,7 @@ kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-ke
 This should be secured and saved in a password manager.
 
 When the cluster is deleted and re-instantiated from scratch, this file can be applied
-using `kubectl` and then the sealed secrets pod restarted.
+using `kubectl apply -f sealed-secrets-key-backup.yaml` and then the sealed secrets pod restarted.
 
 Trivy security scans are done automatically through the Trivy Operator.  These
 are picked up by the Trivy DefectDojo Report Operator which passes them
