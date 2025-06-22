@@ -17,5 +17,5 @@ spec:
   routes:
     - match: HostSNI(`*`)  # or use HostSNI(`postgresql.homelab.rivetcode.com`) if TLS is configured
       services:
-        - name: postgresql-server
+        - name: postgresql
           port: 5432
