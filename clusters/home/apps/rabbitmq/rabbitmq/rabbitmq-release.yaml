@@ -10,7 +10,7 @@ spec:
       chart: rabbitmq
       # https://repo.broadcom.com/bitnami-files/index.yaml
       # https://artifacthub.io/packages/helm/bitnami/rabbitmq
-      version: '15.4.0'
+      version: '16.0.8'
       sourceRef:
         kind: HelmRepository
         name: rabbitmq
