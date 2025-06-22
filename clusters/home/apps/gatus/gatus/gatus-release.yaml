@@ -60,3 +60,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: rabbitmq
+          url: https://rabbitmq.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: prometheus
+          url: https://prometheus.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
