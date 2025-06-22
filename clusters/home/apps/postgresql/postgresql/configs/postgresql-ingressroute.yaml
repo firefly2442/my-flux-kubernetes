@@ -4,22 +4,18 @@ metadata:
   name: postgresql-ingressroute-tcp
   namespace: postgresql
   annotations:
-    cert-manager.io/cluster-issuer: cloudflare-clusterissuer
-    gethomepage.dev/href: "https://postgresql.homelab.rivetcode.com"
+    gethomepage.dev/href: "tcp://postgresql.homelab.rivetcode.com:5432"
     gethomepage.dev/enabled: "true"
-    gethomepage.dev/description: Postgresql
+    gethomepage.dev/description: PostgreSQL
     gethomepage.dev/group: Kubernetes
     gethomepage.dev/icon: postgresql.png
     gethomepage.dev/app: postgresql # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Postgresql
-    #gethomepage.dev/widget.type: "postgresql"
-    #gethomepage.dev/widget.url: "https://postgresql.homelab.rivetcode.com"
-    gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
     - tcp
   routes:
-  - match: Host(`postgresql.homelab.rivetcode.com`)
-    services:
-    - name: postgresql-server
-      port: 5432
+    - match: HostSNI(`*`)  # or use HostSNI(`postgresql.homelab.rivetcode.com`) if TLS is configured
+      services:
+        - name: postgresql-server
+          port: 5432
