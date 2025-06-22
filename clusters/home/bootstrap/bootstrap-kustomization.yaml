@@ -22,3 +22,4 @@ resources:
   - ./namespaces/namespace-trivy-defectdojo.yaml
   - ./namespaces/namespace-trivy-system.yaml
   - ./namespaces/namespace-defectdojo.yaml
+  - ./namespaces/namespace-postgresql.yaml

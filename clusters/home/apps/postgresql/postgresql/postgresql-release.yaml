@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: postgresql
+  namespace: postgresql
+spec:
+  interval: 5m
+  # https://repo.broadcom.com/bitnami-files/index.yaml
+  # https://artifacthub.io/packages/helm/bitnami/postgresql
+  # https://github.com/fluxcd/flux2/issues/5089
+  chartRef:
+    kind: OCIRepository
+    name: postgresql
+    namespace: flux-system
+  # https://github.com/bitnami/charts/blob/main/bitnami/postgresql/values.yaml
+  values:
+    service:
+      type: LoadBalancer
+    metrics:
+      enabled: true
