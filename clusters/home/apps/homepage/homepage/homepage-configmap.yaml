@@ -25,6 +25,10 @@ data:
             href: https://portal.homelab.rivetcode.com
             description: Heimdall
             icon: heimdall.png
+        - Traefik:
+            href: https://traefik.homelab.rivetcode.com
+            description: Traefik
+            icon: traefik.png
   widgets.yaml: |
     - kubernetes:
         cluster:
