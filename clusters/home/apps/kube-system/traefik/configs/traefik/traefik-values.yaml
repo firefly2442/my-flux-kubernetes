@@ -19,6 +19,17 @@ spec:
             to: websecure
             scheme: https
             permanent: true
+      websecure:
+        tls:
+          enabled: true
+      postgres:
+        port: 5432
+        expose: true
+        exposedPort: 5432
+        protocol: TCP
+    entryPoints:
+      postgres:
+        address: ":5432"
     logs:
       access:
         enabled: true
