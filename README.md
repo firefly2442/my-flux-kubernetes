@@ -8,6 +8,9 @@ My personal Kubernetes cluster using [k3s](https://k3s.io/), [flux](https://flux
 Use [Ansible](https://github.com/firefly2442/myhomelab-ansible) to setup OS level applications,
 software, and Kubernetes deployment of k3s.
 
+When the cluster is deleted and re-instantiated from scratch, the sealed secrets backup file can be applied
+using `kubectl apply -f sealed-secrets-key-backup.yaml` and then restart the `kube-system` sealed secrets pod.
+
 ```shell
 # run this once at the very beginning
 # Github PAT: https://github.com/settings/tokens
@@ -84,9 +87,6 @@ kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-ke
 ```
 
 This should be secured and saved in a password manager.
-
-When the cluster is deleted and re-instantiated from scratch, this file can be applied
-using `kubectl apply -f sealed-secrets-key-backup.yaml` and then the sealed secrets pod restarted.
 
 Trivy security scans are done automatically through the Trivy Operator.  These
 are picked up by the Trivy DefectDojo Report Operator which passes them
