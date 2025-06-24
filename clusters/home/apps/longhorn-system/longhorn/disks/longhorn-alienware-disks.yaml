@@ -9,5 +9,6 @@ spec:
   allowScheduling: true
   disks:
     disk1:
+      allowScheduling: true
       path: /data
       storageReserved: 53687091200
