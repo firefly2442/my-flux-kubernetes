@@ -6,9 +6,9 @@ metadata:
   name: alienware
   namespace: longhorn-system
 spec:
-  allowScheduling: true
+  allowScheduling: false
   disks:
     disk1:
-      allowScheduling: true
+      allowScheduling: false
       path: /data
       storageReserved: 53687091200
