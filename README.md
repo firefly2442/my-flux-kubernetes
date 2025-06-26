@@ -22,6 +22,12 @@ export GITHUB_TOKEN=secret
 flux bootstrap github --token-auth --owner=firefly2442 --repository=my-flux-kubernetes --branch=master --path=clusters/home --personal --private=false
 ```
 
+Then go here to setup the initial password and credentials for Authentik:
+
+[https://authentik.homelab.rivetcode.com/if/flow/initial-setup/](https://authentik.homelab.rivetcode.com/if/flow/initial-setup/)
+
+This first user will be the admin user.
+
 ## Development Notes
 
 ```shell
@@ -167,8 +173,7 @@ kubectl exec -it <pod-name> -- /bin/bash
 * [red-lichtie example](https://github.com/red-lichtie/homelab-cluster)
 * [budimanjojo example](https://github.com/budimanjojo/home-cluster)
 * [chamburr example](https://github.com/chamburr/homelab)
-* [dvignoles example](https://github.com/dvignoles/pikluster/tree/main)
-* [vehagn example](https://github.com/vehagn/homelab/tree/main/infra/cilium)
+* [vehagn example](https://github.com/vehagn/homelab/)
 * [chrede88 example](https://github.com/chrede88/home-ops)
 * [mischavandenburg example](https://github.com/mischavandenburg/homelab)
 * [Flux Gitops Experiences](https://dvignoles.github.io/blog/post-flux-gitops/)
@@ -191,3 +196,4 @@ kubectl exec -it <pod-name> -- /bin/bash
 * [Tutorial on Authentik and Traefik](https://github.com/brokenscripts/authentik_traefik)
 * [Tutorial Combining Authentik and Traefik Middleware](https://www.youtube.com/watch?v=_I3hUI1JQP4)
 * [TechnoTim Tutorial on cert-manager and Lets Encrypt](https://www.youtube.com/watch?v=G4CmbYL9UPg)
+* [hmajid2301 example](https://github.com/hmajid2301/k3s-config)
