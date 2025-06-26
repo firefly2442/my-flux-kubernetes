@@ -34,3 +34,7 @@ spec:
         password: "secret"
     redis:
       enabled: true
+    global:
+      envFrom:
+        - secretRef:
+              name: authentik-certificate-secret
