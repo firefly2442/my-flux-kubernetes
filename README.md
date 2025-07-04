@@ -156,6 +156,12 @@ flux resume hr my-helmrelease -n myhelmrelease-ns
 kubectl describe kustomization flux-system -n flux-system
 ```
 
+Check all kustomizations:
+
+```shell
+flux get kustomizations --all-namespaces
+```
+
 Exec into a running pod:
 
 ```shell
