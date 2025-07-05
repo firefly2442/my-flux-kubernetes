@@ -10,7 +10,7 @@ spec:
       chart: grafana
       # https://grafana.github.io/helm-charts/index.yaml
       # https://artifacthub.io/packages/helm/grafana/grafana
-      version: '9.2.9'
+      version: '9.2.10'
       sourceRef:
         kind: HelmRepository
         name: grafana
