@@ -37,4 +37,4 @@ spec:
     global:
       envFrom:
         - secretRef:
-          name: authentik-akadmin-credentials
+            name: authentik-akadmin-credentials
