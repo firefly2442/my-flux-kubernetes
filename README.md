@@ -9,7 +9,9 @@ Use [Ansible](https://github.com/firefly2442/myhomelab-ansible) to setup OS leve
 software, and Kubernetes deployment of k3s.
 
 When the cluster is deleted and re-instantiated from scratch, the sealed secrets backup file can be applied
-using `kubectl apply -f sealed-secrets-key-backup.yaml` and then restart the `kube-system` sealed secrets pod.
+using `kubectl apply -f sealed-secrets-key-backup.yaml` and then restart the `kube-system` sealed secrets pod using
+something like: `kubectl delete pod sealed-secrets-f478c47cc-hcnlg -n kube-system`.  This will delete it and then it
+should come right back up.
 
 ```shell
 # run this once at the very beginning
@@ -21,6 +23,9 @@ using `kubectl apply -f sealed-secrets-key-backup.yaml` and then restart the `ku
 export GITHUB_TOKEN=secret
 flux bootstrap github --token-auth --owner=firefly2442 --repository=my-flux-kubernetes --branch=master --path=clusters/home --personal --private=false
 ```
+
+Next go into Longhorn and disable the plain worker nodes so no data gets stored there.  Edit the nodes then select disable scheduling
+and set eviction request to true.  This will move any existing PVCs that are bound to those nodes to other nodes.
 
 Then go here to setup the initial password and credentials for Authentik:
 
