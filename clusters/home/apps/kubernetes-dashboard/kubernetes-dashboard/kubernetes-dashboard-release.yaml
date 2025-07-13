@@ -19,7 +19,7 @@ spec:
     # https://github.com/kubernetes/dashboard/blob/master/charts/kubernetes-dashboard/values.yaml
     web:
       service:
-        type: LoadBalancer
+        type: ClusterIP
       # containers:
       #   ports:
       #     - name: web

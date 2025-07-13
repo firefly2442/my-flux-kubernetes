@@ -18,7 +18,7 @@ spec:
   # https://github.com/TwiN/helm-charts/blob/master/charts/gatus/values.yaml
   values:
     service:
-      type: LoadBalancer
+      type: ClusterIP
     persistence:
       enabled: false
     # Gatus configuration

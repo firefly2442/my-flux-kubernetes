@@ -23,4 +23,4 @@ spec:
         enabled: true
     service:
       http:
-        type: LoadBalancer
+        type: ClusterIP

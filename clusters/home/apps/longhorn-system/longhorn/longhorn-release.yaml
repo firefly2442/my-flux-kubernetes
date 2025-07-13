@@ -22,7 +22,7 @@ spec:
         enabled: true
     service:
       ui:
-        type: LoadBalancer
+        type: ClusterIP
     defaultSettings:
       createDefaultDiskLabeledNodes: false
     persistence:

@@ -15,6 +15,6 @@ spec:
   # https://github.com/bitnami/charts/blob/main/bitnami/rabbitmq/values.yaml
   values:
     service:
-      type: LoadBalancer
+      type: ClusterIP
     metrics:
       enabled: true
