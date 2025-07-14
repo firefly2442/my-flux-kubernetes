@@ -24,5 +24,8 @@ spec:
     services:
     - name: podinfo
       port: 80
+    middlewares:
+      - name: authentik-service-middleware
+        namespace: authentik
   tls:
     secretName: podinfo-certificate-secret
