@@ -38,3 +38,7 @@ spec:
       envFrom:
         - secretRef:
             name: authentik-akadmin-credentials
+    outposts:
+      env:
+        - name: AK_OUTPOST_API_INSECURE
+          value: "true"
