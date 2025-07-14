@@ -6,7 +6,10 @@ metadata:
 spec:
   acme:
     email: firefly2442@gmail.com
-    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    # staging:
+    #server: https://acme-staging-v02.api.letsencrypt.org/directory
+    # production:
+    server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: cloudflare-clusterissuer-account-key
     solvers:
