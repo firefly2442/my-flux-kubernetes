@@ -6,6 +6,10 @@ metadata:
 spec:
   # https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml
   valuesContent: |-
+    providers:
+      kubernetesCRD:
+        # Allows IngressRoute to reference resources in namespace other than theirs
+        allowCrossNamespace: true
     # Create an IngressRoute for the dashboard
     ingressRoute:
       dashboard:
