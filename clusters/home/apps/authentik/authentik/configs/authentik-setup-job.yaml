@@ -4,7 +4,6 @@ metadata:
   name: authentik-setup-job
   namespace: authentik
 spec:
-  backoffLimit: 1
   ttlSecondsAfterFinished: 600
   template:
     spec:
@@ -74,11 +73,11 @@ spec:
 
               echo "Checking if outpost exists..."
               OUTPOST_ID=$(curl -s -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
-                "${AUTHENTIK_API_URL}/outposts/?search=authentik-outpost" | jq -r '.results[0].pk')
+                "${AUTHENTIK_API_URL}/outposts/instances/?search=authentik-outpost" | jq -r '.results[0].pk')
 
               if [ -z "$OUTPOST_ID" ] || [ "$OUTPOST_ID" = "null" ]; then
                 echo "Creating new outpost..."
-                OUTPOST_ID=$(curl -s -X POST "${AUTHENTIK_API_URL}/outposts/" \
+                OUTPOST_ID=$(curl -s -X POST "${AUTHENTIK_API_URL}/outposts/instances/" \
                   -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
                   -H "Content-Type: application/json" \
                   -d '{
