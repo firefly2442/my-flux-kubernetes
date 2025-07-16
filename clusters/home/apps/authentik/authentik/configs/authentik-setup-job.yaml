@@ -22,6 +22,8 @@ spec:
                 secretKeyRef:
                   name: authentik-akadmin-credentials
                   key: AUTHENTIK_BOOTSTRAP_TOKEN
+          # our endpoint has a debug capability right in the browser
+          # https://authentik.homelab.rivetcode.com/api/v3/
           command:
             - /bin/sh
             - -c
@@ -43,16 +45,8 @@ spec:
               PROVIDER_FLOW_ID=$(curl -s -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
                 "${AUTHENTIK_API_URL}/flows/instances/?slug=default-provider-authorization-implicit-consent" | jq -r '.results[0].pk')
 
-              APPLICATION_FLOW_ID=$(curl -s -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
-                "${AUTHENTIK_API_URL}/flows/?slug=default-application-authorization-flow" | jq -r '.results[0].pk')
-
               if [ -z "$PROVIDER_FLOW_ID" ] || [ "$PROVIDER_FLOW_ID" = "null" ]; then
                 echo "❌ Could not find provider flow"
-                exit 1
-              fi
-
-              if [ -z "$APPLICATION_FLOW_ID" ] || [ "$APPLICATION_FLOW_ID" = "null" ]; then
-                echo "❌ Could not find application flow"
                 exit 1
               fi
 
@@ -108,7 +102,7 @@ spec:
                     \"name\": \"podinfo\",
                     \"slug\": \"podinfo\",
                     \"provider\": \"/api/v3/providers/proxy/'"${PROVIDER_ID}"'/\",
-                    \"authorization_flow\": \"'"${APPLICATION_FLOW_ID}"'\",
+                    \"authorization_flow\": \"'"${PROVIDER_FLOW_ID}"'\",
                     \"meta_launch_url\": \"https://podinfo.homelab.rivetcode.com\",
                     \"outpost\": \"/api/v3/outposts/'"${OUTPOST_ID}"'/\"
                   }')" | jq -r '.pk')
