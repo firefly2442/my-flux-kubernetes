@@ -113,7 +113,7 @@ data:
                 "object_naming_template": "authentik-outpost",
                 "authentik_host_insecure": False,
                 "authentik_host": "https://authentik.homelab.rivetcode.com/",
-                "kubernetes_disabled_components": "ingress"
+                "kubernetes_disabled_components": ["ingress"]
               },
               "service_connection": service_connection_id,
               "providers": [int(provider_id)]
