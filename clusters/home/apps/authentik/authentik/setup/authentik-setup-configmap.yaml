@@ -86,7 +86,14 @@ data:
 
         outpost_id = create_or_get(
             f"{AUTHENTIK_API_URL}/outposts/instances/",
-            {"name": "authentik-outpost", "type": "proxy"},
+            {
+              "name": "authentik-outpost",
+              "type": "proxy",
+              "config": {
+                "log_level": "info"
+              },
+              "providers": [f"/api/v3/providers/proxy/{provider_id}/"]
+            },
         )
 
         app_id = create_or_get(
