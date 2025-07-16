@@ -85,7 +85,7 @@ data:
             print("❌ Failed to find Kubernetes service connection")
             exit(1)
         else:
-            print(f"Kubernetes service connection id: {service_connection_id}"")
+            print(f"Kubernetes service connection id: {service_connection_id}")
 
         provider_id = create_or_get(
             f"{AUTHENTIK_API_URL}/providers/proxy/",
