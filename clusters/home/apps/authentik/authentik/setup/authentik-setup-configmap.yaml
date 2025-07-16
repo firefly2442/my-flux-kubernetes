@@ -106,7 +106,14 @@ data:
               "name": "authentik-outpost",
               "type": "proxy",
               "config": {
-                "log_level": "info"
+                "log_level": "info",
+                "kubernetes_ingress_secret_name": "authentik-outpost-tls",
+                "kubernetes_namespace": "authentik",
+                "kubernetes_replicas": "1",
+                "object_naming_template": "authentik-outpost",
+                "authentik_host_insecure": "false",
+                "authentik_host": "https://authentik.homelab.rivetcode.com/",
+                "kubernetes_disabled_components": "ingress"
               },
               "service_connection": service_connection_id,
               "providers": [int(provider_id)]
