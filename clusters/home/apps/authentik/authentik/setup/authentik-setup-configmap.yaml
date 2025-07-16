@@ -51,18 +51,31 @@ data:
 
     if __name__ == "__main__":
         wait_for_ready()
-        flow_id = get_id(
+
+        authorization_flow_id = get_id(
             f"{AUTHENTIK_API_URL}/flows/instances/?slug=default-provider-authorization-implicit-consent"
         )
-        if not flow_id:
-            print("❌ Missing flow")
+        if not authorization_flow_id:
+            print("❌ Missing authorization flow")
             exit(1)
+        else:
+            print(f"Authorization flow id: {authorization_flow_id}")
+
+        invalidation_flow_id = get_id(
+            f"{AUTHENTIK_API_URL}/flows/instances/?slug=default-provider-invalidation-flow"
+        )
+        if not invalidation_flow_id:
+            print("❌ Missing invalidation flow")
+            exit(1)
+        else:
+            print(f"Invalidation flow id: {invalidation_flow_id}")
 
         provider_id = create_or_get(
             f"{AUTHENTIK_API_URL}/providers/proxy/",
             {
                 "name": "podinfo-forwardauth",
-                "authorization_flow": flow_id,
+                "authorization_flow": authorization_flow_id,
+                "invalidation_flow": invalidation_flow_id,
                 "external_host": "https://podinfo.homelab.rivetcode.com",
                 "mode": "forward_single",
                 "cookie_domain": "homelab.rivetcode.com",
@@ -81,7 +94,7 @@ data:
                 "name": "podinfo",
                 "slug": "podinfo",
                 "provider": f"/api/v3/providers/proxy/{provider_id}/",
-                "authorization_flow": flow_id,
+                "authorization_flow": authorization_flow_id,
                 "meta_launch_url": "https://podinfo.homelab.rivetcode.com",
                 "outpost": f"/api/v3/outposts/{outpost_id}/",
             },
