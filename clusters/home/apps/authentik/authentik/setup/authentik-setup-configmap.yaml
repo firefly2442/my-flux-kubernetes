@@ -101,7 +101,7 @@ data:
             {
                 "name": "podinfo",
                 "slug": "podinfo",
-                "provider": f"/api/v3/providers/proxy/{provider_id}/",
+                "provider": int(provider_id),
                 "authorization_flow": authorization_flow_id,
                 "meta_launch_url": "https://podinfo.homelab.rivetcode.com",
                 "outpost": f"/api/v3/outposts/{outpost_id}/",
