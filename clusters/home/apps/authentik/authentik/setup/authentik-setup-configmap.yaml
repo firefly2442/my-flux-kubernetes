@@ -50,7 +50,7 @@ data:
         return r[key]
 
     def get_k8s_service_connection(name):
-        url = f"{AUTHENTIK_API_URL}/integrations/kubernetes/"
+        url = f"{AUTHENTIK_API_URL}/outposts/service_connections/all/?search={name}"
         resp = requests.get(url, headers=HEADERS).json()
         for conn in resp.get("results", []):
             if conn["name"] == name:
