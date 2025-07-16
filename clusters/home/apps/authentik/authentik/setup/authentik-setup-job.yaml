@@ -11,7 +11,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: setup-authentik
-          image: python:3.12-alpine
+          image: python:3.13-alpine
           env:
             - name: AUTHENTIK_API_URL
               value: "https://authentik.homelab.rivetcode.com/api/v3"
