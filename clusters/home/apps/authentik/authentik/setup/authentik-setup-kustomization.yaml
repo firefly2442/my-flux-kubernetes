@@ -8,8 +8,4 @@ namespace: authentik
 
 resources:
   - authentik-setup-job.yaml
-
-configMapGenerator:
-  - name: authentik-setup-script
-    files:
-      - setup-authentik.py
+  - authentik-setup-configmap.yaml
