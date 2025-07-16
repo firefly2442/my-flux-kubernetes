@@ -12,4 +12,4 @@ resources:
 configMapGenerator:
   - name: authentik-setup-script
     files:
-      - setup-authentik.py=setup_authentik.py
+      - setup-authentik.py
