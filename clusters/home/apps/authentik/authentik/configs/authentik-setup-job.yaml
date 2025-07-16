@@ -31,6 +31,7 @@ spec:
               pip install --no-cache-dir requests
               echo "Running Python setup..."
               python3 /scripts/setup_authentik.py
+              echo "Finished setup"
           volumeMounts:
             - name: script-volume
               mountPath: /scripts

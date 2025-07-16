@@ -4,5 +4,5 @@ metadata:
   name: authentik-setup-script
   namespace: authentik
 data:
-  setup_authentik.py: |
+  setup-authentik.py: |
     # contents of the python file here (can be auto-filled from your script)
