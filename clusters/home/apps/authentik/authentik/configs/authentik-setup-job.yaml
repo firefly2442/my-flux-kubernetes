@@ -33,18 +33,18 @@ spec:
 
               echo "Waiting for Authentik API to be ready..."
               until curl -sf "${AUTHENTIK_URL}/-/health/ready/"; do
-                echo "Authentik not ready, retrying in 5 seconds..."
-                sleep 5
+                echo "Authentik not ready, retrying in 30 seconds..."
+                sleep 30
               done
 
               echo "Authentik is ready."
 
               echo "Looking up required flows..."
               PROVIDER_FLOW_ID=$(curl -s -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
-                "${AUTHENTIK_API_URL}/flows/?slug=default-provider-authorization-implicit-consent" | jq -r '.results[0].id')
+                "${AUTHENTIK_API_URL}/flows/instances/?slug=default-provider-authorization-implicit-consent" | jq -r '.results[0].pk')
 
               APPLICATION_FLOW_ID=$(curl -s -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
-                "${AUTHENTIK_API_URL}/flows/?slug=default-application-authorization-flow" | jq -r '.results[0].id')
+                "${AUTHENTIK_API_URL}/flows/?slug=default-application-authorization-flow" | jq -r '.results[0].pk')
 
               if [ -z "$PROVIDER_FLOW_ID" ] || [ "$PROVIDER_FLOW_ID" = "null" ]; then
                 echo "❌ Could not find provider flow"
