@@ -92,7 +92,7 @@ data:
               "config": {
                 "log_level": "info"
               },
-              "providers": [f"/api/v3/providers/proxy/{provider_id}/"]
+              "providers": [int(provider_id)]
             },
         )
 
