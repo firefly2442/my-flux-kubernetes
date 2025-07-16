@@ -30,7 +30,7 @@ spec:
               apk add --no-cache py3-pip curl
               pip install --no-cache-dir requests
               echo "Running Python setup..."
-              python3 /scripts/setup_authentik.py
+              python3 /scripts/setup-authentik.py
               echo "Finished setup"
           volumeMounts:
             - name: script-volume
