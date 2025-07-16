@@ -35,7 +35,7 @@ data:
 
     def get_id(url, key="pk"):
         r = requests.get(url, headers=HEADERS).json()
-        print(json.dumps(r, indent=2))
+        #print(json.dumps(r, indent=2))
         return r["results"][0][key] if r.get("results") else None
 
 
@@ -46,8 +46,17 @@ data:
             return r["results"][0][key]
         print(f"Creating {payload['name']}...")
         r = requests.post(url, headers=HEADERS, json=payload).json()
-        print(json.dumps(r, indent=2))
+        #print(json.dumps(r, indent=2))
         return r[key]
+
+    def get_k8s_service_connection(name):
+        url = f"{AUTHENTIK_API_URL}/integrations/kubernetes/"
+        resp = requests.get(url, headers=HEADERS).json()
+        for conn in resp.get("results", []):
+            if conn["name"] == name:
+                return conn["pk"]
+        return None
+
 
 
     if __name__ == "__main__":
@@ -71,6 +80,13 @@ data:
         else:
             print(f"Invalidation flow id: {invalidation_flow_id}")
 
+        service_connection_id = get_k8s_service_connection("Local Kubernetes Cluster")
+        if not service_connection_id:
+            print("❌ Failed to find Kubernetes service connection")
+            exit(1)
+        else:
+            print(f"Kubernetes service connection id: {service_connection_id}"")
+
         provider_id = create_or_get(
             f"{AUTHENTIK_API_URL}/providers/proxy/",
             {
@@ -92,6 +108,7 @@ data:
               "config": {
                 "log_level": "info"
               },
+              "service_connection": service_connection_id,
               "providers": [int(provider_id)]
             },
         )
