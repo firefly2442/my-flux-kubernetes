@@ -109,7 +109,7 @@ data:
                 "log_level": "info",
                 "kubernetes_ingress_secret_name": "authentik-outpost-tls",
                 "kubernetes_namespace": "authentik",
-                "kubernetes_replicas": "1",
+                "kubernetes_replicas": 1,
                 "object_naming_template": "authentik-outpost",
                 "authentik_host_insecure": False,
                 "authentik_host": "https://authentik.homelab.rivetcode.com/",
