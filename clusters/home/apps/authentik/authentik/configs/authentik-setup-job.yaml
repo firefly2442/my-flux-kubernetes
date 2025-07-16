@@ -25,17 +25,16 @@ spec:
           command:
             - /bin/sh
             - -c
-            - |
+            - >
               set -e
+
               echo "Installing pip and requests..."
               apk add --no-cache py3-pip curl
               pip install --no-cache-dir requests
 
-              echo "Running setup script..."
-              python3 - <<EOF
-              import os
-              import time
-              import requests
+              echo "Running Python setup..."
+              cat <<EOF | python3 -
+              import os, time, requests
 
               AUTHENTIK_API_URL = os.environ["AUTHENTIK_API_URL"]
               AUTHENTIK_URL = os.environ["AUTHENTIK_URL"]
@@ -53,79 +52,52 @@ spec:
                           r = requests.get(f"{AUTHENTIK_URL}/-/health/ready/")
                           if r.ok:
                               break
-                      except Exception:
+                      except:
                           pass
-                      print("Still waiting...")
                       time.sleep(10)
-                  print("✅ Authentik is ready.")
+                  print("✅ Ready.")
 
-              def get_flow_id(slug):
-                  url = f"{AUTHENTIK_API_URL}/flows/instances/?slug={slug}"
-                  resp = requests.get(url, headers=HEADERS).json()
-                  return resp["results"][0]["pk"] if resp["results"] else None
+              def get_id(url, key="pk"):
+                  r = requests.get(url, headers=HEADERS).json()
+                  return r["results"][0][key] if r.get("results") else None
 
-              def get_or_create_provider(name, flow_id):
-                  search = requests.get(f"{AUTHENTIK_API_URL}/providers/proxy/?search={name}", headers=HEADERS).json()
-                  if search["results"]:
-                      print(f"✅ Provider '{name}' already exists.")
-                      return search["results"][0]["pk"]
+              def create_or_get(url, payload, key="pk"):
+                  r = requests.get(f"{url}?search={payload['name']}", headers=HEADERS).json()
+                  if r.get("results"):
+                      print(f"✅ Found {payload['name']}")
+                      return r["results"][0][key]
+                  print(f"Creating {payload['name']}...")
+                  r = requests.post(url, headers=HEADERS, json=payload).json()
+                  return r[key]
 
-                  print(f"Creating provider '{name}'...")
-                  payload = {
-                      "name": name,
+              if __name__ == "__main__":
+                  wait_for_ready()
+                  flow_id = get_id(f"{AUTHENTIK_API_URL}/flows/instances/?slug=default-provider-authorization-implicit-consent")
+                  if not flow_id:
+                      print("❌ Missing flow"); exit(1)
+
+                  provider_id = create_or_get(f"{AUTHENTIK_API_URL}/providers/proxy/", {
+                      "name": "podinfo-forwardauth",
                       "authorization_flow": flow_id,
                       "external_host": "https://podinfo.homelab.rivetcode.com",
                       "mode": "forward_single",
                       "cookie_domain": "homelab.rivetcode.com",
-                      "skip_path_regex": "",
-                      "preserve_path": True,
-                  }
-                  created = requests.post(f"{AUTHENTIK_API_URL}/providers/proxy/", headers=HEADERS, json=payload).json()
-                  return created["pk"]
+                      "preserve_path": True
+                  })
 
-              def get_or_create_outpost(name):
-                  search = requests.get(f"{AUTHENTIK_API_URL}/outposts/instances/?search={name}", headers=HEADERS).json()
-                  if search["results"]:
-                      print(f"✅ Outpost '{name}' already exists.")
-                      return search["results"][0]["pk"]
-
-                  print(f"Creating outpost '{name}'...")
-                  payload = {
-                      "name": name,
+                  outpost_id = create_or_get(f"{AUTHENTIK_API_URL}/outposts/instances/", {
+                      "name": "authentik-outpost",
                       "type": "proxy"
-                  }
-                  created = requests.post(f"{AUTHENTIK_API_URL}/outposts/instances/", headers=HEADERS, json=payload).json()
-                  return created["pk"]
+                  })
 
-              def get_or_create_application(name, slug, provider_id, flow_id, outpost_id):
-                  search = requests.get(f"{AUTHENTIK_API_URL}/core/applications/?slug={slug}", headers=HEADERS).json()
-                  if search["results"]:
-                      print(f"✅ Application '{name}' already exists.")
-                      return search["results"][0]["pk"]
-
-                  print(f"Creating application '{name}'...")
-                  payload = {
-                      "name": name,
-                      "slug": slug,
+                  app_id = create_or_get(f"{AUTHENTIK_API_URL}/core/applications/", {
+                      "name": "podinfo",
+                      "slug": "podinfo",
                       "provider": f"/api/v3/providers/proxy/{provider_id}/",
                       "authorization_flow": flow_id,
                       "meta_launch_url": "https://podinfo.homelab.rivetcode.com",
                       "outpost": f"/api/v3/outposts/{outpost_id}/"
-                  }
-                  created = requests.post(f"{AUTHENTIK_API_URL}/core/applications/", headers=HEADERS, json=payload).json()
-                  return created["pk"]
+                  })
 
-              if __name__ == "__main__":
-                  wait_for_ready()
-                  flow_slug = "default-provider-authorization-implicit-consent"
-                  flow_id = get_flow_id(flow_slug)
-                  if not flow_id:
-                      print(f"❌ Failed to find flow with slug '{flow_slug}'")
-                      exit(1)
-
-                  provider_id = get_or_create_provider("podinfo-forwardauth", flow_id)
-                  outpost_id = get_or_create_outpost("authentik-outpost")
-                  app_id = get_or_create_application("podinfo", "podinfo", provider_id, flow_id, outpost_id)
-
-                  print("🎉 Authentik setup complete.")
+                  print("🎉 Done.")
               EOF
