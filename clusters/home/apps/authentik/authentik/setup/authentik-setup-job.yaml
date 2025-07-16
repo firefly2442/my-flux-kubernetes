@@ -11,7 +11,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: setup-authentik
-          image: python:3.11-alpine
+          image: python:3.12-alpine
           env:
             - name: AUTHENTIK_API_URL
               value: "https://authentik.homelab.rivetcode.com/api/v3"
@@ -27,7 +27,7 @@ spec:
             - |
               set -e
               echo "Installing pip and dependencies..."
-              apk add --no-cache py3-pip curl
+              apk add --no-cache py3-pip
               pip install --no-cache-dir requests
               echo "Running Python setup..."
               python3 /scripts/setup-authentik.py
