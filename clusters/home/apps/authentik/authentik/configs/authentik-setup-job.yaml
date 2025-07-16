@@ -1,11 +1,11 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: authentik-setup-job
+  generateName: authentik-setup-job-
   namespace: authentik
 spec:
   backoffLimit: 1
-  ttlSecondsAfterFinished: 600  # Cleans up 10 minutes after completion
+  ttlSecondsAfterFinished: 600
   template:
     spec:
       restartPolicy: Never
@@ -26,8 +26,10 @@ spec:
             - /bin/sh
             - -c
             - |
+              set -euo pipefail
+
               echo "Installing curl and jq..."
-              apk add --no-cache -f curl jq
+              apk add --no-cache curl jq
 
               echo "Waiting for Authentik API to be ready..."
               until curl -sf "${AUTHENTIK_URL}/-/health/ready/"; do
@@ -35,63 +37,83 @@ spec:
                 sleep 5
               done
 
-              echo "Authentik API is ready, proceeding..."
+              echo "Authentik is ready."
 
-              echo "Available flows:"
-              curl -s -X GET "${AUTHENTIK_API_URL}/flows/" \
-                -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
-                -H "Accept: application/json" | jq
+              echo "Looking up required flows..."
+              PROVIDER_FLOW_ID=$(curl -s -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
+                "${AUTHENTIK_API_URL}/flows/?slug=default-provider-authorization-implicit-consent" | jq -r '.results[0].id')
 
-              echo "Creating Provider in Authentik..."
+              APPLICATION_FLOW_ID=$(curl -s -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
+                "${AUTHENTIK_API_URL}/flows/?slug=default-application-authorization-flow" | jq -r '.results[0].id')
 
-              PROVIDER_ID=$(curl -s -X POST "${AUTHENTIK_API_URL}/providers/proxy/" \
-                -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
-                -H "Content-Type: application/json" \
-                -d '{
-                  "name": "podinfo-forwardauth",
-                  "authorization_flow": "default-provider-authorization-implicit-consent",
-                  "external_host": "https://podinfo.homelab.rivetcode.com",
-                  "mode": "forward_single",
-                  "cookie_domain": "homelab.rivetcode.com",
-                  "skip_path_regex": "",
-                  "preserve_path": true
-                }' | jq -r '.pk')
+              if [ -z "$PROVIDER_FLOW_ID" ] || [ "$PROVIDER_FLOW_ID" = "null" ]; then
+                echo "❌ Could not find provider flow"
+                exit 1
+              fi
+
+              if [ -z "$APPLICATION_FLOW_ID" ] || [ "$APPLICATION_FLOW_ID" = "null" ]; then
+                echo "❌ Could not find application flow"
+                exit 1
+              fi
+
+              echo "Checking if provider exists..."
+              PROVIDER_ID=$(curl -s -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
+                "${AUTHENTIK_API_URL}/providers/proxy/?search=podinfo-forwardauth" | jq -r '.results[0].pk')
 
               if [ -z "$PROVIDER_ID" ] || [ "$PROVIDER_ID" = "null" ]; then
-                echo "Failed to create ForwardAuth provider"
-                exit 1
+                echo "Creating new provider..."
+                PROVIDER_ID=$(curl -s -X POST "${AUTHENTIK_API_URL}/providers/proxy/" \
+                  -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
+                  -H "Content-Type: application/json" \
+                  -d "$(echo '{
+                    "name": "podinfo-forwardauth",
+                    "authorization_flow": "'"${PROVIDER_FLOW_ID}"'",
+                    "external_host": "https://podinfo.homelab.rivetcode.com",
+                    "mode": "forward_single",
+                    "cookie_domain": "homelab.rivetcode.com",
+                    "skip_path_regex": "",
+                    "preserve_path": true
+                  }')" | jq -r '.pk')
+              else
+                echo "Provider already exists with ID: $PROVIDER_ID"
               fi
 
-              echo "Creating new outpost..."
-
-              OUTPOST_ID=$(curl -s -X POST "${AUTHENTIK_API_URL}/outposts/" \
-                -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
-                -H "Content-Type: application/json" \
-                -d '{
-                  "name": "authentik-outpost",
-                  "type": "proxy"
-                }' | jq -r '.pk')
+              echo "Checking if outpost exists..."
+              OUTPOST_ID=$(curl -s -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
+                "${AUTHENTIK_API_URL}/outposts/?search=authentik-outpost" | jq -r '.results[0].pk')
 
               if [ -z "$OUTPOST_ID" ] || [ "$OUTPOST_ID" = "null" ]; then
-                echo "Failed to create Outpost"
-                exit 1
+                echo "Creating new outpost..."
+                OUTPOST_ID=$(curl -s -X POST "${AUTHENTIK_API_URL}/outposts/" \
+                  -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
+                  -H "Content-Type: application/json" \
+                  -d '{
+                    "name": "authentik-outpost",
+                    "type": "proxy"
+                  }' | jq -r '.pk')
+              else
+                echo "Outpost already exists with ID: $OUTPOST_ID"
               fi
 
-              echo "Creating Application..."
-
-              APP_ID=$(curl -s -X POST "${AUTHENTIK_API_URL}/core/applications/" \
-                -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
-                -H "Content-Type: application/json" \
-                -d "{
-                  \"name\": \"podinfo\",
-                  \"slug\": \"podinfo\",
-                  \"provider\": \"/api/v3/providers/proxy/${PROVIDER_ID}/\",
-                  \"authorization_flow\": \"default-application-authorization-flow\",
-                  \"meta_launch_url\": \"https://podinfo.homelab.rivetcode.com\",
-                  \"outpost\": \"/api/v3/outposts/${OUTPOST_ID}/\"
-                }" | jq -r '.pk')
+              echo "Checking if application exists..."
+              APP_ID=$(curl -s -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
+                "${AUTHENTIK_API_URL}/core/applications/?slug=podinfo" | jq -r '.results[0].pk')
 
               if [ -z "$APP_ID" ] || [ "$APP_ID" = "null" ]; then
-                echo "Failed to create Application"
-                exit 1
+                echo "Creating new application..."
+                APP_ID=$(curl -s -X POST "${AUTHENTIK_API_URL}/core/applications/" \
+                  -H "Authorization: Bearer ${AUTHENTIK_BOOTSTRAP_TOKEN}" \
+                  -H "Content-Type: application/json" \
+                  -d "$(echo '{
+                    \"name\": \"podinfo\",
+                    \"slug\": \"podinfo\",
+                    \"provider\": \"/api/v3/providers/proxy/'"${PROVIDER_ID}"'/\",
+                    \"authorization_flow\": \"'"${APPLICATION_FLOW_ID}"'\",
+                    \"meta_launch_url\": \"https://podinfo.homelab.rivetcode.com\",
+                    \"outpost\": \"/api/v3/outposts/'"${OUTPOST_ID}"'/\"
+                  }')" | jq -r '.pk')
+              else
+                echo "Application already exists with ID: $APP_ID"
               fi
+
+              echo "✅ Authentik setup complete."
