@@ -35,7 +35,7 @@ data:
 
     def get_id(url, key="pk"):
         r = requests.get(url, headers=HEADERS).json()
-        print(json.dumps(r, indent=2))
+        #print(json.dumps(r, indent=2))
         return r["results"][0][key] if r.get("results") else None
 
 
@@ -46,7 +46,7 @@ data:
             return r["results"][0][key]
         print(f"Creating {payload['name']}...")
         r = requests.post(url, headers=HEADERS, json=payload).json()
-        print(json.dumps(r, indent=2))
+        #print(json.dumps(r, indent=2))
         return r[key]
 
     def get_k8s_service_connection(name):
@@ -87,6 +87,26 @@ data:
         else:
             print(f"Kubernetes service connection id: {service_connection_id}")
 
+        app_list = ['podinfo', 'longhorn', 'traefik', 'homepage', 'gatus', 'rabbitmq']
+        provider_list = []
+
+        for appname in app_list:
+            print(f"Setting up application: {appname}...")
+
+            provider_id = create_or_get(
+                f"{AUTHENTIK_API_URL}/providers/proxy/",
+                {
+                    "name": f"{appname}-forwardauth",
+                    "authorization_flow": authorization_flow_id,
+                    "invalidation_flow": invalidation_flow_id,
+                    "external_host": f"https://{appname}.homelab.rivetcode.com",
+                    "mode": "forward_single",
+                    "cookie_domain": "homelab.rivetcode.com",
+                    "preserve_path": True,
+                },
+            )
+            provider_list.append(int(provider_id))
+
         outpost_id = create_or_get(
             f"{AUTHENTIK_API_URL}/outposts/instances/",
             {
@@ -102,32 +122,18 @@ data:
                 "authentik_host": "https://authentik.homelab.rivetcode.com/",
                 "kubernetes_disabled_components": ["ingress"]
               },
-              "service_connection": service_connection_id
+              "service_connection": service_connection_id,
+              "providers": provider_list
             },
         )
 
-        for appname in ['podinfo', 'longhorn', 'traefik', 'homepage', 'gatus', 'rabbitmq']:
-            print(f"Setting up application: {appname}...")
-
-            provider_id = create_or_get(
-                f"{AUTHENTIK_API_URL}/providers/proxy/",
-                {
-                    "name": f"{appname}-forwardauth",
-                    "authorization_flow": authorization_flow_id,
-                    "invalidation_flow": invalidation_flow_id,
-                    "external_host": f"https://{appname}.homelab.rivetcode.com",
-                    "mode": "forward_single",
-                    "cookie_domain": "homelab.rivetcode.com",
-                    "preserve_path": True,
-                },
-            )
-
+        for i,appname in enumerate(app_list):
             app_id = create_or_get(
                 f"{AUTHENTIK_API_URL}/core/applications/",
                 {
                     "name": appname,
                     "slug": appname,
-                    "provider": int(provider_id),
+                    "provider": provider_list[i],
                     "authorization_flow": authorization_flow_id,
                     "meta_launch_url": f"https://{appname}.homelab.rivetcode.com",
                     "outpost": f"/api/v3/outposts/{outpost_id}/",
