@@ -20,3 +20,6 @@ spec:
               httpOnly: true
               secure: true
               sameSite: none
+      middlewares:
+        - name: authentik-service-middleware
+          namespace: authentik

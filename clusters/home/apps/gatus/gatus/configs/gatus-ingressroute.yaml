@@ -24,5 +24,8 @@ spec:
     services:
     - name: gatus
       port: 80
+    middlewares:
+      - name: authentik-service-middleware
+        namespace: authentik
   tls:
     secretName: gatus-certificate-secret
