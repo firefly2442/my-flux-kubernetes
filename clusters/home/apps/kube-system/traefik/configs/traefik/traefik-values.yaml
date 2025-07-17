@@ -16,6 +16,9 @@ spec:
         enabled: true
         matchRule: Host(`traefik.homelab.rivetcode.com`)
         entryPoints: ["web", "websecure"]
+        middlewares:
+          - name: authentik-service-middleware
+            namespace: authentik
     ports:
       web:
         redirections:
