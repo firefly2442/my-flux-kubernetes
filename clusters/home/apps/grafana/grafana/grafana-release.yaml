@@ -62,6 +62,7 @@ spec:
           token: ''
     grafana.ini:
       server:
+        # make sure this is set, otherwise it doesn't generate the correct redirect URI
         root_url: "https://grafana.homelab.rivetcode.com"
       auth:
         signout_redirect_url: "https://grafana.homelab.rivetcode.com/application/o/grafana/end-session/"
@@ -73,7 +74,7 @@ spec:
         client_secret: $__file{/etc/secrets/auth_generic_oauth/client_secret}
         scopes: "openid profile email"
         auth_url: "https://authentik.homelab.rivetcode.com/application/o/authorize/"
-        token_url: "https://authentik.homelab.rivetcode.com/application/o/token/"
+        token_url: "https://authentik.authentik.svc.cluster.local/application/o/token/"
         api_url: "https://authentik.homelab.rivetcode.com/application/o/userinfo/"
         redirect_uri: "https://grafana.homelab.rivetcode.com/login/generic_oauth"
         # Optionally map user groups to Grafana roles
