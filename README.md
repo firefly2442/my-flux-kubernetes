@@ -129,6 +129,12 @@ psql -h postgresql.homelab.rivetcode.com -U postgres
 # then enter the password from above
 ```
 
+Check on the Authentik setup:
+
+```shell
+kubectl get jobs -n authentik
+```
+
 ## Application URL List
 
 * [Heimdall Application Portal](http://portal.homelab.rivetcode.com)
