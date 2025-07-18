@@ -87,7 +87,7 @@ data:
         else:
             print(f"Kubernetes service connection id: {service_connection_id}")
 
-        app_list = ['podinfo', 'longhorn', 'traefik', 'homepage', 'gatus', 'rabbitmq']
+        app_list = ['podinfo', 'longhorn', 'traefik', 'homepage', 'gatus', 'stirlingpdf']
         provider_list = []
 
         for appname in app_list:

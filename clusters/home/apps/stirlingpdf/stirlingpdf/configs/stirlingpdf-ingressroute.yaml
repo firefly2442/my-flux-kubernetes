@@ -22,7 +22,7 @@ spec:
   - match: Host(`stirlingpdf.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: stirlingpdf
+    - name: stirlingpdf-stirling-pdf-chart
       port: 8080
     middlewares:
       - name: authentik-service-middleware
