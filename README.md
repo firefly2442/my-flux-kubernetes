@@ -186,6 +186,12 @@ Check all kustomizations:
 flux get kustomizations --all-namespaces
 ```
 
+Local inter-cluster networking can use .local domain so things like:
+
+```shell
+<service-name>.<namespace>.svc.cluster.local
+```
+
 Exec into a running pod:
 
 ```shell
