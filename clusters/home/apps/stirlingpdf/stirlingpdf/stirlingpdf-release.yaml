@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: stirlingpdf
-      # https://aquasecurity.github.io/helm-charts/index.yaml
+      # https://stirling-tools.github.io/Stirling-PDF-chart/index.yaml
       # https://docs.stirlingpdf.com/Installation/Kubernetes%20Install
       # https://github.com/Stirling-Tools/Stirling-PDF-chart/tree/main/charts/stirling-pdf
       version: '2.0.2'
