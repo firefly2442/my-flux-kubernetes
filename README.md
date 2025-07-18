@@ -39,6 +39,8 @@ This first user will be the admin user.
 pip3 install pre-commit
 # lint and check all files
 pre-commit run --all-files
+# check for any updates
+pre-commit autoupdate
 ```
 
 ```shell
