@@ -61,6 +61,8 @@ spec:
           url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
           token: ''
     grafana.ini:
+      log:
+        level: debug
       server:
         # make sure this is set, otherwise it doesn't generate the correct redirect URI
         root_url: "https://grafana.homelab.rivetcode.com"
