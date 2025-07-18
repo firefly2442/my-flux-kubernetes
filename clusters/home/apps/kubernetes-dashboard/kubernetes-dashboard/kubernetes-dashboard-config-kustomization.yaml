@@ -5,7 +5,7 @@ metadata:
   namespace: kubernetes-dashboard
 spec:
   interval: 10m
-  path: ./apps/kubernetes-dashboard/kubernetes-dashboard/configs/
+  path: ./clusters/home/apps/kubernetes-dashboard/kubernetes-dashboard/configs/
   prune: true
   dependsOn:
     - name: kubernetes-dashboard
