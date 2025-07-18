@@ -60,3 +60,22 @@ spec:
         k8s-views-pods:
           url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
           token: ''
+    grafana.ini:
+      auth:
+        signout_redirect_url: "https://grafana.homelab.rivetcode.com/application/o/grafana/end-session/"
+        oauth_auto_login: true
+      auth.generic_oauth:
+        name: authentik
+        enabled: true
+        scopes: "openid profile email"
+        auth_url: "https://authentik.homelab.rivetcode.com/application/o/authorize/"
+        token_url: "https://authentik.homelab.rivetcode.com/application/o/token/"
+        api_url: "https://authentik.homelab.rivetcode.com/application/o/userinfo/"
+        # Optionally map user groups to Grafana roles
+        role_attribute_path: contains(groups, 'Grafana Admins') && 'Admin' || contains(groups, 'Grafana Editors') && 'Editor' || 'Viewer'
+    extraSecretMounts:
+    - name: grafana-authentik-oauth-secret-mount
+      secretName: grafana-authentik-oauth
+      defaultMode: 0440
+      mountPath: /etc/secrets/auth_generic_oauth
+      readOnly: true
