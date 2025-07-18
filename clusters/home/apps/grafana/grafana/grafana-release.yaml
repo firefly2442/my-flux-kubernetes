@@ -61,6 +61,8 @@ spec:
           url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
           token: ''
     grafana.ini:
+      server:
+        root_url: "https://grafana.homelab.rivetcode.com"
       auth:
         signout_redirect_url: "https://grafana.homelab.rivetcode.com/application/o/grafana/end-session/"
         oauth_auto_login: true
