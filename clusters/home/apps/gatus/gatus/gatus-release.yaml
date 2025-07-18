@@ -75,3 +75,8 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: stirlingpdf
+          url: https://stirlingpdf.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
