@@ -18,3 +18,41 @@ spec:
       type: ClusterIP
     metrics:
       enabled: true
+    extraPlugins: "rabbitmq_auth_backend_oauth2"
+    extraEnvVars:
+      - name: OAUTH_CLIENT_ID
+        valueFrom:
+          secretKeyRef:
+            name: rabbitmq-authentik-oauth
+            key: OAUTH_CLIENT_ID
+      - name: OAUTH_CLIENT_SECRET
+        valueFrom:
+          secretKeyRef:
+            name: rabbitmq-authentik-oauth
+            key: OAUTH_CLIENT_SECRET
+    podTemplate:
+      initContainers:
+        - name: config-template
+          image: busybox
+          command:
+            - sh
+            - -c
+            - |
+              echo "Generating rabbitmq.conf from template..."
+              envsubst < /config-template/rabbitmq.conf.template > /config/rabbitmq.conf
+              echo "Generated config:"
+              cat /config/rabbitmq.conf
+          volumeMounts:
+            - name: config-template
+              mountPath: /config-template
+            - name: config
+              mountPath: /config
+      extraVolumes:
+        - name: config-template
+          configMap:
+            name: rabbitmq-config-template
+        - name: config
+          emptyDir: {}
+      extraVolumeMounts:
+        - name: config
+          mountPath: /opt/bitnami/rabbitmq/etc/
