@@ -143,6 +143,7 @@ psql -h postgresql.homelab.rivetcode.com -U postgres
 * [Grafana Dashboard](https://grafana.homelab.rivetcode.com)
 * [Rabbitmq Dashboard](https://rabbitmq.homelab.rivetcode.com)
 * [DefectDojo Dashboard](https://defectdojo.homelab.rivetcode.com)
+* [Stirling PDF](https://stirlingpdf.homelab.rivetcode.com)
 
 ## Debugging
 

@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: stirlingpdf-cert
+  namespace: stirlingpdf
+spec:
+  secretName: stirlingpdf-certificate-secret
+  dnsNames:
+    - "stirlingpdf.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
