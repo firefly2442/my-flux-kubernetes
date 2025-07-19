@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: ./my-recipes-cooklang  # relative path in the repo
+      chart: ./chart  # relative path in the repo
       sourceRef:
         kind: GitRepository
         name: my-recipes-cooklang
