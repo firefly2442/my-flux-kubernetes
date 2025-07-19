@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: boardgames-cert
+  namespace: boardgames
+spec:
+  secretName: boardgames-certificate-secret
+  dnsNames:
+    - "boardgames.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer

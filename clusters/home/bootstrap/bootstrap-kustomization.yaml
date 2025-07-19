@@ -25,3 +25,4 @@ resources:
   - ./namespaces/namespace-postgresql.yaml
   - ./namespaces/namespace-stirlingpdf.yaml
   - ./namespaces/namespace-recipes.yaml
+  - ./namespaces/namespace-boardgames.yaml
