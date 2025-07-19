@@ -10,6 +10,9 @@ data:
     import requests
     import json
 
+    # this page has all the API endpoints and a debugging interface:
+    # https://authentik.homelab.rivetcode.com/api/v3/
+
     AUTHENTIK_API_URL = os.environ["AUTHENTIK_API_URL"]
     AUTHENTIK_URL = os.environ["AUTHENTIK_URL"]
     AUTHENTIK_TOKEN = os.environ["AUTHENTIK_BOOTSTRAP_TOKEN"]
@@ -87,11 +90,12 @@ data:
         else:
             print(f"Kubernetes service connection id: {service_connection_id}")
 
+        # plain proxy apps:
         app_list = ['podinfo', 'longhorn', 'traefik', 'homepage', 'gatus', 'stirlingpdf']
         provider_list = []
 
         for appname in app_list:
-            print(f"Setting up application: {appname}...")
+            print(f"Setting up proxy application: {appname}...")
 
             provider_id = create_or_get(
                 f"{AUTHENTIK_API_URL}/providers/proxy/",
@@ -137,6 +141,34 @@ data:
                     "authorization_flow": authorization_flow_id,
                     "meta_launch_url": f"https://{appname}.homelab.rivetcode.com",
                     "outpost": f"/api/v3/outposts/{outpost_id}/",
+                },
+            )
+
+        # oauth2 OIDC app list
+        oauth_app_list = ["grafana"]:
+
+        for appname in oauth_app_list:
+            print(f"Setting up oauth application: {appname}...")
+
+            provider_id = create_or_get(
+                f"{AUTHENTIK_API_URL}/providers/oauth2/",
+                {
+                    "name": f"{appname}-oauth2",
+                    "authorization_flow": authorization_flow_id,
+                    "invalidation_flow": invalidation_flow_id,
+                    "external_host": f"https://{appname}.homelab.rivetcode.com",
+                    "redirect_uris": [{"matching_mode": "strict", "url": "https://grafana.homelab.rivetcode.com/login/generic_oauth"}]
+                },
+            )
+
+            app_id = create_or_get(
+                f"{AUTHENTIK_API_URL}/core/applications/",
+                {
+                    "name": appname,
+                    "slug": appname,
+                    "provider": provider_id,
+                    "authorization_flow": authorization_flow_id,
+                    "meta_launch_url": f"https://{appname}.homelab.rivetcode.com"
                 },
             )
 
