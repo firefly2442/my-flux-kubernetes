@@ -27,11 +27,10 @@ flux bootstrap github --token-auth --owner=firefly2442 --repository=my-flux-kube
 Next go into Longhorn and disable the plain worker nodes so no data gets stored there.  Edit the nodes then select disable scheduling
 and set eviction request to true.  This will move any existing PVCs that are bound to those nodes to other nodes.
 
-Then go here to setup the initial password and credentials for Authentik:
-
-[https://authentik.homelab.rivetcode.com/if/flow/initial-setup/](https://authentik.homelab.rivetcode.com/if/flow/initial-setup/)
-
-This first user will be the admin user.
+Authentik should already have initialized a username and password through the stored secret.
+For the oauth2 enabled applications, make sure the client ID and client secret match what is stored
+in the sealed secrets for each application.  On a fresh install, authentik will generate new
+values so these may need to be overwritten.
 
 ## Development Notes
 
