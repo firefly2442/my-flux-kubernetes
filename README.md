@@ -186,6 +186,12 @@ Check all kustomizations:
 flux get kustomizations --all-namespaces
 ```
 
+Check all Helm releases:
+
+```shell
+flux get helmrelease -A
+```
+
 Local inter-cluster networking can use .local domain so things like:
 
 ```shell

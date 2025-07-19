@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: my-recipes-cooklang-repo
+  name: my-recipes-cooklang
   namespace: flux-system
 spec:
   interval: 5m
