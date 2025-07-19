@@ -9,7 +9,7 @@ metadata:
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Defectdojo
     gethomepage.dev/group: Kubernetes
-    gethomepage.dev/icon: defectdojo.png
+    gethomepage.dev/icon: mdi-application
     gethomepage.dev/app: defectdojo # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Defectdojo
     # gethomepage.dev/widget.type: "defectdojo"
