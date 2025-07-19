@@ -9,7 +9,7 @@ metadata:
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: StirlingPDF
     gethomepage.dev/group: Kubernetes
-    gethomepage.dev/icon: mdi:file-pdf-box
+    gethomepage.dev/icon: mdi-file-pdf-box
     gethomepage.dev/app: stirlingPDF # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: StirlingPDF
     #gethomepage.dev/widget.type: "stirlingpdf"
