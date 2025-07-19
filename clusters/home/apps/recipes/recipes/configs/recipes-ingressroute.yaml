@@ -22,7 +22,7 @@ spec:
   - match: Host(`recipes.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: recipes
+    - name: my-recipes-cooklang
       port: 9080
   tls:
     secretName: recipes-certificate-secret
