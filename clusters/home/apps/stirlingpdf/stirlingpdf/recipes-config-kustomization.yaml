@@ -1,0 +1,16 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: config-stirlingpdf
+  namespace: kube-system
+spec:
+  interval: 5m
+  dependsOn:
+  - name: stirlingpdf
+  path: ./configs/
+  prune: true # remove any elements later removed from the above path
+  timeout: 2m
+  sourceRef:
+    kind: GitRepository
+    name: stirlingpdf-configs
+  retryInterval: 1m
