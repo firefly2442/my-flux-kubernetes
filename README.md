@@ -151,6 +151,7 @@ kubectl get jobs -n authentik
 * [Rabbitmq Dashboard](https://rabbitmq.homelab.rivetcode.com)
 * [DefectDojo Dashboard](https://defectdojo.homelab.rivetcode.com)
 * [Stirling PDF](https://stirlingpdf.homelab.rivetcode.com)
+* [My Recipes](https://recipes.homelab.rivetcode.com)
 
 ## Debugging
 

@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: my-recipes-cooklang
+  namespace: recipes
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: ./my-recipes-cooklang  # relative path in the repo
+      sourceRef:
+        kind: GitRepository
+        name: my-recipes-cooklang
+        namespace: flux-system
+  values:
+    # optional custom values here

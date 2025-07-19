@@ -80,3 +80,8 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: recipes
+          url: https://recipes.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

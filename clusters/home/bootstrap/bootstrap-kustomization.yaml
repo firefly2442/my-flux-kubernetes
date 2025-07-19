@@ -24,3 +24,4 @@ resources:
   - ./namespaces/namespace-defectdojo.yaml
   - ./namespaces/namespace-postgresql.yaml
   - ./namespaces/namespace-stirlingpdf.yaml
+  - ./namespaces/namespace-recipes.yaml

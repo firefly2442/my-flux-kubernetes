@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: my-recipes-cooklang-repo
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://github.com/firefly2442/my-recipes-cooklang
+  ref:
+    branch: master

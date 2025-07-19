@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: recipes-cert
+  namespace: recipes
+spec:
+  secretName: recipes-certificate-secret
+  dnsNames:
+    - "recipes.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
