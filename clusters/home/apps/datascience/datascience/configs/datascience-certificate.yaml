@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: datascience-cert
+  namespace: datascience
+spec:
+  secretName: datascience-certificate-secret
+  dnsNames:
+    - "datascience.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer

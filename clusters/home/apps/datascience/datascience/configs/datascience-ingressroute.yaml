@@ -1,0 +1,31 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: datascience-ingressroute
+  namespace: datascience
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+    gethomepage.dev/href: "https://datascience.homelab.rivetcode.com"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Datascience
+    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/icon: mdi-application
+    gethomepage.dev/app: datascience # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
+    gethomepage.dev/name: Datascience
+    #gethomepage.dev/widget.type: "datascience"
+    #gethomepage.dev/widget.url: "https://datascience.homelab.rivetcode.com"
+    gethomepage.dev/pod-selector: ""
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`datascience.homelab.rivetcode.com`)
+    kind: Rule
+    services:
+    - name: jupyterlab-r-docker-stack-helm
+      port: 8888
+    middlewares:
+      - name: authentik-service-middleware
+        namespace: authentik
+  tls:
+    secretName: datascience-certificate-secret
