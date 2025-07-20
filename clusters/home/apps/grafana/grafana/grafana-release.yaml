@@ -62,8 +62,8 @@ spec:
           token: ''
     grafana.ini:
       # for debugging purposes, particularly for oauth2
-      log:
-        level: debug
+      #log:
+        #level: debug
       server:
         # make sure this is set, otherwise it doesn't generate the correct redirect URI
         root_url: "https://grafana.homelab.rivetcode.com"
@@ -81,7 +81,7 @@ spec:
         api_url: "https://authentik.homelab.rivetcode.com/application/o/userinfo/"
         redirect_uri: "https://grafana.homelab.rivetcode.com/login/generic_oauth"
         # Optionally map user groups to Grafana roles
-        role_attribute_path: contains(groups, 'Grafana Admins') && 'Admin' || contains(groups, 'Grafana Editors') && 'Editor' || 'Viewer'
+        role_attribute_path: contains(groups, 'authentik Admins') && 'Admin' || contains(groups, 'Grafana Editors') && 'Editor' || 'Viewer'
     extraSecretMounts:
     - name: grafana-authentik-oauth-secret-mount
       secretName: grafana-authentik-oauth
