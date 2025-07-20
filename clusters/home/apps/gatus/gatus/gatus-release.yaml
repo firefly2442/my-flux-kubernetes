@@ -90,3 +90,8 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: datascience
+          url: https://datascience.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
