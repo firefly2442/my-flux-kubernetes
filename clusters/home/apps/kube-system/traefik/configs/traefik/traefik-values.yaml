@@ -19,6 +19,8 @@ spec:
         middlewares:
           - name: authentik-service-middleware
             namespace: authentik
+        tls:
+          secretName: traefik-certificate-secret
     ports:
       web:
         redirections:
