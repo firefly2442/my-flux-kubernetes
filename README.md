@@ -153,6 +153,7 @@ kubectl get jobs -n authentik
 * [Stirling PDF](https://stirlingpdf.homelab.rivetcode.com)
 * [My Recipes](https://recipes.homelab.rivetcode.com)
 * [My Boardgames](https://boardgames.homelab.rivetcode.com)
+* [Data Science Tools](https://datascience.homelab.rivetcode.com)
 
 ## Debugging
 
