@@ -4,7 +4,7 @@ metadata:
   name: jupyterlab-r-docker-stack-helm
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 1m
   url: https://github.com/firefly2442/jupyterlab-r-docker-stack-helm
   ref:
     branch: master

@@ -4,7 +4,7 @@ metadata:
   name: jupyterlab-r-docker-stack-helm
   namespace: datascience
 spec:
-  interval: 5m
+  interval: 1m
   chart:
     spec:
       chart: ./chart  # relative path in the repo
