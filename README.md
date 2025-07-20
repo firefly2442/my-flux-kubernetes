@@ -199,6 +199,12 @@ Local inter-cluster networking can use .local domain so things like:
 <service-name>.<namespace>.svc.cluster.local
 ```
 
+Check resouce utilization:
+
+```shell
+kubectl top nodes
+```
+
 Exec into a running pod:
 
 ```shell

@@ -20,3 +20,6 @@ spec:
       requests:
         cpu: 4000m
         memory: 8Gi
+    env:
+    - name: TZ
+      value: America/Chicago
