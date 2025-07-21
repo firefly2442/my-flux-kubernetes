@@ -60,9 +60,10 @@ spec:
         k8s-views-pods:
           url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
           token: ''
+        # customized fork of:
         # https://grafana.com/grafana/dashboards/15661-k8s-dashboard-en-20250125/
         grafana-k8s-dashboard:
-          url: https://grafana.com/api/dashboards/15661/revisions/2/download
+          url: https://raw.githubusercontent.com/firefly2442/my-flux-kubernetes/refs/heads/master/clusters/home/apps/grafana/grafana/dashboards/grafana-k8s-dashboard.json
           token: ''
     grafana.ini:
       # for debugging purposes, particularly for oauth2
