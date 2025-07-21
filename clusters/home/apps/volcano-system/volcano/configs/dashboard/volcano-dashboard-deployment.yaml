@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: volcano-dashboard
+  namespace: volcano-system
+  labels:
+    app: volcano-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: volcano-dashboard
+  template:
+    metadata:
+      labels:
+        app: volcano-dashboard
+    spec:
+      serviceAccountName: volcano-dashboard
+      containers:
+        - name: frontend
+          image: volcanosh/vc-dashboard-frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - name: frontend
+              containerPort: 80
+              protocol: TCP
+        - name: backend
+          image: volcanosh/vc-dashboard-backend:latest
+          imagePullPolicy: Always
+          ports:
+            - name: backend
+              containerPort: 3001
+              protocol: TCP

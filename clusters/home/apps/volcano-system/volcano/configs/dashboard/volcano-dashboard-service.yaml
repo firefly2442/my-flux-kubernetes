@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: volcano-dashboard
+  namespace: volcano-system
+spec:
+  selector:
+    app: volcano-dashboard
+  ports:
+    - name: backend
+      port: 3001
+      targetPort: 3001
+      protocol: TCP
+    - name: frontend
+      port: 80
+      targetPort: 80
+      protocol: TCP

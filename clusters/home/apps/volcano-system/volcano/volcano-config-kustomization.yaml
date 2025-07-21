@@ -1,0 +1,16 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: config-volcano
+  namespace: kube-system
+spec:
+  interval: 10m
+  dependsOn:
+  - name: volcano
+  path: ./configs/
+  prune: true # remove any elements later removed from the above path
+  timeout: 2m
+  sourceRef:
+    kind: GitRepository
+    name: volcano-configs
+  retryInterval: 1m

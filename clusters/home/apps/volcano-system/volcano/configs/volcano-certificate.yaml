@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: volcano-cert
+  namespace: volcano
+spec:
+  secretName: volcano-certificate-secret
+  dnsNames:
+    - "volcano.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
