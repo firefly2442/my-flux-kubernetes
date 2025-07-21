@@ -2,7 +2,7 @@ apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
   name: volcano-ingressroute
-  namespace: volcano
+  namespace: volcano-system
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-clusterissuer
     gethomepage.dev/href: "https://volcano.homelab.rivetcode.com"
