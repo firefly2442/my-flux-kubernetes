@@ -12,9 +12,9 @@ metadata:
     gethomepage.dev/icon: grafana.png
     gethomepage.dev/app: grafana # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Grafana
-    gethomepage.dev/widget.type: "grafana"
+    #gethomepage.dev/widget.type: "grafana"
     # use .local domain name so we don't get blocked by authentik
-    gethomepage.dev/widget.url: "http://grafana.grafana.svc.cluster.local"
+    #gethomepage.dev/widget.url: "http://grafana.grafana.svc.cluster.local"
     gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:

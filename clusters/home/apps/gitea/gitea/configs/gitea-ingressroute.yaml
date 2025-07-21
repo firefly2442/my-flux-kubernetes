@@ -12,9 +12,9 @@ metadata:
     gethomepage.dev/icon: gitea.png
     gethomepage.dev/app: gitea # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Gitea
-    gethomepage.dev/widget.type: "gitea"
+    #gethomepage.dev/widget.type: "gitea"
     # use .local domain name so we don't get blocked by authentik
-    gethomepage.dev/widget.url: "http://gitea-http.gitea.svc.cluster.local:3000"
+    #gethomepage.dev/widget.url: "http://gitea-http.gitea.svc.cluster.local:3000"
     gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
