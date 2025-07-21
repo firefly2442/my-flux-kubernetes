@@ -18,3 +18,5 @@ spec:
     # https://github.com/volcano-sh/volcano/blob/master/installer/helm/chart/volcano/values.yaml
     basic:
       image_pull_policy: "Always"
+    custom:
+      metrics_enable: true
