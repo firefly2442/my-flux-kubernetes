@@ -27,4 +27,4 @@ resources:
   - ./namespaces/namespace-recipes.yaml
   - ./namespaces/namespace-boardgames.yaml
   - ./namespaces/namespace-datascience.yaml
-  - ./namespaces/namespace-spark.yaml
+  - ./namespaces/namespace-spark-operator.yaml
