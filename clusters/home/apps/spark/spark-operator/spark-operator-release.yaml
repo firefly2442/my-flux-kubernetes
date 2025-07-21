@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: spark-operator
+  namespace: spark
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: spark-kubernetes-operator
+      # https://apache.github.io/spark-kubernetes-operator/index.yaml
+      # https://github.com/apache/spark-kubernetes-operator
+      version: '1.2.0'
+      sourceRef:
+        kind: HelmRepository
+        name: spark-kubernetes-operator
+        namespace: flux-system
+      interval: 5m
+  install:
+    crds: CreateReplace
+  # https://github.com/apache/spark-kubernetes-operator/blob/main/build-tools/helm/spark-kubernetes-operator/values.yaml
+  values:
+    # optional values here
