@@ -207,6 +207,12 @@ Check resouce utilization:
 kubectl top nodes
 ```
 
+List all custom resource definitions (CRDs):
+
+```shell
+kubectl get crds
+```
+
 Exec into a running pod:
 
 ```shell
