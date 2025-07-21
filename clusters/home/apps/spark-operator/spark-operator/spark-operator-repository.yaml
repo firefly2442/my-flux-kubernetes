@@ -5,4 +5,10 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  url: https://apache.github.io/spark-kubernetes-operator
+  # this is maintained by the Apache Spark community
+  # https://github.com/apache/spark-kubernetes-operator
+  #url: https://apache.github.io/spark-kubernetes-operator
+
+  # this is maintained by Kubeflow, seems to be more popular
+  # https://github.com/kubeflow/spark-operator
+  url: https://kubeflow.github.io/spark-operator
