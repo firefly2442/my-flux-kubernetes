@@ -19,4 +19,5 @@ spec:
     basic:
       image_pull_policy: "Always"
     custom:
-      metrics_enable: true
+      # don't deploy it's own standalone Grafana metrics tracking
+      metrics_enable: false
