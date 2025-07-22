@@ -16,7 +16,7 @@ spec:
       version: '1.4.2' # this should match the tag below
       sourceRef:
         kind: HelmRepository
-        name: ray-repo
+        name: kuberay-operator-repo
         namespace: flux-system
       interval: 5m
   install:
