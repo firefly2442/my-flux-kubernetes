@@ -8,12 +8,12 @@ spec:
   chart:
     spec:
       chart: ray-chart
-      # https://stirling-tools.github.io/Stirling-PDF-chart/index.yaml
+      # https://ray-project.github.io/kuberay-helm/index.yaml
       # https://docs.ray.io/en/latest/cluster/kubernetes/getting-started/kuberay-operator-installation.html
       # https://ray-project.github.io/kuberay/deploy/installation/
       # https://github.com/ray-project/kuberay
       # https://github.com/ray-project/kuberay/tree/master/helm-chart/kuberay-operator
-      version: '1.4.2'
+      version: '1.4.2' # this should match the tag below
       sourceRef:
         kind: HelmRepository
         name: ray-repo
