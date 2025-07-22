@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: ray
+  name: kuberay-operator
   namespace: ray
 spec:
   interval: 5m
   chart:
     spec:
-      chart: ray-chart
+      chart: kuberay-operator
       # https://ray-project.github.io/kuberay-helm/index.yaml
       # https://docs.ray.io/en/latest/cluster/kubernetes/getting-started/kuberay-operator-installation.html
       # https://ray-project.github.io/kuberay/deploy/installation/
