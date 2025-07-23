@@ -22,12 +22,15 @@ spec:
         name: "ghcr.io/firefly2442/jupyterlab-r-docker-stack-helm"
         tag: "latest"
         pullPolicy: "Always"
+      # https://z2jh.jupyter.org/en/stable/jupyterhub/customizing/user-resources.html
+      cpu:
+        limit: 6
+        guarantee: 1
+      memory:
+        limit: 16G
+        guarantee: 1G
       storage:
-        # type: dynamic
         capacity: 20Gi
-        # homeMountPath: /home/jovyan
-        # dynamic:
-        #   storageClass: longhorn
-        #   pvcNameTemplate: claim-{username}
-        #   volumeNameTemplate: volume-{user_server}
-        #   storageAccessModes: [ReadWriteOnce]
+      extraEnv:
+        - name: TZ
+          value: America/Chicago
