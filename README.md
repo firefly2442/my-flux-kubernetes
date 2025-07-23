@@ -134,6 +134,12 @@ Check on the Authentik setup:
 kubectl get jobs -n authentik
 ```
 
+When authentik updates, delete the setup job that authentik uses
+and force it to re-create the outpost.  Otherwise, the outpost
+will be at the old version and not match the new updated deployment.
+Helm does not manage the outpost since that's created through our
+setup automation script.
+
 ## Application URL List
 
 * [Heimdall Application Portal](http://portal.homelab.rivetcode.com)

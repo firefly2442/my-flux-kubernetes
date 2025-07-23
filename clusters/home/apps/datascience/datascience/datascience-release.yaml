@@ -22,3 +22,12 @@ spec:
         name: "ghcr.io/firefly2442/jupyterlab-r-docker-stack-helm"
         tag: "latest"
         pullPolicy: "Always"
+      storage:
+        type: dynamic
+        capacity: 20Gi
+        homeMountPath: /home/jovyan
+        dynamic:
+          storageClass: longhorn
+          pvcNameTemplate: claim-{username}
+          volumeNameTemplate: volume-{user_server}
+          storageAccessModes: [ReadWriteOnce]
