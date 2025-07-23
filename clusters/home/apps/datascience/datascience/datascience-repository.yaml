@@ -1,10 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: GitRepository
+kind: HelmRepository
 metadata:
-  name: jupyterlab-r-docker-stack-helm
+  name: datascience
   namespace: flux-system
 spec:
   interval: 5m
-  url: https://github.com/firefly2442/jupyterlab-r-docker-stack-helm
-  ref:
-    branch: master
+  url: https://hub.jupyter.org/helm-chart/
