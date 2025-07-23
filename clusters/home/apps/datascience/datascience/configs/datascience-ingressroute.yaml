@@ -22,8 +22,8 @@ spec:
   - match: Host(`datascience.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: jupyterlab-r-docker-stack-helm
-      port: 8888
+    - name: proxy-public
+      port: 80
     middlewares:
       - name: authentik-service-middleware
         namespace: authentik
