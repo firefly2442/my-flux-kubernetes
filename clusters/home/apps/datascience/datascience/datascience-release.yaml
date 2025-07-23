@@ -28,6 +28,6 @@ spec:
         homeMountPath: /home/jovyan
         dynamic:
           storageClass: longhorn
-          pvcNameTemplate: claim-{username}
+          pvcNameTemplate: {user_server}
           volumeNameTemplate: volume-{user_server}
           storageAccessModes: [ReadWriteOnce]
