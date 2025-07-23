@@ -32,5 +32,4 @@ spec:
       storage:
         capacity: 20Gi
       extraEnv:
-        - name: TZ
-          value: America/Chicago
+        TZ: "America/Chicago"
