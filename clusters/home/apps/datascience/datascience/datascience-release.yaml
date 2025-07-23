@@ -23,11 +23,11 @@ spec:
         tag: "latest"
         pullPolicy: "Always"
       storage:
-        type: dynamic
+        # type: dynamic
         capacity: 20Gi
-        homeMountPath: /home/jovyan
-        dynamic:
-          storageClass: longhorn
-          pvcNameTemplate: {user_server}
-          volumeNameTemplate: volume-{user_server}
-          storageAccessModes: [ReadWriteOnce]
+        # homeMountPath: /home/jovyan
+        # dynamic:
+        #   storageClass: longhorn
+        #   pvcNameTemplate: claim-{username}
+        #   volumeNameTemplate: volume-{user_server}
+        #   storageAccessModes: [ReadWriteOnce]
