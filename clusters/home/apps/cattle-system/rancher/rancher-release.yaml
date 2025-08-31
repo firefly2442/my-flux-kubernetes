@@ -10,7 +10,7 @@ spec:
       chart: rancher
       # https://www.suse.com/suse-rancher/support-matrix/all-supported-versions/rancher-v2-10-3/
       # rancher only supports specific versions of Kubernetes
-      version: '2.11.3'
+      version: '2.12.1'
       sourceRef:
         kind: HelmRepository
         name: rancher
