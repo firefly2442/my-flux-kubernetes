@@ -10,7 +10,7 @@ spec:
       chart: gitea
       # note this doesn't match the gitea version, the helm chart has it's own versioning
       # https://dl.gitea.com/charts/index.yaml
-      version: '12.3.0'
+      version: '12.4.0'
       sourceRef:
         kind: HelmRepository
         name: gitea
