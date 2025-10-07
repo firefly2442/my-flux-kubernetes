@@ -8,6 +8,7 @@ spec:
   chart:
     spec:
       chart: longhorn
+      # when longhorn is updated, you may need to go into the UI and upgrade the engine on existing PVCs
       version: '1.10.0'
       sourceRef:
         kind: HelmRepository
