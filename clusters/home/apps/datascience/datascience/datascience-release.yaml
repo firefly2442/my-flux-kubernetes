@@ -19,7 +19,7 @@ spec:
   values:
     singleuser:
       image:
-        name: "ghcr.io/firefly2442/jupyterlab-r-docker-stack-helm"
+        name: "ghcr.io/firefly2442/jupyterlab-r-docker-stack-custom"
         tag: "latest"
         pullPolicy: "Always"
       # https://z2jh.jupyter.org/en/stable/jupyterhub/customizing/user-resources.html
