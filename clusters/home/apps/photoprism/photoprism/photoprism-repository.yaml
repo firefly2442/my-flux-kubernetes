@@ -5,4 +5,4 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  url: https://p80n.github.io/photoprism-helm/
+  url: https://andrenarchy.github.io/helm-charts/

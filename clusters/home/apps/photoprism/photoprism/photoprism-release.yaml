@@ -7,12 +7,21 @@ spec:
   interval: 5m
   chart:
     spec:
+      # https://artifacthub.io/packages/helm/andrenarchy/photoprism
       chart: photoprism
-      version: '2.0.0'
+      version: '8.10.0'
       sourceRef:
         kind: HelmRepository
         name: photoprism
         namespace: flux-system
       interval: 5m
-  # https://github.com/p80n/photoprism-helm/blob/main/values.yaml
-  #values:
+  values:
+    persistence:
+      config:
+        enabled: true
+        mountPath: /photoprism/storage
+      originals:
+        enabled: true
+        mountPath: "/photoprism/originals"
+    env:
+      PHOTOPRISM_PUBLIC: "true"
