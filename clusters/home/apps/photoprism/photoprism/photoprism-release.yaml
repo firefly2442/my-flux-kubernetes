@@ -16,6 +16,10 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    image:
+      # https://hub.docker.com/r/photoprism/photoprism/tags
+      repository: photoprism/photoprism
+      tag: "250707"
     persistence:
       config:
         enabled: true
