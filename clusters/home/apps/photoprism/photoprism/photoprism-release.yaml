@@ -19,7 +19,7 @@ spec:
     image:
       # https://hub.docker.com/r/photoprism/photoprism/tags
       repository: photoprism/photoprism
-      tag: "250707"
+      tag: "20220121"
     persistence:
       config:
         enabled: true
