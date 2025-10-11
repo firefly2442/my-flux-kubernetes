@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: photoprism-cert
+  namespace: photoprism
+spec:
+  secretName: photoprism-certificate-secret
+  dnsNames:
+    - "photoprism.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer

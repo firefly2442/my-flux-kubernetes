@@ -29,3 +29,4 @@ resources:
   - ./namespaces/namespace-datascience.yaml
   - ./namespaces/namespace-spark-operator.yaml
   - ./namespaces/namespace-kuberay-operator.yaml
+  - ./namespaces/namespace-photoprism.yaml
