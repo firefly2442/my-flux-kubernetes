@@ -4,28 +4,11 @@ metadata:
   name: photoprism
   namespace: photoprism
 spec:
-  interval: 5m
+  interval: 30m
   chart:
     spec:
-      # https://artifacthub.io/packages/helm/andrenarchy/photoprism
-      chart: photoprism
-      version: '8.10.0'
+      chart: ./   # path inside the repo
       sourceRef:
-        kind: HelmRepository
+        kind: GitRepository
         name: photoprism
         namespace: flux-system
-      interval: 5m
-  values:
-    image:
-      # https://hub.docker.com/r/photoprism/photoprism/tags
-      repository: photoprism/photoprism
-      tag: "250707"
-    persistence:
-      config:
-        enabled: true
-        mountPath: /photoprism/storage
-      originals:
-        enabled: true
-        mountPath: "/photoprism/originals"
-    env:
-      PHOTOPRISM_PUBLIC: "true"
