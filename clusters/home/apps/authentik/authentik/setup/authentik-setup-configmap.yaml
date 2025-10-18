@@ -98,7 +98,7 @@ data:
             print(f"Kubernetes service connection id: {service_connection_id}")
 
         # plain proxy apps:
-        app_list = ['podinfo', 'longhorn', 'traefik', 'homepage', 'gatus', 'stirlingpdf', 'prometheus', 'datascience', 'volcano']
+        app_list = ['podinfo', 'longhorn', 'traefik', 'homepage', 'gatus', 'stirlingpdf', 'prometheus', 'datascience', 'volcano', 'photoprism']
         provider_list = []
 
         for appname in app_list:
