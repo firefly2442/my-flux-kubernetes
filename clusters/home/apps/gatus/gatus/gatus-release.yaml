@@ -100,3 +100,8 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: photoprism
+          url: https://photoprism.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

@@ -161,6 +161,7 @@ setup automation script.
 * [My Boardgames](https://boardgames.homelab.rivetcode.com)
 * [Data Science Tools](https://datascience.homelab.rivetcode.com)
 * [Volcano Dashboard](https://volcano.homelab.rivetcode.com)
+* [Photoprism](https://photoprism.homelab.rivetcode.com)
 
 ## Debugging
 
