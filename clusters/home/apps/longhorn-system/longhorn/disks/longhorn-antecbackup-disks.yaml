@@ -1,14 +1,14 @@
-apiVersion: longhorn.io/v1beta2
-kind: Node
-metadata:
-  # use kubectl get nodes to get the appropriate reference names
-  # don't use trailing slashes at the end of the disk locations
-  name: antecbackup
-  namespace: longhorn-system
-spec:
-  allowScheduling: true
-  disks:
-    disk1:
-      allowScheduling: true
-      path: /var/lib/longhorn
-      storageReserved: 53687091200
+# apiVersion: longhorn.io/v1beta2
+# kind: Node
+# metadata:
+#   # use kubectl get nodes to get the appropriate reference names
+#   # don't use trailing slashes at the end of the disk locations
+#   name: antecbackup
+#   namespace: longhorn-system
+# spec:
+#   allowScheduling: true
+#   disks:
+#     disk1:
+#       allowScheduling: true
+#       path: /var/lib/longhorn
+#       storageReserved: 53687091200
