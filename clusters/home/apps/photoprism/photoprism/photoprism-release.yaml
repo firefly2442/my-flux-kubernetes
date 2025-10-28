@@ -12,3 +12,8 @@ spec:
         kind: GitRepository
         name: photoprism
         namespace: flux-system
+  values:
+    env:
+      # warning, this opens your deployment up to anyone, be careful!
+      # we're protecting the endpoint with Authentik so we're OK
+      PHOTOPRISM_AUTH_MODE: "public"
