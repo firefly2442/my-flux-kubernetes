@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: vertsh-cert
+  namespace: vertsh
+spec:
+  secretName: vertsh-certificate-secret
+  dnsNames:
+    - "vertsh.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
