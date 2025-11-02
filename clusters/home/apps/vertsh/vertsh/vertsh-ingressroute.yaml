@@ -1,0 +1,25 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: vertsh.homelab.rivetcode.com
+  namespace: vertsh
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`vertsh.homelab.rivetcode.com`)
+      services:
+        - kind: Service
+          name: vertsh
+          port: 3000
+          sticky:
+            cookie:
+              httpOnly: true
+              secure: true
+              sameSite: none
+      middlewares:
+        - name: authentik-service-middleware
+          namespace: authentik
