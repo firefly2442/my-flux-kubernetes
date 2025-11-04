@@ -28,7 +28,7 @@ spec:
       enabled: true
     image:
       repository: "quay.io/kuberay/operator"
-      tag: "v1.4.2"
+      tag: "v1.5.0"
     env:
       # https://docs.ray.io/en/latest/cluster/usage-stats.html
       - name: RAY_USAGE_STATS_ENABLED
