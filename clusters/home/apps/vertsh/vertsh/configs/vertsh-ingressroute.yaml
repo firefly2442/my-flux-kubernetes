@@ -5,6 +5,16 @@ metadata:
   namespace: vertsh
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+    gethomepage.dev/href: "https://vertsh.homelab.rivetcode.com"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Vertsh
+    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/icon: mdi-file-pdf-box
+    gethomepage.dev/app: vertsh # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
+    gethomepage.dev/name: Vertsh
+    #gethomepage.dev/widget.type: "vertsh"
+    #gethomepage.dev/widget.url: "https://vertsh.homelab.rivetcode.com"
+    gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
     - websecure
@@ -23,3 +33,5 @@ spec:
       middlewares:
         - name: authentik-service-middleware
           namespace: authentik
+  tls:
+    secretName: vertsh-certificate-secret
