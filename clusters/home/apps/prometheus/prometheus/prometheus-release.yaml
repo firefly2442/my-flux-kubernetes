@@ -21,3 +21,5 @@ spec:
     server:
       service:
         type: ClusterIP
+      # Prometheus' data retention size. Supported units: B, KB, MB, GB, TB, PB, EB.
+      retentionSize: "7GB"
