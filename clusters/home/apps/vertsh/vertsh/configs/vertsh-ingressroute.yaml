@@ -24,7 +24,7 @@ spec:
       services:
         - kind: Service
           name: vertsh
-          port: 3000
+          port: 80
           sticky:
             cookie:
               httpOnly: true
