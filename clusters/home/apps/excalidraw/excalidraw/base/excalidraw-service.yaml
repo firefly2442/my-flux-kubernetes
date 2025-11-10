@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: vertsh
-  namespace: vertsh
+  name: excalidraw
+  namespace: excalidraw
   labels:
-    app.kubernetes.io/name: vertsh
+    app.kubernetes.io/name: excalidraw
 spec:
   type: ClusterIP
   ports:
     - port: 80
       targetPort: http
       protocol: TCP
-      name: vertsh-http
+      name: excalidraw-http
   selector:
-    app.kubernetes.io/name: vertsh
+    app.kubernetes.io/name: excalidraw
