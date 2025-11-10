@@ -152,13 +152,18 @@ data:
             )
 
         # oauth2 OIDC app list
-        oauth_app_list = ["grafana"]
+        oauth_app_list = ["grafana", "gitea"]
+        # https://integrations.goauthentik.io/development/gitea/
+        oauth_redirect_uri_list = [
+            "https://grafana.homelab.rivetcode.com/login/generic_oauth",
+            "https://gitea.homelab.rivetcode.com/user/oauth2/authentik/callback"
+        ]
 
         scopes_list = []
         for scope in ['openid', 'profile', 'email']:
             scopes_list.append(get_scope(scope))
 
-        for appname in oauth_app_list:
+        for i,appname in enumerate(oauth_app_list):
             print(f"Setting up oauth application: {appname}...")
 
             provider_id = create_or_get(
@@ -169,7 +174,7 @@ data:
                     "invalidation_flow": invalidation_flow_id,
                     "property_mappings": scopes_list,
                     "external_host": f"https://{appname}.homelab.rivetcode.com",
-                    "redirect_uris": [{"matching_mode": "strict", "url": "https://grafana.homelab.rivetcode.com/login/generic_oauth"}]
+                    "redirect_uris": [{"matching_mode": "strict", "url": oauth_redirect_uri_list[i]}]
                 },
             )
 
