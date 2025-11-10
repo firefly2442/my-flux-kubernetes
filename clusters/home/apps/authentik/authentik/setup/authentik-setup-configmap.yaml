@@ -22,7 +22,6 @@ data:
         "Accept": "application/json",
     }
 
-
     def wait_for_ready():
         print("Waiting for Authentik to be ready...")
         while True:
@@ -35,22 +34,20 @@ data:
             time.sleep(30)
         print("✅ Authentik is ready.")
 
-
     def get_id(url, key="pk"):
         r = requests.get(url, headers=HEADERS).json()
-        #print(json.dumps(r, indent=2))
+        print(json.dumps(r, indent=2))
         return r["results"][0][key] if r.get("results") else None
-
 
     def create_or_get(url, payload, key="pk"):
         r = requests.get(f"{url}?search={payload['name']}", headers=HEADERS).json()
-        print(r)
+        print(json.dumps(r, indent=2))
         if r.get("results"):
             print(f"✅ Found {payload['name']}")
             return r["results"][0][key]
         print(f"Creating {payload['name']}...")
         r = requests.post(url, headers=HEADERS, json=payload).json()
-        #print(json.dumps(r, indent=2))
+        print(json.dumps(r, indent=2))
         return r[key]
 
     def get_k8s_service_connection(name):
@@ -64,6 +61,7 @@ data:
     def get_scope(name):
         url = f"{AUTHENTIK_API_URL}/propertymappings/provider/scope/?scope={name}"
         resp = requests.get(url, headers=HEADERS).json()
+        print(json.dumps(resp, indent=2))
         for conn in resp.get("results", []):
             if conn["name"] == name:
                 return conn["pk"]
