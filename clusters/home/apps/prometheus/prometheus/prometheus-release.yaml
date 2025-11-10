@@ -22,4 +22,9 @@ spec:
       service:
         type: ClusterIP
       # Prometheus' data retention size. Supported units: B, KB, MB, GB, TB, PB, EB.
+      # keep this under the persistent volume size
       retentionSize: "7GB"
+      # Prometheus data retention period (default if not specified is 15 days)
+      retention: "15d"
+      persistentVolume:
+        size: 8Gi
