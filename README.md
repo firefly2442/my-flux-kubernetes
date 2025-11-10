@@ -162,6 +162,7 @@ setup automation script.
 * [Data Science Tools](https://datascience.homelab.rivetcode.com)
 * [Volcano Dashboard](https://volcano.homelab.rivetcode.com)
 * [Photoprism](https://photoprism.homelab.rivetcode.com)
+* [Vertsh](https://vertsh.homelab.rivetcode.com)
 
 ## Debugging
 

@@ -9,7 +9,7 @@ metadata:
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Vertsh
     gethomepage.dev/group: Kubernetes
-    gethomepage.dev/icon: mdi-file-pdf-box
+    gethomepage.dev/icon: mdi-application
     gethomepage.dev/app: vertsh # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Vertsh
     #gethomepage.dev/widget.type: "vertsh"
