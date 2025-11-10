@@ -44,6 +44,7 @@ data:
 
     def create_or_get(url, payload, key="pk"):
         r = requests.get(f"{url}?search={payload['name']}", headers=HEADERS).json()
+        print(r)
         if r.get("results"):
             print(f"✅ Found {payload['name']}")
             return r["results"][0][key]
