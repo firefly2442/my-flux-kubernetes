@@ -1,0 +1,14 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: excalidraw
+  namespace: excalidraw
+spec:
+  interval: 5m
+  path: ./clusters/home/apps/excalidraw/excalidraw/base/
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system

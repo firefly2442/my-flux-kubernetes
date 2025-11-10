@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: excalidraw-cert
+  namespace: excalidraw
+spec:
+  secretName: excalidraw-certificate-secret
+  dnsNames:
+    - "excalidraw.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer

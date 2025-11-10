@@ -31,3 +31,4 @@ resources:
   - ./namespaces/namespace-kuberay-operator.yaml
   - ./namespaces/namespace-photoprism.yaml
   - ./namespaces/namespace-vertsh.yaml
+  - ./namespaces/namespace-excalidraw.yaml
