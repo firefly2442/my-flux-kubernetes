@@ -1,26 +1,26 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
-metadata:
-  name: defectdojo
-  namespace: defectdojo
-spec:
-  interval: 5m
-  chart:
-    spec:
-      chart: defectdojo
-      # https://github.com/DefectDojo/django-DefectDojo/tree/master/helm/defectdojo
-      version: '1.8.0'
-      sourceRef:
-        kind: HelmRepository
-        name: defectdojo
-        namespace: flux-system
-      interval: 5m
-  # https://github.com/DefectDojo/django-DefectDojo/blob/master/helm/defectdojo/values.yaml
-  values:
-    createSecret: true
-    createRedisSecret: true
-    createPostgresqlSecret: true
-    extraEnv:
-    - name: "DD_ALLOWED_HOSTS"
-      value: "defectdojo-django.defectdojo.svc.cluster.local,defectdojo.homelab.rivetcode.com"
-    host: defectdojo-django.defectdojo.svc.cluster.local
+# apiVersion: helm.toolkit.fluxcd.io/v2
+# kind: HelmRelease
+# metadata:
+#   name: defectdojo
+#   namespace: defectdojo
+# spec:
+#   interval: 5m
+#   chart:
+#     spec:
+#       chart: defectdojo
+#       # https://github.com/DefectDojo/django-DefectDojo/tree/master/helm/defectdojo
+#       version: '1.8.0'
+#       sourceRef:
+#         kind: HelmRepository
+#         name: defectdojo
+#         namespace: flux-system
+#       interval: 5m
+#   # https://github.com/DefectDojo/django-DefectDojo/blob/master/helm/defectdojo/values.yaml
+#   values:
+#     createSecret: true
+#     createRedisSecret: true
+#     createPostgresqlSecret: true
+#     extraEnv:
+#     - name: "DD_ALLOWED_HOSTS"
+#       value: "defectdojo-django.defectdojo.svc.cluster.local,defectdojo.homelab.rivetcode.com"
+#     host: defectdojo-django.defectdojo.svc.cluster.local
