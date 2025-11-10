@@ -5,7 +5,7 @@ metadata:
   namespace: vertsh
 spec:
   interval: 5m
-  path: ./
+  path: ./base/
   prune: true
   wait: true
   sourceRef:
