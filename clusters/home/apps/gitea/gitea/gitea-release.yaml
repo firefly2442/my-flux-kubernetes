@@ -52,4 +52,4 @@ spec:
     deployment:
       env:
         - name: GITEA__SERVER__ROOT_URL
-          value: "https://git.homelab.rivetcode.com/"
+          value: "https://gitea.homelab.rivetcode.com/"
