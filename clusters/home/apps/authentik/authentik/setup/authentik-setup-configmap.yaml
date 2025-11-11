@@ -66,7 +66,7 @@ data:
         print(f"Looking up scope: {name}")
         print(json.dumps(resp, indent=2))
         for conn in resp.get("results", []):
-            if conn["name"] == name:
+            if conn["scope_name"] == name:
                 return conn["pk"]
         return None
 
