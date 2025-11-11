@@ -46,6 +46,8 @@ data:
             print(f"✅ Found {payload['name']}")
             return r["results"][0][key]
         print(f"Creating {payload['name']}...")
+        print(f"url: {url}")
+        print(f"payload: {payload}")
         r = requests.post(url, headers=HEADERS, json=payload).json()
         print(json.dumps(r, indent=2))
         return r[key]
