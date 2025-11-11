@@ -21,6 +21,15 @@ spec:
     gitea:
       metrics:
         enabled: true
+      # https://integrations.goauthentik.io/development/gitea/#helm-chart-configuration
+      oauth:
+        - name: "authentik"
+          provider: "openidConnect"
+          existingSecret: gitea-authentik-oauth
+          # this leads to a JSON page that lists all the endpoints and other details
+          autoDiscoverUrl: "https://authentik.homelab.rivetcode.com/application/o/gitea/.well-known/openid-configuration"
+          iconUrl: "https://authentik.homelab.rivetcode.com/static/dist/assets/icons/icon.png"
+          scopes: "email profile"
     service:
       http:
         type: ClusterIP
