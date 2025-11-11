@@ -61,7 +61,7 @@ data:
         return None
 
     def get_scope(name):
-        url = f"{AUTHENTIK_API_URL}/propertymappings/provider/scope/?scope={name}"
+        url = f"{AUTHENTIK_API_URL}/propertymappings/provider/scope/?scope_name={name}"
         resp = requests.get(url, headers=HEADERS).json()
         print(json.dumps(resp, indent=2))
         for conn in resp.get("results", []):
