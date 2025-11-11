@@ -63,8 +63,8 @@ data:
     def get_scope(name):
         url = f"{AUTHENTIK_API_URL}/propertymappings/provider/scope/?scope_name={name}"
         resp = requests.get(url, headers=HEADERS).json()
-        print(f"Looking up scope: {name}")
-        print(json.dumps(resp, indent=2))
+        #print(f"Looking up scope: {name}")
+        #print(json.dumps(resp, indent=2))
         for conn in resp.get("results", []):
             if conn["scope_name"] == name:
                 return conn["pk"]
