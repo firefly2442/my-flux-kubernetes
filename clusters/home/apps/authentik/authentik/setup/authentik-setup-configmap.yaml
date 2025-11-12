@@ -158,7 +158,8 @@ data:
         # https://integrations.goauthentik.io/development/gitea/
         oauth_redirect_uri_list = [
             "https://grafana.homelab.rivetcode.com/login/generic_oauth",
-            "https://gitea.homelab.rivetcode.com/user/oauth2/authentik/callback"
+            "https://gitea.homelab.rivetcode.com/user/oauth2/authentik/callback",
+            "https://headlamp.homelab.rivetcode.com/oidc-callback",
         ]
 
         scopes_list = []
