@@ -154,7 +154,7 @@ data:
             )
 
         # oauth2 OIDC app list
-        oauth_app_list = ["grafana", "gitea"]
+        oauth_app_list = ["grafana", "gitea", "headlamp"]
         # https://integrations.goauthentik.io/development/gitea/
         oauth_redirect_uri_list = [
             "https://grafana.homelab.rivetcode.com/login/generic_oauth",
