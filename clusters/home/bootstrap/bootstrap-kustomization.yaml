@@ -32,3 +32,4 @@ resources:
   - ./namespaces/namespace-photoprism.yaml
   - ./namespaces/namespace-vertsh.yaml
   - ./namespaces/namespace-excalidraw.yaml
+  - ./namespaces/namespace-headlamp.yaml

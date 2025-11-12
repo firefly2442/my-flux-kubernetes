@@ -2,7 +2,7 @@ apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
   name: headlamp-ingressroute
-  namespace: kube-system
+  namespace: headlamp
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-clusterissuer
     gethomepage.dev/href: "https://headlamp.homelab.rivetcode.com"
