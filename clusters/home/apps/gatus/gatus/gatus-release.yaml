@@ -55,11 +55,11 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: defectdojo
-          url: https://defectdojo.homelab.rivetcode.com
-          interval: 60s
-          conditions:
-            - "[STATUS] == 200"
+        # - name: defectdojo
+        #   url: https://defectdojo.homelab.rivetcode.com
+        #   interval: 60s
+        #   conditions:
+        #     - "[STATUS] == 200"
         - name: rabbitmq
           url: https://rabbitmq.homelab.rivetcode.com
           interval: 60s
