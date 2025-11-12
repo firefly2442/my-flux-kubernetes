@@ -32,6 +32,10 @@ For the oauth2 enabled applications, make sure the client ID and client secret m
 in the sealed secrets for each application.  On a fresh install, authentik will generate new
 values so these may need to be overwritten.
 
+Some applications like Headlamp require some manual tweaks to the provider in Authentik.
+Go into the provider itself, for example `headlamp-oauth2` and set the Signing Key
+to be the self-signed Authentik certificate.
+
 ## Development Notes
 
 ```shell

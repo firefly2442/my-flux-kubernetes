@@ -26,3 +26,6 @@ spec:
         externalSecret:
           enabled: true
           name: headlamp-authentik-oauth
+    serviceAccount:
+      create: false
+      name: headlamp
