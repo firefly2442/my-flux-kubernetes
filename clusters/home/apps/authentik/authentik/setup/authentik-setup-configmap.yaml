@@ -155,7 +155,11 @@ data:
 
         # oauth2 OIDC app list
         oauth_app_list = ["grafana", "gitea", "headlamp"]
+
+        # https://grafana.com/docs/grafana/latest/setup-grafana/configure-access/configure-authentication/generic-oauth/
         # https://integrations.goauthentik.io/development/gitea/
+        # https://headlamp.dev/docs/latest/installation/in-cluster/oidc
+
         oauth_redirect_uri_list = [
             "https://grafana.homelab.rivetcode.com/login/generic_oauth",
             "https://gitea.homelab.rivetcode.com/user/oauth2/authentik/callback",
