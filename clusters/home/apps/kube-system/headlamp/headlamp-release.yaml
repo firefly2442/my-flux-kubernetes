@@ -20,6 +20,7 @@ spec:
     service:
       type: LoadBalancer
     config:
+      inCluster: false
       oidc:
         secret:
           create: false
