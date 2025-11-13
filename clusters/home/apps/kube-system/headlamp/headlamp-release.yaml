@@ -20,7 +20,6 @@ spec:
     service:
       type: LoadBalancer
     config:
-      inCluster: false
       oidc:
         secret:
           create: false
@@ -30,14 +29,3 @@ spec:
     serviceAccount:
       create: false
       name: headlamp
-    volumes:
-      - name: headlamp-kubeconfig
-        secret:
-          secretName: headlamp-kubeconfig
-          items:
-            - key: config
-              path: config
-    volumeMounts:
-      - name: headlamp-kubeconfig
-        mountPath: /home/headlamp/.config/Headlamp/kubeconfigs
-        readOnly: true
