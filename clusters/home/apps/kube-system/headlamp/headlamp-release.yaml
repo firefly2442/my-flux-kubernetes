@@ -29,9 +29,14 @@ spec:
     serviceAccount:
       create: false
       name: headlamp
-    env:
-      - name: KUBECONFIG
-        valueFrom:
-          secretKeyRef:
-            name: headlamp-kubeconfig
-            key: headlamp-kubeconfig
+    volumes:
+      - name: headlamp-kubeconfig
+        secret:
+          secretName: headlamp-kubeconfig
+          items:
+            - key: headlamp-kubeconfig
+              path: config
+    volumeMounts:
+      - name: headlamp-kubeconfig
+        mountPath: /home/headlamp/.config/Headlamp/kubeconfigs
+        readOnly: true
