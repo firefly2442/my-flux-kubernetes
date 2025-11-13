@@ -34,7 +34,7 @@ spec:
         secret:
           secretName: headlamp-kubeconfig
           items:
-            - key: headlamp-kubeconfig
+            - key: config
               path: config
     volumeMounts:
       - name: headlamp-kubeconfig
