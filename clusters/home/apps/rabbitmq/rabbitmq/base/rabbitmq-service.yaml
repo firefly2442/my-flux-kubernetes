@@ -18,3 +18,7 @@ spec:
       port: 5672
       targetPort: amqp
       protocol: TCP
+    - name: rabbitmq-mqtt
+      port: 1883
+      targetPort: mqtt
+      protocol: TCP

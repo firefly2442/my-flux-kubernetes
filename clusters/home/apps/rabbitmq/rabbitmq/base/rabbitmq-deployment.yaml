@@ -26,10 +26,18 @@ spec:
         - name: rabbitmq
           image: "rabbitmq:4-management"
           imagePullPolicy: Always
+          command: ["/bin/bash", "-c"]
+          args:
+            - |
+              rabbitmq-plugins enable --offline rabbitmq_mqtt;
+              rabbitmq-server
           ports:
             - name: http
               containerPort: 15672 # Dashboard management UI
               protocol: TCP
             - name: amqp
               containerPort: 5672 # AMQP messaging
+              protocol: TCP
+            - name: mqtt
+              containerPort: 1883 # MQTT listener
               protocol: TCP

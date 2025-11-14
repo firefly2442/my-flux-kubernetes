@@ -22,3 +22,44 @@ spec:
         # Enables persistence for the config directory
         enabled: true
         storageClass: "longhorn"
+    # frigate configuration - see [Docs](https://docs.frigate.video/configuration/index) for more info
+    config: |
+      mqtt:
+        # Required: host name
+        host: rabbitmq.homelab.rivetcode.com
+        # Optional: port (default: shown below)
+        port: 1883
+        # Optional: topic prefix (default: shown below)
+        # WARNING: must be unique if you are running multiple instances
+        topic_prefix: frigate
+        # Optional: client id (default: shown below)
+        # WARNING: must be unique if you are running multiple instances
+        client_id: frigate
+        # Optional: user
+        user: guest
+        # Optional: password
+        # NOTE: Environment variables that begin with 'FRIGATE_' may be referenced in {}.
+        #       eg. password: '{FRIGATE_MQTT_PASSWORD}'
+        password: guest
+        # Optional: interval in seconds for publishing stats (default: shown below)
+        stats_interval: 60
+
+      detectors:
+        cpu1:
+          type: cpu
+
+      cameras:
+        inside:
+          ffmpeg:
+            inputs:
+              # sub-stream, lower quality and FPS
+              # - path: rtsp://admin:{FRIGATE_RTSP_PASSWORD}@192.168.1.111:554/cam/realmonitor?channel=1&subtype=1
+              #   roles:
+              #     - detect
+              # full 4k stream
+              - path: rtsp://admin:{FRIGATE_RTSP_PASSWORD}@192.168.1.111:554/cam/realmonitor?channel=1&subtype=0
+                roles:
+                  - record
+          width: 2688
+          height: 1520
+          fps: 20
