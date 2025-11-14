@@ -5,6 +5,17 @@ metadata:
   namespace: kuberay-operator
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+    gethomepage.dev/href: "https://kuberay.homelab.rivetcode.com"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Ray
+    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/icon: mdi-application
+    gethomepage.dev/app: ray # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
+    gethomepage.dev/name: Ray
+    #gethomepage.dev/widget.type: "kuberay"
+    # use .local domain name so we don't get blocked by authentik
+    #gethomepage.dev/widget.url: "http://kuberay-http.kuberay.svc.cluster.local:3000"
+    gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
     - websecure

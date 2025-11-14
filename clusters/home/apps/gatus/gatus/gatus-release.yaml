@@ -115,3 +115,8 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: ray-dashboard
+          url: https://kuberay.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

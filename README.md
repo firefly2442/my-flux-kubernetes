@@ -168,6 +168,7 @@ setup automation script.
 * [Photoprism](https://photoprism.homelab.rivetcode.com)
 * [Vertsh](https://vertsh.homelab.rivetcode.com)
 * [Excalidraw](https://excalidraw.homelab.rivetcode.com)
+* [Ray Cluster Dashboard](https://kuberay.homelab.rivetcode.com)
 
 ## Debugging
 
