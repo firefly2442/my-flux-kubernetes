@@ -8,6 +8,8 @@ spec:
   rayVersion: "2.51.1"
   headGroupSpec:
     serviceType: ClusterIP
+    rayStartParams:
+      dashboard-host: "0.0.0.0"
     template:
       metadata:
         labels:
@@ -19,7 +21,6 @@ spec:
             resources:
               limits:
                 cpu: "1"
-            args: ["ray", "start", "--head", "--dashboard-host=0.0.0.0"]
         affinity:
           podAntiAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
@@ -43,7 +44,6 @@ spec:
               resources:
                 limits:
                   cpu: "1"
-              args: ["ray", "start", "--address=$(RAY_HEAD_SERVICE_HOST):6379"]
           affinity:
             podAntiAffinity:
               requiredDuringSchedulingIgnoredDuringExecution:
