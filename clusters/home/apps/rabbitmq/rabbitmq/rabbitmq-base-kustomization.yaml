@@ -5,7 +5,7 @@ metadata:
   namespace: rabbitmq
 spec:
   interval: 5m
-  path: ./clusters/home/apps/rabbitmq/vertsrabbitmqh/base/
+  path: ./clusters/home/apps/rabbitmq/rabbitmq/base/
   prune: true
   wait: true
   sourceRef:
