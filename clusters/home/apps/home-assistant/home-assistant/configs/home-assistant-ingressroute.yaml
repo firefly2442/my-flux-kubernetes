@@ -23,7 +23,7 @@ spec:
   - match: Host(`home-assistant.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: home-assistant-http
-      port: 3000
+    - name: home-assistant
+      port: 8080
   tls:
     secretName: home-assistant-certificate-secret

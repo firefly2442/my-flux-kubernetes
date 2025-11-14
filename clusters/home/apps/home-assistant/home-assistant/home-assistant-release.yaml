@@ -27,3 +27,6 @@ spec:
     ingress:
       enabled: false   # Traditional ingress
       external: true # External ingress
+    # TODO: enable the service monitor at some point via Prometheus
+    # serviceMonitor:
+    #   enabled: true
