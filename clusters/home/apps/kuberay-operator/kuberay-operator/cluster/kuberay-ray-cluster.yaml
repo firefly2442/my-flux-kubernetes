@@ -8,14 +8,26 @@ spec:
   rayVersion: "2.51.1"
   headGroupSpec:
     serviceType: ClusterIP
-    replicas: 1
-    rayStartParams:
-      dashboard-host: "0.0.0.0"
-      num-cpus: "1"
+    template:
+      spec:
+        containers:
+          - name: ray-head
+            image: rayproject/ray:2.51.1
+            resources:
+              limits:
+                cpu: "1"
+            args: ["ray", "start", "--head", "--dashboard-host=0.0.0.0"]
   workerGroupSpecs:
     - groupName: workers
       replicas: 2
       minReplicas: 1
       maxReplicas: 4
-      rayStartParams:
-        num-cpus: "1"
+      template:
+        spec:
+          containers:
+            - name: ray-worker
+              image: rayproject/ray:2.51.1
+              resources:
+                limits:
+                  cpu: "1"
+              args: ["ray", "start", "--address=$(RAY_HEAD_SERVICE_HOST):6379"]
