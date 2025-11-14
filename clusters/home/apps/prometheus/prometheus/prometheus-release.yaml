@@ -27,4 +27,4 @@ spec:
       # Prometheus data retention period (default if not specified is 15 days)
       retention: "15d"
       persistentVolume:
-        size: 8Gi
+        size: 10Gi
