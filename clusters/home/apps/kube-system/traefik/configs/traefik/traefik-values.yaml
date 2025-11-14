@@ -37,6 +37,18 @@ spec:
           default: true
         exposedPort: 5432
         protocol: TCP
+      mqtt:
+        port: 1883
+        expose:
+          default: true
+        exposedPort: 1883
+        protocol: TCP
+      amqp:
+        port: 5672
+        expose:
+          default: true
+        exposedPort: 5672
+        protocol: TCP
     entryPoints:
       mqtt:
         address: ":1883" # MQTT plaintext
