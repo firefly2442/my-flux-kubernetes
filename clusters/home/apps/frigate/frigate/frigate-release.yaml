@@ -22,7 +22,7 @@ spec:
         # Enables persistence for the config directory
         enabled: true
         storageClass: "longhorn"
-    env:
+    extraEnv:
       - name: FRIGATE_RTSP_PASSWORD
         valueFrom:
           secretKeyRef:
