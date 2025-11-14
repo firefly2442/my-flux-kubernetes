@@ -7,10 +7,14 @@ metadata:
     app.kubernetes.io/name: rabbitmq
 spec:
   type: ClusterIP
-  ports:
-    - port: 15672
-      targetPort: http
-      protocol: TCP
-      name: rabbitmq-http
   selector:
     app.kubernetes.io/name: rabbitmq
+  ports:
+    - name: rabbitmq-http
+      port: 15672
+      targetPort: http
+      protocol: TCP
+    - name: rabbitmq-amqp
+      port: 5672
+      targetPort: amqp
+      protocol: TCP
