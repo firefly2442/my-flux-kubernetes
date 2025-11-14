@@ -120,3 +120,8 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: home-assistant
+          url: https://home-assistant.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

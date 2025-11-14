@@ -33,3 +33,4 @@ resources:
   - ./namespaces/namespace-vertsh.yaml
   - ./namespaces/namespace-excalidraw.yaml
   - ./namespaces/namespace-headlamp.yaml
+  - ./namespaces/namespace-home-assistant.yaml

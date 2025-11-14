@@ -169,6 +169,7 @@ setup automation script.
 * [Vertsh](https://vertsh.homelab.rivetcode.com)
 * [Excalidraw](https://excalidraw.homelab.rivetcode.com)
 * [Ray Cluster Dashboard](https://kuberay.homelab.rivetcode.com)
+* [Home Assistant](https://home-assistant.homelab.rivetcode.com)
 
 ## Debugging
 
