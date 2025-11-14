@@ -22,12 +22,8 @@ spec:
         # Enables persistence for the config directory
         enabled: true
         storageClass: "longhorn"
-    extraEnv:
-      - name: FRIGATE_RTSP_PASSWORD
-        valueFrom:
-          secretKeyRef:
-            name: frigate-rtsp-secret
-            key: FRIGATE_RTSP_PASSWORD
+    envFromSecrets:
+      - name: frigate-rtsp-secret
     # frigate configuration - see [Docs](https://docs.frigate.video/configuration/index) for more info
     config: |
       mqtt:
