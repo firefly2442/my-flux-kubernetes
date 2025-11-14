@@ -24,9 +24,12 @@ spec:
       enableServiceLinks: true
       containers:
         - name: rabbitmq
-          image: "rabbitmq:3"
+          image: "rabbitmq:4-management"
           imagePullPolicy: Always
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 15672 # Dashboard management UI
+              protocol: TCP
+            - name: amqp
+              containerPort: 5672 # AMQP messaging
               protocol: TCP
