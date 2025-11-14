@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: kuberay-cert
+  namespace: kuberay-operator
+spec:
+  secretName: kuberay-certificate-secret
+  dnsNames:
+    - "kuberay.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
