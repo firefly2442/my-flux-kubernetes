@@ -5,6 +5,8 @@ metadata:
   namespace: frigate
 spec:
   interval: 5m
+  dependsOn:
+    - name: frigate-dependencies
   chart:
     spec:
       chart: frigate
@@ -23,7 +25,7 @@ spec:
         enabled: true
         storageClass: "longhorn"
     envFromSecrets:
-      - name: frigate-rtsp-secret
+      - frigate-rtsp-secret
     # frigate configuration - see [Docs](https://docs.frigate.video/configuration/index) for more info
     config: |
       mqtt:

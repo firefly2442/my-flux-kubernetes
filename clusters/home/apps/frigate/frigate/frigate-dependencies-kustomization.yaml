@@ -1,0 +1,13 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: frigate-dependencies
+  namespace: frigate
+spec:
+  interval: 10m
+  path: ./dependencies/
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
