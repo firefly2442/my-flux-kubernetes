@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ray-dashboard
+  name: kuberay-dashboard
   namespace: kuberay-operator
   labels:
     app: ray
