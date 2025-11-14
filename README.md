@@ -159,7 +159,7 @@ setup automation script.
 * [Prometheus Logging Dashboard](https://prometheus.homelab.rivetcode.com)
 * [Grafana Dashboard](https://grafana.homelab.rivetcode.com)
 * [Rabbitmq Dashboard](https://rabbitmq.homelab.rivetcode.com)
-* [DefectDojo Dashboard](https://defectdojo.homelab.rivetcode.com)
+* [DefectDojo Dashboard](https://defectdojo.homelab.rivetcode.com) - disabled
 * [Stirling PDF](https://stirlingpdf.homelab.rivetcode.com)
 * [My Recipes](https://recipes.homelab.rivetcode.com)
 * [My Boardgames](https://boardgames.homelab.rivetcode.com)

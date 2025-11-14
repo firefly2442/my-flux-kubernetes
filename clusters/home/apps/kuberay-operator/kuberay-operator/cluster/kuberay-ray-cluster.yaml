@@ -1,0 +1,21 @@
+apiVersion: ray.io/v1
+kind: RayCluster
+metadata:
+  name: raycluster
+  namespace: kuberay-operator
+spec:
+  # https://github.com/ray-project/ray/releases
+  rayVersion: "2.51.1"
+  headGroupSpec:
+    serviceType: ClusterIP
+    replicas: 1
+    rayStartParams:
+      dashboard-host: "0.0.0.0"
+      num-cpus: "1"
+  workerGroupSpecs:
+    - groupName: workers
+      replicas: 2
+      minReplicas: 1
+      maxReplicas: 4
+      rayStartParams:
+        num-cpus: "1"
