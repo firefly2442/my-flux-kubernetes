@@ -5,8 +5,7 @@ metadata:
   namespace: rabbitmq
 spec:
   entryPoints:
-    mqtt:
-      address: ":1883"
+    - mqtt
   routes:
     - match: HostSNI(`*`)  # MQTT does not use SNI by default
       services:
