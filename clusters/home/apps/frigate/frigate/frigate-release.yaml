@@ -21,3 +21,4 @@ spec:
       config:
         # Enables persistence for the config directory
         enabled: true
+        storageClass: "longhorn"
