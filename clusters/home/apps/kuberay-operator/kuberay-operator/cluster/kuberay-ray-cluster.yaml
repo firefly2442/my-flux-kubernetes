@@ -9,6 +9,9 @@ spec:
   headGroupSpec:
     serviceType: ClusterIP
     template:
+      metadata:
+        labels:
+          ray-cluster-head: "true"
       spec:
         containers:
           - name: ray-head
@@ -17,12 +20,22 @@ spec:
               limits:
                 cpu: "1"
             args: ["ray", "start", "--head", "--dashboard-host=0.0.0.0"]
+        affinity:
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              - labelSelector:
+                  matchLabels:
+                    ray-cluster-head: "true"
+                topologyKey: kubernetes.io/hostname
   workerGroupSpecs:
     - groupName: workers
       replicas: 2
       minReplicas: 1
       maxReplicas: 4
       template:
+        metadata:
+          labels:
+            ray-worker: "true"
         spec:
           containers:
             - name: ray-worker
@@ -31,3 +44,10 @@ spec:
                 limits:
                   cpu: "1"
               args: ["ray", "start", "--address=$(RAY_HEAD_SERVICE_HOST):6379"]
+          affinity:
+            podAntiAffinity:
+              requiredDuringSchedulingIgnoredDuringExecution:
+                - labelSelector:
+                    matchLabels:
+                      ray-cluster-head: "true"
+                  topologyKey: kubernetes.io/hostname
