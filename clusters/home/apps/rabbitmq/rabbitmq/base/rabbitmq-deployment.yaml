@@ -30,6 +30,8 @@ spec:
           args:
             - |
               rabbitmq-plugins enable --offline rabbitmq_mqtt;
+              rabbitmqctl add_user rabbitmq rabbitmq || echo "user exists"
+              rabbitmqctl set_permissions -p / rabbitmq ".*" ".*" ".*"
               rabbitmq-server
           ports:
             - name: http
