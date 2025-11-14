@@ -38,8 +38,12 @@ spec:
         exposedPort: 5432
         protocol: TCP
     entryPoints:
+      mqtt:
+        address: ":1883" # MQTT plaintext
+      amqp:
+        address: ":5672" # AMQP messaging
       postgres:
-        address: ":5432"
+        address: ":5432" # Postgres database
     logs:
       access:
         enabled: true
