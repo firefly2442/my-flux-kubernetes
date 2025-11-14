@@ -12,7 +12,7 @@ spec:
       version: '0.3.30'
       sourceRef:
         kind: HelmRepository
-        name: gitea
+        name: home-assistant
         namespace: flux-system
       interval: 5m
   # https://github.com/pajikos/home-assistant-helm-chart/blob/main/charts/home-assistant/values.yaml
