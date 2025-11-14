@@ -27,5 +27,3 @@ spec:
     ingress:
       enabled: false   # Traditional ingress
       external: true # External ingress
-    serviceMonitor:
-      enabled: true
