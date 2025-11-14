@@ -125,3 +125,8 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: frigate
+          url: https://frigate.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

@@ -170,6 +170,7 @@ setup automation script.
 * [Excalidraw](https://excalidraw.homelab.rivetcode.com)
 * [Ray Cluster Dashboard](https://kuberay.homelab.rivetcode.com)
 * [Home Assistant](https://home-assistant.homelab.rivetcode.com)
+* [Frigate Dashboard](https://frigate.homelab.rivetcode.com)
 
 ## Debugging
 

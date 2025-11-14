@@ -34,3 +34,4 @@ resources:
   - ./namespaces/namespace-excalidraw.yaml
   - ./namespaces/namespace-headlamp.yaml
   - ./namespaces/namespace-home-assistant.yaml
+  - ./namespaces/namespace-frigate.yaml
