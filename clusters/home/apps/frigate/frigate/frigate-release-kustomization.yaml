@@ -10,7 +10,6 @@ spec:
   dependsOn:
     - name: frigate-dependencies
       namespace: frigate
-      kind: Kustomization
   path: ./release/
   sourceRef:
     kind: GitRepository

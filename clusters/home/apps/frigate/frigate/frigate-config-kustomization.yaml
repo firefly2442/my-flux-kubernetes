@@ -10,7 +10,6 @@ spec:
   dependsOn:
     - name: frigate
       namespace: frigate
-      kind: Kustomization
   wait: true
   sourceRef:
     kind: GitRepository
