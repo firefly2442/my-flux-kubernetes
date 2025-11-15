@@ -12,10 +12,3 @@ spec:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  # Skip health checks on PVC that uses local-path
-  healthChecks:
-    - apiVersion: v1
-      kind: PersistentVolume
-      name: frigate-pv
-      namespace: "" # cluster-scoped PV
-    # Exclude the PVC entirely since the status will be pending until the pod leverages it
