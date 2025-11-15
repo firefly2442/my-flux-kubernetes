@@ -5,7 +5,7 @@ metadata:
   namespace: frigate
 spec:
   interval: 10m
-  path: ./dependencies/
+  path: ./clusters/home/apps/frigate/frigate/dependencies/
   prune: true
   wait: true
   sourceRef:

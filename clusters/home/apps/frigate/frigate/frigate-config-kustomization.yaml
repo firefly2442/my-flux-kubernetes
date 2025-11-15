@@ -5,7 +5,7 @@ metadata:
   namespace: frigate
 spec:
   interval: 10m
-  path: ./configs/
+  path: ./clusters/home/apps/frigate/frigate/configs/
   prune: true
   dependsOn:
     - name: frigate

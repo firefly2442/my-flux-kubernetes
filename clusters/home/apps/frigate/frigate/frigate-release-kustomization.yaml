@@ -10,7 +10,7 @@ spec:
   dependsOn:
     - name: frigate-dependencies
       namespace: frigate
-  path: ./release/
+  path: ./clusters/home/apps/frigate/frigate/release/
   sourceRef:
     kind: GitRepository
     name: flux-system
