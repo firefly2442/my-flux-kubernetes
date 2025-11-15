@@ -9,6 +9,8 @@ spec:
   prune: true
   dependsOn:
     - name: frigate
+      namespace: frigate
+      kind: HelmRelease
   wait: true
   sourceRef:
     kind: GitRepository
