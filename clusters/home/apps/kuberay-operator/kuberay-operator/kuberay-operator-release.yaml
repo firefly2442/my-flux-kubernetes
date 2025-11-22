@@ -13,7 +13,7 @@ spec:
       # https://ray-project.github.io/kuberay/deploy/installation/
       # https://github.com/ray-project/kuberay
       # https://github.com/ray-project/kuberay/tree/master/helm-chart/kuberay-operator
-      version: '1.5.0' # this should match the tag below
+      version: '1.5.1' # this should match the tag below
       sourceRef:
         kind: HelmRepository
         name: kuberay-operator-repo
