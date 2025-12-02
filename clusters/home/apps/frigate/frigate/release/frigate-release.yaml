@@ -28,6 +28,8 @@ spec:
         ## If you want to reuse an existing claim, you can pass the name of the PVC using
         ## the existingClaim variable
         existingClaim: frigate-pvc
+        subPath: ""
+        type: pvc
 
     envFromSecrets:
       - frigate-rtsp-secret
