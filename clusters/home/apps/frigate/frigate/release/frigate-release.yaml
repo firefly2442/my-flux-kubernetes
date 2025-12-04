@@ -61,6 +61,17 @@ spec:
         cpu1:
           type: cpu
 
+      detect:
+        enabled: True
+        width: 640
+        height: 480
+        fps: 5
+      record:
+        enabled: True
+        retain:
+          days: 16
+          mode: all
+
       cameras:
         inside:
           ffmpeg:
@@ -77,13 +88,3 @@ spec:
               - path: rtsp://admin:{FRIGATE_RTSP_PASSWORD}@192.168.1.111:554/cam/realmonitor?channel=1&subtype=0
                 roles:
                   - record
-            detect:
-              enabled: True
-              width: 640
-              height: 480
-              fps: 5
-            record:
-              enabled: True
-              retain:
-                days: 16
-                mode: all
