@@ -32,9 +32,6 @@ spec:
         ## If you want to reuse an existing claim, you can pass the name of the PVC using
         ## the existingClaim variable
         existingClaim: frigate-media
-        #subPath: ""
-        #type: pvc
-        #hostPath: null
 
     envFromSecrets:
       - frigate-rtsp-secret
@@ -67,12 +64,26 @@ spec:
       cameras:
         inside:
           ffmpeg:
+            # record audio
+            # https://docs.frigate.video/troubleshooting/faqs/
+            output_args:
+              record: preset-record-generic-audio-aac
             inputs:
               # sub-stream, lower quality and FPS
-              # - path: rtsp://admin:{FRIGATE_RTSP_PASSWORD}@192.168.1.111:554/cam/realmonitor?channel=1&subtype=1
-              #   roles:
-              #     - detect
+              - path: rtsp://admin:{FRIGATE_RTSP_PASSWORD}@192.168.1.111:554/cam/realmonitor?channel=1&subtype=1
+                roles:
+                  - detect
               # full 4k stream
               - path: rtsp://admin:{FRIGATE_RTSP_PASSWORD}@192.168.1.111:554/cam/realmonitor?channel=1&subtype=0
                 roles:
                   - record
+            detect:
+              enabled: True
+              width: 640
+              height: 480
+              fps: 5
+            record:
+              enabled: True
+              retain:
+                days: 16
+                mode: all
