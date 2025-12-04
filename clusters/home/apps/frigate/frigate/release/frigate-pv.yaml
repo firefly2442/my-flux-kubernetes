@@ -1,10 +1,8 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: frigate-pv
+  name: frigate-media
   namespace: frigate
-  labels:
-    app: frigate
 spec:
   capacity:
     storage: 100Gi

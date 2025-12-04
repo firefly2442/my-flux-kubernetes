@@ -31,9 +31,10 @@ spec:
         enabled: true
         ## If you want to reuse an existing claim, you can pass the name of the PVC using
         ## the existingClaim variable
-        existingClaim: frigate-pvc
-        subPath: ""
-        type: pvc
+        existingClaim: frigate-media
+        #subPath: ""
+        #type: pvc
+        #hostPath: null
 
     envFromSecrets:
       - frigate-rtsp-secret
