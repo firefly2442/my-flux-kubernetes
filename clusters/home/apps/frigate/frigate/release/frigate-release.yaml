@@ -88,3 +88,9 @@ spec:
               - path: rtsp://admin:{FRIGATE_RTSP_PASSWORD}@192.168.1.111:554/cam/realmonitor?channel=1&subtype=0
                 roles:
                   - record
+
+      # https://docs.frigate.video/guides/configuring_go2rtc
+      go2rtc:
+        streams:
+          inside:
+            - rtsp://admin:{FRIGATE_RTSP_PASSWORD}@192.168.1.111:554/cam/realmonitor?channel=1&subtype=0
