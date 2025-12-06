@@ -69,8 +69,12 @@ spec:
       record:
         enabled: True
         retain:
-          days: 16
-          mode: all
+          days: 7
+          # Optional: Mode for retention. Available options are: all, motion, and active_objects
+          #   all - save all recording segments regardless of activity
+          #   motion - save all recordings segments with any detected motion
+          #   active_objects - save all recording segments with active/moving objects
+          mode: motion
 
       cameras:
         inside:
