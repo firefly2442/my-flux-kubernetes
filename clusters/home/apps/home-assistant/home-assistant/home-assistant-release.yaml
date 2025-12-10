@@ -9,7 +9,7 @@ spec:
     spec:
       chart: home-assistant
       # https://github.com/pajikos/home-assistant-helm-chart
-      version: '0.3.33'
+      version: '0.3.34'
       sourceRef:
         kind: HelmRepository
         name: home-assistant
