@@ -29,3 +29,4 @@ This seems to fix things and then allow us to use split-DNS properly and resolve
 
 * [https://traefik.io/traefik](https://traefik.io/traefik)
 * [https://github.com/traefik/traefik](https://github.com/traefik/traefik)
+* [Setting up Traefik and Cert Manager](https://www.youtube.com/watch?v=vJweuU6Qrgo)

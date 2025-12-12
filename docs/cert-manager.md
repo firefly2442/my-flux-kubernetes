@@ -19,3 +19,5 @@ only the `rivetcode.com` domain name.
 ## Links
 
 * [https://cert-manager.io/](https://cert-manager.io/)
+* [Setting up Traefik and Cert Manager](https://www.youtube.com/watch?v=vJweuU6Qrgo)
+* [TechnoTim Tutorial on cert-manager and Lets Encrypt](https://www.youtube.com/watch?v=G4CmbYL9UPg)

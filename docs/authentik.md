@@ -37,3 +37,6 @@ setup automation script.
 ## Links
 
 * [https://goauthentik.io/](https://goauthentik.io/)
+* [Setting up Authentik Tutorial](https://www.youtube.com/watch?v=N5unsATNpJk)
+* [Tutorial Combining Authentik and Traefik Middleware](https://www.youtube.com/watch?v=_I3hUI1JQP4)
+* [Tutorial on Authentik and Traefik](https://github.com/brokenscripts/authentik_traefik)
