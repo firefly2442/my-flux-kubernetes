@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: ./service-account/
+  path: ./clusters/home/apps/kubernetes-dashboard/kubernetes-dashboard/service-account/
   prune: true
   sourceRef:
     kind: GitRepository
