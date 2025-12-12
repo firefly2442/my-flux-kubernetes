@@ -60,7 +60,7 @@ pre-commit autoupdate
 * [Gitea](https://gitea.homelab.rivetcode.com)
 * [Podinfo](https://podinfo.homelab.rivetcode.com)
 * [Longhorn Storage](https://longhorn.homelab.rivetcode.com)
-* [Kubernetes Dashboard](https://kubernetes-dashboard.homelab.rivetcode.com)
+* [Kubernetes Dashboard](https://kubernetes-dashboard.homelab.rivetcode.com) - disabled
 * [Gatus Service Status Dashboard](https://gatus.homelab.rivetcode.com)
 * [Prometheus Logging Dashboard](https://prometheus.homelab.rivetcode.com)
 * [Grafana Dashboard](https://grafana.homelab.rivetcode.com)
