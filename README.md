@@ -38,6 +38,10 @@ to be the self-signed Authentik certificate.
 
 ## Development Notes
 
+See details in `docs` folder for each service/application.
+
+Use git pre-commit hooks:
+
 ```shell
 pip3 install pre-commit
 # lint and check all files
@@ -45,104 +49,6 @@ pre-commit run --all-files
 # check for any updates
 pre-commit autoupdate
 ```
-
-```shell
-# convert a 'ClusterIP' type to a 'LoadBalancer' type so it gets an IP address from metallb
-kubectl patch svc <service-name> -n <namespace> -p '{"spec": {"type": "LoadBalancer"}}'
-kubectl get svc -A
-```
-
-Cilium requires a compatible BGP router and seems pretty complicated to setup.
-Metallb seems a lot easier to setup and will assign IP addresses from an available
-range specified which then are routable.
-
-To get the generated Kubernetes Dashboard token to login:
-
-```shell
-kubectl get secret admin-user-token -n kubernetes-dashboard -o jsonpath="{.data.token}" | base64 --decode
-```
-
-DNS and Fully Qualified Domain Names (FQDN):
-
-`homelab.rivetcode.com` and `*.homelab.rivetcode.com` point to the k3s Traefik
-ingress controller at `192.168.1.10`.  HAProxy on the Raspberry Pi routes traffic for the Kubernetes
-control plane so that we can use `kubectl` on any machine.
-This is a split-DNS setup where the DNS for rivetcode only resolves when we're on our local
-network.
-
-CloudFlare provides the DNS nameservers.  These are setup in Westhost for the `rivetcode.com`
-domain name.  This way Cloudflare handles DNS, not Westhost.
-We use dns01 and an API token from Cloudflare to leverage cert-manager
-to request certificates and have them be properly signed.  Otherwise, we would have to
-use self-signed certs which would be annoying in the web-browser.
-
-The only service that should be setup as `LoadBalancer` is the Traefik service.  This handles
-all inbound access into the cluster.  All other services should be `ClusterIP` type.
-
-DNS on Windows can be a little annoying.  It seems to sometimes use IPv6 as the default DNS
-which we're not using through OpenWRT and PiHole.  Disable IPv6 DNS through
-OpenWRT -> Network -> Interfaces -> LAN -> DHCP Server -> IPv6 Settings -> Uncheck "Local IPv6 DNS server"
-This seems to fix things and then allow us to use split-DNS properly and resolve our services.
-
-Secrets are managed using sealed secrets.  This way we can store the actual values
-in Git and the values are decrypted upon deployment and usage.  To create new secrets:
-
-```shell
-kubectl create secret generic my-api-token \
-  --namespace kube-system \
-  --from-literal=api-token='MY_SECRET_TOKEN' \
-  --dry-run=client -o yaml > secret.yaml
-```
-
-The above api token from Cloudflare is allowed DNS edit permissions on
-only the `rivetcode.com` domain name.
-
-This unencrypted secret then needs to be encrypted using `kubeseal`:
-
-```shell
-kubeseal --controller-namespace kube-system --controller-name sealed-secrets < secret.yaml > sealed-secret.yaml --format=yaml
-```
-
-This `sealed-secret.yaml` file can then be safely added to Flux since the only
-way to get to the plaintext value is by decrypting it with the sealed secrets private key.
-
-The private key for all sealed secrets can be exported and backed up using:
-
-```shell
-kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > sealed-secrets-key-backup.yaml
-```
-
-This should be secured and saved in a password manager.
-
-Trivy security scans are done automatically through the Trivy Operator.  These
-are picked up by the Trivy DefectDojo Report Operator which passes them
-to the DefectDojo web-ui.  This requires a secret API key setup
-in DefectDojo and setup within the Trivy DefectDojo Report Operator.
-
-To get the postgresql password:
-
-```shell
-kubectl get secret postgresql -n postgresql -o jsonpath="{.data.postgres-password}" | base64 -d; echo
-```
-
-Then connect via:
-
-```shell
-psql -h postgresql.homelab.rivetcode.com -U postgres
-# then enter the password from above
-```
-
-Check on the Authentik setup:
-
-```shell
-kubectl get jobs -n authentik
-```
-
-When authentik updates, delete the setup job that authentik uses
-and force it to re-create the outpost.  Otherwise, the outpost
-will be at the old version and not match the new updated deployment.
-Helm does not manage the outpost since that's created through our
-setup automation script.
 
 ## Application URL List
 
