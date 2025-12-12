@@ -8,7 +8,7 @@ resources:
   - ./namespaces/namespace-cert-manager.yaml
   - ./namespaces/namespace-podinfo.yaml
   - ./namespaces/namespace-longhorn-system.yaml
-  - ./namespaces/namespace-cattle-system.yaml
+  #- ./namespaces/namespace-cattle-system.yaml
   - ./namespaces/namespace-metallb-system.yaml
   - ./namespaces/namespace-volcano-system.yaml
   - ./namespaces/namespace-kubernetes-dashboard.yaml

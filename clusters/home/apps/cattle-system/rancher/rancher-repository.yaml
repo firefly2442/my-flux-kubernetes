@@ -1,8 +1,8 @@
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: rancher
-  namespace: flux-system
-spec:
-  interval: 5m
-  url: https://releases.rancher.com/server-charts/stable
+# apiVersion: source.toolkit.fluxcd.io/v1
+# kind: HelmRepository
+# metadata:
+#   name: rancher
+#   namespace: flux-system
+# spec:
+#   interval: 5m
+#   url: https://releases.rancher.com/server-charts/stable
