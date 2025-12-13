@@ -7,6 +7,8 @@ spec:
   interval: 5m
   path: ./clusters/home/apps/kuberay-operator/kuberay-operator/cluster/
   prune: true
+  dependsOn:
+    - name: kuberay-operator
   sourceRef:
     kind: GitRepository
     name: flux-system
