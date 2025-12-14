@@ -1,14 +1,12 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: authentik-release
+  name: authentik-setup
   namespace: flux-system
 spec:
   interval: 10m
-  path: ./clusters/home/apps/authentik/authentik/release/
+  path: ./clusters/home/apps/authentik/authentik/setup/
   prune: true
-  dependsOn:
-    - name: authentik-config
   wait: true
   sourceRef:
     kind: GitRepository
