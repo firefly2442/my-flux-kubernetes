@@ -7,7 +7,7 @@ spec:
   interval: 10m
   dependsOn:
   - name: cert-manager
-  path: ./configs/
+  path: ./clusters/home/apps/cert-manager/cert-manager/configs/
   prune: true # remove any elements later removed from the above path
   timeout: 2m
   sourceRef:
