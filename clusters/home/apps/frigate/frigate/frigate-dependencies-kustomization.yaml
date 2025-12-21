@@ -12,3 +12,8 @@ spec:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
+  healthChecks:
+    - apiVersion: v1
+      kind: Secret
+      name: frigate-rtsp-secret
+      namespace: frigate
