@@ -20,7 +20,7 @@ spec:
     image:
       repository: ghcr.io/blakeblackshear/frigate
       # https://github.com/blakeblackshear/frigate/releases
-      tag: 0.16.3
+      tag: 0.16.4
     persistence:
       config:
         # Enables persistence for the config directory
