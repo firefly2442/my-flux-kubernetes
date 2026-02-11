@@ -9,7 +9,7 @@ spec:
     spec:
       chart: gatus
       # https://twin.github.io/helm-charts/index.yaml
-      version: '1.4.5'
+      version: '1.5.0'
       sourceRef:
         kind: HelmRepository
         name: gatus
