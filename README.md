@@ -13,15 +13,32 @@ using `kubectl apply -f sealed-secrets-key-backup.yaml` and then restart the `ku
 something like: `kubectl delete pod sealed-secrets-f478c47cc-hcnlg -n kube-system`.  This will delete it and then it
 should come right back up.
 
+Check if flux is ready to go:
+
+```shell
+flux check --pre
+```
+
+Setup flux:
+
 ```shell
 # run this once at the very beginning
 # Github PAT: https://github.com/settings/tokens
-# full "repo" and "admin:org" permissions seemed to be sufficient
+# full "repo" and "admin:repo_hook:read" permissions seemed to be sufficient
 # creates the Github repo if it doesn't exist
 # creates the "flux-system" namespace in our Kubernetes cluster and some pods, see: kubectl get pods -n flux-system
 # https://github.com/firefly2442/my-flux-kubernetes
 export GITHUB_TOKEN=secret
 flux bootstrap github --token-auth --owner=firefly2442 --repository=my-flux-kubernetes --branch=master --path=clusters/home --personal --private=false
+```
+
+To update an existing secret for example after it expires:
+
+```shell
+
+kubectl patch secret flux-system \
+  -n flux-system \
+  -p='{"stringData":{"password":"SECRET"}}'
 ```
 
 Next go into Longhorn and disable the plain worker nodes so no data gets stored there.  Edit the nodes then select disable scheduling
