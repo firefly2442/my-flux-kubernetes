@@ -12,5 +12,5 @@ spec:
   timeout: 2m
   sourceRef:
     kind: GitRepository
-    name: cert-manager-configs
+    name: flux-system
   retryInterval: 1m
