@@ -54,6 +54,20 @@ Describe a specific certificate from above:
 kubectl describe certificate <certificate-name> -n <namespace>
 ```
 
+Look at challenges -> orders -> certs.  This is the order that items
+are queued and resolved.
+
+```shell
+kubectl get challenges -A
+kubectl get orders -A
+kubectl get secrets -A
+```
+
+Challenges and orders are temporary objects that cert-manager creates to complete
+the ACME validation process. Once a cert is successfully issued they get cleaned up
+automatically. The only thing that persists is the Certificate resource
+(showing Ready: True) and the corresponding Secret containing the actual TLS cert/key.
+
 ## Links
 
 * [https://cert-manager.io/](https://cert-manager.io/)
