@@ -37,7 +37,7 @@ The private key for ALL sealed secrets can be exported and backed up using:
 kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > sealed-secrets-key-backup.yaml
 ```
 
-This should be secured and saved in a password manager.
+This should be secured and saved in a password manager.  Do not commit this file to git.
 
 To fully restore this private key upon a full cluster reinstall for example:
 
@@ -50,6 +50,13 @@ cd ~
 kubectl apply -f sealed-secrets-key-backup.yaml
 # then restart to apply
 kubectl rollout restart deployment sealed-secrets -n kube-system
+```
+
+Double check and make sure all the sealed secrets can be properly decrypted.
+If any of them say, "no key could decrypt secret" there's a problem.
+
+```shell
+kubectl get sealedsecrets -A
 ```
 
 ## Links
