@@ -16,6 +16,44 @@ is provided by Cloudflare.
 The API token for Cloudflare is allowed DNS edit permissions on
 only the `rivetcode.com` domain name.
 
+## Debugging
+
+Make sure cert-manager and sealed-secrets are working:
+
+```shell
+kubectl get sealedsecret -n cert-manager
+```
+
+Make sure the API is up and running:
+
+```shell
+cmctl check api
+```
+
+Check the cluster issuer:
+
+```shell
+kubectl describe clusterissuer cloudflare-clusterissuer
+```
+
+Check to make sure all the service secrets are available:
+
+```shell
+kubectl get secrets -n cert-manager
+```
+
+List all certificates the service is managing:
+
+```shell
+kubectl get certificate --all-namespaces
+```
+
+Describe a specific certificate from above:
+
+```shell
+kubectl describe certificate <certificate-name> -n <namespace>
+```
+
 ## Links
 
 * [https://cert-manager.io/](https://cert-manager.io/)

@@ -39,6 +39,19 @@ kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-ke
 
 This should be secured and saved in a password manager.
 
+To fully restore this private key upon a full cluster reinstall for example:
+
+```shell
+# delete the existing secret
+kubectl delete secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key
+# and restore from the file that gets created as a backup by the Ansible job
+# or use the version of the file we stored in password manager
+cd ~
+kubectl apply -f sealed-secrets-key-backup.yaml
+# then restart to apply
+kubectl rollout restart deployment sealed-secrets -n kube-system
+```
+
 ## Links
 
 * [https://github.com/bitnami-labs/sealed-secrets](https://github.com/bitnami-labs/sealed-secrets)
