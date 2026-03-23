@@ -14,7 +14,12 @@ domain names.  DNS registration is provided by WestHost and DNS management
 is provided by Cloudflare.
 
 The API token for Cloudflare is allowed DNS edit permissions on
-only the `rivetcode.com` domain name.
+only the `rivetcode.com` domain name.  If you see API throttling
+on the Cloudflare side, double-check the API token is valid
+and not expired.
+
+DNS propagation can take a few minutes so give it 10-20 minutes
+at a minimum for things to settle down.
 
 ## Debugging
 
