@@ -130,3 +130,8 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: metube
+          url: https://metube.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
