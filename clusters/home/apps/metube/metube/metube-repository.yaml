@@ -8,4 +8,3 @@ spec:
   url: oci://oci.trueforge.org/truecharts/metube
   ref:
     tag: 18.3.0
-    type: helmchart
