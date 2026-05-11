@@ -171,6 +171,7 @@ kubectl exec -it <pod-name> -- /bin/bash
 * [chamburr example](https://github.com/chamburr/homelab)
 * [vehagn example](https://github.com/vehagn/homelab/)
 * [chrede88 example](https://github.com/chrede88/home-ops)
+* [Boemeltrein example](https://github.com/Boemeltrein/TalosCluster)
 * [mischavandenburg example](https://github.com/mischavandenburg/homelab)
 * [Flux Gitops Experiences](https://dvignoles.github.io/blog/post-flux-gitops/)
 * [flux Github](https://github.com/fluxcd/flux2)
