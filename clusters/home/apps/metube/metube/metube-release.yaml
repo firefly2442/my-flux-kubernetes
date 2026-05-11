@@ -5,14 +5,9 @@ metadata:
   namespace: metube
 spec:
   interval: 5m
-  chart:
-    spec:
-      chart: truecharts/metube
-      version: '18.3.0'
-      sourceRef:
-        kind: HelmRepository
-        name: metube
-        namespace: flux-system
-      interval: 5m
+  chartRef:
+    kind: OCIRepository
+    name: metube
+    namespace: flux-system
   # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/metube/values.yaml
   # values:
