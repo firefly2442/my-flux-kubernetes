@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: metube-cert
+  namespace: metube
+spec:
+  secretName: metube-certificate-secret
+  dnsNames:
+    - "metube.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer

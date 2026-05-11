@@ -35,3 +35,4 @@ resources:
   - ./namespaces/namespace-headlamp.yaml
   - ./namespaces/namespace-home-assistant.yaml
   - ./namespaces/namespace-frigate.yaml
+  - ./namespaces/namespace-metube.yaml
