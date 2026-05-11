@@ -94,6 +94,7 @@ pre-commit autoupdate
 * [Ray Cluster Dashboard](https://kuberay.homelab.rivetcode.com)
 * [Home Assistant](https://home-assistant.homelab.rivetcode.com)
 * [Frigate Dashboard](https://frigate.homelab.rivetcode.com)
+* [Metube Dashboard](https://metube.homelab.rivetcode.com)
 
 ## Debugging
 
