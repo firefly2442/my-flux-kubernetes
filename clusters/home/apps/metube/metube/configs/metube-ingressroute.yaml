@@ -23,7 +23,7 @@ spec:
     kind: Rule
     services:
     - name: metube
-      port: 80
+      port: 10216
     middlewares:
       - name: authentik-service-middleware
         namespace: authentik
