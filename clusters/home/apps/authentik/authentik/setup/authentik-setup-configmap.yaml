@@ -101,7 +101,7 @@ data:
 
         # plain proxy apps:
         app_list = ['podinfo', 'longhorn', 'traefik', 'homepage', 'gatus', 'stirlingpdf',
-                    'prometheus', 'datascience', 'volcano', 'photoprism', 'frigate', 'metube']
+                    'prometheus', 'datascience', 'volcano', 'photoprism', 'frigate', 'metube', 'calibre']
         provider_list = []
 
         for appname in app_list:

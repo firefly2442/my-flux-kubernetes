@@ -36,3 +36,4 @@ resources:
   - ./namespaces/namespace-home-assistant.yaml
   - ./namespaces/namespace-frigate.yaml
   - ./namespaces/namespace-metube.yaml
+  - ./namespaces/namespace-calibre.yaml

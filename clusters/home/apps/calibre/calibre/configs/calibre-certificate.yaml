@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: calibre-cert
+  namespace: calibre
+spec:
+  secretName: calibre-certificate-secret
+  dnsNames:
+    - "calibre.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
