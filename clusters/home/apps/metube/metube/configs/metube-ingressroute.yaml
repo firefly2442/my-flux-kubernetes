@@ -9,7 +9,7 @@ metadata:
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Metube
     gethomepage.dev/group: Kubernetes
-    gethomepage.dev/icon: mdi-application
+    gethomepage.dev/icon: mdi-video
     gethomepage.dev/app: metube # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Metube
     #gethomepage.dev/widget.type: "metube"
