@@ -6,3 +6,4 @@ Calibre is a powerful and easy to use e-book manager.
 
 * [https://truecharts.org/charts/stable/calibre/](https://truecharts.org/charts/stable/calibre/)
 * [https://github.com/kovidgoyal/calibre/](https://github.com/kovidgoyal/calibre/)
+* [https://github.com/linuxserver/docker-calibre](https://github.com/linuxserver/docker-calibre)
