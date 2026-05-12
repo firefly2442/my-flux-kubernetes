@@ -22,8 +22,8 @@ spec:
   - match: Host(`calibre.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: calibre-webserver
-      port: 8081
+    - name: calibre
+      port: 8084
     middlewares:
       - name: authentik-service-middleware
         namespace: authentik
