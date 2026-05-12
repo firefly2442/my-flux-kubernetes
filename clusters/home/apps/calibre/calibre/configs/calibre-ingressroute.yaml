@@ -23,7 +23,7 @@ spec:
     kind: Rule
     services:
     - name: calibre
-      port: 10216
+      port: 8084
     middlewares:
       - name: authentik-service-middleware
         namespace: authentik
