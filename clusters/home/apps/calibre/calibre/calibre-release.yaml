@@ -15,4 +15,9 @@ spec:
         namespace: flux-system
       interval: 5m
   # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/calibre/values.yaml
-  # values:
+  values:
+    persistence:
+      config:
+        enabled: true
+        size: 1Gi
+        mountPath: /config
