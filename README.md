@@ -188,3 +188,4 @@ kubectl exec -it <pod-name> -- /bin/bash
 * [awesome self-hosted resources](https://github.com/awesome-selfhosted/awesome-selfhosted)
 * [hmajid2301 example](https://github.com/hmajid2301/k3s-config)
 * [Christian Lempa's Boilerplates](https://github.com/ChristianLempa/boilerplates)
+* [TrueCharts Helm Charts](https://truecharts.org/)
