@@ -6,3 +6,4 @@ Navidrome is an open source web-based music collection server and streamer.
 
 * [https://www.navidrome.org/](https://www.navidrome.org/)
 * [https://github.com/navidrome/navidrome/](https://github.com/navidrome/navidrome/)
+* [https://truecharts.org/charts/stable/navidrome/](https://truecharts.org/charts/stable/navidrome/)
