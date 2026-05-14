@@ -19,7 +19,7 @@ spec:
     env:
       # https://www.navidrome.org/docs/usage/admin/insights/
       # disable telemetry collection
-      ND_ENABLEINSIGHTSCOLLECTOR: false
+      ND_ENABLEINSIGHTSCOLLECTOR: "false"
     persistence:
       data:
         enabled: true
