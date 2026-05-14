@@ -9,7 +9,7 @@ metadata:
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Navidrome
     gethomepage.dev/group: Kubernetes
-    gethomepage.dev/icon: mdi-audio
+    gethomepage.dev/icon: mdi-music
     gethomepage.dev/app: navidrome # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Navidrome
     #gethomepage.dev/widget.type: "navidrome"
