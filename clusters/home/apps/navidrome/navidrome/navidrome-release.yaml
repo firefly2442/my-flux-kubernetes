@@ -16,10 +16,15 @@ spec:
       interval: 5m
   # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/navidrome/values.yaml
   values:
-    env:
-      # https://www.navidrome.org/docs/usage/admin/insights/
-      # disable telemetry collection
-      ND_ENABLEINSIGHTSCOLLECTOR: "false"
+    # https://www.navidrome.org/docs/usage/admin/insights/
+    # disable telemetry collection
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                ND_ENABLEINSIGHTSCOLLECTOR: "false"
     persistence:
       data:
         enabled: true
