@@ -95,6 +95,8 @@ pre-commit autoupdate
 * [Home Assistant](https://home-assistant.homelab.rivetcode.com)
 * [Frigate Dashboard](https://frigate.homelab.rivetcode.com)
 * [Metube Dashboard](https://metube.homelab.rivetcode.com)
+* [Calibre Dashboard](https://calibre.homelab.rivetcode.com)
+* [Navidrome Music](https://navidrome.homelab.rivetcode.com)
 
 ## Debugging
 

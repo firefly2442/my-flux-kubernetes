@@ -140,3 +140,8 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: navidrome
+          url: https://navidrome.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
