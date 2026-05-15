@@ -17,3 +17,9 @@ spec:
   values:
     image:
       tag: "0.28.0"
+    persistence:
+      # If enabled is False, emptyDir will be used, data may be lost after Pod rebuild, it is recommended to use persistent volume
+      enabled: true
+      storageClass: "longhorn"
+      accessMode: ReadWriteOnce
+      size: 1Gi
