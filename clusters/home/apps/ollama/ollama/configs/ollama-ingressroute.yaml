@@ -22,7 +22,7 @@ spec:
   - match: Host(`ollama.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: ollama
+    - name: ollama-api
       port: 11434
     middlewares:
       - name: authentik-service-middleware
