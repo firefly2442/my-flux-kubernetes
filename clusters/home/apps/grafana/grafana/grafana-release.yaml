@@ -26,6 +26,16 @@ spec:
           type: prometheus
           # <service-name>.<namespace>.svc.cluster.local
           url: http://prometheus-server.prometheus.svc.cluster.local
+        - name: Loki
+          type: loki
+          access: proxy
+          orgId: 1
+          # <service-name>.<namespace>.svc.cluster.local
+          url: http://loki-gateway.loki.svc.cluster.local:80
+          basicAuth: false
+          isDefault: false
+          version: 1
+          editable: false
     # Provision grafana-dashboards-kubernetes
     dashboardProviders:
       dashboardproviders.yaml:
