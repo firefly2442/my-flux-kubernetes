@@ -8,7 +8,7 @@ metadata:
     gethomepage.dev/href: "https://kuberay.homelab.rivetcode.com"
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Ray
-    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/group: Programming
     gethomepage.dev/icon: mdi-application
     gethomepage.dev/app: ray # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Ray
