@@ -98,6 +98,7 @@ pre-commit autoupdate
 * [Calibre Dashboard](https://calibre.homelab.rivetcode.com)
 * [Navidrome Music](https://navidrome.homelab.rivetcode.com)
 * [Ollama](https://ollama.homelab.rivetcode.com)
+* [Open Web-UI](https://openwebui.homelab.rivetcode.com)
 
 ## Debugging
 

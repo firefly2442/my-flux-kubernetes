@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: openwebui
+  namespace: openwebui
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: openwebui
+      version: '14.5.0'
+      sourceRef:
+        kind: HelmRepository
+        name: openwebui
+        namespace: flux-system
+      interval: 5m
+  # https://github.com/open-webui/helm-charts/blob/main/charts/open-webui/values.yaml
+  values:
+    ollama:
+      enabled: false
+    ollamaUrls: ["ollama.cluster.local:11434"]
