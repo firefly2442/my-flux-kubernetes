@@ -18,5 +18,5 @@ spec:
   values:
     ollama:
       enabled: false
-    env:
-      OLLAMA_BASE_URL: "http://ollama-api.ollama.svc.cluster.local:11434"
+    ollamaUrls:
+      - "http://ollama-api.ollama.svc.cluster.local:11434"
