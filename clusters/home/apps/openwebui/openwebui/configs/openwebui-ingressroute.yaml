@@ -22,8 +22,8 @@ spec:
   - match: Host(`openwebui.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: openwebui
-      port: 6379
+    - name: openwebui-open-webui
+      port: 80
     middlewares:
       - name: authentik-service-middleware
         namespace: authentik
