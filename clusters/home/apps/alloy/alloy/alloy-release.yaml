@@ -29,7 +29,32 @@ spec:
           }
 
           loki.source.kubernetes "pods" {
-            targets    = discovery.kubernetes.pods.targets
+            targets = discovery.kubernetes.pods.targets
+
+            forward_to = [loki.process.filter.receiver]
+          }
+
+          loki.process "filter" {
+
+            # Drop kube-system completely
+            stage.match {
+              selector = "{namespace=\"kube-system\"}"
+              action   = "drop"
+            }
+
+            # Drop noisy pause/coredns containers
+            stage.match {
+              selector = "{container=~\"pause|POD|coredns\"}"
+              action   = "drop"
+            }
+
+            # Drop health checks
+            stage.regex {
+              expression     = ".*(GET /health|/ready|/live).*"
+              source         = "line"
+              action         = "drop"
+            }
+
             forward_to = [loki.write.default.receiver]
           }
 
