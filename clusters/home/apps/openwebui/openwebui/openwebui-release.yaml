@@ -18,4 +18,4 @@ spec:
   values:
     ollama:
       enabled: false
-    ollamaUrls: ["ollama.cluster.local:11434"]
+    ollamaUrls: ["ollama-api.ollama.svc.cluster.local:11434"]
