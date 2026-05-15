@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: memos
+      chart: .
       sourceRef:
         kind: GitRepository
         name: memos
