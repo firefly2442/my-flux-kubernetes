@@ -24,5 +24,8 @@ spec:
     services:
     - name: ollama-api
       port: 11434
+      serversTransport: ollama-transport
+    middlewares:
+    - name: ollama-nobuffer
   tls:
     secretName: ollama-certificate-secret
