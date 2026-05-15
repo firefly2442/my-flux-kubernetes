@@ -155,3 +155,8 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: memos
+          url: https://memos.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

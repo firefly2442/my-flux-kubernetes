@@ -40,3 +40,4 @@ resources:
   - ./namespaces/namespace-navidrome.yaml
   - ./namespaces/namespace-ollama.yaml
   - ./namespaces/namespace-openwebui.yaml
+  - ./namespaces/namespace-memos.yaml

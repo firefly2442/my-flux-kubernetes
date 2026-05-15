@@ -99,6 +99,7 @@ pre-commit autoupdate
 * [Navidrome Music](https://navidrome.homelab.rivetcode.com)
 * [Ollama](https://ollama.homelab.rivetcode.com)
 * [Open Web-UI](https://openwebui.homelab.rivetcode.com)
+* [Memos](https://memos.homelab.rivetcode.com)
 
 ## Debugging
 
