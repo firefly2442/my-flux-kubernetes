@@ -8,7 +8,7 @@ metadata:
     gethomepage.dev/href: "https://home-assistant.homelab.rivetcode.com"
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: home-assistant
-    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/group: Smart Home
     gethomepage.dev/icon: home-assistant.png
     gethomepage.dev/app: home-assistant # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: home-assistant

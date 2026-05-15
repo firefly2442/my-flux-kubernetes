@@ -8,7 +8,7 @@ metadata:
     gethomepage.dev/href: "https://frigate.homelab.rivetcode.com"
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Frigate
-    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/group: Smart Home
     gethomepage.dev/icon: mdi-application
     gethomepage.dev/app: frigate # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Frigate

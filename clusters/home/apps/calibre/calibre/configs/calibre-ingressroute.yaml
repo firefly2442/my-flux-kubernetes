@@ -8,7 +8,7 @@ metadata:
     gethomepage.dev/href: "https://calibre.homelab.rivetcode.com"
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Calibre
-    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/group: Media
     gethomepage.dev/icon: mdi-book
     gethomepage.dev/app: calibre # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Calibre

@@ -8,7 +8,7 @@ metadata:
     gethomepage.dev/href: "https://photoprism.homelab.rivetcode.com"
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Photoprism
-    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/group: Media
     gethomepage.dev/icon: mdi-camera
     gethomepage.dev/app: photoprism # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Photoprism

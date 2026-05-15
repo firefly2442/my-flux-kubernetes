@@ -8,7 +8,7 @@ metadata:
     gethomepage.dev/href: "https://recipes.homelab.rivetcode.com"
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Recipes
-    gethomepage.dev/group: Kubernetes
+    gethomepage.dev/group: Productivity
     gethomepage.dev/icon: mdi-chef-hat
     gethomepage.dev/app: recipes # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Recipes
