@@ -29,7 +29,6 @@ spec:
         - name: Loki
           type: loki
           access: proxy
-          orgId: 1
           # <service-name>.<namespace>.svc.cluster.local
           url: http://loki-gateway.loki.svc.cluster.local:80
           basicAuth: false
