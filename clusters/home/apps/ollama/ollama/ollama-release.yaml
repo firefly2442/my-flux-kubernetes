@@ -16,6 +16,9 @@ spec:
       interval: 5m
   # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/ollama/values.yaml
   values:
+    service:
+      main:
+        targetSelector: main
     workload:
       ui:
         # use our separate open web-ui install
