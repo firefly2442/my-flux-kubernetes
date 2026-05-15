@@ -16,9 +16,10 @@ spec:
       interval: 5m
   # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/ollama/values.yaml
   values:
-    ui:
-      # use our separate open web-ui install
-      enabled: false
+    workload:
+      ui:
+        # use our separate open web-ui install
+        enabled: false
     persistence:
       config:
         enabled: true
