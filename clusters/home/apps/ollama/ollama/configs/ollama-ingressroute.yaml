@@ -24,8 +24,5 @@ spec:
     services:
     - name: ollama-api
       port: 11434
-    middlewares:
-      - name: authentik-service-middleware
-        namespace: authentik
   tls:
     secretName: ollama-certificate-secret
