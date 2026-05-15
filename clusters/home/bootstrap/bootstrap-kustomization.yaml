@@ -42,3 +42,4 @@ resources:
   - ./namespaces/namespace-openwebui.yaml
   - ./namespaces/namespace-memos.yaml
   - ./namespaces/namespace-alloy.yaml
+  - ./namespaces/namespace-loki.yaml
