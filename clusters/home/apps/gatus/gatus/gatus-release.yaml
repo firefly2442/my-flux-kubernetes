@@ -145,3 +145,8 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: ollama
+          url: https://ollama.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

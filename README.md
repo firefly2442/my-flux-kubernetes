@@ -97,6 +97,7 @@ pre-commit autoupdate
 * [Metube Dashboard](https://metube.homelab.rivetcode.com)
 * [Calibre Dashboard](https://calibre.homelab.rivetcode.com)
 * [Navidrome Music](https://navidrome.homelab.rivetcode.com)
+* [Ollama](https://ollama.homelab.rivetcode.com)
 
 ## Debugging
 

@@ -38,3 +38,4 @@ resources:
   - ./namespaces/namespace-metube.yaml
   - ./namespaces/namespace-calibre.yaml
   - ./namespaces/namespace-navidrome.yaml
+  - ./namespaces/namespace-ollama.yaml
