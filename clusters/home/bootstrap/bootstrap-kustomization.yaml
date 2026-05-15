@@ -41,3 +41,4 @@ resources:
   - ./namespaces/namespace-ollama.yaml
   - ./namespaces/namespace-openwebui.yaml
   - ./namespaces/namespace-memos.yaml
+  - ./namespaces/namespace-alloy.yaml
