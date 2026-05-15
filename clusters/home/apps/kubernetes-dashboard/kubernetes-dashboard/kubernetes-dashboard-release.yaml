@@ -8,21 +8,11 @@ spec:
   chart:
     spec:
       chart: kubernetes-dashboard
-      version: '7.14.0'
+      version: 18.4.0
       sourceRef:
         kind: HelmRepository
         name: kubernetes-dashboard
-        namespace: kubernetes-dashboard
+        namespace: flux-system
       interval: 5m
-  values:
-    # see stock version
-    # https://github.com/kubernetes/dashboard/blob/master/charts/kubernetes-dashboard/values.yaml
-    web:
-      service:
-        type: ClusterIP
-      # containers:
-      #   ports:
-      #     - name: web
-      #       containerPort: 80
-    metrics-server:
-      enabled: true
+  # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/kubernetes-dashboard/values.yaml
+  # values:
