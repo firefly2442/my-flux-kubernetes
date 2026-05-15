@@ -15,4 +15,26 @@ spec:
         namespace: flux-system
       interval: 5m
   # https://github.com/grafana/alloy/blob/main/operations/helm/charts/alloy/values.yaml
-  # values:
+  values:
+    alloy:
+      configMap:
+        create: true
+        content: |
+          logging {
+            level = "info"
+          }
+
+          discovery.kubernetes "pods" {
+            role = "pod"
+          }
+
+          loki.source.kubernetes "pods" {
+            targets    = discovery.kubernetes.pods.targets
+            forward_to = [loki.write.default.receiver]
+          }
+
+          loki.write "default" {
+            endpoint {
+              url = "http://loki-gateway.loki.svc.cluster.local/loki/api/v1/push"
+            }
+          }
