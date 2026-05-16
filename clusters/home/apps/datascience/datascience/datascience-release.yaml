@@ -31,5 +31,7 @@ spec:
         guarantee: 1G
       storage:
         capacity: 20Gi
+        dynamic:
+          storageClass: "longhorn-ha-2"
       extraEnv:
         TZ: "America/Chicago"
