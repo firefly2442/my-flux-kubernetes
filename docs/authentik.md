@@ -34,6 +34,17 @@ will be at the old version and not match the new updated deployment.
 Helm does not manage the outpost since that's created through our
 setup automation script.
 
+The Python script job can be forced via:
+
+```shell
+# delete the job
+kubectl delete job authentik-setup-job -n authentik
+# reconcile with flux
+flux reconcile kustomization authentik-setup -n flux-system
+# check if the job now exists
+kubectl get jobs -n authentik
+```
+
 ## Links
 
 * [https://goauthentik.io/](https://goauthentik.io/)
