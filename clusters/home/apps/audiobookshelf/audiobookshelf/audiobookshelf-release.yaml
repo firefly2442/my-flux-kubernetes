@@ -20,9 +20,12 @@ spec:
       config:
         enabled: true
         size: 1Gi
+        storageClass: "longhorn-ha-2"
       audiobooks:
         enabled: true
         size: 10Gi
+        storageClass: "longhorn-ha-2"
       metadata:
         enabled: true
         size: 5Gi
+        storageClass: "longhorn-ha-2"

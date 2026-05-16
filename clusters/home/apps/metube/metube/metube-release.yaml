@@ -19,7 +19,9 @@ spec:
     persistence:
       downloads:
         enabled: true
+        storageClass: "longhorn-ha-2"
         size: 20Gi
       config:
         enabled: true
+        storageClass: "longhorn-ha-2"
         size: 1Gi

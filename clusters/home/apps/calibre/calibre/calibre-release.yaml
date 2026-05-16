@@ -20,4 +20,4 @@ spec:
       config:
         enabled: true
         size: 1Gi
-        mountPath: /config
+        storageClass: "longhorn-ha-2"

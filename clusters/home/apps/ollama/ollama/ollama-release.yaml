@@ -34,6 +34,7 @@ spec:
       config:
         enabled: true
         size: 30Gi
+        storageClass: "longhorn-ha-2"
       # not needed since open web-ui from this Helm chart is disabled
       data:
         enabled: false
