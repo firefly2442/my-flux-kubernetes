@@ -20,6 +20,6 @@ spec:
     persistence:
       # If enabled is False, emptyDir will be used, data may be lost after Pod rebuild, it is recommended to use persistent volume
       enabled: true
-      storageClass: "longhorn"
+      storageClass: "longhorn-ha-2"
       accessMode: ReadWriteOnce
       size: 1Gi
