@@ -29,35 +29,7 @@ spec:
           }
 
           loki.source.kubernetes "pods" {
-            targets = discovery.kubernetes.pods.targets
-
-            forward_to = [loki.process.filter.receiver]
-          }
-
-          loki.process "filter" {
-
-            stage.drop {
-              source     = "namespace"
-              expression = "kube-system"
-            }
-
-            stage.drop {
-              source     = "container"
-              expression = "pause|POD|coredns"
-            }
-
-            stage.drop {
-              expression = "GET /health"
-            }
-
-            stage.drop {
-              expression = "/ready"
-            }
-
-            stage.drop {
-              expression = "/live"
-            }
-
+            targets    = discovery.kubernetes.pods.targets
             forward_to = [loki.write.default.receiver]
           }
 
