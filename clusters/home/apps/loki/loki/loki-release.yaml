@@ -55,6 +55,8 @@ spec:
     deploymentMode: Monolithic
     singleBinary:
       replicas: 1
+      persistence:
+        storageClass: "longhorn-ha-2"
       resources:
         limits:
           cpu: 3
