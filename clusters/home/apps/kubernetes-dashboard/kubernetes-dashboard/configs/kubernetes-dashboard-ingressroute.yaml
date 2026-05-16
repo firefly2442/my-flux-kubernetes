@@ -23,7 +23,7 @@ spec:
     kind: Rule
     services:
     - name: kubernetes-dashboard
-      port: 10216
+      port: 80
     middlewares:
       - name: authentik-service-middleware
         namespace: authentik
