@@ -10,7 +10,7 @@ spec:
       chart: spark-operator
       # https://kubeflow.github.io/spark-operator/index.yaml
       # https://github.com/kubeflow/spark-operator
-      version: '2.2.1'
+      version: '2.5.0'
       sourceRef:
         kind: HelmRepository
         name: spark-kubernetes-operator
