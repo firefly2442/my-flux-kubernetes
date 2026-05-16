@@ -23,7 +23,7 @@ spec:
     kind: Rule
     services:
     - name: audiobookshelf
-      port: 10216
+      port: 10223
     middlewares:
       - name: authentik-service-middleware
         namespace: authentik
