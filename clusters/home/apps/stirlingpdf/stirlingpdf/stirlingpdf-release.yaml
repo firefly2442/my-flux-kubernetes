@@ -29,3 +29,7 @@ spec:
     serviceMonitor:
       # for prometheus metrics
       enabled: true
+    envs:
+      # disable login
+      - name: SECURITY_ENABLELOGIN
+        value: "false"
