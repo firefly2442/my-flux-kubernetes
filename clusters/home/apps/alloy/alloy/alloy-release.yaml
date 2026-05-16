@@ -36,29 +36,26 @@ spec:
 
           loki.process "filter" {
 
-            stage.match {
-              selector = "{namespace=\"kube-system\"}"
-              action   = "drop"
+            stage.drop {
+              source     = "namespace"
+              expression = "kube-system"
             }
 
-            stage.match {
-              selector = "{container=~\"pause|POD|coredns\"}"
-              action   = "drop"
+            stage.drop {
+              source     = "container"
+              expression = "pause|POD|coredns"
             }
 
-            stage.match {
-              selector = "{} |= \"GET /health\""
-              action   = "drop"
+            stage.drop {
+              expression = "GET /health"
             }
 
-            stage.match {
-              selector = "{} |= \"/ready\""
-              action   = "drop"
+            stage.drop {
+              expression = "/ready"
             }
 
-            stage.match {
-              selector = "{} |= \"/live\""
-              action   = "drop"
+            stage.drop {
+              expression = "/live"
             }
 
             forward_to = [loki.write.default.receiver]
