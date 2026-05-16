@@ -36,19 +36,16 @@ spec:
 
           loki.process "filter" {
 
-            # Drop kube-system completely
             stage.match {
               selector = "{namespace=\"kube-system\"}"
               action   = "drop"
             }
 
-            # Drop noisy pause/coredns containers
             stage.match {
               selector = "{container=~\"pause|POD|coredns\"}"
               action   = "drop"
             }
 
-            # Drop health checks
             stage.regex {
               expression     = ".*(GET /health|/ready|/live).*"
               source         = "line"
