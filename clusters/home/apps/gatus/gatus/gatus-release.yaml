@@ -56,123 +56,243 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: gitea
+        - name: gitea-external
           url: https://gitea.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        # - name: headlamp
+        - name: gitea-internal
+          url: http://gitea-http.gitea.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        # - name: headlamp-external
         #   url: https://headlamp.homelab.rivetcode.com
         #   interval: 60s
         #   conditions:
         #     - "[STATUS] == 200"
-        - name: kubernetes-dashboard
+        # - name: headlamp-internal
+        #   url: http://headlamp.headlamp.svc.cluster.local
+        #   interval: 60s
+        #   conditions:
+        #     - "[STATUS] == 200"
+        - name: kubernetes-dashboard-external
           url: https://kubernetes-dashboard.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        # - name: defectdojo
+        - name: kubernetes-dashboard-internal
+          url: http://kubernetes-dashboard.kubernetes-dashboard.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        # - name: defectdojo-external
         #   url: https://defectdojo.homelab.rivetcode.com
         #   interval: 60s
         #   conditions:
         #     - "[STATUS] == 200"
-        - name: rabbitmq
+        # - name: defectdojo-internal
+        #   url: http://defectdojo.defectdojo.svc.cluster.local
+        #   interval: 60s
+        #   conditions:
+        #     - "[STATUS] == 200"
+        - name: rabbitmq-external
           url: https://rabbitmq.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: prometheus
+        - name: rabbitmq-internal
+          url: http://rabbitmq.rabbitmq.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: prometheus-external
           url: https://prometheus.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: traefik
+        - name: prometheus-internal
+          url: http://prometheus-server.prometheus.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: traefik-external
           url: https://traefik.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: stirlingpdf
+        - name: traefik-internal
+          url: http://traefik.kube-system.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: stirlingpdf-extnerla
           url: https://stirlingpdf.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: recipes
+        - name: stirlingpdf-internal
+          url: http://stirlingpdf-stirling-pdf-chart.stirlingpdf.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: recipes-external
           url: https://recipes.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: boardgames
+        - name: recipes-internal
+          url: http://my-recipes-cooklang.recipes.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: boardgames-external
           url: https://boardgames.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: datascience
+        - name: boardgames-internal
+          url: http://bgg-inventory-nextjs.boardgames.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: datascience-external
           url: https://datascience.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: volcano
+        - name: datascience-internal
+          url: http://hub.datascience.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: volcano-external
           url: https://volcano.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: photoprism
+        - name: volcano-internal
+          url: http://volcano-dashboard.volcano-system.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: photoprism-external
           url: https://photoprism.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: vertsh
+        - name: photoprism-internal
+          url: http://photoprism.photoprism.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: vertsh-external
           url: https://vertsh.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: excalidraw
+        - name: vertsh-internal
+          url: http://vertsh.vertsh.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: excalidraw-external
           url: https://excalidraw.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: ray-dashboard
+        - name: excalidraw-internal
+          url: http://excalidraw.excalidraw.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: ray-dashboard-external
           url: https://kuberay.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: home-assistant
+        - name: ray-dashboard-internal
+          url: http://kuberay-dashboard.kuberay-operator.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: home-assistant-external
           url: https://home-assistant.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: frigate
+        - name: home-assistant-internal
+          url: http://home-assistant.home-assistant.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: frigate-external
           url: https://frigate.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: metube
+        - name: frigate-internal
+          url: http://frigate.frigate.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: metube-external
           url: https://metube.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: calibre
+        - name: metube-internal
+          url: http://metube.metube.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: calibre-external
           url: https://calibre.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: navidrome
+        - name: calibre-internal
+          url: http://calibre.calibre.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: navidrome-external
           url: https://navidrome.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: ollama
+        - name: navidrome-internal
+          url: http://navidrome.navidrome.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: ollama-external
           url: https://ollama.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: openwebui
+        - name: ollama-internal
+          url: http://ollama-api.ollama.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: openwebui-external
           url: https://openwebui.homelab.rivetcode.com
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: memos
+        - name: openwebui-internal
+          url: http://openwebui-open-webui.openwebui.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: memos-external
           url: https://memos.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: memos-internal
+          url: http://memos.memos.svc.cluster.local
           interval: 60s
           conditions:
             - "[STATUS] == 200"
