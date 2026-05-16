@@ -73,7 +73,7 @@ pre-commit autoupdate
 * [Homepage Portal](https://homepage.homelab.rivetcode.com)
 * [Traefik Dashboard](https://traefik.homelab.rivetcode.com)
 * [Authentik](https://authentik.homelab.rivetcode.com)
-* [Headlamp Dashboard](https://headlamp.homelab.rivetcode.com)
+* [Headlamp Dashboard](https://headlamp.homelab.rivetcode.com) - disabled
 * [Gitea](https://gitea.homelab.rivetcode.com)
 * [Podinfo](https://podinfo.homelab.rivetcode.com)
 * [Longhorn Storage](https://longhorn.homelab.rivetcode.com)
