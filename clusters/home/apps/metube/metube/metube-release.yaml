@@ -20,8 +20,6 @@ spec:
       downloads:
         enabled: true
         size: 20Gi
-        mountPath: /downloads
       config:
         enabled: true
         size: 1Gi
-        mountPath: /config
