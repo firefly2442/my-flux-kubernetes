@@ -121,11 +121,12 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: traefik-internal
-          url: http://traefik.kube-system.svc.cluster.local
-          interval: 60s
-          conditions:
-            - "[STATUS] == 200"
+        # this gets routed to the internal API so not sure we can do checks...
+        # - name: traefik-internal
+        #   url: http://traefik.kube-system.svc.cluster.local
+        #   interval: 60s
+        #   conditions:
+        #     - "[STATUS] == 200"
         - name: stirlingpdf-external
           url: https://stirlingpdf.homelab.rivetcode.com
           interval: 60s
