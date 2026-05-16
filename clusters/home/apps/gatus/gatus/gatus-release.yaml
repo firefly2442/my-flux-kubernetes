@@ -45,11 +45,11 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: headlamp
-          url: https://headlamp.homelab.rivetcode.com
-          interval: 60s
-          conditions:
-            - "[STATUS] == 200"
+        # - name: headlamp
+        #   url: https://headlamp.homelab.rivetcode.com
+        #   interval: 60s
+        #   conditions:
+        #     - "[STATUS] == 200"
         - name: kubernetes-dashboard
           url: https://kubernetes-dashboard.homelab.rivetcode.com
           interval: 60s
