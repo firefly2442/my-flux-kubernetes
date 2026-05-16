@@ -43,3 +43,4 @@ resources:
   - ./namespaces/namespace-memos.yaml
   - ./namespaces/namespace-alloy.yaml
   - ./namespaces/namespace-loki.yaml
+  - ./namespaces/namespace-audiobookshelf.yaml

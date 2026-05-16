@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: audiobookshelf-cert
+  namespace: audiobookshelf
+spec:
+  secretName: audiobookshelf-certificate-secret
+  dnsNames:
+    - "audiobookshelf.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
