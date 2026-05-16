@@ -47,17 +47,17 @@ spec:
             }
 
             stage.match {
-              selector = "{} |= `GET /health`"
+              selector = "{} |= \"GET /health\""
               action   = "drop"
             }
 
             stage.match {
-              selector = "{} |= `/ready`"
+              selector = "{} |= \"/ready\""
               action   = "drop"
             }
 
             stage.match {
-              selector = "{} |= `/live`"
+              selector = "{} |= \"/live\""
               action   = "drop"
             }
 
