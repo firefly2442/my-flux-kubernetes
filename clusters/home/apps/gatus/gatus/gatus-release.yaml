@@ -126,7 +126,7 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: stirlingpdf-extnerla
+        - name: stirlingpdf-external
           url: https://stirlingpdf.homelab.rivetcode.com
           interval: 60s
           conditions:
@@ -152,7 +152,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: boardgames-internal
-          url: http://bgg-inventory-nextjs.boardgames.svc.cluster.local
+          url: http://bgg-inventory-nextjs.boardgames.svc.cluster.local:3000
           interval: 60s
           conditions:
             - "[STATUS] == 200"
