@@ -25,138 +25,154 @@ spec:
     # https://github.com/TwiN/gatus#configuration
     config:
       endpoints:
-        - name: podinfo
+        # <service-name>.<namespace>.svc.cluster.local
+        - name: podinfo-external
           url: https://podinfo.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
-        - name: authentik
+            - "[STATUS] == 200 || [STATUS] == 302"
+        - name: podinfo-internal
+          url: http://podinfo.podinfo.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200 || [STATUS] == 302"
+        - name: authentik-external
           url: https://authentik.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
-        - name: longhorn
+            - "[STATUS] == 200 || [STATUS] == 302"
+        - name: authentik-internal
+          url: http://authentik-server.authentik.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200 || [STATUS] == 302"
+        - name: longhorn-external
           url: https://longhorn.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
+        - name: longhorn-internal
+          url: http://longhorn-frontend.longhorn-system.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: gitea
           url: https://gitea.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         # - name: headlamp
         #   url: https://headlamp.homelab.rivetcode.com
         #   interval: 60s
         #   conditions:
-        #     - "[STATUS] == 200"
+        #     - "[STATUS] == 200 || [STATUS] == 302"
         - name: kubernetes-dashboard
           url: https://kubernetes-dashboard.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         # - name: defectdojo
         #   url: https://defectdojo.homelab.rivetcode.com
         #   interval: 60s
         #   conditions:
-        #     - "[STATUS] == 200"
+        #     - "[STATUS] == 200 || [STATUS] == 302"
         - name: rabbitmq
           url: https://rabbitmq.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: prometheus
           url: https://prometheus.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: traefik
           url: https://traefik.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: stirlingpdf
           url: https://stirlingpdf.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: recipes
           url: https://recipes.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: boardgames
           url: https://boardgames.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: datascience
           url: https://datascience.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: volcano
           url: https://volcano.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: photoprism
           url: https://photoprism.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: vertsh
           url: https://vertsh.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: excalidraw
           url: https://excalidraw.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: ray-dashboard
           url: https://kuberay.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: home-assistant
           url: https://home-assistant.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: frigate
           url: https://frigate.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: metube
           url: https://metube.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: calibre
           url: https://calibre.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: navidrome
           url: https://navidrome.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: ollama
           url: https://ollama.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: openwebui
           url: https://openwebui.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
         - name: memos
           url: https://memos.homelab.rivetcode.com
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[STATUS] == 200 || [STATUS] == 302"
