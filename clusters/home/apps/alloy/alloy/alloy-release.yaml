@@ -46,10 +46,19 @@ spec:
               action   = "drop"
             }
 
-            stage.regex {
-              expression     = ".*(GET /health|/ready|/live).*"
-              source         = "line"
-              action         = "drop"
+            stage.match {
+              selector = "{} |= `GET /health`"
+              action   = "drop"
+            }
+
+            stage.match {
+              selector = "{} |= `/ready`"
+              action   = "drop"
+            }
+
+            stage.match {
+              selector = "{} |= `/live`"
+              action   = "drop"
             }
 
             forward_to = [loki.write.default.receiver]
