@@ -62,7 +62,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: gitea-internal
-          url: http://gitea-http.gitea.svc.cluster.local
+          url: http://gitea-http.gitea.svc.cluster.local:3000
           interval: 60s
           conditions:
             - "[STATUS] == 200"
@@ -102,7 +102,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: rabbitmq-internal
-          url: http://rabbitmq.rabbitmq.svc.cluster.local
+          url: http://rabbitmq.rabbitmq.svc.cluster.local:15672
           interval: 60s
           conditions:
             - "[STATUS] == 200"
@@ -132,7 +132,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: stirlingpdf-internal
-          url: http://stirlingpdf-stirling-pdf-chart.stirlingpdf.svc.cluster.local
+          url: http://stirlingpdf-stirling-pdf-chart.stirlingpdf.svc.cluster.local:8080
           interval: 60s
           conditions:
             - "[STATUS] == 200"
@@ -142,7 +142,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: recipes-internal
-          url: http://my-recipes-cooklang.recipes.svc.cluster.local
+          url: http://my-recipes-cooklang.recipes.svc.cluster.local:9080
           interval: 60s
           conditions:
             - "[STATUS] == 200"
@@ -162,7 +162,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: datascience-internal
-          url: http://hub.datascience.svc.cluster.local
+          url: http://proxy-public.datascience.svc.cluster.local
           interval: 60s
           conditions:
             - "[STATUS] == 200"
@@ -182,7 +182,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: photoprism-internal
-          url: http://photoprism.photoprism.svc.cluster.local
+          url: http://photoprism.photoprism.svc.cluster.local:2342
           interval: 60s
           conditions:
             - "[STATUS] == 200"
@@ -222,7 +222,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: home-assistant-internal
-          url: http://home-assistant.home-assistant.svc.cluster.local
+          url: http://home-assistant.home-assistant.svc.cluster.local:8080
           interval: 60s
           conditions:
             - "[STATUS] == 200"
@@ -232,7 +232,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: frigate-internal
-          url: http://frigate.frigate.svc.cluster.local
+          url: http://frigate.frigate.svc.cluster.local:5000
           interval: 60s
           conditions:
             - "[STATUS] == 200"
@@ -242,7 +242,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: metube-internal
-          url: http://metube.metube.svc.cluster.local
+          url: http://metube.metube.svc.cluster.local:10216
           interval: 60s
           conditions:
             - "[STATUS] == 200"
@@ -252,7 +252,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: calibre-internal
-          url: http://calibre.calibre.svc.cluster.local
+          url: http://calibre.calibre.svc.cluster.local:8084
           interval: 60s
           conditions:
             - "[STATUS] == 200"
@@ -262,7 +262,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: navidrome-internal
-          url: http://navidrome.navidrome.svc.cluster.local
+          url: http://navidrome.navidrome.svc.cluster.local:4533
           interval: 60s
           conditions:
             - "[STATUS] == 200"
@@ -272,7 +272,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: ollama-internal
-          url: http://ollama-api.ollama.svc.cluster.local
+          url: http://ollama-api.ollama.svc.cluster.local:11434
           interval: 60s
           conditions:
             - "[STATUS] == 200"
@@ -292,7 +292,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: memos-internal
-          url: http://memos.memos.svc.cluster.local
+          url: http://memos.memos.svc.cluster.local:5230
           interval: 60s
           conditions:
             - "[STATUS] == 200"
