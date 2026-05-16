@@ -7,11 +7,11 @@ metadata:
     cert-manager.io/cluster-issuer: cloudflare-clusterissuer
     gethomepage.dev/href: "https://home-assistant.homelab.rivetcode.com"
     gethomepage.dev/enabled: "true"
-    gethomepage.dev/description: home-assistant
+    gethomepage.dev/description: Home Assistant
     gethomepage.dev/group: Smart Home
     gethomepage.dev/icon: home-assistant.png
     gethomepage.dev/app: home-assistant # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
-    gethomepage.dev/name: home-assistant
+    gethomepage.dev/name: Home Assistant
     #gethomepage.dev/widget.type: "home-assistant"
     # use .local domain name so we don't get blocked by authentik
     #gethomepage.dev/widget.url: "http://home-assistant-http.home-assistant.svc.cluster.local:3000"
