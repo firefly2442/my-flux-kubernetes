@@ -25,7 +25,7 @@ spec:
       config:
         # Enables persistence for the config directory
         enabled: true
-        storageClass: "longhorn"
+        storageClass: "longhorn-ha-2"
         size: 300Mi
       media:
         # Enables persistence for the media directory
