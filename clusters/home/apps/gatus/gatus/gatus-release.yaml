@@ -297,3 +297,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: audiobookshelf-external
+          url: https://audiobookshelf.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: audiobookshelf-internal
+          url: http://audiobookshelf.audiobookshelf.svc.cluster.local:10223
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
