@@ -212,7 +212,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: ray-dashboard-internal
-          url: http://kuberay-dashboard.kuberay-operator.svc.cluster.local
+          url: http://kuberay-dashboard.kuberay-operator.svc.cluster.local:8265
           interval: 60s
           conditions:
             - "[STATUS] == 200"
