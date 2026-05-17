@@ -26,6 +26,32 @@ spec:
         type: ClusterIP
     defaultSettings:
       createDefaultDiskLabeledNodes: false
+      recurringSuccessfulJobsHistoryLimit: 3
+      recurringFailedJobsHistoryLimit: 3
+    recurringJobs:
+      enabled: true
+      jobs:
+        - name: hourly-snapshot
+          task: snapshot
+          cron: "0 * * * *"
+          retain: 24
+          concurrency: 1
+          labels:
+            backup: enabled
+        - name: daily-backup
+          task: backup
+          cron: "0 3 * * *"
+          retain: 7
+          concurrency: 1
+          labels:
+            backup: enabled
+        - name: weekly-backup
+          task: backup
+          cron: "0 4 * * 0"
+          retain: 4
+          concurrency: 1
+          labels:
+            backup: enabled
     # https://longhorn.io/docs/1.11.2/snapshots-and-backups/backup-and-restore/set-backup-target/
     defaultBackupStore:
       backupTarget: "s3://longhorn@seaweedfs/"
