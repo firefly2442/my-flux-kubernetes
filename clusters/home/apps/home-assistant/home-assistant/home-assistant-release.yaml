@@ -23,7 +23,7 @@ spec:
       enabled: true
       accessMode: ReadWriteOnce
       size: 5Gi
-      storageClass: longhorn
+      storageClass: longhorn-ha-2
     ingress:
       enabled: false   # Traditional ingress
       external: true # External ingress
