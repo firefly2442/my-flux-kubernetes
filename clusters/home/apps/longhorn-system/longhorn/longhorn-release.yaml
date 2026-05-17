@@ -26,6 +26,11 @@ spec:
         type: ClusterIP
     defaultSettings:
       createDefaultDiskLabeledNodes: false
+    # https://longhorn.io/docs/1.11.2/snapshots-and-backups/backup-and-restore/set-backup-target/
+    defaultBackupStore:
+      backupTarget: "s3://longhorn@seaweedfs/"
+      # Name of the Kubernetes secret associated with the default backup target.
+      backupTargetCredentialSecret: "longhorn-backup-s3-secret"
     persistence:
       defaultClass: true
       defaultFsType: ext4
