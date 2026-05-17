@@ -21,6 +21,9 @@ spec:
     persistence:
       enabled: true
       storageClass: "longhorn-ha-2"
+      labels:
+        recurring-job.longhorn.io/source: enabled
+        recurring-job-group.longhorn.io/backup: enabled
     gitea:
       metrics:
         enabled: true
@@ -51,28 +54,49 @@ spec:
       persistence:
         enabled: true
         storageClass: "longhorn-ha-2"
+        labels:
+          recurring-job.longhorn.io/source: enabled
+          recurring-job-group.longhorn.io/backup: enabled
     postgresql:
       primary:
         persistence:
           enabled: true
           storageClass: "longhorn-ha-2"
+          labels:
+            recurring-job.longhorn.io/source: enabled
+            recurring-job-group.longhorn.io/backup: enabled
       readReplicas:
         persistence:
           enabled: true
           storageClass: "longhorn-ha-2"
+          labels:
+            recurring-job.longhorn.io/source: enabled
+            recurring-job-group.longhorn.io/backup: enabled
     valkey:
       primary:
         persistence:
           enabled: true
           storageClass: "longhorn-ha-2"
+          labels:
+            recurring-job.longhorn.io/source: enabled
+            recurring-job-group.longhorn.io/backup: enabled
       replica:
         persistence:
           enabled: true
           storageClass: "longhorn-ha-2"
+          labels:
+            recurring-job.longhorn.io/source: enabled
+            recurring-job-group.longhorn.io/backup: enabled
     valkey-cluster:
       persistence:
         enabled: true
         storageClass: "longhorn-ha-2"
+        labels:
+          recurring-job.longhorn.io/source: enabled
+          recurring-job-group.longhorn.io/backup: enabled
+      cluster:
+        nodes: 2
+        replicas: 0
       image:
         repository: bitnamilegacy/valkey-cluster
         tag: 8.1.3-debian-12-r3
