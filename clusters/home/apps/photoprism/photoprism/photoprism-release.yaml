@@ -20,6 +20,7 @@ spec:
       # https://hub.docker.com/r/photoprism/photoprism/tags
       tag: "260305"
     persistence:
+      enabled: true
       # Main storage (database, cache, sidecar data)
       storage:
         enabled: true
