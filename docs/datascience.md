@@ -9,6 +9,9 @@ to use the same username each time as it spins up a persistent volume claim (PVC
 for you that is tied to that username.  This gets mounted when the environment is used
 and unmounts when it's not in use.  This allows for persistence of code, data, etc.
 
+The pod gets instantiated and spun up upon login.  After usage, close the web-browser.
+Then, after some time unused running pods will be cleaned up and culled.
+
 ## Links
 
 * [https://github.com/firefly2442/jupyterlab-r-docker-stack-custom](https://github.com/firefly2442/jupyterlab-r-docker-stack-custom)
