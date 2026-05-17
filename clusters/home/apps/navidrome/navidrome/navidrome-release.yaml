@@ -29,6 +29,10 @@ spec:
       data:
         enabled: true
         size: 1Gi
+        labels:
+          recurring-job-group.longhorn.io/backup: enabled
       music:
         enabled: true
         size: 10Gi
+        labels:
+          recurring-job-group.longhorn.io/backup: enabled
