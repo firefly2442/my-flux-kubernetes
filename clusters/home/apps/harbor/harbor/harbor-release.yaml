@@ -1,0 +1,93 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: harbor
+  namespace: harbor
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: harbor
+      version: '1.19.0'
+      sourceRef:
+        kind: HelmRepository
+        name: harbor
+        namespace: flux-system
+      interval: 5m
+  # https://github.com/goharbor/harbor-helm/blob/main/values.yaml
+  values:
+    expose:
+      # Set how to expose the service. Set the type as "ingress", "clusterIP", "nodePort", "loadBalancer" or "route"
+      # and fill the information in the corresponding section
+      type: clusterIP
+    externalURL: https://expose.clusterIP.name
+    persistence:
+      enabled: true
+      # Setting it to "keep" to avoid removing PVCs during a helm delete
+      # operation. Leaving it empty will delete PVCs after the chart deleted
+      # (this does not apply for PVCs that are created for internal database
+      # and redis components, i.e. they are never deleted automatically)
+      resourcePolicy: "keep"
+      persistentVolumeClaim:
+        registry:
+          # Use the existing PVC which must be created manually before bound,
+          # and specify the "subPath" if the PVC is shared with other components
+          existingClaim: ""
+          # Specify the "storageClass" used to provision the volume. Or the default
+          # StorageClass will be used (the default).
+          # Set it to "-" to disable dynamic provisioning
+          storageClass: "longhorn-ha-2"
+          subPath: ""
+          accessMode: ReadWriteOnce
+          size: 5Gi
+          annotations: {}
+        jobservice:
+          jobLog:
+            existingClaim: ""
+            storageClass: "longhorn-ha-2"
+            subPath: ""
+            accessMode: ReadWriteOnce
+            size: 1Gi
+            annotations: {}
+        # If external database is used, the following settings for database will
+        # be ignored
+        database:
+          existingClaim: ""
+          storageClass: "longhorn-ha-2"
+          subPath: ""
+          accessMode: ReadWriteOnce
+          size: 1Gi
+          annotations: {}
+        # If external Redis is used, the following settings for Redis will
+        # be ignored
+        redis:
+          existingClaim: ""
+          storageClass: "longhorn-ha-2"
+          subPath: ""
+          accessMode: ReadWriteOnce
+          size: 1Gi
+          annotations: {}
+        trivy:
+          existingClaim: ""
+          storageClass: "longhorn-ha-2"
+          subPath: ""
+          accessMode: ReadWriteOnce
+          size: 5Gi
+          annotations: {}
+    imageChartStorage:
+      s3:
+        # Set an existing secret for S3 accesskey and secretkey
+        # keys in the secret should be REGISTRY_STORAGE_S3_ACCESSKEY and REGISTRY_STORAGE_S3_SECRETKEY for registry
+        existingSecret: "harbor-s3-credentials-secret"
+        region: harbor
+        bucket: harbor
+        #accesskey: awsaccesskey
+        #secretkey: awssecretkey
+        #regionendpoint: http://myobjects.local
+        #encrypt: false
+        #keyid: mykeyid
+        #secure: true
+        #skipverify: false
+    existingSecretAdminPassword: "harbor-admin-password-secret"
+    metrics:
+      enabled: true

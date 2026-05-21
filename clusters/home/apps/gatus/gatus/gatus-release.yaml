@@ -307,3 +307,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: harbor-external
+          url: https://harbor.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: harbor-internal
+          url: http://harbor.harbor.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

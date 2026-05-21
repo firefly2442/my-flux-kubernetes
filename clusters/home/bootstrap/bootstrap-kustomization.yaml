@@ -44,3 +44,4 @@ resources:
   - ./namespaces/namespace-alloy.yaml
   - ./namespaces/namespace-loki.yaml
   - ./namespaces/namespace-audiobookshelf.yaml
+  - ./namespaces/namespace-harbor.yaml
