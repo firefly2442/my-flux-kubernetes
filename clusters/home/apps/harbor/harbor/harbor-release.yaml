@@ -19,10 +19,7 @@ spec:
     expose:
       # Set how to expose the service. Set the type as "ingress", "clusterIP", "nodePort", "loadBalancer" or "route"
       # and fill the information in the corresponding section
-      type: clusterIP
-      tls:
-        auto:
-          commonName: harbor
+      type: ingress
     externalURL: https://harbor.homelab.rivetcode.com
     persistence:
       enabled: true
