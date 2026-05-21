@@ -22,7 +22,7 @@ spec:
   - match: Host(`harbor.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: harbor
+    - name: harbor-portal
       port: 80
   tls:
     secretName: harbor-certificate-secret
