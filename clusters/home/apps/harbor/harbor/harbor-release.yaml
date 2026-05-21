@@ -20,6 +20,9 @@ spec:
       # Set how to expose the service. Set the type as "ingress", "clusterIP", "nodePort", "loadBalancer" or "route"
       # and fill the information in the corresponding section
       type: clusterIP
+      tls:
+        auto:
+          commonName: harbor
     externalURL: https://expose.clusterIP.name
     persistence:
       enabled: true
