@@ -318,7 +318,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: harbor-core-internal
-          url: http://harbor-core.harbor.svc.cluster.local
+          url: http://harbor-core.harbor.svc.cluster.local:80/api/v2.0/health
           interval: 60s
           conditions:
             - "[STATUS] == 200"
