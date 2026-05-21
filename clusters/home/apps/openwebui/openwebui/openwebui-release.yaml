@@ -18,5 +18,7 @@ spec:
   values:
     ollama:
       enabled: false
+    image:
+      repository: harbor.homelab.rivetcode.com/ghcr-proxy/open-webui/open-webui
     ollamaUrls:
       - "http://ollama-api.ollama.svc.cluster.local:11434"
