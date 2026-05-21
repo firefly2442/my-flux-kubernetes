@@ -16,6 +16,9 @@ spec:
   # https://github.com/usememos/helm/blob/main/values.yaml
   values:
     image:
+      repo: harbor.homelab.rivetcode.com/ghcr-proxy
+      imageName: usememos/memos
+      # https://github.com/usememos/memos/releases
       tag: "0.28.0"
     persistence:
       # If enabled is False, emptyDir will be used, data may be lost after Pod rebuild, it is recommended to use persistent volume

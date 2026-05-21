@@ -16,6 +16,8 @@ spec:
       interval: 5m
   # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/navidrome/values.yaml
   values:
+    image:
+      repository: harbor.homelab.rivetcode.com/dockerhub-proxy/deluan/navidrome
     # https://www.navidrome.org/docs/usage/admin/insights/
     # disable telemetry collection
     workload:

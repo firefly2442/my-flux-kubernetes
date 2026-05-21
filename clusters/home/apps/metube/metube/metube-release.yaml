@@ -16,6 +16,8 @@ spec:
       interval: 5m
   # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/metube/values.yaml
   values:
+    image:
+      repository: harbor.homelab.rivetcode.com/ghcr-proxy/alexta69/metube
     persistence:
       downloads:
         enabled: true
