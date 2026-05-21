@@ -24,7 +24,7 @@ spec:
       enableServiceLinks: true
       containers:
         - name: vertsh
-          image: "ghcr.io/vert-sh/vert:latest"
+          image: "harbor.homelab.rivetcode.com/ghcr-proxy/vert-sh/vert:latest"
           imagePullPolicy: Always
           ports:
             - name: http
