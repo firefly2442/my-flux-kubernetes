@@ -3,6 +3,10 @@
   "extends": [
     "config:recommended"
   ],
+  "registryAliases": {
+    "harbor.homelab.rivetcode.com/ghcr-proxy": "ghcr.io",
+    "harbor.homelab.rivetcode.com/dockerhub-proxy": "docker.io"
+  },
   "kubernetes": {
     "fileMatch": ["\\.yaml$"]
   },
