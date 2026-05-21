@@ -24,5 +24,10 @@ spec:
     services:
     - name: harbor-portal
       port: 80
+  - match: Host(`harbor.homelab.rivetcode.com`) && (PathPrefix(`/api/`) || PathPrefix(`/c/`) || PathPrefix(`/service/`) || PathPrefix(`/v2/`) || PathPrefix(`/chartrepo/`))
+    kind: Rule
+    services:
+      - name: harbor-core
+        port: 80
   tls:
     secretName: harbor-certificate-secret
