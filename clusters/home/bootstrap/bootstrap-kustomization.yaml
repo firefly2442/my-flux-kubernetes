@@ -46,3 +46,4 @@ resources:
   - ./namespaces/namespace-audiobookshelf.yaml
   - ./namespaces/namespace-harbor.yaml
   - ./namespaces/namespace-searxng.yaml
+  - ./namespaces/namespace-steam-analysis.yaml

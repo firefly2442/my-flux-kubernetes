@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: steam-analysis-mongodb-cert
+  namespace: steam-analysis
+spec:
+  secretName: steam-analysis-mongodb-certificate-secret
+  dnsNames:
+    - "steam-analysis-mongodb.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer

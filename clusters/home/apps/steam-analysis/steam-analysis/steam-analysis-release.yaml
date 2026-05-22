@@ -1,0 +1,40 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: steam-analysis
+  namespace: steam-analysis
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: ./chart  # relative path in the repo
+      sourceRef:
+        kind: GitRepository
+        name: steam-analysis
+        namespace: flux-system
+  # https://github.com/carlsonp/steam-analysis/blob/master/chart/values.yaml
+  values:
+    image:
+      repository: harbor.homelab.rivetcode.com/ghcr-proxy/carlsonp/steam-analysis
+    resources:
+      requests:
+        cpu: 3000m
+        memory: 6Gi
+    persistence:
+      enabled: true
+      # logs
+      logs:
+        enabled: true
+        size: 1Gi
+        storageClass: "longhorn-ha-2"
+        labels:
+          recurring-job.longhorn.io/source: enabled
+          recurring-job-group.longhorn.io/backup: enabled
+    mongodb:
+      persistence:
+        enabled: true
+        size: 20Gi
+        storageClass: "longhorn-ha-2"
+        labels:
+          recurring-job.longhorn.io/source: enabled
+          recurring-job-group.longhorn.io/backup: enabled
