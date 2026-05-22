@@ -350,5 +350,7 @@ spec:
         - name: bitwarden-internal
           url: https://192.168.1.226:9443/
           interval: 60s
+          client:
+            insecure: true  # This skips TLS/SSL certificate validation
           conditions:
             - "[STATUS] == 200"
