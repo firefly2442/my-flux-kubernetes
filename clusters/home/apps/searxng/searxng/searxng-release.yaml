@@ -18,3 +18,9 @@ spec:
   values:
     image:
       repository: harbor.homelab.rivetcode.com/dockerhub-proxy/searxng/searxng
+    persistence:
+      config:
+        enabled: true
+        mountPath: /etc/searxng
+        size: 500Mi
+        storageClass: "longhorn-ha-2"
