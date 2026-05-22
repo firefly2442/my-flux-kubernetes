@@ -17,6 +17,8 @@ spec:
   # https://github.com/stefanprodan/podinfo/blob/master/charts/podinfo/values.yaml
   values:
     replicaCount: 2
+    image:
+      repository: harbor.homelab.rivetcode.com/ghcr-proxy/stefanprodan/podinfo
     service:
       type: ClusterIP
       httpPort: 80

@@ -20,4 +20,5 @@ spec:
     crds: CreateReplace
   # https://github.com/kubeflow/spark-operator/blob/master/charts/spark-operator-chart/values.yaml
   values:
-    # optional values here
+    image:
+      registry: harbor.homelab.rivetcode.com/ghcr-proxy

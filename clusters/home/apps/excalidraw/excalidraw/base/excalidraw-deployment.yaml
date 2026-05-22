@@ -24,7 +24,7 @@ spec:
       enableServiceLinks: true
       containers:
         - name: excalidraw
-          image: "excalidraw/excalidraw:latest"
+          image: "harbor.homelab.rivetcode.com/dockerhub-proxy/excalidraw/excalidraw:latest"
           imagePullPolicy: Always
           ports:
             - name: http

@@ -24,7 +24,7 @@ spec:
       enableServiceLinks: true
       containers:
         - name: rabbitmq
-          image: "rabbitmq:4-management"
+          image: "harbor.homelab.rivetcode.com/dockerhub-proxy/rabbitmq:4-management"
           imagePullPolicy: Always
           command: ["/bin/bash", "-c"]
           args:

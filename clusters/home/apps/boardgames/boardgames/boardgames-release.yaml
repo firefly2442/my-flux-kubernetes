@@ -12,5 +12,7 @@ spec:
         kind: GitRepository
         name: bgg-inventory-nextjs
         namespace: flux-system
+  # https://github.com/firefly2442/bgg-inventory-nextjs/blob/master/chart/values.yaml
   values:
-    # optional custom values here
+    image:
+      repository: harbor.homelab.rivetcode.com/ghcr-proxy/firefly2442/bgg-inventory-nextjs

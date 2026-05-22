@@ -100,6 +100,7 @@ pre-commit autoupdate
 * [Ollama](https://ollama.homelab.rivetcode.com)
 * [Open Web-UI](https://openwebui.homelab.rivetcode.com)
 * [Memos](https://memos.homelab.rivetcode.com)
+* [Harbor](https://harbor.homelab.rivetcode.com)
 
 ## Debugging
 
