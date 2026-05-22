@@ -25,7 +25,7 @@ data:
             href: https://traefik.homelab.rivetcode.com
             description: Traefik
             icon: traefik.png
-        - Kubernetes HAProxy
+        - Kubernetes HAProxy:
             href: http://192.168.1.226:8404/stats
             description: Kubernetes HAProxy
             icon: haproxy.png
@@ -34,15 +34,15 @@ data:
             href: https://portal.homelab.rivetcode.com
             description: Heimdall
             icon: heimdall.png
-        - Pi-hole Primary
+        - Pi-hole Primary:
             href: http://192.168.1.226:8095/admin
             description: Pi-hole
             icon: pi-hole.png
-        - Pi-hole Secondary
+        - Pi-hole Secondary:
             href: http://192.168.1.114:8090/admin
             description: Pi-hole
             icon: pi-hole.png
-        - Bitwarden
+        - Bitwarden:
             href: https://192.168.1.226:9443/
             description: Bitwarden
             icon: bitwarden.png
