@@ -322,3 +322,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: searxng-external
+          url: https://searxng.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: searxng-internal
+          url: http://searxng.searxng.svc.cluster.local:8080
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

@@ -23,9 +23,6 @@ spec:
     kind: Rule
     services:
     - name: searxng
-      port: 80
-    middlewares:
-      - name: authentik-service-middleware
-        namespace: authentik
+      port: 8080
   tls:
     secretName: searxng-certificate-secret
