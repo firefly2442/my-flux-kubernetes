@@ -1,5 +1,5 @@
 apiVersion: traefik.io/v1alpha1
-kind: IngressRoute
+kind: IngressRouteTCP
 metadata:
   name: steam-analysis-mongodb-ingressroute
   namespace: steam-analysis
@@ -7,9 +7,9 @@ metadata:
     cert-manager.io/cluster-issuer: cloudflare-clusterissuer
 spec:
   entryPoints:
-    - websecure
+    - mongodb
   routes:
-  - match: Host(`steam-analysis-mongodb.homelab.rivetcode.com`)
+  - match: HostSNI(`*`)
     kind: Rule
     services:
     - name: steam-analysis-mongodb
