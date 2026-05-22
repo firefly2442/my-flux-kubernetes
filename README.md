@@ -49,10 +49,6 @@ For the oauth2 enabled applications, make sure the client ID and client secret m
 in the sealed secrets for each application.  On a fresh install, authentik will generate new
 values so these may need to be overwritten.
 
-Some applications like Headlamp require some manual tweaks to the provider in Authentik.
-Go into the provider itself, for example `headlamp-oauth2` and set the Signing Key
-to be the self-signed Authentik certificate.
-
 ## Development Notes
 
 See details in `docs` folder for each service/application.
@@ -101,6 +97,7 @@ pre-commit autoupdate
 * [Open Web-UI](https://openwebui.homelab.rivetcode.com)
 * [Memos](https://memos.homelab.rivetcode.com)
 * [Harbor](https://harbor.homelab.rivetcode.com)
+* [Searxng](https://searxng.homelab.rivetcode.com)
 
 ## Debugging
 
@@ -170,6 +167,8 @@ kubectl exec -it <pod-name> -- /bin/bash
 
 ## References
 
+### Flux Homelab Examples
+
 * [home-ops example](https://github.com/onedr0p/home-ops)
 * [pikluster example](https://github.com/dvignoles/pikluster)
 * [untouchedwagons example](https://github.com/UntouchedWagons/K3S-Cluster-Setup)
@@ -184,6 +183,10 @@ kubectl exec -it <pod-name> -- /bin/bash
 * [kqmaverick example](https://github.com/kqmaverick/cluster)
 * [Crow-Control example](https://github.com/Crow-Control/cluster)
 * [xstar97 example](https://github.com/xstar97/cluster)
+* [hmajid2301 example](https://github.com/hmajid2301/k3s-config)
+
+### Tutorials and Links
+
 * [Flux Gitops Experiences](https://dvignoles.github.io/blog/post-flux-gitops/)
 * [flux Github](https://github.com/fluxcd/flux2)
 * [flux](https://fluxcd.io/)
@@ -196,6 +199,6 @@ kubectl exec -it <pod-name> -- /bin/bash
 * [k3s Kubernetes](https://k3s.io/)
 * [awesome k8s resources](https://github.com/tomhuang12/awesome-k8s-resources)
 * [awesome self-hosted resources](https://github.com/awesome-selfhosted/awesome-selfhosted)
-* [hmajid2301 example](https://github.com/hmajid2301/k3s-config)
 * [Christian Lempa's Boilerplates](https://github.com/ChristianLempa/boilerplates)
 * [TrueCharts Helm Charts](https://truecharts.org/)
+* [Linux Server Project](https://www.linuxserver.io/)

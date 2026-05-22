@@ -45,3 +45,4 @@ resources:
   - ./namespaces/namespace-loki.yaml
   - ./namespaces/namespace-audiobookshelf.yaml
   - ./namespaces/namespace-harbor.yaml
+  - ./namespaces/namespace-searxng.yaml
