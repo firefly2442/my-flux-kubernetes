@@ -332,3 +332,23 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: pihole-primary-internal
+          url: http://192.168.1.226:8095/admin
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: pihole-secondary-internal
+          url: http://192.168.1.114:8090/admin
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: kubernetes-haproxy-internal
+          url: http://192.168.1.226:8404/stats
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: bitwarden-internal
+          url: https://192.168.1.226:9443/
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

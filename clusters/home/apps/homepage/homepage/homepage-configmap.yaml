@@ -21,14 +21,31 @@ data:
   bookmarks.yaml: ""
   services.yaml: |
     - Kubernetes:
-        - Heimdall:
-            href: https://portal.homelab.rivetcode.com
-            description: Heimdall
-            icon: heimdall.png
         - Traefik:
             href: https://traefik.homelab.rivetcode.com
             description: Traefik
             icon: traefik.png
+        - Kubernetes HAProxy
+            href: http://192.168.1.226:8404/stats
+            description: Kubernetes HAProxy
+            icon: haproxy.png
+    - Homelab:
+        - Heimdall:
+            href: https://portal.homelab.rivetcode.com
+            description: Heimdall
+            icon: heimdall.png
+        - Pi-hole Primary
+            href: http://192.168.1.226:8095/admin
+            description: Pi-hole
+            icon: pi-hole.png
+        - Pi-hole Secondary
+            href: http://192.168.1.114:8090/admin
+            description: Pi-hole
+            icon: pi-hole.png
+        - Bitwarden
+            href: https://192.168.1.226:9443/
+            description: Bitwarden
+            icon: bitwarden.png
   widgets.yaml: |
     - kubernetes:
         cluster:
