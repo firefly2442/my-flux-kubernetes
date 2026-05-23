@@ -359,3 +359,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: paperlessngx-external
+          url: https://paperlessngx.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: paperlessngx-internal
+          url: http://paperlessngx-paperless-ngx.paperlessngx.svc.cluster.local:10140
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
