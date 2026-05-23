@@ -22,7 +22,7 @@ resources:
   #- ./namespaces/namespace-trivy-defectdojo.yaml
   #- ./namespaces/namespace-trivy-system.yaml
   #- ./namespaces/namespace-defectdojo.yaml
-  - ./namespaces/namespace-postgresql.yaml
+  - ./namespaces/namespace-cnpg-system.yaml
   - ./namespaces/namespace-stirlingpdf.yaml
   - ./namespaces/namespace-recipes.yaml
   - ./namespaces/namespace-boardgames.yaml
