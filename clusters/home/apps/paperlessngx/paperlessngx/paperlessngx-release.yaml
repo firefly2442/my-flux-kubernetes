@@ -44,6 +44,14 @@ spec:
         labels:
           recurring-job.longhorn.io/source: enabled
           recurring-job-group.longhorn.io/backup: enabled
+    cnpg:
+      main:
+        enabled: true
+        user: "paperless-ng"
+        database: "paperless-ng"
+        storage:
+          size: 2Gi
+          storageClass: "longhorn-ha-2"
     workload:
       main:
         podSpec:
