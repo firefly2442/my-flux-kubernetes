@@ -50,4 +50,4 @@ spec:
           containers:
             main:
               env:
-                PAPERLESS_URL: "paperlessngx.homelab.rivetcode.com"
+                PAPERLESS_URL: "https://paperlessngx.homelab.rivetcode.com"
