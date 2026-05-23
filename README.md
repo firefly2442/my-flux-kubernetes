@@ -184,6 +184,7 @@ kubectl exec -it <pod-name> -- /bin/bash
 * [Crow-Control example](https://github.com/Crow-Control/cluster)
 * [xstar97 example](https://github.com/xstar97/cluster)
 * [hmajid2301 example](https://github.com/hmajid2301/k3s-config)
+* [MarkNygaard example](https://github.com/MarkNygaard/home-ops)
 
 ### Tutorials and Links
 
