@@ -44,3 +44,10 @@ spec:
         labels:
           recurring-job.longhorn.io/source: enabled
           recurring-job-group.longhorn.io/backup: enabled
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                PAPERLESS_URL: "paperlessngx.homelab.rivetcode.com"
