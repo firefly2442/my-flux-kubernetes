@@ -51,4 +51,4 @@ spec:
             main:
               env:
                 PAPERLESS_URL: "https://paperlessngx.homelab.rivetcode.com"
-                PAPERLESS_DISABLE_REGULAR_LOGIN: "true"
+                PAPERLESS_AUTO_LOGIN_USERNAME: "admin"
