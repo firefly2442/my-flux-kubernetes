@@ -49,9 +49,10 @@ spec:
         enabled: true
         user: "paperless-ng"
         database: "paperless-ng"
-        storage:
-          size: 2Gi
-          storageClass: "longhorn-ha-2"
+        cluster:
+          storage:
+            size: 2Gi
+            storageClass: "longhorn-ha-2"
     workload:
       main:
         podSpec:
