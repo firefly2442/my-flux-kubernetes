@@ -51,6 +51,7 @@ spec:
         database: "paperless-ng"
         cluster:
           storage:
+            enabled: true
             size: 2Gi
             storageClass: "longhorn-ha-2"
     workload:
