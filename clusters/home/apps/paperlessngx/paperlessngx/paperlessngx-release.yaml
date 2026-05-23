@@ -22,10 +22,6 @@ spec:
       repository: harbor.homelab.rivetcode.com/dockerhub-proxy/gotenberg/gotenberg
     tikaImage:
       repository: harbor.homelab.rivetcode.com/dockerhub-proxy/apache/tika
-    cnpg:
-      main:
-        # don't use postgresql, use sqlite
-        enabled: false
     persistence:
       data:
         enabled: true
