@@ -98,6 +98,7 @@ pre-commit autoupdate
 * [Memos](https://memos.homelab.rivetcode.com)
 * [Harbor](https://harbor.homelab.rivetcode.com)
 * [Searxng](https://searxng.homelab.rivetcode.com)
+* [Paperlessngx Dashboard](https://paperlessngx.homelab.rivetcode.com)
 
 ## Debugging
 

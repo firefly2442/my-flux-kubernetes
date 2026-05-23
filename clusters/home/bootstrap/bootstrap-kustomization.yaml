@@ -47,3 +47,4 @@ resources:
   - ./namespaces/namespace-harbor.yaml
   - ./namespaces/namespace-searxng.yaml
   - ./namespaces/namespace-steam-analysis.yaml
+  - ./namespaces/namespace-paperlessngx.yaml
