@@ -3,16 +3,11 @@ kind: IngressRouteTCP
 metadata:
   name: steam-analysis-mongodb-ingressroute
   namespace: steam-analysis
-  annotations:
-    cert-manager.io/cluster-issuer: cloudflare-clusterissuer
 spec:
   entryPoints:
     - mongodb
   routes:
-  - match: HostSNI(`*`)
-    kind: Rule
-    services:
-    - name: steam-analysis-mongodb
-      port: 27017
-  tls:
-    secretName: steam-analysis-mongodb-certificate-secret
+    - match: HostSNI(`*`)
+      services:
+        - name: steam-analysis-mongodb
+          port: 27017
