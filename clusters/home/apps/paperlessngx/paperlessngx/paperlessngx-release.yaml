@@ -51,4 +51,5 @@ spec:
             main:
               env:
                 PAPERLESS_URL: "https://paperlessngx.homelab.rivetcode.com"
+                # normally this is insecure but we're protecting the page with Authentik
                 PAPERLESS_AUTO_LOGIN_USERNAME: "admin"
