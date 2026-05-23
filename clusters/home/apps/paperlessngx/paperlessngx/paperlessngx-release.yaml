@@ -55,7 +55,9 @@ spec:
             size: 2Gi
             storageClass: "longhorn-ha-2"
           walStorage:
-            enabled: false
+            enabled: true
+            size: 1Gi
+            storageClass: "longhorn-ha-2"
     workload:
       main:
         podSpec:
