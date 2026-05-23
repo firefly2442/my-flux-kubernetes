@@ -18,6 +18,12 @@ spec:
   values:
     image:
       repository: harbor.homelab.rivetcode.com/dockerhub-proxy/searxng/searxng
+    config:
+      use_default_settings: true
+      search:
+        formats:
+          - html
+          - json
     persistence:
       config:
         enabled: true
