@@ -22,8 +22,8 @@ spec:
   - match: Host(`paperlessngx.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: paperlessngx
-      port: 10216
+    - name: paperlessngx-paperless-ngx
+      port: 10140
     middlewares:
       - name: authentik-service-middleware
         namespace: authentik
