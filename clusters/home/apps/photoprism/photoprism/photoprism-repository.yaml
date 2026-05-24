@@ -1,8 +1,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: GitRepository
+kind: HelmRepository
 metadata:
   name: photoprism
   namespace: flux-system
 spec:
   interval: 5m
-  url: https://github.com/firefly2442/photoprism-helm-chart
+  type: oci
+  url: oci://oci.trueforge.org/truecharts
