@@ -48,7 +48,7 @@ spec:
           recurring-job-group.longhorn.io/backup: enabled
     mariadb:
       enabled: true
-      mariadb:
+      primary:
         persistence:
           enabled: true
           size: 5Gi
