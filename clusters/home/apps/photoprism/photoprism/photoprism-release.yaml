@@ -46,10 +46,11 @@ spec:
         labels:
           recurring-job.longhorn.io/source: enabled
           recurring-job-group.longhorn.io/backup: enabled
+    # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/mariadb/values.yaml
     mariadb:
       enabled: true
-      primary:
-        persistence:
+      persistence:
+        data:
           enabled: true
           size: 5Gi
           storageClass: longhorn-ha-3
