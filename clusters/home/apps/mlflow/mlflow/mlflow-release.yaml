@@ -32,3 +32,6 @@ spec:
       # deployments and ReadWriteMany for multi-replica setups.
       accessMode: ReadWriteOnce
       storageClassName: "longhorn-ha-2"
+    env:
+      - name: MLFLOW_SERVER_ALLOWED_HOSTS
+        value: "mlflow.homelab.rivetcode.com"
