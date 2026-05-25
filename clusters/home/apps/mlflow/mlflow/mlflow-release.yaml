@@ -35,3 +35,9 @@ spec:
     env:
       - name: MLFLOW_SERVER_ALLOWED_HOSTS
         value: "mlflow.homelab.rivetcode.com,localhost,127.0.0.1,mlflow-mlflow.mlflow.svc.cluster.local"
+      # https://mlflow.org/docs/latest/community/usage-tracking/#how-to-opt-out
+      # disable telemetry
+      - name: MLFLOW_DISABLE_TELEMETRY
+        value: true
+      - name: DO_NOT_TRACK
+        value: true
