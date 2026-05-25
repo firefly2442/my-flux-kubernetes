@@ -375,7 +375,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: mlflow-internal
-          url: http://mlflow.mlflow.svc.cluster.local
+          url: http://mlflow-mlflow.mlflow.svc.cluster.local:5000
           interval: 60s
           conditions:
             - "[STATUS] == 200"

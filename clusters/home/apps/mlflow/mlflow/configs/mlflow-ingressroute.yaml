@@ -22,7 +22,7 @@ spec:
   - match: Host(`mlflow.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: mlflow
+    - name: mlflow-mlflow
       port: 5000
   tls:
     secretName: mlflow-certificate-secret
