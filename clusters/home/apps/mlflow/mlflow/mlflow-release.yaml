@@ -38,6 +38,6 @@ spec:
       # https://mlflow.org/docs/latest/community/usage-tracking/#how-to-opt-out
       # disable telemetry
       - name: MLFLOW_DISABLE_TELEMETRY
-        value: true
+        value: "true"
       - name: DO_NOT_TRACK
-        value: true
+        value: "true"
