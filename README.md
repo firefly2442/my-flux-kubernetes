@@ -157,6 +157,18 @@ List all custom resource definitions (CRDs):
 kubectl get crds
 ```
 
+Delete all the pods, services, and deployments.  However, it keeps the certificates.
+
+```shell
+kubectl delete all --all -n <namespace>
+```
+
+Deleting the Helm release can also be helpful in reinstalling/reseting applications.
+
+```shell
+kubectl delete helmrelease <helmreleasename> -n <namespace>
+```
+
 Exec into a running pod:
 
 ```shell
