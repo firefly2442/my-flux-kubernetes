@@ -20,8 +20,6 @@ spec:
       enabled: true
     metrics:
       enabled: true
-    serviceMonitor:
-      enabled: true
     mlflow:
       # URI of the database or file store used to record runs and metadata.
       # Examples: "sqlite:////mlflow/mlflow.db", "postgresql://user:pass@host/db"
