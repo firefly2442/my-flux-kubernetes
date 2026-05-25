@@ -369,3 +369,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: mlflow-external
+          url: https://mlflow.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: mlflow-internal
+          url: http://mlflow.mlflow.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

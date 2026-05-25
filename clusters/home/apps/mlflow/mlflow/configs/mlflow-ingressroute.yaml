@@ -1,0 +1,28 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: mlflow-ingressroute
+  namespace: mlflow
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+    gethomepage.dev/href: "https://mlflow.homelab.rivetcode.com"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Mlflow
+    gethomepage.dev/group: AI
+    gethomepage.dev/icon: mdi-application
+    gethomepage.dev/app: mlflow # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
+    gethomepage.dev/name: Mlflow
+    #gethomepage.dev/widget.type: "mlflow"
+    #gethomepage.dev/widget.url: "https://mlflow.homelab.rivetcode.com"
+    gethomepage.dev/pod-selector: ""
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`mlflow.homelab.rivetcode.com`)
+    kind: Rule
+    services:
+    - name: mlflow
+      port: 5000
+  tls:
+    secretName: mlflow-certificate-secret

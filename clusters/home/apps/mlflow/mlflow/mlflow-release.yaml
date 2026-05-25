@@ -1,0 +1,36 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: mlflow
+  namespace: mlflow
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: ./charts  # relative path in the repo
+      sourceRef:
+        kind: GitRepository
+        name: mlflow
+        namespace: flux-system
+  # https://github.com/mlflow/mlflow/blob/master/charts/values.yaml
+  values:
+    image:
+      repository: harbor.homelab.rivetcode.com/ghcr-proxy/mlflow/mlflow
+    garbageCollection:
+      enabled: true
+    metrics:
+      enabled: true
+    serviceMonitor:
+      enabled: true
+    mlflow:
+      # URI of the database or file store used to record runs and metadata.
+      # Examples: "sqlite:////mlflow/mlflow.db", "postgresql://user:pass@host/db"
+      backendStoreUri: "sqlite:////mlflow/mlflow.db"
+      defaultArtifactRoot: "/mlflow/artifacts"
+    storage:
+      enabled: true
+      size: 5Gi
+      # Access mode for the PersistentVolumeClaim. Use ReadWriteOnce for single-node
+      # deployments and ReadWriteMany for multi-replica setups.
+      accessMode: ReadWriteOnce
+      storageClassName: "longhorn-ha-2"
