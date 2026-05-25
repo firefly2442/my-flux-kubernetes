@@ -99,6 +99,7 @@ pre-commit autoupdate
 * [Harbor](https://harbor.homelab.rivetcode.com)
 * [Searxng](https://searxng.homelab.rivetcode.com)
 * [Paperlessngx Dashboard](https://paperlessngx.homelab.rivetcode.com)
+* [mlflow Dashboard](https://mlflow.homelab.rivetcode.com)
 
 ## Debugging
 
