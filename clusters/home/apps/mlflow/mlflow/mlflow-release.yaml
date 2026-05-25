@@ -34,4 +34,4 @@ spec:
       storageClassName: "longhorn-ha-2"
     env:
       - name: MLFLOW_SERVER_ALLOWED_HOSTS
-        value: "mlflow.homelab.rivetcode.com"
+        value: "mlflow.homelab.rivetcode.com,localhost,127.0.0.1,mlflow-mlflow.mlflow.svc.cluster.local"
