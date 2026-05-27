@@ -14,7 +14,7 @@ metadata:
     gethomepage.dev/name: Frigate
     gethomepage.dev/widget.type: "frigate"
     # use .local domain name so we don't get blocked by authentik
-    gethomepage.dev/widget.url: "http://frigate.frigate.svc.cluster.local"
+    gethomepage.dev/widget.url: "http://frigate.frigate.svc.cluster.local:5000"
     gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
