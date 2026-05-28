@@ -190,6 +190,8 @@ no data is lost.
 * Memos
 * Navidrome
 * Photoprism
+* Paperlessngx
+* Linkding
 
 ## Links
 

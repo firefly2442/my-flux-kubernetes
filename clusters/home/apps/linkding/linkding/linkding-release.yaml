@@ -23,6 +23,9 @@ spec:
         enabled: true
         storageClass: "longhorn-ha-2"
         size: 500Mi
+        labels:
+          recurring-job.longhorn.io/source: enabled
+          recurring-job-group.longhorn.io/backup: enabled
     workload:
       main:
         podSpec:
