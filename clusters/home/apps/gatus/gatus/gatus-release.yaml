@@ -385,7 +385,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: linkding-internal
-          url: http://linkding.linkding.svc.cluster.local
+          url: http://linkding.linkding.svc.cluster.local:10210
           interval: 60s
           conditions:
             - "[STATUS] == 200"
