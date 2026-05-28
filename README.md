@@ -100,6 +100,7 @@ pre-commit autoupdate
 * [Searxng](https://searxng.homelab.rivetcode.com)
 * [Paperlessngx Dashboard](https://paperlessngx.homelab.rivetcode.com)
 * [mlflow Dashboard](https://mlflow.homelab.rivetcode.com)
+* [Linkding Bookmarks](https://linkding.homelab.rivetcode.com)
 
 ## Debugging
 

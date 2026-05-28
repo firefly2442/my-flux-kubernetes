@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: linkding-cert
+  namespace: linkding
+spec:
+  secretName: linkding-certificate-secret
+  dnsNames:
+    - "linkding.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer

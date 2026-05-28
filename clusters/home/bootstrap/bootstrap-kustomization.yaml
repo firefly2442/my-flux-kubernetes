@@ -49,3 +49,4 @@ resources:
   - ./namespaces/namespace-steam-analysis.yaml
   - ./namespaces/namespace-paperlessngx.yaml
   - ./namespaces/namespace-mlflow.yaml
+  - ./namespaces/namespace-linkding.yaml

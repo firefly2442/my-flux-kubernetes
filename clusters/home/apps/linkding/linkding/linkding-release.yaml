@@ -1,0 +1,34 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: linkding
+  namespace: linkding
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: linkding
+      version: 13.3.0
+      sourceRef:
+        kind: HelmRepository
+        name: linkding
+        namespace: flux-system
+      interval: 5m
+  # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/linkding/values.yaml
+  values:
+    image:
+      repository: harbor.homelab.rivetcode.com/dockerhub-proxy/sissbruecker/linkding
+    persistence:
+      data:
+        enabled: true
+        storageClass: "longhorn-ha-2"
+        size: 500Mi
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                # we're secured via the authentik proxy so built-in login is less of a concern
+                LD_SUPERUSER_NAME: "admin"
+                LD_SUPERUSER_PASSWORD: "admin"

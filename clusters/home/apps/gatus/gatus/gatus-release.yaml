@@ -379,3 +379,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: linkding-external
+          url: https://linkding.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: linkding-internal
+          url: http://linkding.linkding.svc.cluster.local
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
