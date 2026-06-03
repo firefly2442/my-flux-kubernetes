@@ -31,6 +31,7 @@ kubectl get jobs -n authentik
 When authentik updates, delete the setup job that authentik uses
 and force it to re-create the outpost.  Otherwise, the outpost
 will be at the old version and not match the new updated deployment.
+The outpost can be deleted in the Authentik web-ui.
 Helm does not manage the outpost since that's created through our
 setup automation script.
 
