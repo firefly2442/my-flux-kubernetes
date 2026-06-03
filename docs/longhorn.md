@@ -123,6 +123,10 @@ Lastly, scale back up:
 kubectl scale deployment <app> --replicas=1 -n <namespace>
 ```
 
+For full [System Backups](https://longhorn.io/docs/1.12.0/advanced-resources/system-backup-restore/backup-longhorn-system/)
+these can be done via the web-UI.  This captures all the settings and details and can be used
+to restore should something go wrong.  It uses the default backup target.
+
 ## Recurring Jobs
 
 See details in the [longhorn documentation on recurring jobs](https://longhorn.io/docs/1.11.2/snapshots-and-backups/scheduling-backups-and-snapshots/).
