@@ -21,6 +21,10 @@ spec:
     resources:
       requests:
         memory: "8Gi"
+      # explicitly set no limits
+      limits:
+        memory: null
+        cpu: null
     service:
       main:
         targetSelector: main
