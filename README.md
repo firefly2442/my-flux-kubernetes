@@ -63,6 +63,11 @@ pre-commit run --all-files
 pre-commit autoupdate
 ```
 
+Generally, resource `Limits` should not be utilized as that helps with burst performance
+to allow pods to use as much resources as they need.
+Resource `Requests` determine where a pod can run during scheduling.
+Resource `Limits` determine how much a pod is allowed to consume once it is running.
+
 ## Application URL List
 
 * [Heimdall Application Portal](http://portal.homelab.rivetcode.com)

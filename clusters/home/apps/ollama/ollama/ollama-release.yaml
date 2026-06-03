@@ -19,12 +19,9 @@ spec:
     image:
       repository: harbor.homelab.rivetcode.com/dockerhub-proxy/ollama/ollama
     resources:
-      limits:
-        memory: "16Gi"
-        cpu: "12"
       requests:
         memory: "8Gi"
-        cpu: "10"
+        cpu: "4"
     service:
       main:
         targetSelector: main
