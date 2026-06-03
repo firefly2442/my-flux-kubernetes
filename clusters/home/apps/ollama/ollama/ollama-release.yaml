@@ -21,7 +21,6 @@ spec:
     resources:
       requests:
         memory: "8Gi"
-        cpu: "4"
     service:
       main:
         targetSelector: main
