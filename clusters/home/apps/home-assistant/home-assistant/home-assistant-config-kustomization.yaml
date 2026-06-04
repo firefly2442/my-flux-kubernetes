@@ -4,12 +4,11 @@ metadata:
   name: home-assistant-config
   namespace: home-assistant
 spec:
-  interval: 10m
-  path: ./configs/
+  interval: 5m
+  path: ./clusters/home/apps/home-assistant/home-assistant/configs/
   prune: true
-  dependsOn:
-    - name: home-assistant
   wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system
+    namespace: flux-system
