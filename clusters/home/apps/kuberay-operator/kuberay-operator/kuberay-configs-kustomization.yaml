@@ -7,6 +7,8 @@ spec:
   interval: 5m
   path: ./clusters/home/apps/kuberay-operator/kuberay-operator/configs/
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system
+    namespace: flux-system
