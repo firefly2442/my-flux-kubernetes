@@ -4,12 +4,11 @@ metadata:
   name: longhorn-recurringjobs
   namespace: longhorn-system
 spec:
-  interval: 10m
-  path: ./recurringjobs/
+  interval: 5m
+  path: ./clusters/home/apps/longhorn-system/longhorn/recurringjobs/
   prune: true
-  dependsOn:
-    - name: longhorn
   wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system
+    namespace: flux-system
