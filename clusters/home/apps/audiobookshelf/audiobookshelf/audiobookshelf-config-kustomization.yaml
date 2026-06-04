@@ -5,8 +5,6 @@ metadata:
   namespace: audiobookshelf
 spec:
   interval: 5m
-  dependsOn:
-  - name: audiobookshelf
   path: ./clusters/home/apps/audiobookshelf/audiobookshelf/configs/
   prune: true # remove any elements later removed from the above path
   timeout: 2m
