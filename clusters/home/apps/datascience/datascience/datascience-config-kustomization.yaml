@@ -1,16 +1,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: config-datascience
-  namespace: kube-system
+  name: datascience-config
+  namespace: datascience
 spec:
   interval: 5m
-  dependsOn:
-  - name: jupyterlab-r-docker-stack-helm
-  path: ./configs/
+  path: ./clusters/home/apps/datascience/datascience/configs/
   prune: true # remove any elements later removed from the above path
-  timeout: 2m
+  wait: true
   sourceRef:
     kind: GitRepository
-    name: datascience-configs
-  retryInterval: 1m
+    name: flux-system
+    namespace: flux-system
