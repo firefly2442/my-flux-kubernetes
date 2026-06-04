@@ -5,7 +5,7 @@ metadata:
   namespace: mlflow
 spec:
   interval: 5m
-  path: ./clusters/home/apps/mlflow/mlflowconfigs/
+  path: ./clusters/home/apps/mlflow/mlflow/configs/
   prune: true # remove any elements later removed from the above path
   wait: true
   sourceRef:
