@@ -5,8 +5,6 @@ metadata:
   namespace: kube-system
 spec:
   interval: 5m
-  dependsOn:
-  - name: metallb
   path: ./clusters/home/apps/kube-system/traefik/configs/traefik/
   prune: true # remove any elements later removed from the above path
   wait: true
