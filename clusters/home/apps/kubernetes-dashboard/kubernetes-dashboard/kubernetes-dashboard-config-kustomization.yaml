@@ -1,16 +1,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: config-kubernetes-dashboard
+  name: kubernetes-dashboard-config
   namespace: kube-system
 spec:
-  interval: 10m
-  dependsOn:
-  - name: kubernetes-dashboard
-  path: ./configs/
+  interval: 5m
+  path: ./clusters/home/apps/kubernetes-dashboard/kubernetes-dashboard/configs/
   prune: true # remove any elements later removed from the above path
-  timeout: 2m
+  wait: true
   sourceRef:
     kind: GitRepository
-    name: kubernetes-dashboard-configs
-  retryInterval: 1m
+    name: flux-system
+    namespace: flux-system
