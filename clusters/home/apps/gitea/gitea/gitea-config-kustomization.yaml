@@ -4,12 +4,11 @@ metadata:
   name: gitea-config
   namespace: gitea
 spec:
-  interval: 10m
-  path: ./configs/
+  interval: 5m
+  path: ./clusters/home/apps/gitea/gitea/configs/
   prune: true
-  dependsOn:
-    - name: gitea
   wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system
+    namespace: flux-system
