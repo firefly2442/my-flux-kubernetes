@@ -1,16 +1,13 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: config-boardgames
-  namespace: kube-system
+  name: boardgames-config
+  namespace: boardgames
 spec:
   interval: 5m
-  dependsOn:
-  - name: bgg-inventory-nextjs
-  path: ./configs/
+  path: ./clusters/home/apps/boardgames/boardgames/configs/
   prune: true # remove any elements later removed from the above path
-  timeout: 2m
   sourceRef:
     kind: GitRepository
-    name: boardgames-configs
-  retryInterval: 1m
+    name: flux-system
+    namespace: flux-system
