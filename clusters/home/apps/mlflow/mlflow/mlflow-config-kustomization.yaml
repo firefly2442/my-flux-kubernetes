@@ -1,16 +1,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: config-mlflow
-  namespace: kube-system
+  name: mlflow-config
+  namespace: mlflow
 spec:
   interval: 5m
-  dependsOn:
-  - name: mlflow
-  path: ./configs/
+  path: ./clusters/home/apps/mlflow/mlflowconfigs/
   prune: true # remove any elements later removed from the above path
-  timeout: 2m
+  wait: true
   sourceRef:
     kind: GitRepository
-    name: mlflow-configs
-  retryInterval: 1m
+    name: flux-system
+    namespace: flux-system
