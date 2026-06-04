@@ -1,16 +1,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: config-harbor
-  namespace: kube-system
+  name: harbor-config
+  namespace: harbor
 spec:
-  interval: 10m
-  dependsOn:
-  - name: harbor
-  path: ./configs/
+  interval: 5m
+  path: ./clusters/home/apps/harbor/harbor/configs/
   prune: true # remove any elements later removed from the above path
-  timeout: 2m
+  wait: true
   sourceRef:
     kind: GitRepository
-    name: harbor-configs
-  retryInterval: 1m
+    name: flux-system
+    namespace: flux-system
