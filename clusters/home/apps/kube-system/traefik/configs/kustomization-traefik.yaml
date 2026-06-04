@@ -1,16 +1,16 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: config-traefik
+  name: traefik-config
   namespace: kube-system
 spec:
-  interval: 10m
+  interval: 5m
   dependsOn:
   - name: metallb
-  path: ./traefik/
+  path: ./clusters/home/apps/kube-system/traefik/configs/traefik/
   prune: true # remove any elements later removed from the above path
-  timeout: 2m
+  wait: true
   sourceRef:
     kind: GitRepository
-    name: traefik-configs
-  retryInterval: 1m
+    name: flux-system
+    namespace: flux-system
