@@ -51,3 +51,4 @@ resources:
   - ./namespaces/namespace-mlflow.yaml
   - ./namespaces/namespace-linkding.yaml
   - ./namespaces/namespace-karakeep.yaml
+  - ./namespaces/namespace-litellm.yaml
