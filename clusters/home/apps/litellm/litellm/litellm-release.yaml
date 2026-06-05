@@ -27,6 +27,8 @@ spec:
       GENERIC_USERINFO_ENDPOINT: "https://authentik.homelab.rivetcode.com/application/o/userinfo/"
       AUTO_REDIRECT_UI_LOGIN_TO_SSO: "true"
       PROXY_BASE_URL: "https://litellm.homelab.rivetcode.com"
+      # https://docs.litellm.ai/docs/proxy/admin_ui_sso#set-proxy-admin
+      PROXY_ADMIN_ID: "akadmin"
     db:
       deployStandalone: false
       # kubectl get clusters -n litellm
