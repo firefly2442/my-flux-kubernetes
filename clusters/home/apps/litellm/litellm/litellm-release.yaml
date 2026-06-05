@@ -19,6 +19,7 @@ spec:
       # Use "ghcr.io/berriai/litellm-database" for optimized image with database
       repository: harbor.homelab.rivetcode.com/ghcr-proxy/berriai/litellm-database
     db:
+      deployStandalone: false
       # kubectl get clusters -n litellm
       useExisting: true
       endpoint: litellm-postgres-rw.litellm.svc.cluster.local
