@@ -25,6 +25,7 @@ spec:
       GENERIC_AUTHORIZATION_ENDPOINT: "https://authentik.homelab.rivetcode.com/application/o/authorize/"
       GENERIC_TOKEN_ENDPOINT: "https://authentik.homelab.rivetcode.com/application/o/token/"
       GENERIC_USERINFO_ENDPOINT: "https://authentik.homelab.rivetcode.com/application/o/userinfo/"
+      AUTO_REDIRECT_UI_LOGIN_TO_SSO: "true"
     db:
       deployStandalone: false
       # kubectl get clusters -n litellm
