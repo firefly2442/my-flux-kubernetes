@@ -19,6 +19,8 @@ spec:
     applicationProtocol: https
     applicationHost: karakeep.homelab.rivetcode.com
     meilisearch:
+      auth:
+        existingMasterKeySecret: "{{ .Release.Name }}-meilesearch"
       environment:
         MEILI_ENV: production
         # https://www.meilisearch.com/docs/resources/help/telemetry#environment-variable
@@ -42,9 +44,9 @@ spec:
               - secretRef:
                   name: karakeep-oauth-oidc-secret
             env:
-              OLLAMA_BASE_URL: "https://ollama.homelab.rivetcode.com"
-              INFERENCE_TEXT_MODEL: "qwen3.5"
-              INFERENCE_JOB_TIMEOUT_SEC: "180"
+              # OLLAMA_BASE_URL: "https://ollama.homelab.rivetcode.com"
+              # INFERENCE_TEXT_MODEL: "qwen3.5:0.8b"
+              # INFERENCE_JOB_TIMEOUT_SEC: "120"
               DISABLE_PASSWORD_AUTH: "true"
               OAUTH_ALLOW_DANGEROUS_EMAIL_ACCOUNT_LINKING: "true"
               OAUTH_AUTO_REDIRECT: "true"
