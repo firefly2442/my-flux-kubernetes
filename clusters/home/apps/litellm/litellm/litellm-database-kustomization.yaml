@@ -1,0 +1,14 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: litellm-database
+  namespace: litellm
+spec:
+  interval: 5m
+  path: ./clusters/home/apps/litellm/litellm/database/
+  prune: true # remove any elements later removed from the above path
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system

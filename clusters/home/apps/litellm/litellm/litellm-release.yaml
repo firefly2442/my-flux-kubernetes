@@ -18,3 +18,5 @@ spec:
     image:
       # Use "ghcr.io/berriai/litellm-database" for optimized image with database
       repository: harbor.homelab.rivetcode.com/ghcr-proxy/berriai/litellm-database
+    db:
+      useExisting: true
