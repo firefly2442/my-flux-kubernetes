@@ -16,7 +16,8 @@ spec:
       interval: 5m
   # https://github.com/karakeep-app/helm-charts/blob/main/charts/karakeep/values.yaml
   values:
-    applicationHost: https://karakeep.homelab.rivetcode.com
+    applicationProtocol: https
+    applicationHost: karakeep.homelab.rivetcode.com
     meilisearch:
       environment:
         MEILI_ENV: production
