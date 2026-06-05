@@ -399,3 +399,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: litellm-external
+          url: https://litellm.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: litellm-internal
+          url: http://litellm.litellm.svc.cluster.local:4000
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

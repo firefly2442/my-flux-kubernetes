@@ -5,7 +5,7 @@ metadata:
   namespace: litellm
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-clusterissuer
-    gethomepage.dev/href: "https://litellm.homelab.rivetcode.com"
+    gethomepage.dev/href: "https://litellm.homelab.rivetcode.com/ui"
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Litellm
     gethomepage.dev/group: AI

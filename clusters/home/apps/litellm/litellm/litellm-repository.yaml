@@ -7,4 +7,5 @@ spec:
   interval: 5m
   url: https://github.com/BerriAI/litellm
   ref:
+    # https://github.com/BerriAI/litellm/releases
     tag: v1.87.1
