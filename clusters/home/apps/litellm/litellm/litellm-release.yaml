@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: oci://docker.litellm.ai/berriai/litellm-helm
+      chart: litellm-helm
       version: 0.1.2
       sourceRef:
         kind: HelmRepository
