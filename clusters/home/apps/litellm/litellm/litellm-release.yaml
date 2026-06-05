@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: litellm
+      chart: litellm-helm
       version: 0.1.2
       sourceRef:
         kind: HelmRepository
