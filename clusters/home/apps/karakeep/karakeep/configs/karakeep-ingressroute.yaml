@@ -24,8 +24,5 @@ spec:
     services:
     - name: karakeep
       port: 3000
-    middlewares:
-      - name: authentik-service-middleware
-        namespace: authentik
   tls:
     secretName: karakeep-certificate-secret
