@@ -40,6 +40,10 @@ spec:
             envFrom:
               - secretRef:
                   name: karakeep-oauth-oidc-secret
+              - secretRef:
+                  name: "{{ .Release.Name }}"
+              - secretRef:
+                  name: "{{ .Release.Name }}-meilesearch"
             env:
               # OLLAMA_BASE_URL: "https://ollama.homelab.rivetcode.com"
               # INFERENCE_TEXT_MODEL: "qwen3.5:0.8b"
