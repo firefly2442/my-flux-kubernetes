@@ -5,4 +5,4 @@ metadata:
   namespace: flux-system
 spec:
   type: oci
-  url: docker.litellm.ai/berriai/litellm-helm
+  url: oci://docker.litellm.ai/berriai/litellm-helm
