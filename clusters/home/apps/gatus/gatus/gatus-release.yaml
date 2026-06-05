@@ -389,3 +389,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: karakeep-external
+          url: https://karakeep.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: karakeep-internal
+          url: http://karakeep.karakeep.svc.cluster.local:3000
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
