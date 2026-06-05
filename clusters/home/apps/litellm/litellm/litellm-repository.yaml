@@ -1,8 +1,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
+kind: GitRepository
 metadata:
   name: litellm
   namespace: flux-system
 spec:
-  type: oci
-  url: oci://docker.litellm.ai/berriai/litellm-helm
+  interval: 5m
+  url: https://github.com/BerriAI/litellm
+  ref:
+    tag: v1.87.1
