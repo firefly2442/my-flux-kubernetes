@@ -106,6 +106,7 @@ Resource `Limits` determine how much a pod is allowed to consume once it is runn
 * [Paperlessngx Dashboard](https://paperlessngx.homelab.rivetcode.com)
 * [mlflow Dashboard](https://mlflow.homelab.rivetcode.com)
 * [Linkding Bookmarks](https://linkding.homelab.rivetcode.com)
+* [Karakeep Dashboard](https://karakeep.homelab.rivetcode.com)
 
 ## Debugging
 
