@@ -23,6 +23,6 @@ spec:
     kind: Rule
     services:
     - name: litellm
-      port: 10216
+      port: 4000
   tls:
     secretName: litellm-certificate-secret
