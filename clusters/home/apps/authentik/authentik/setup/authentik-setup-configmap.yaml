@@ -167,7 +167,7 @@ data:
             "https://gitea.homelab.rivetcode.com/user/oauth2/authentik/callback",
             "https://headlamp.homelab.rivetcode.com/oidc-callback",
             "https://karakeep.homelab.rivetcode.com/api/auth/callback/custom",
-            "https://litellm.homelab.rivetcode.com/auth"
+            "https://litellm.homelab.rivetcode.com/sso/callback"
         ]
 
         scopes_list = []
