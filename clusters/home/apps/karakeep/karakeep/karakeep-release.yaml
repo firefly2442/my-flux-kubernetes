@@ -33,9 +33,6 @@ spec:
         labels:
           recurring-job.longhorn.io/source: enabled
           recurring-job-group.longhorn.io/backup: enabled
-    secrets:
-      karakeep:
-        enabled: false
     controllers:
       karakeep:
         containers:
