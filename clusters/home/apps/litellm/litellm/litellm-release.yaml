@@ -17,7 +17,10 @@ spec:
   values:
     image:
       # Use "ghcr.io/berriai/litellm-database" for optimized image with database
-      repository: harbor.homelab.rivetcode.com/ghcr-proxy/berriai/litellm-database
+      # we have a standalone postgres database so we don't need that
+      repository: harbor.homelab.rivetcode.com/ghcr-proxy/berriai/litellm
+      pullPolicy: IfNotPresent
+      tag: v1.87.1
     environmentSecrets:
       - litellm-oauth-oidc-secret
     envVars:
