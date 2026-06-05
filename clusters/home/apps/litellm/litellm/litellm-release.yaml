@@ -9,7 +9,7 @@ spec:
     spec:
       chart: ./deploy/charts/litellm-helm
       sourceRef:
-        kind: HelmRepository
+        kind: GitRepository
         name: litellm
         namespace: flux-system
       interval: 5m
