@@ -156,7 +156,7 @@ data:
             )
 
         # oauth2 OIDC app list
-        oauth_app_list = ["grafana", "gitea", "headlamp", "karakeep"]
+        oauth_app_list = ["grafana", "gitea", "headlamp", "karakeep", "litellm"]
 
         # https://grafana.com/docs/grafana/latest/setup-grafana/configure-access/configure-authentication/generic-oauth/
         # https://integrations.goauthentik.io/development/gitea/
@@ -166,7 +166,8 @@ data:
             "https://grafana.homelab.rivetcode.com/login/generic_oauth",
             "https://gitea.homelab.rivetcode.com/user/oauth2/authentik/callback",
             "https://headlamp.homelab.rivetcode.com/oidc-callback",
-            "https://karakeep.homelab.rivetcode.com/api/auth/callback/custom"
+            "https://karakeep.homelab.rivetcode.com/api/auth/callback/custom",
+            "https://litellm.homelab.rivetcode.com/auth"
         ]
 
         scopes_list = []
