@@ -50,3 +50,4 @@ resources:
   - ./namespaces/namespace-paperlessngx.yaml
   - ./namespaces/namespace-mlflow.yaml
   - ./namespaces/namespace-linkding.yaml
+  - ./namespaces/namespace-karakeep.yaml

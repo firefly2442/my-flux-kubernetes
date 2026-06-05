@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: karakeep-cert
+  namespace: karakeep
+spec:
+  secretName: karakeep-certificate-secret
+  dnsNames:
+    - "karakeep.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer

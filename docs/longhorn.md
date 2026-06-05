@@ -196,6 +196,7 @@ no data is lost.
 * Photoprism
 * Paperlessngx
 * Linkding
+* Karakeep
 
 ## Links
 
