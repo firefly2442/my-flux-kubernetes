@@ -166,6 +166,7 @@ data:
             "https://grafana.homelab.rivetcode.com/login/generic_oauth",
             "https://gitea.homelab.rivetcode.com/user/oauth2/authentik/callback",
             "https://headlamp.homelab.rivetcode.com/oidc-callback",
+            "https://karakeep.homelab.rivetcode.com/api/auth/callback/custom"
         ]
 
         scopes_list = []
