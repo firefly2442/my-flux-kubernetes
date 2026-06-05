@@ -18,6 +18,13 @@ spec:
     image:
       # Use "ghcr.io/berriai/litellm-database" for optimized image with database
       repository: harbor.homelab.rivetcode.com/ghcr-proxy/berriai/litellm-database
+    environmentSecrets:
+      - litellm-oauth-oidc-secret
+    envVars:
+      # https://docs.litellm.ai/docs/proxy/admin_ui_sso
+      GENERIC_AUTHORIZATION_ENDPOINT: "https://authentik.homelab.rivetcode.com/application/o/authorize/"
+      GENERIC_TOKEN_ENDPOINT: "https://authentik.homelab.rivetcode.com/application/o/token/"
+      GENERIC_USERINFO_ENDPOINT: "https://authentik.homelab.rivetcode.com/application/o/userinfo/"
     db:
       deployStandalone: false
       # kubectl get clusters -n litellm
