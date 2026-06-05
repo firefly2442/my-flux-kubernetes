@@ -10,12 +10,6 @@ spec:
     size: 1Gi
     storageClass: "longhorn-ha-2"
 
-  template:
-    metadata:
-      labels:
-        recurring-job.longhorn.io/source: "enabled"
-        recurring-job-group.longhorn.io/backup: "enabled"
-
   bootstrap:
     initdb:
       database: litellm
