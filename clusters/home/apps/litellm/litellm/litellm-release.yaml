@@ -32,6 +32,7 @@ spec:
       PROXY_BASE_URL: "https://litellm.homelab.rivetcode.com"
       # https://docs.litellm.ai/docs/proxy/admin_ui_sso#set-proxy-admin
       PROXY_ADMIN_ID: "akadmin"
+      STORE_MODEL_IN_DB: "true"
     db:
       deployStandalone: false
       # kubectl get clusters -n litellm
