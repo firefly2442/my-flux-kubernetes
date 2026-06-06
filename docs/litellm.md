@@ -7,6 +7,12 @@ OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM]
 There is [no telemetry](https://docs.litellm.ai/docs/observability/telemetry) enabled
 by default.
 
+## Models
+
+LiteLLM is configured with the following model providers:
+
+* [Google Gemini](https://aistudio.google.com)
+
 ## Links
 
 * [https://github.com/BerriAI/litellm](https://github.com/BerriAI/litellm)
