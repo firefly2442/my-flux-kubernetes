@@ -49,6 +49,10 @@ spec:
     proxy_config:
       model_list:
         # At least one model must exist for the proxy to start
+        - model_name: gemini-2.5-flash-lite
+          litellm_params:
+            model: gemini/gemini-2.5-flash-lite
+            api_key: os.environ/GEMINI_API_KEY
         - model_name: gemma-4-31b-it
           litellm_params:
             model: gemini/gemma-4-31b-it
