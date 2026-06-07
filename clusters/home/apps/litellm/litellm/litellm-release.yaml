@@ -20,7 +20,7 @@ spec:
       # we have a standalone postgres database so we don't need that
       repository: harbor.homelab.rivetcode.com/ghcr-proxy/berriai/litellm
       pullPolicy: IfNotPresent
-      tag: v1.87.1
+      tag: v1.88.0
     environmentSecrets:
       - litellm-oauth-oidc-secret
     envVars:
