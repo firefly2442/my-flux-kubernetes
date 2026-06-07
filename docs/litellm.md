@@ -13,10 +13,14 @@ LiteLLM is configured with the following model providers:
 
 * [Google Gemini](https://aistudio.google.com)
 * [Gemma4 from Google](https://aistudio.google.com)
+* [Cerebras AI](https://cloud.cerebras.ai)
 
 [This page from Google](https://aistudio.google.com/rate-limit) in particular
 is helpful to show all the different models and what is available and deprecated.
 Models are substantially rate-limited depending on the model.
+
+[And this is for Cerebras AI](https://inference-docs.cerebras.ai/support/rate-limits)
+and their rate-limits.
 
 Terminology:
 
