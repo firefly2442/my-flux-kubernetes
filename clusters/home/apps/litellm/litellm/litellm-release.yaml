@@ -23,6 +23,8 @@ spec:
       tag: v1.88.0
     environmentSecrets:
       - litellm-oauth-oidc-secret
+      - litellm-gemini-api-key-secret
+      - litellm-cerebras-api-key-secret
     envVars:
       # https://docs.litellm.ai/docs/proxy/admin_ui_sso
       GENERIC_AUTHORIZATION_ENDPOINT: "https://authentik.homelab.rivetcode.com/application/o/authorize/"
@@ -32,7 +34,8 @@ spec:
       PROXY_BASE_URL: "https://litellm.homelab.rivetcode.com"
       # https://docs.litellm.ai/docs/proxy/admin_ui_sso#set-proxy-admin
       PROXY_ADMIN_ID: "akadmin"
-      STORE_MODEL_IN_DB: "true"
+      # force to only use config.yaml file for model setup
+      STORE_MODEL_IN_DB: "false"
     db:
       deployStandalone: false
       # kubectl get clusters -n litellm
@@ -43,3 +46,20 @@ spec:
         name: litellm-postgres-app
         usernameKey: username
         passwordKey: password
+    proxy_config:
+      model_list:
+        # At least one model must exist for the proxy to start
+        - model_name: gemma-4-31b-it
+          litellm_params:
+            model: gemini/gemma-4-31b-it
+            api_key: os.environ/GEMINI_API_KEY
+        - model_name: gemma-4-26b-a4b-it
+          litellm_params:
+            model: gemini/gemma-4-26b-a4b-it
+            api_key: os.environ/GEMINI_API_KEY
+        - model_name: gpt-oss-120b
+          litellm_params:
+            model: cerebras/gpt-oss-120b
+            api_key: os.environ/CEREBRAS_API_KEY
+      general_settings:
+        master_key: os.environ/PROXY_MASTER_KEY
