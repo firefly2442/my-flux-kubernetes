@@ -15,19 +15,31 @@ spec:
       labels:
         app: volcano-dashboard
     spec:
+      securityContext:
+        seLinuxOptions:
+          level: s0:c123,c456
+        seccompProfile:
+          type: RuntimeDefault
       serviceAccountName: volcano-dashboard
       containers:
-        - name: frontend
+        - name: volcano-dashboard
           image: volcanosh/vc-dashboard-frontend:latest
           imagePullPolicy: Always
           ports:
-            - name: frontend
-              containerPort: 80
+            - containerPort: 8080
+              name: frontend
               protocol: TCP
-        - name: backend
-          image: volcanosh/vc-dashboard-backend:latest
-          imagePullPolicy: Always
-          ports:
-            - name: backend
-              containerPort: 3001
-              protocol: TCP
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: PORT
+              value: "8080"
+            - name: K8S_SKIP_TLS_VERIFY
+              value: "false"
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
