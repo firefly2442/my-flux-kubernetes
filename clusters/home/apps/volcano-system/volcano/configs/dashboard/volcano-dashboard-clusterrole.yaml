@@ -3,12 +3,73 @@ kind: ClusterRole
 metadata:
   name: volcano-dashboard
 rules:
-  - apiGroups: ["batch.volcano.sh"]
-    resources: ["jobs"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: [""]
-    resources: ["pods", "namespaces"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: ["scheduling.incubator.k8s.io", "scheduling.volcano.sh"]
-    resources: ["queues"]
-    verbs: ["get", "list", "watch"]
+  # Volcano Jobs
+  - apiGroups:
+      - batch.volcano.sh
+    resources:
+      - jobs
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - delete
+      - update
+      - patch
+  # Pods
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+    verbs:
+      - get
+      - list
+      - watch
+  # Namespaces
+  - apiGroups:
+      - ""
+    resources:
+      - namespaces
+    verbs:
+      - get
+      - list
+      - watch
+  # Volcano Queues
+  - apiGroups:
+      - scheduling.incubator.k8s.io
+      - scheduling.volcano.sh
+    resources:
+      - queues
+    verbs:
+      - get
+      - list
+      - watch
+      - delete
+      - create
+      - update
+      - patch
+  - apiGroups:
+      - scheduling.volcano.sh
+    resources:
+      - podgroups
+    verbs:
+      - get
+      - list
+      - watch
+  # Events (for better monitoring)
+  - apiGroups:
+      - ""
+    resources:
+      - events
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - scheduling.volcano.sh
+    resources:
+      - podgroups
+    verbs:
+      - get
+      - list
+      - watch
