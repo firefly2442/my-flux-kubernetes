@@ -20,7 +20,7 @@ spec:
       repository: harbor.homelab.rivetcode.com/dockerhub-proxy/searxng/searxng
     persistence:
       config:
-        enabled: true
+        enabled: false
         mountPath: /etc/searxng
-        size: 500Mi
-        storageClass: "longhorn-ha-2"
+        # size: 500Mi
+        # storageClass: "longhorn-ha-2"
