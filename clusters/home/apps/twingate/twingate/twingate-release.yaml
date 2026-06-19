@@ -20,8 +20,6 @@ spec:
       tag: "1.89.0"
     metrics:
       enabled: true
-      podMonitor:
-        enabled: true
     connector:
       existingSecret: "twingate-token-secret"
       network: "firefly2442"
