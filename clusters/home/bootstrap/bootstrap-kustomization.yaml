@@ -52,3 +52,4 @@ resources:
   - ./namespaces/namespace-linkding.yaml
   - ./namespaces/namespace-karakeep.yaml
   - ./namespaces/namespace-litellm.yaml
+  - ./namespaces/namespace-twingate.yaml
