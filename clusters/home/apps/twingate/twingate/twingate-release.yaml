@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: twingate
+      chart: connector
       version: '0.1.35'
       sourceRef:
         kind: HelmRepository
