@@ -74,6 +74,14 @@ spec:
         grafana-k8s-dashboard:
           url: https://raw.githubusercontent.com/firefly2442/my-flux-kubernetes/refs/heads/master/clusters/home/apps/grafana/grafana/dashboards/grafana-k8s-dashboard.json
           token: ''
+        # flux monitoring
+        # https://github.com/fluxcd/flux2-monitoring-example
+        grafana-flux-cluster-dashboard:
+          url: https://raw.githubusercontent.com/fluxcd/flux2-monitoring-example/tree/main/monitoring/configs/dashboards/cluster.json
+          token: ''
+        grafana-flux-controlplane-dashboard:
+          url: https://raw.githubusercontent.com/fluxcd/flux2-monitoring-example/blob/main/monitoring/configs/dashboards/control-plane.json
+          token: ''
     grafana.ini:
       # for debugging purposes, particularly for oauth2
       #log:
