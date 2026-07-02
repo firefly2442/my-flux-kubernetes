@@ -77,10 +77,10 @@ spec:
         # flux monitoring
         # https://github.com/fluxcd/flux2-monitoring-example
         grafana-flux-cluster-dashboard:
-          url: https://raw.githubusercontent.com/fluxcd/flux2-monitoring-example/tree/main/monitoring/configs/dashboards/cluster.json
+          url: https://raw.githubusercontent.com/fluxcd/flux2-monitoring-example/refs/heads/main/monitoring/configs/dashboards/cluster.json
           token: ''
         grafana-flux-controlplane-dashboard:
-          url: https://raw.githubusercontent.com/fluxcd/flux2-monitoring-example/blob/main/monitoring/configs/dashboards/control-plane.json
+          url: https://raw.githubusercontent.com/fluxcd/flux2-monitoring-example/refs/heads/main/monitoring/configs/dashboards/control-plane.json
           token: ''
     grafana.ini:
       # for debugging purposes, particularly for oauth2
