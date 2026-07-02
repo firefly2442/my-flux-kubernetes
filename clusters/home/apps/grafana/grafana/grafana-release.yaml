@@ -48,6 +48,14 @@ spec:
           editable: true
           options:
             path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes
+        - name: 'grafana-dashboards-flux'
+          orgId: 1
+          folder: 'Flux'
+          type: file
+          disableDeletion: true
+          editable: true
+          options:
+            path: /var/lib/grafana/dashboards/grafana-dashboards-flux
     dashboards:
       # https://github.com/dotdc/grafana-dashboards-kubernetes
       grafana-dashboards-kubernetes:
@@ -74,8 +82,9 @@ spec:
         grafana-k8s-dashboard:
           url: https://raw.githubusercontent.com/firefly2442/my-flux-kubernetes/refs/heads/master/clusters/home/apps/grafana/grafana/dashboards/grafana-k8s-dashboard.json
           token: ''
-        # flux monitoring
-        # https://github.com/fluxcd/flux2-monitoring-example
+      # flux monitoring
+      # https://github.com/fluxcd/flux2-monitoring-example
+      grafana-dashboards-flux:
         grafana-flux-cluster-dashboard:
           url: https://raw.githubusercontent.com/fluxcd/flux2-monitoring-example/refs/heads/main/monitoring/configs/dashboards/cluster.json
           token: ''
