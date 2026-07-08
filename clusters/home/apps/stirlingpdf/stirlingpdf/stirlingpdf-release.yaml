@@ -25,7 +25,7 @@ spec:
       registry: docker.stirlingpdf.com
       repository: stirlingtools/stirling-pdf
       # https://hub.docker.com/r/stirlingtools/stirling-pdf/tags
-      tag: 2.14.0
+      tag: 2.14.1
     serviceMonitor:
       # for prometheus metrics
       enabled: true
