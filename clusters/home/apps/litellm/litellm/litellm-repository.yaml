@@ -8,4 +8,4 @@ spec:
   url: https://github.com/BerriAI/litellm
   ref:
     # https://github.com/BerriAI/litellm/releases
-    tag: v1.91.0
+    tag: v1.91.1
