@@ -6,8 +6,8 @@ metadata:
 # https://docs.ray.io/en/latest/cluster/kubernetes/user-guides/config.html
 spec:
   # https://github.com/ray-project/ray/releases
-  # this must match the image tag version
-  rayVersion: "2.55.1"
+  # this must match the image tag version below
+  rayVersion: "2.58.0"
   headGroupSpec:
     serviceType: ClusterIP
     rayStartParams:
