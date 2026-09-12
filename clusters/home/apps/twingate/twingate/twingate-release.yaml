@@ -17,6 +17,7 @@ spec:
   # https://github.com/Twingate/helm-charts/blob/master/stable/connector/values.yaml
   values:
     image:
+      repository: twingate/connector
       # renovate: datasource=docker depName=twingate/connector
       tag: "1.89.0"
     metrics:
