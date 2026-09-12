@@ -19,7 +19,7 @@ spec:
     image:
       repository: twingate/connector
       # renovate: datasource=docker depName=twingate/connector
-      tag: "1.89.0"
+      tag: "1.92.0"
     metrics:
       enabled: true
     connector:
