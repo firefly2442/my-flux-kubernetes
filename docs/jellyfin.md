@@ -9,4 +9,4 @@ or renaming media records and files.
 ## Links
 
 * [https://github.com/jellyfin/jellyfin](https://github.com/jellyfin/jellyfin)
-* [https://github.com/jellyfin/jellyfin-helm/tree/master/charts/jellyfin](https://github.com/jellyfin/jellyfin-helm/tree/master/charts/jellyfin)
+* [https://truecharts.org/charts/stable/jellyfin/](https://truecharts.org/charts/stable/jellyfin/)

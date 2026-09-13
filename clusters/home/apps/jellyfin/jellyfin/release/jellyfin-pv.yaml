@@ -10,7 +10,7 @@ spec:
   accessModes:
     - ReadOnlyMany
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: local-path
+  storageClassName: jellyfin-media-local
   local:
     path: /twotbmirror/media/
   nodeAffinity:

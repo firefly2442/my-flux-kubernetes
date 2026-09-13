@@ -4,7 +4,7 @@ metadata:
   name: jellyfin-media
   namespace: jellyfin
 spec:
-  storageClassName: local-path
+  storageClassName: jellyfin-media-local
   accessModes:
     - ReadOnlyMany
   resources:

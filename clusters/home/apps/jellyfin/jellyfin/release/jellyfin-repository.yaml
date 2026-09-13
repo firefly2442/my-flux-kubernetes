@@ -5,4 +5,5 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  url: https://jellyfin.github.io/jellyfin-helm
+  type: oci
+  url: oci://oci.trueforge.org/truecharts/jellyfin
