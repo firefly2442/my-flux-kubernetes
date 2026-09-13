@@ -1,0 +1,84 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: jellyfin
+  namespace: jellyfin
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: jellyfin
+      # https://github.com/jellyfin/jellyfin-helm/tree/master/charts/jellyfin
+      version: '3.3.0'
+      sourceRef:
+        kind: HelmRepository
+        name: jellyfin
+        namespace: flux-system
+      interval: 5m
+  # https://github.com/jellyfin/jellyfin-helm/blob/master/charts/jellyfin/values.yaml
+  values:
+    persistence:
+      config:
+        # -- set to false to use emptyDir
+        enabled: true
+        # -- Type of volume for media storage (pvc, hostPath, nfs, emptyDir). If 'enabled' is false, 'emptyDir' is used regardless of this setting.
+        type: pvc
+        hostPath: ""
+        # -- PVC specific settings, only used if type is 'pvc'.
+        accessMode: ReadWriteOnce
+        size: 10Gi
+        # -- Custom labels to be added to the PVC
+        labels: {}
+        # -- Custom annotations to be added to the PVC
+        annotations: {}
+        # -- If undefined (the default) or set to null, no storageClassName spec is set, choosing the default provisioner.
+        storageClass: 'longhorn-ha-2'
+        ## -- Use an existing PVC for this mount
+        # existingClaim: ''
+        # -- NFS specific settings, only used if type is 'nfs'.
+        nfsServer: ""
+        nfsPath: ""
+        readOnly: true
+      media:
+        # -- set to false to use emptyDir
+        enabled: true
+        # -- Type of volume for media storage (pvc, hostPath, nfs, emptyDir). If 'enabled' is false, 'emptyDir' is used regardless of this setting.
+        type: pvc
+        # -- Path on the host node for media storage, only used if type is 'hostPath'.
+        #hostPath: ""
+        # -- PVC specific settings, only used if type is 'pvc'.
+        accessMode: ReadOnlyMany
+        size: 15Ti
+        # -- Custom labels to be added to the PVC
+        #labels: {}
+        # -- Custom annotations to be added to the PVC
+        #annotations: {}
+        # -- If undefined (the default) or set to null, no storageClassName spec is set, choosing the default provisioner.
+        #storageClass: ''
+        ## -- Use an existing PVC for this mount
+        existingClaim: 'jellyfin-media'
+        # -- NFS specific settings, only used if type is 'nfs'.
+        #nfsServer: ""
+        #nfsPath: ""
+        #readOnly: true
+      cache:
+        # -- set to false to use emptyDir
+        enabled: false
+        # -- Type of volume for cache storage (pvc, hostPath, emptyDir). If 'enabled' is false, 'emptyDir' is used regardless of this setting.
+        type: pvc
+        # -- Path on the host node for cache storage, only used if type is 'hostPath'.
+        hostPath: ""
+        # -- PVC specific settings, only used if type is 'pvc'.
+        accessMode: ReadWriteOnce
+        size: 10Gi
+        # -- Custom labels to be added to the PVC
+        labels: {}
+        # -- Custom annotations to be added to the PVC
+        annotations: {}
+        # -- If undefined (the default) or set to null, no storageClassName spec is set, choosing the default provisioner.
+        storageClass: ''
+        ## -- Use an existing PVC for this mount
+        # existingClaim: ''
+
+    metrics:
+      enabled: true
