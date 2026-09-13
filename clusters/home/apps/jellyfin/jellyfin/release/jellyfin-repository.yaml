@@ -6,4 +6,4 @@ metadata:
 spec:
   interval: 5m
   type: oci
-  url: oci://oci.trueforge.org/truecharts/jellyfin
+  url: oci://oci.trueforge.org/truecharts
