@@ -9,7 +9,7 @@ spec:
     spec:
       chart: jellyfin
       # https://github.com/jellyfin/jellyfin-helm/tree/master/charts/jellyfin
-      version: '3.3.0'
+      version: '3.2.0'
       sourceRef:
         kind: HelmRepository
         name: jellyfin
