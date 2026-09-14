@@ -8,8 +8,8 @@ metadata:
     gethomepage.dev/href: "https://jellyfin.homelab.rivetcode.com"
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Jellyfin
-    gethomepage.dev/group: Smart Home
-    gethomepage.dev/icon: mdi-application
+    gethomepage.dev/group: Entertainment
+    gethomepage.dev/icon: mdi-video
     gethomepage.dev/app: jellyfin # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Jellyfin
     gethomepage.dev/widget.type: "jellyfin"
