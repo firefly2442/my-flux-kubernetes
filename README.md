@@ -108,6 +108,7 @@ Resource `Limits` determine how much a pod is allowed to consume once it is runn
 * [Linkding Bookmarks](https://linkding.homelab.rivetcode.com)
 * [Karakeep Dashboard](https://karakeep.homelab.rivetcode.com)
 * [LiteLLM Admin Dashboard](https://litellm.homelab.rivetcode.com/ui)
+* [Jellyfin](https://jellyfin.homelab.rivetcode.com)
 
 ## Debugging
 

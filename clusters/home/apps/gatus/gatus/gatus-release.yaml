@@ -409,3 +409,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: jellyfin-external
+          url: https://jellyfin.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: jellyfin-internal
+          url: http://jellyfin.jellyfin.svc.cluster.local:8096
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
