@@ -10,14 +10,9 @@ spec:
   accessModes:
     - ReadOnlyMany
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: jellyfin-media-local
-  local:
-    path: /twotbmirror/media/
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - alienware
+  storageClassName: nfs-jellyfin-media
+  nfs:
+    server: 192.168.1.105
+    path: /twotbmirror/media
+  mountOptions:
+    - ro

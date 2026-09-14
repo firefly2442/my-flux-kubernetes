@@ -17,12 +17,6 @@ spec:
       interval: 5m
   # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/jellyfin/values.yaml
   values:
-    podOptions:
-      tolerations:
-        - key: "node-role.kubernetes.io/worker"
-          operator: "Equal"
-          value: "ephemeral"
-          effect: "NoSchedule"
     persistence:
       config:
         enabled: true
