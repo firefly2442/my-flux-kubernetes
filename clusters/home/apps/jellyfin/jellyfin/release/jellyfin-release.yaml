@@ -26,7 +26,7 @@ spec:
       data:
         enabled: true
         mountPath: "/data"
-        existingClaim: 'longhorn-ha-2'
+        storageClass: 'longhorn-ha-2'
         size: 10Gi
       media:
         enabled: true
