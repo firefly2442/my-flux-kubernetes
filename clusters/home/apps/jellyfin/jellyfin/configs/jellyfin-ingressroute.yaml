@@ -25,8 +25,5 @@ spec:
     services:
     - name: jellyfin
       port: 8096
-    middlewares:
-      - name: authentik-service-middleware
-        namespace: authentik
   tls:
     secretName: jellyfin-certificate-secret
