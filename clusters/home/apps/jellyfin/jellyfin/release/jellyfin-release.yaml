@@ -26,6 +26,11 @@ spec:
       data:
         enabled: true
         mountPath: "/data"
+        existingClaim: 'longhorn-ha-2'
+        size: 10Gi
+      media:
+        enabled: true
+        mountPath: "/jellyfin-media"
         existingClaim: 'jellyfin-media'
       logs:
         enabled: true
