@@ -7,10 +7,6 @@ spec:
   selector:
     app: volcano-dashboard
   ports:
-    - name: backend
-      port: 3001
-      targetPort: 3001
-      protocol: TCP
     - name: frontend
       port: 80
       targetPort: 8080

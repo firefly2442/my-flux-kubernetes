@@ -23,7 +23,7 @@ spec:
       serviceAccountName: volcano-dashboard
       containers:
         - name: volcano-dashboard
-          image: volcanosh/vc-dashboard-frontend:latest
+          image: volcanosh/vc-dashboard:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
