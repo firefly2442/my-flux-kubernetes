@@ -56,16 +56,16 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: gitea-external
-          url: https://gitea.homelab.rivetcode.com
-          interval: 60s
-          conditions:
-            - "[STATUS] == 200"
-        - name: gitea-internal
-          url: http://gitea-http.gitea.svc.cluster.local:3000
-          interval: 60s
-          conditions:
-            - "[STATUS] == 200"
+        # - name: gitea-external
+        #   url: https://gitea.homelab.rivetcode.com
+        #   interval: 60s
+        #   conditions:
+        #     - "[STATUS] == 200"
+        # - name: gitea-internal
+        #   url: http://gitea-http.gitea.svc.cluster.local:3000
+        #   interval: 60s
+        #   conditions:
+        #     - "[STATUS] == 200"
         # - name: headlamp-external
         #   url: https://headlamp.homelab.rivetcode.com
         #   interval: 60s

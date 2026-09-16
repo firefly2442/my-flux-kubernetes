@@ -75,7 +75,7 @@ Resource `Limits` determine how much a pod is allowed to consume once it is runn
 * [Traefik Dashboard](https://traefik.homelab.rivetcode.com)
 * [Authentik](https://authentik.homelab.rivetcode.com)
 * [Headlamp Dashboard](https://headlamp.homelab.rivetcode.com) - disabled
-* [Gitea](https://gitea.homelab.rivetcode.com)
+* [Gitea](https://gitea.homelab.rivetcode.com) - disabled
 * [Podinfo](https://podinfo.homelab.rivetcode.com)
 * [Longhorn Storage](https://longhorn.homelab.rivetcode.com)
 * [Kubernetes Dashboard](https://kubernetes-dashboard.homelab.rivetcode.com)

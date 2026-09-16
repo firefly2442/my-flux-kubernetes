@@ -12,7 +12,7 @@ resources:
   - ./namespaces/namespace-metallb-system.yaml
   - ./namespaces/namespace-volcano-system.yaml
   - ./namespaces/namespace-kubernetes-dashboard.yaml
-  - ./namespaces/namespace-gitea.yaml
+  #- ./namespaces/namespace-gitea.yaml
   - ./namespaces/namespace-authentik.yaml
   - ./namespaces/namespace-gatus.yaml
   - ./namespaces/namespace-homepage.yaml
