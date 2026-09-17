@@ -23,3 +23,13 @@ spec:
         enabled: true
         storageClass: "longhorn-ha-2"
         size: 1Gi
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                # since we are using Let's Encrypt, we can set this to true
+                HTTP_ALLOWED: "true"
+                # this is our local network so we don't need to setup accounts
+                ALLOW_UNAUTHENTICATED: "true"
