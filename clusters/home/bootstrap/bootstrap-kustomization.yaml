@@ -54,3 +54,4 @@ resources:
   - ./namespaces/namespace-litellm.yaml
   - ./namespaces/namespace-twingate.yaml
   - ./namespaces/namespace-jellyfin.yaml
+  - ./namespaces/namespace-convertx.yaml
