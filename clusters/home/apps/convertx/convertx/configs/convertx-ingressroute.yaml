@@ -25,4 +25,4 @@ spec:
     - name: convertx
       port: 3000
   tls:
-    secretName: metube-certificate-secret
+    secretName: convertx-certificate-secret
