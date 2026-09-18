@@ -14,7 +14,7 @@ spec:
         name: convertx
         namespace: flux-system
       interval: 5m
-  # https://github.com/trueforge-org/truecharts/blob/master/charts/incubator/convertx/values.yaml
+  # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/convertx/values.yaml
   values:
     image:
       repository: harbor.homelab.rivetcode.com/ghcr-proxy/c4illin/convertx
