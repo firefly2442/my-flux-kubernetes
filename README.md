@@ -110,6 +110,7 @@ Resource `Limits` determine how much a pod is allowed to consume once it is runn
 * [LiteLLM Admin Dashboard](https://litellm.homelab.rivetcode.com/ui)
 * [Jellyfin](https://jellyfin.homelab.rivetcode.com)
 * [ConvertX](https://convertx.homelab.rivetcode.com)
+* [Birdnet-Go](https://birdnet-go.homelab.rivetcode.com)
 
 ## Debugging
 
