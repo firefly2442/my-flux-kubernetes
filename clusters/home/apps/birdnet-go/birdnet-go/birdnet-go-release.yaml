@@ -29,3 +29,11 @@ spec:
         mountPath: /data
         storageClass: "longhorn-ha-2"
         size: 5Gi
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                BIRDNET_LATITUDE: 45.000938
+                BIRDNET_LONGITUDE: -92.880112
