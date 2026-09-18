@@ -9,7 +9,7 @@ metadata:
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Birdnet-Go
     gethomepage.dev/group: Smart Home
-    gethomepage.dev/icon: mdi-audio
+    gethomepage.dev/icon: mdi-music
     gethomepage.dev/app: birdnet-go # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Birdnet-Go
     #gethomepage.dev/widget.type: "birdnet-go"
