@@ -29,6 +29,3 @@ spec:
         mountPath: /data
         storageClass: "longhorn-ha-2"
         size: 5Gi
-    env:
-      WEB_PORT: "8080"
-      TZ: "America/Chicago"
