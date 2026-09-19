@@ -26,6 +26,17 @@ check the photos and approve or delete.
 
 To delete photos, archive them first, then go into the archive page and delete them.
 
+## Backups
+
+Every so often, manually take a backup synchronization of the original photos.  Shell into the
+Kubernetes deployed Photoprism container.
+
+```shell
+apt update
+apt-get install openssh-client
+rsync -avzP --delete /photoprism/originals/ carlsonp@192.168.1.114:/data/photosbackup/
+```
+
 ## Links
 
 * [https://www.photoprism.app/](https://www.photoprism.app/)
