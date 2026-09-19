@@ -20,7 +20,7 @@ spec:
       repository: harbor.homelab.rivetcode.com/dockerhub-proxy/photoprism/photoprism
       pullPolicy: IfNotPresent
       # https://hub.docker.com/r/photoprism/photoprism/tags
-      tag: "260728"
+      tag: "260919"
     resources:
       requests:
         memory: 1Gi
