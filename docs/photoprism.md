@@ -19,6 +19,13 @@ Then check the folder and move files around if needed.
 Then go into the Library page and do a complete re-scan of the index.  This will not move
 or delete any of the existing files but re-index them and add them to the database.
 
+## Usage
+
+The photo review feature is turned on, this helps to flag blurry photos.  Go into Search -> Review to
+check the photos and approve or delete.
+
+To delete photos, archive them first, then go into the archive page and delete them.
+
 ## Links
 
 * [https://www.photoprism.app/](https://www.photoprism.app/)
