@@ -21,6 +21,11 @@ spec:
       pullPolicy: IfNotPresent
       # https://hub.docker.com/r/photoprism/photoprism/tags
       tag: "260728"
+    resources:
+      requests:
+        memory: 1Gi
+      limits:
+        memory: 8Gi
     persistence:
       # Main storage (database, cache, sidecar data)
       storage:
