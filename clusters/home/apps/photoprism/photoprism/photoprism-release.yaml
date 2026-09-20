@@ -68,6 +68,7 @@ spec:
           containers:
             main:
               env:
+                PHOTOPRISM_SITE_URL: "https://photoprism.homelab.rivetcode.com/"
                 PHOTOPRISM_OIDC_URI: "https://authentik.homelab.rivetcode.com/application/o/photoprism/"
                 PHOTOPRISM_OIDC_PROVIDER: "Authentik"
                 PHOTOPRISM_OIDC_REDIRECT: "true"
