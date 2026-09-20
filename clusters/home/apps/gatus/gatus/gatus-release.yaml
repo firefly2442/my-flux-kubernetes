@@ -355,7 +355,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: steam-analysis-mongodb-internal
-          url: http://steam-analysis-mongodb.steam-analysis.svc.cluster.local:27017
+          url: tcp://steam-analysis-mongodb.steam-analysis.svc.cluster.local:27017
           interval: 60s
           conditions:
             - "[STATUS] == 200"
