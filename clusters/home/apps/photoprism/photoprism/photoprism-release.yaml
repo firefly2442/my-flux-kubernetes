@@ -26,10 +26,6 @@ spec:
         memory: 1Gi
       limits:
         memory: 8Gi
-    secret:
-      photoprism-oauth-oidc-secret:
-        enabled: true
-        externalSecret: true
     persistence:
       # Main storage (database, cache, sidecar data)
       storage:
@@ -81,7 +77,9 @@ spec:
                   secretKeyRef:
                     name: photoprism-oauth-oidc-secret
                     key: PHOTOPRISM_OIDC_CLIENT
+                    expandObjectName: false
                 PHOTOPRISM_OIDC_SECRET:
                   secretKeyRef:
                     name: photoprism-oauth-oidc-secret
                     key: PHOTOPRISM_OIDC_SECRET
+                    expandObjectName: false
