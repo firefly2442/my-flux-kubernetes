@@ -24,8 +24,5 @@ spec:
     services:
     - name: photoprism
       port: 2342
-    middlewares:
-      - name: authentik-service-middleware
-        namespace: authentik
   tls:
     secretName: photoprism-certificate-secret
