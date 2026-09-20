@@ -68,6 +68,16 @@ spec:
           containers:
             main:
               env:
-                # warning, this opens your deployment up to anyone, be careful!
-                # we're protecting the endpoint with Authentik so we're OK
-                PHOTOPRISM_AUTH_MODE: "public"
+                PHOTOPRISM_OIDC_URI: "https://authentik.homelab.rivetcode.com/application/o/photoprism/"
+                PHOTOPRISM_OIDC_PROVIDER: "Authentik"
+                PHOTOPRISM_OIDC_REDIRECT: "true"
+                # allow new users to create an account when they sign in with OpenID Connect
+                PHOTOPRISM_OIDC_REGISTER: "true"
+                PHOTOPRISM_OIDC_CLIENT:
+                  secretKeyRef:
+                    name: photoprism-oauth-oidc-secret
+                    key: PHOTOPRISM_OIDC_CLIENT
+                PHOTOPRISM_OIDC_SECRET:
+                  secretKeyRef:
+                    name: photoprism-oauth-oidc-secret
+                    key: PHOTOPRISM_OIDC_SECRET
