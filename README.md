@@ -151,6 +151,14 @@ Check all Helm releases:
 flux get helmrelease -A
 ```
 
+In some cases, a Helm release might get stuck or not upgrade.
+To try addressing this, make sure all nodes are running on the cluster
+and are available.  Then force a re-try of the deployment.  For example:
+
+```shell
+flux reconcile helmrelease prometheus -n prometheus --force
+```
+
 Local inter-cluster networking can use .local domain so things like:
 
 ```shell
