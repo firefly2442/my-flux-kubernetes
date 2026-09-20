@@ -358,7 +358,7 @@ spec:
           url: tcp://steam-analysis-mongodb.steam-analysis.svc.cluster.local:27017
           interval: 60s
           conditions:
-            - "[STATUS] == 200"
+            - "[CONNECTED] == true"
         - name: paperlessngx-external
           url: https://paperlessngx.homelab.rivetcode.com
           interval: 60s
