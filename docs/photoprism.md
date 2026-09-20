@@ -2,6 +2,20 @@
 
 Photoprism is a photo management application.
 
+## Login
+
+Login is handled through Authentik and OpenID Connect.
+After logging in and creating the account, the account may
+need to be added as an admin.  This can be done by shelling
+into the deployed Photoprism container in Kubernetes.
+
+```shell
+photoprism users ls
+photoprism users mod --role admin akadmin
+photoprism users mod --superadmin akadmin
+photoprism users ls
+```
+
 ## Setup
 
 For the initial setup, I copied the origin files over from my existing install.
