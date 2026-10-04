@@ -3,6 +3,10 @@
 This is our customized VSCode environment for doing development with
 Generative AI, agents, or other sandboxed needs.
 
+## Setup
+
+`opencode` configuration is setup via a `ConfigMap`.
+
 ## Usage
 
 Deploy and access the web-interface.  No `PVCs` are setup so

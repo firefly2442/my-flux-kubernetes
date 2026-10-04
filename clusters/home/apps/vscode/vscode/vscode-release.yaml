@@ -16,3 +16,14 @@ spec:
   values:
     image:
       repository: harbor.homelab.rivetcode.com/ghcr-proxy/firefly2442/docker-vscode-customized
+    env:
+      - name: OPENCODE_CONFIG
+        value: /etc/opencode/opencode.json
+    volumeMounts:
+      - name: opencode-config
+        mountPath: /etc/opencode
+        readOnly: true
+    volumes:
+      - name: opencode-config
+        configMap:
+          name: opencode-config
