@@ -439,3 +439,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: vscode-external
+          url: https://vscode.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: vscode-internal
+          url: http://vscode-docker-vscode-customized.vscode.svc.cluster.local:8443
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
