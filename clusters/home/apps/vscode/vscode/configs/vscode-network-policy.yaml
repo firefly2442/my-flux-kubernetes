@@ -10,7 +10,10 @@ spec:
     - from:
         - namespaceSelector:
             matchLabels:
-              kubernetes.io/metadata.name: ingress-nginx # the controller namespace
+              kubernetes.io/metadata.name: kube-system # the controller namespace
+          podSelector:
+            matchLabels:
+              app.kubernetes.io/name: traefik
       ports:
         - port: 8443
   egress: [] # nothing: no DNS, no cluster services, no internet, no metadata endpoint
