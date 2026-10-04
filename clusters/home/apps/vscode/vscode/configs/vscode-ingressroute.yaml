@@ -22,7 +22,7 @@ spec:
   - match: Host(`vscode.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: vscode
+    - name: vscode-docker-vscode-customized
       port: 8443
     middlewares:
       - name: authentik-service-middleware
