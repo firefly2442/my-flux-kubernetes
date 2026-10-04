@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: vscode
+  namespace: vscode
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: ./chart
+      sourceRef:
+        kind: GitRepository
+        name: vscode
+        namespace: flux-system
+  # https://github.com/firefly2442/docker-vscode-customized/blob/master/chart/values.yaml
+  values:
+    image:
+      repository: harbor.homelab.rivetcode.com/ghcr-proxy/firefly2442/docker-vscode-customized

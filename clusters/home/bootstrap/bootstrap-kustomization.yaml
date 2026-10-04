@@ -56,3 +56,4 @@ resources:
   - ./namespaces/namespace-jellyfin.yaml
   - ./namespaces/namespace-convertx.yaml
   - ./namespaces/namespace-birdnet-go.yaml
+  - ./namespaces/namespace-vscode.yaml
