@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: vscode-lockdown
+  namespace: vscode
+spec:
+  podSelector: {} # all pods in this namespace
+  policyTypes: [Ingress, Egress]
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: ingress-nginx # the controller namespace
+      ports:
+        - port: 8443
+  egress: [] # nothing: no DNS, no cluster services, no internet, no metadata endpoint
