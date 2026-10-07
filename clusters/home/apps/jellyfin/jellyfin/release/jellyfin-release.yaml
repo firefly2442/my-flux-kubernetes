@@ -9,7 +9,7 @@ spec:
     spec:
       chart: jellyfin
       # https://truecharts.org/charts/stable/jellyfin/
-      version: '24.1.4'
+      version: '24.2.0'
       sourceRef:
         kind: HelmRepository
         name: jellyfin
