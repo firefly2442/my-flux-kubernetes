@@ -2,6 +2,8 @@
 
 This is our customized VSCode environment for doing development with
 Generative AI, agents, or other sandboxed needs.
+See also the `opencode` namespace and application
+which uses the same image.
 
 ## Setup
 

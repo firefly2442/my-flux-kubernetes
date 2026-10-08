@@ -57,3 +57,4 @@ resources:
   - ./namespaces/namespace-convertx.yaml
   - ./namespaces/namespace-birdnet-go.yaml
   - ./namespaces/namespace-vscode.yaml
+  - ./namespaces/namespace-opencode.yaml

@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: opencode-lockdown
+  namespace: opencode
+spec:
+  podSelector: {} # all pods in this namespace
+  policyTypes: [Ingress, Egress]
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system # the controller namespace
+          podSelector:
+            matchLabels:
+              app.kubernetes.io/name: traefik
+      ports:
+        - port: 4096
+  egress: [] # nothing: no DNS, no cluster services, no internet, no metadata endpoint
