@@ -455,7 +455,7 @@ spec:
           conditions:
             - "[STATUS] == 200"
         - name: opencode-internal
-          url: http://vscode-docker-vscode-customized.opencode.svc.cluster.local:4096
+          url: http://opencode-docker-vscode-customized.opencode.svc.cluster.local:4096
           interval: 60s
           conditions:
             - "[STATUS] == 200"
