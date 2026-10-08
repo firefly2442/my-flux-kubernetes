@@ -103,7 +103,7 @@ data:
         app_list = ['podinfo', 'longhorn', 'traefik', 'homepage', 'gatus', 'stirlingpdf', 'navidrome', 'memos',
                     'prometheus', 'datascience', 'volcano', 'frigate', 'metube', 'calibre',
                     'openwebui', 'kubernetes-dashboard', 'audiobookshelf', 'paperlessngx', 'linkding', 'birdnet-go',
-                    'vscode']
+                    'vscode', 'opencode']
         provider_list = []
 
         for appname in app_list:
