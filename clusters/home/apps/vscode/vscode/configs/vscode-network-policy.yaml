@@ -14,6 +14,12 @@ spec:
           podSelector:
             matchLabels:
               app.kubernetes.io/name: traefik
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: gatus # Gatus namespace
+          podSelector:
+            matchLabels:
+              app.kubernetes.io/name: gatus
       ports:
         - port: 8443
   egress: [] # nothing: no DNS, no cluster services, no internet, no metadata endpoint
