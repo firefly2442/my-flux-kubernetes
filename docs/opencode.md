@@ -1,6 +1,8 @@
 # opencode
 
 Opencode is setup with the integrated web server.
+See also the `vscode` namespace and deployment
+which uses the same base image.
 
 ## Sandbox
 

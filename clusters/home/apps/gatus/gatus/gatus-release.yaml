@@ -449,3 +449,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: opencode-external
+          url: https://opencode.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: opencode-internal
+          url: http://vscode-docker-vscode-customized.opencode.svc.cluster.local:4096
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
