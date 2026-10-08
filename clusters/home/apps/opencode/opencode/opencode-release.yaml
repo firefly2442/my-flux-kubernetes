@@ -56,3 +56,11 @@ spec:
     service:
       type: ClusterIP
       port: 4096
+    persistence:
+      enabled: true
+      accessModes:
+        - ReadWriteMany
+      size: 2Gi
+      storageClass: "longhorn-ha-2"
+      annotations: {}
+      mountPath: /config/projects

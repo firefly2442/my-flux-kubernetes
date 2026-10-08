@@ -38,3 +38,11 @@ spec:
         drop: ["ALL"]
         add: ["CHOWN", "DAC_OVERRIDE", "FOWNER", "SETUID", "SETGID"]
       readOnlyRootFilesystem: false
+    persistence:
+      enabled: true
+      accessModes:
+        - ReadWriteMany
+      size: 2Gi
+      storageClass: "longhorn-ha-2"
+      annotations: {}
+      mountPath: /config/workspace
