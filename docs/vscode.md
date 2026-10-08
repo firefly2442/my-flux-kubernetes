@@ -11,8 +11,8 @@ which uses the same image.
 
 ## Usage
 
-Deploy and access the web-interface.  No `PVCs` are setup so
-the entire environment is ephemeral.
+Deploy and access the web-interface.  Store files in
+`/config/workspace` to persist them.
 
 ## Sandbox
 

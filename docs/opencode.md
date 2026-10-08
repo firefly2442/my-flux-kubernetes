@@ -4,6 +4,11 @@ Opencode is setup with the integrated web server.
 See also the `vscode` namespace and deployment
 which uses the same base image.
 
+## Usage
+
+Store files in
+`/config/projects` to persist them.
+
 ## Sandbox
 
 All egress traffic is blocked out of the pod.  Ingress traffic through the Traefik
