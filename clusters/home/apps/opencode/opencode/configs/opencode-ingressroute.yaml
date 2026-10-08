@@ -22,7 +22,7 @@ spec:
   - match: Host(`opencode.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: vscode-docker-vscode-customized
+    - name: opencode-docker-vscode-customized
       port: 4096
     middlewares:
       - name: authentik-service-middleware
