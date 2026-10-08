@@ -45,3 +45,14 @@ spec:
         drop: ["ALL"]
         add: ["CHOWN", "DAC_OVERRIDE", "FOWNER", "SETUID", "SETGID"]
       readOnlyRootFilesystem: false
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 4096
+    readinessProbe:
+      httpGet:
+        path: /
+        port: 4096
+    service:
+      type: ClusterIP
+      port: 4096
