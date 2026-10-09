@@ -31,10 +31,6 @@ spec:
           recurring-job.longhorn.io/source: enabled
           recurring-job-group.longhorn.io/backup: enabled
     mongodb:
-      # TODO: this is a temporary hack until this issue with the kernel version is addressed
-      # https://jira.mongodb.org/browse/SERVER-121912
-      nodeSelector:
-        kubernetes.io/hostname: gmktec
       persistence:
         enabled: true
         size: 20Gi
