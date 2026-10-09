@@ -24,3 +24,5 @@ spec:
         mountPath: /config
         size: 2Gi
         storageClass: "longhorn-ha-2"
+    service:
+      type: LoadBalancer
