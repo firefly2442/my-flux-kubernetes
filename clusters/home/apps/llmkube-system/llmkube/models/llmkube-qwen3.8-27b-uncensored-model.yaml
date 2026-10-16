@@ -8,7 +8,7 @@ spec:
   source: https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-GGUF/resolve/main/Qwen3.8-27B-Uncensored-Q4_K_M.gguf
   format: gguf
   sourceSecretRef:
-    name: hf-read-token
+    name: llmkube-hf-read-token-secret
   quantization: Q4_K_M
   hardware:
     accelerator: rocm
