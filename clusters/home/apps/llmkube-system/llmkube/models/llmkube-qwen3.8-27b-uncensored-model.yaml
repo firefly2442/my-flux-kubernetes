@@ -10,3 +10,8 @@ spec:
   quantization: Q4_K_M
   hardware:
     accelerator: rocm
+    gpu:
+      enabled: true
+      count: 1
+      vendor: amd
+      runtime: rocm
