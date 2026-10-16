@@ -197,6 +197,7 @@ no data is lost.
 * Paperlessngx
 * Linkding
 * Karakeep
+* Steam-Analysis
 
 ## Links
 
