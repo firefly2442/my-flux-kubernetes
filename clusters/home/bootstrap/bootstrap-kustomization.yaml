@@ -60,3 +60,4 @@ resources:
   - ./namespaces/namespace-opencode.yaml
   - ./namespaces/namespace-factorio.yaml
   - ./namespaces/namespace-satisfactory.yaml
+  - ./namespaces/namespace-llmkube-system.yaml
