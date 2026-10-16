@@ -88,6 +88,16 @@ curl https://qwen3-8-27b-uncensored.homelab.rivetcode.com/v1/chat/completions \
 
 Remember to add internal and external networking checks to `gatus` for new models.
 
+## Debugging
+
+To check the AMD details or other characteristics of the GPU, leverage the
+following commands
+
+```shell
+sudo amd-smi
+sudo amdgpu_top
+```
+
 ## Links
 
 * [https://llmkube.com/docs/getting-started](https://llmkube.com/docs/getting-started)
