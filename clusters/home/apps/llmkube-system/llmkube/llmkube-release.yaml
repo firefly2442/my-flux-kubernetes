@@ -18,5 +18,25 @@ spec:
   # https://github.com/defilantech/LLMKube/blob/main/charts/llmkube/values.yaml
   values:
     modelCache:
-      # we're going to use our own external model cache via s3
-      enabled: false
+      # we use NFS to share and mount our local drive where we store the models
+      # for the AMD Strix Halo and other machines to use if desired
+      enabled: true
+      mode: shared
+      size: 300Gi
+      storageClass: nfs-llmkube-models
+      accessMode: ReadWriteMany
+    extraObjects:
+      - apiVersion: storage.k8s.io/v1
+        kind: StorageClass
+        metadata:
+          name: nfs-llmkube-models
+        provisioner: nfs.csi.k8s.io
+        parameters:
+          server: 192.168.1.120
+          share: /models
+        reclaimPolicy: Retain
+        volumeBindingMode: Immediate
+        mountOptions:
+          - nfsvers=4.1
+          - hard
+          - noatime
