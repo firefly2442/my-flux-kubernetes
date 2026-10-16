@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: llmkube-qwen3.8-27b-uncensored-cert
+  namespace: llmkube-system
+spec:
+  secretName: llmkube-qwen3.8-27b-uncensored-certificate-secret
+  dnsNames:
+    - "qwen3-8-27b-uncensored.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer

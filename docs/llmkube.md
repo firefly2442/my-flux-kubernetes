@@ -33,6 +33,9 @@ sudo exportfs -ra
 sudo systemctl enable --now nfs-kernel-server
 ```
 
+The `generic-device-plugin` provides a way of passing the GPU device to the inference service
+so that it can use the GPU.
+
 ## Usage
 
 `llmkube` adds two new CRDs: `Models` and `InferenceServices`.
@@ -48,7 +51,18 @@ Following [this tutorial](https://llmkube.com/docs/labs/qwen38-flash-next-gufo-o
 we want to combine `llmkube` and `gufo` together.  `gofu` will provide the container
 image and `llmkube` will orchestrate everything.
 
+To list all the inference services and describe one
 
+```shell
+kubectl get inferenceservices -A
+kubectl describe inferenceservice qwen3.8-27b-uncensored-strix -n llmkube-system
+```
+
+Look at the services to setup networking
+
+```shell
+kubectl get svc -n llmkube-system
+```
 
 ## Links
 
