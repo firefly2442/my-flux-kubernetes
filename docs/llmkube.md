@@ -64,6 +64,30 @@ Look at the services to setup networking
 kubectl get svc -n llmkube-system
 ```
 
+Look at the ingress routes for network routing
+
+```shell
+kubectl get ingressroutes -n llmkube-system
+```
+
+Test the deployed model
+
+```shell
+curl https://qwen3-8-27b-uncensored.homelab.rivetcode.com/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "qwen3.8-27b-uncensored",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hello"
+      }
+    ]
+  }'
+```
+
+Remember to add internal and external networking checks to `gatus` for new models.
+
 ## Links
 
 * [https://llmkube.com/docs/getting-started](https://llmkube.com/docs/getting-started)

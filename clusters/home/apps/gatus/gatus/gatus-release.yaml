@@ -459,3 +459,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: qwen3-8-27b-uncensored-external
+          url: https://qwen3-8-27b-uncensored.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: qwen3-8-27b-uncensored-internal
+          url: http://qwen3-8-27b-uncensored-strix.llmkube-system.svc.cluster.local:8080
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
