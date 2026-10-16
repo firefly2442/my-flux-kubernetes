@@ -20,7 +20,6 @@ spec:
   - llm
   - --model
   - $(LLMKUBE_MODEL_PATH)
-  - --speculative
   - --sessions
   - "2"
   - --context
