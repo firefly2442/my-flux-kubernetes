@@ -23,7 +23,7 @@ sudo apt install nfs-kernel-server
 Edit `/etc/exports` and setup the folder and access as ro - read-only:
 
 ```shell
-/models 192.168.1.0/24(ro,sync,no_subtree_check,no_root_squash)
+/models 192.168.1.0/24(rw,sync,no_subtree_check,no_root_squash)
 ```
 
 Save the file and then apply the changes:
