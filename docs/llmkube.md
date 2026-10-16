@@ -33,7 +33,25 @@ sudo exportfs -ra
 sudo systemctl enable --now nfs-kernel-server
 ```
 
+## Usage
+
+`llmkube` adds two new CRDs: `Models` and `InferenceServices`.
+
+To list all the models and describe one
+
+```shell
+kubectl get models -A
+kubectl describe model qwen3.8-27b-uncensored -n llmkube-system
+```
+
+Following [this tutorial](https://llmkube.com/docs/labs/qwen38-flash-next-gufo-on-strix-halo),
+we want to combine `llmkube` and `gufo` together.  `gofu` will provide the container
+image and `llmkube` will orchestrate everything.
+
+
+
 ## Links
 
 * [https://llmkube.com/docs/getting-started](https://llmkube.com/docs/getting-started)
 * [https://github.com/defilantech/LLMKube](https://github.com/defilantech/LLMKube)
+* [https://github.com/gufo-org/gufo](https://github.com/gufo-org/gufo)
