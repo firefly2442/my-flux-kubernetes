@@ -33,7 +33,7 @@ spec:
     type: ClusterIP
   replicas: 1
   nodeSelector:
-    accelerator: amd
+    kubernetes.io/hostname: evo-x2
   podSecurityContext:
     supplementalGroups: [991]
   resources:
