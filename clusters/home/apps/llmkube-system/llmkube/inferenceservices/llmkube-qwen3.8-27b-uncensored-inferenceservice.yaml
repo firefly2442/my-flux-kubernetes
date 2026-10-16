@@ -9,6 +9,7 @@ spec:
   modelRef: qwen3.8-27b-uncensored
   runtime: generic
   stageModel: true
+  # https://github.com/defilantech/llmkube-runtimes/pkgs/container/llmkube-gufo-rocm-gfx1151
   image: ghcr.io/defilantech/llmkube-gufo-rocm-gfx1151@sha256:3055ba7de07281f679f7974b8bc9ec7544dc84e7734fc757080db5deb5971c0f
   args:
   - serve
