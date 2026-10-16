@@ -15,3 +15,8 @@ spec:
         name: llmkube
         namespace: flux-system
       interval: 5m
+  # https://github.com/defilantech/LLMKube/blob/main/charts/llmkube/values.yaml
+  values:
+    modelCache:
+      # we're going to use our own external model cache via s3
+      enabled: false
