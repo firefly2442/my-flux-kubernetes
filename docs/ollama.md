@@ -2,6 +2,8 @@
 
 Get up and running with large language models locally.
 
+## Text Generation Models
+
 Exec into the running container and run:
 
 ```shell
@@ -22,6 +24,40 @@ curl https://ollama.homelab.rivetcode.com/api/generate \
     "model": "qwen3.5:4b",
     "prompt": "Why is the sky blue?",
     "stream": false
+  }'
+```
+
+## System One Decision Models
+
+```shell
+ollama pull clef-flash:9b
+```
+
+To test the deployed model:
+
+```shell
+curl -X POST https://ollama.homelab.rivetcode.com/v1/systemone \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "clef-flash:9b",
+    "state": "Checkout has been failing for every customer for the last hour.",
+    "questions": {
+      "urgent": {"type": "noul", "instructions": "Is this support request urgent?"},
+      "team": {
+        "type": "choice",
+        "instructions": "Which team should handle this request?",
+        "criteria": {
+          "billing": "Payments, invoices, and refunds",
+          "technical": "Outages, errors, and configuration",
+          "sales": "Plans and upgrades"
+        }
+      },
+      "severity": {
+        "type": "score",
+        "instructions": "How severe is the customer impact?",
+        "criteria": ["No impact", "Minor", "Major", "Critical"]
+      }
+    }
   }'
 ```
 
