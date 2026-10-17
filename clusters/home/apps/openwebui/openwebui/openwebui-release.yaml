@@ -22,3 +22,6 @@ spec:
       repository: harbor.homelab.rivetcode.com/ghcr-proxy/open-webui/open-webui
     ollamaUrls:
       - "http://ollama-api.ollama.svc.cluster.local:11434"
+    openaiBaseApiUrls:
+      - https://litellm.homelab.rivetcode.com/v1
+    openaiApiKeysExistingSecret: litellm-key-secret
