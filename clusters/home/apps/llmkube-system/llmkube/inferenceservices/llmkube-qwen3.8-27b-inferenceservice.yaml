@@ -46,7 +46,7 @@ spec:
     cpu: "8"
     gpu: 1
     memory: 16Gi
-    memoryLimit: 25Gi
+    memoryLimit: 45Gi
   probeOverrides:
     readiness:
       httpGet: {path: /v1/models, port: 8080}
