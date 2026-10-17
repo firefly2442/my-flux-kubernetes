@@ -21,7 +21,7 @@ spec:
   - --model
   - $(LLMKUBE_MODEL_PATH)
   - --sessions
-  - "2"
+  - "1"
   - --context
   - "262144"
   - --served-model-name

@@ -1,0 +1,19 @@
+apiVersion: inference.llmkube.dev/v1alpha1
+kind: Model
+metadata:
+  # name must be all lowercase
+  name: qwen3.8-27b
+  namespace: llmkube-system
+spec:
+  source: https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/resolve/main/Qwen3.8-27B-UD-Q8_K_XL.gguf
+  format: gguf
+  sourceSecretRef:
+    name: llmkube-hf-read-token-secret
+  quantization: Q8_K_XL
+  hardware:
+    accelerator: rocm
+    gpu:
+      enabled: true
+      count: 1
+      vendor: amd
+      runtime: rocm
