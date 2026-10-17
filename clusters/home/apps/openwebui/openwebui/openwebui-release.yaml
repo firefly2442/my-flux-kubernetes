@@ -25,3 +25,4 @@ spec:
     openaiBaseApiUrls:
       - https://litellm.homelab.rivetcode.com/v1
     openaiApiKeysExistingSecret: litellm-key-secret
+    openaiApiKeysExistingSecretKey: OPENAI_API_KEY
