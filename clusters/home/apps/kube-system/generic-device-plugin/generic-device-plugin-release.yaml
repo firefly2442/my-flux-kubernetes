@@ -30,6 +30,7 @@ spec:
         devices:
           - name: dri-render
             groups:
+              - count: 2
               - paths:
                   - path: /dev/dri/renderD128
                   - path: /dev/kfd
