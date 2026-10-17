@@ -1,0 +1,18 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: llmkube-clef-ingressroute
+  namespace: llmkube-system
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`clef.homelab.rivetcode.com`)
+    kind: Rule
+    services:
+    - name: clef-strix
+      port: 8080
+  tls:
+    secretName: llmkube-clef-certificate-secret
