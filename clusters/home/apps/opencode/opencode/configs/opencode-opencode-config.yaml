@@ -15,16 +15,16 @@ data:
         "webfetch": "deny"
       },
       "provider": {
-        "internal-llm": {
+        "strix": {
           "npm": "@ai-sdk/openai-compatible",
-          "name": "Internal Gateway",
+          "name": "strix",
           "options": {
-            "baseURL": "http://litellm.litellm.svc.cluster.local:4000/v1"
+            "baseURL": "https://qwen3-8-27b-uncensored.homelab.rivetcode.com/v1"
           },
           "models": {
-            "my-model": { "name": "My Model" }
+            "qwen3.8-27b-uncensored": { "name": "qwen3.8-27b-uncensored" }
           }
         }
       },
-      "model": "internal-llm/my-model"
+      "model": "strix/qwen3.8-27b-uncensored"
     }
