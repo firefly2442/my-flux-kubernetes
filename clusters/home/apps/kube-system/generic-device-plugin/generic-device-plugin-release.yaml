@@ -26,11 +26,12 @@ spec:
         effect: NoSchedule
     config:
       enabled: true
+      # kubectl describe node evo-x2 | grep -A12 -E 'Capacity|Allocated resources' | grep -E 'devic.es|Capacity|Allocated'
       data: |
         devices:
           - name: dri-render
             groups:
               - count: 2
-              - paths:
+                paths:
                   - path: /dev/dri/renderD128
                   - path: /dev/kfd
