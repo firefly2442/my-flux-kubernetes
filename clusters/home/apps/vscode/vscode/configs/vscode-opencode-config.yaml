@@ -11,20 +11,20 @@ data:
       "share": "disabled",
       "permission": {
         "edit": "allow",
-        "bash": "ask",
+        "bash": "allow",
         "webfetch": "deny"
       },
       "provider": {
-        "internal-llm": {
+        "strix": {
           "npm": "@ai-sdk/openai-compatible",
-          "name": "Internal Gateway",
+          "name": "strix",
           "options": {
-            "baseURL": "http://litellm.litellm.svc.cluster.local:4000/v1"
+            "baseURL": "http://qwen3-8-27b-uncensored-strix.llmkube-system.svc.cluster.local:8080/v1"
           },
           "models": {
-            "my-model": { "name": "My Model" }
+            "qwen3.8-27b-uncensored": { "name": "qwen3.8-27b-uncensored" }
           }
         }
       },
-      "model": "internal-llm/my-model"
+      "model": "strix/qwen3.8-27b-uncensored"
     }
