@@ -1,0 +1,19 @@
+apiVersion: inference.llmkube.dev/v1alpha1
+kind: Model
+metadata:
+  # name must be all lowercase
+  name: clef
+  namespace: llmkube-system
+spec:
+  source: https://huggingface.co/ggml-org/Clef-GGUF/resolve/main/Clef-Q8_0.gguf
+  format: gguf
+  sourceSecretRef:
+    name: llmkube-hf-read-token-secret
+  quantization: Q8_0
+  hardware:
+    accelerator: rocm
+    gpu:
+      enabled: true
+      count: 1
+      vendor: amd
+      runtime: rocm

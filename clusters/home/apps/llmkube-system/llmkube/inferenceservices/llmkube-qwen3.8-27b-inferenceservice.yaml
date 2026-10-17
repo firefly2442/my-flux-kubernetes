@@ -1,55 +1,55 @@
-apiVersion: inference.llmkube.dev/v1alpha1
-kind: InferenceService
-metadata:
-  # name must be all lowercase
-  name: qwen3.8-27b-strix
-  namespace: llmkube-system
-spec:
-  # https://llmkube.com/docs/labs/qwen38-flash-next-gufo-on-strix-halo
-  modelRef: qwen3.8-27b
-  runtime: generic
-  stageModel: true
-  # https://github.com/defilantech/llmkube-runtimes/pkgs/container/llmkube-gufo-rocm-gfx1151
-  image: harbor.homelab.rivetcode.com/ghcr-proxy/defilantech/llmkube-gufo-rocm-gfx1151@sha256:3055ba7de07281f679f7974b8bc9ec7544dc84e7734fc757080db5deb5971c0f
-  args:
-  - serve
-  - --host
-  - 0.0.0.0
-  - --port
-  - "8080"
-  - llm
-  - --model
-  - $(LLMKUBE_MODEL_PATH)
-  - --sessions
-  - "1"
-  - --context
-  - "262144"
-  - --served-model-name
-  - qwen3.8-27b
-  containerPort: 8080
-  endpoint:
-    path: /v1/chat/completions
-    port: 8080
-    type: ClusterIP
-  replicas: 1
-  nodeSelector:
-    kubernetes.io/hostname: evo-x2
-  tolerations:
-    # override our taint in order to force scheduling on our worker node evo-x2
-    - key: node-role.kubernetes.io/worker
-      operator: Equal
-      value: ephemeral
-      effect: NoSchedule
-  podSecurityContext:
-    supplementalGroups: [991]
-  resources:
-    cpu: "8"
-    gpu: 1
-    memory: 16Gi
-    memoryLimit: 45Gi
-  probeOverrides:
-    readiness:
-      httpGet: {path: /v1/models, port: 8080}
-      periodSeconds: 10
-      timeoutSeconds: 5
-      failureThreshold: 3
+# apiVersion: inference.llmkube.dev/v1alpha1
+# kind: InferenceService
+# metadata:
+#   # name must be all lowercase
+#   name: qwen3.8-27b-strix
+#   namespace: llmkube-system
+# spec:
+#   # https://llmkube.com/docs/labs/qwen38-flash-next-gufo-on-strix-halo
+#   modelRef: qwen3.8-27b
+#   runtime: generic
+#   stageModel: true
+#   # https://github.com/defilantech/llmkube-runtimes/pkgs/container/llmkube-gufo-rocm-gfx1151
+#   image: harbor.homelab.rivetcode.com/ghcr-proxy/defilantech/llmkube-gufo-rocm-gfx1151@sha256:3055ba7de07281f679f7974b8bc9ec7544dc84e7734fc757080db5deb5971c0f
+#   args:
+#   - serve
+#   - --host
+#   - 0.0.0.0
+#   - --port
+#   - "8080"
+#   - llm
+#   - --model
+#   - $(LLMKUBE_MODEL_PATH)
+#   - --sessions
+#   - "1"
+#   - --context
+#   - "262144"
+#   - --served-model-name
+#   - qwen3.8-27b
+#   containerPort: 8080
+#   endpoint:
+#     path: /v1/chat/completions
+#     port: 8080
+#     type: ClusterIP
+#   replicas: 1
+#   nodeSelector:
+#     kubernetes.io/hostname: evo-x2
+#   tolerations:
+#     # override our taint in order to force scheduling on our worker node evo-x2
+#     - key: node-role.kubernetes.io/worker
+#       operator: Equal
+#       value: ephemeral
+#       effect: NoSchedule
+#   podSecurityContext:
+#     supplementalGroups: [991]
+#   resources:
+#     cpu: "8"
+#     gpu: 1
+#     memory: 16Gi
+#     memoryLimit: 35Gi
+#   probeOverrides:
+#     readiness:
+#       httpGet: {path: /v1/models, port: 8080}
+#       periodSeconds: 10
+#       timeoutSeconds: 5
+#       failureThreshold: 3
