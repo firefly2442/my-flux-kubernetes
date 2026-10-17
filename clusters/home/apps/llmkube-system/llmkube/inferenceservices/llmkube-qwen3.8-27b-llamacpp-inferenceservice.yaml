@@ -14,7 +14,8 @@ spec:
   flashAttention: true
   jinja: true
   extraArgs:
-    - --n-gpu-layers 99
+    - --n-gpu-layers
+    - 99
   env:
     # common gfx1151 workaround; remove if the image supports your GPU natively
     - name: HSA_OVERRIDE_GFX_VERSION
