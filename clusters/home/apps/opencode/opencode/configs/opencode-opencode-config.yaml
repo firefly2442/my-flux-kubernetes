@@ -19,7 +19,7 @@ data:
           "npm": "@ai-sdk/openai-compatible",
           "name": "strix",
           "options": {
-            "baseURL": "https://qwen3-8-27b-uncensored.homelab.rivetcode.com/v1"
+            "baseURL": "http://qwen3-8-27b-uncensored-strix.llmkube-system.svc.cluster.local:8080/v1"
           },
           "models": {
             "qwen3.8-27b-uncensored": { "name": "qwen3.8-27b-uncensored" }
