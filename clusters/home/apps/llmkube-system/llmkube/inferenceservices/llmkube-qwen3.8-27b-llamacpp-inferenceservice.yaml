@@ -21,6 +21,8 @@ spec:
       value: "11.5.1"
     - name: GGML_HIP_NO_VMM
       value: "ON"
+    - name: GGML_CUDA_ENABLE_UNIFIED_MEMORY
+      value: "1"
   endpoint:
     path: /v1/chat/completions
     port: 8080
