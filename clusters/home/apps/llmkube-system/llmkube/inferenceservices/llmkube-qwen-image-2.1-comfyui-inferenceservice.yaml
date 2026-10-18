@@ -30,7 +30,7 @@ spec:
       value: "ON"
   containerPort: 8080
   endpoint:
-    path: /v1/images/generations
+    path: /
     port: 8080
     type: ClusterIP
   replicas: 1
@@ -51,7 +51,7 @@ spec:
     memoryLimit: 35Gi
   probeOverrides:
     readiness:
-      httpGet: {path: /v1/models, port: 8080}
+      httpGet: {path: /health, port: 8080}
       periodSeconds: 10
       timeoutSeconds: 5
       failureThreshold: 3
