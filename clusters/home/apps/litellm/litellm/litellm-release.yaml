@@ -13,7 +13,7 @@ spec:
         name: litellm
         namespace: flux-system
       interval: 5m
-  # https://github.com/BerriAI/litellm/blob/litellm_internal_staging/deploy/charts/litellm-helm/values.yaml
+  # https://github.com/BerriAI/litellm/blob/main/helm/litellm/values.yaml
   values:
     image:
       # Use "ghcr.io/berriai/litellm-database" for optimized image with database
@@ -47,6 +47,9 @@ spec:
         usernameKey: username
         passwordKey: password
     proxy_config:
+      general_settings:
+        disable_env_auth: true # we login via SSO
+        master_key: os.environ/PROXY_MASTER_KEY
       model_list:
         # At least one model must exist for the proxy to start
         - model_name: gemini-2.5-flash-lite
@@ -79,5 +82,3 @@ spec:
             api_key: "none"
             timeout: 600 # long prompts can take minutes to prefill
             drop_params: true
-      general_settings:
-        master_key: os.environ/PROXY_MASTER_KEY
