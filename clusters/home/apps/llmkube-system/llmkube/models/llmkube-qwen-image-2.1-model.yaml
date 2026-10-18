@@ -8,6 +8,7 @@ spec:
   # https://huggingface.co/Qwen/Qwen-Image-2.1
   source: hf://Qwen/Qwen-Image-2.1/
   files:
+    - model_index.json
     - transformer/diffusion_pytorch_model-00001-of-00002.safetensors
     - transformer/diffusion_pytorch_model-00002-of-00002.safetensors
     - transformer/diffusion_pytorch_model.safetensors.index.json
