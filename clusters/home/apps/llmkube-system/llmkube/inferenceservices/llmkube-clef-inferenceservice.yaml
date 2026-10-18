@@ -5,30 +5,27 @@ metadata:
   name: clef-strix
   namespace: llmkube-system
 spec:
-  # https://llmkube.com/docs/labs/qwen38-flash-next-gufo-on-strix-halo
   modelRef: clef
   runtime: generic
   stageModel: true
-  # https://github.com/defilantech/llmkube-runtimes/pkgs/container/llmkube-gufo-rocm-gfx1151
-  image: harbor.homelab.rivetcode.com/ghcr-proxy/defilantech/llmkube-gufo-rocm-gfx1151@sha256:3055ba7de07281f679f7974b8bc9ec7544dc84e7734fc757080db5deb5971c0f
+  image: harbor.homelab.rivetcode.com/ghcr-proxy/ggml-org/llama.cpp:server-rocm
   args:
-  - serve
-  - --host
-  - 0.0.0.0
-  - --port
-  - "8080"
-  - llm
-  - --model
-  - $(LLMKUBE_MODEL_PATH)
-  - --sessions
-  - "1"
-  - --context
-  - "262144"
-  - --served-model-name
-  - clef
+    - --host
+    - 0.0.0.0
+    - --port
+    - "8080"
+    - -m
+    - $(LLMKUBE_MODEL_PATH)
+    - -ngl
+    - "99"
+  env:
+    - name: HSA_OVERRIDE_GFX_VERSION
+      value: "11.5.1"
+    - name: GGML_HIP_ENABLE_UNIFIED_MEMORY
+      value: "1"
   containerPort: 8080
   endpoint:
-    path: /v1/chat/completions
+    path: /v1/systemone
     port: 8080
     type: ClusterIP
   replicas: 1
