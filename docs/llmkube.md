@@ -142,3 +142,16 @@ sudo amdgpu_top
 * [https://llmkube.com/blog/qwen38-flash-next-gufo-strix-halo](https://llmkube.com/blog/qwen38-flash-next-gufo-strix-halo)
 * [https://github.com/halo-box/strix-llama.cpp](https://github.com/halo-box/strix-llama.cpp)
 * [https://github.com/lemonade-sdk/llamacpp-rocm](https://github.com/lemonade-sdk/llamacpp-rocm)
+
+### Model Specific Links
+
+* Qwen-Image-2.1
+  * [https://github.com/QwenLM/Qwen-Image-2.1](https://github.com/QwenLM/Qwen-Image-2.1)
+  * [https://huggingface.co/Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1)
+  * [https://huggingface.co/unsloth/Qwen-Image-2.1-GGUF](https://huggingface.co/unsloth/Qwen-Image-2.1-GGUF)
+  * [https://github.com/gufo-org/gufo/tree/main/docs/models/qwen-image-2.1](https://github.com/gufo-org/gufo/tree/main/docs/models/qwen-image-2.1)
+* MiniMax-H3
+  * [https://huggingface.co/MiniMaxAI/MiniMax-H3](https://huggingface.co/MiniMaxAI/MiniMax-H3)
+  * [https://github.com/gufo-org/gufo/blob/main/docs/models/minimax-h3/README.md](https://github.com/gufo-org/gufo/blob/main/docs/models/minimax-h3/README.md)
+* Gemma-4
+  * [https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF](https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF)

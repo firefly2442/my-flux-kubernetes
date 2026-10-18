@@ -1,0 +1,19 @@
+apiVersion: inference.llmkube.dev/v1alpha1
+kind: Model
+metadata:
+  # name must be all lowercase
+  name: gemma-4-26b
+  namespace: llmkube-system
+spec:
+  source: https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF/resolve/main/gemma-4-26B-A4B-it-UD-Q8_K_XL.gguf
+  format: gguf
+  sourceSecretRef:
+    name: llmkube-hf-read-token-secret
+  quantization: Q8_K_XL
+  hardware:
+    accelerator: rocm
+    gpu:
+      enabled: true
+      count: 1
+      vendor: amd
+      runtime: rocm
