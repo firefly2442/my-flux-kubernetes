@@ -19,16 +19,26 @@ data:
         "webfetch": "deny"
       },
       "provider": {
-        "strix": {
+        "qwen3-8": {
           "npm": "@ai-sdk/openai-compatible",
-          "name": "strix",
+          "name": "qwen3-8",
           "options": {
             "baseURL": "http://qwen3-8-27b-uncensored-strix.llmkube-system.svc.cluster.local:8080/v1"
           },
           "models": {
             "qwen3.8-27b-uncensored": { "name": "qwen3.8-27b-uncensored" }
           }
+        },
+        "gemma-4": {
+          "npm": "@ai-sdk/openai-compatible",
+          "name": "gemma-4",
+          "options": {
+            "baseURL": "http://gemma-4-26b-strix.llmkube-system.svc.cluster.local:8080/v1"
+          },
+          "models": {
+            "gemma-4-26b": { "name": "gemma-4-26b" }
+          }
         }
       },
-      "model": "strix/qwen3.8-27b-uncensored"
+      "model": "gemma-4/gemma-4-26b"
     }
