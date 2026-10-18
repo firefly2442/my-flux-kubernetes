@@ -10,6 +10,7 @@ spec:
   stageModel: true
   image: harbor.homelab.rivetcode.com/ghcr-proxy/gufo-org/toolboxes/gufo-runtime:latest
   args:
+    - gufo
     - serve
     - "image"
     - --host
