@@ -5,7 +5,7 @@ metadata:
   name: gemma-4-26b-strix
   namespace: llmkube-system
 spec:
-  modelRef: clef
+  modelRef: gemma-4-26b
   runtime: generic
   stageModel: true
   image: harbor.homelab.rivetcode.com/ghcr-proxy/ggml-org/llama.cpp:server-rocm
