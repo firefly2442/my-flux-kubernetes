@@ -18,7 +18,7 @@ spec:
     - --port
     - "8080"
     - --model
-    - $(LLMKUBE_MODEL_PATH)
+    - $(LLMKUBE_MODEL_DIR)
   env:
     - name: HSA_OVERRIDE_GFX_VERSION
       value: "11.5.1"
