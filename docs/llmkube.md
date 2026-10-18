@@ -139,3 +139,6 @@ sudo amdgpu_top
 * [https://github.com/gufo-org/gufo](https://github.com/gufo-org/gufo)
 * [https://llmkube.com/docs/labs/qwen38-flash-next-gufo-on-strix-halo](https://llmkube.com/docs/labs/qwen38-flash-next-gufo-on-strix-halo)
 * [https://github.com/defilantech/llmkube-runtimes/pkgs/container/llmkube-gufo-rocm-gfx1151](https://github.com/defilantech/llmkube-runtimes/pkgs/container/llmkube-gufo-rocm-gfx1151)
+* [https://llmkube.com/blog/qwen38-flash-next-gufo-strix-halo](https://llmkube.com/blog/qwen38-flash-next-gufo-strix-halo)
+* [https://github.com/halo-box/strix-llama.cpp](https://github.com/halo-box/strix-llama.cpp)
+* [https://github.com/lemonade-sdk/llamacpp-rocm](https://github.com/lemonade-sdk/llamacpp-rocm)
