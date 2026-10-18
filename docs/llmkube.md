@@ -90,6 +90,24 @@ Remember to add internal and external networking checks to `gatus` for new model
 
 Models can also be added to `litellm`.
 
+## Additional Model Testing via Curl
+
+Gemma-4
+
+```shell
+curl https://gemma-4.homelab.rivetcode.com/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "gemma-4",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write me a poem about the blue sky."
+      }
+    ]
+  }'
+```
+
 ## System One and Decision Models
 
 Clef (full model, not flash)

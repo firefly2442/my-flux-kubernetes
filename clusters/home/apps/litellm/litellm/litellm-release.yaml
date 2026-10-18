@@ -72,5 +72,12 @@ spec:
             api_key: "none" # Gufo ignores it, LiteLLM wants a value
             timeout: 600 # long prompts can take minutes to prefill
             drop_params: true # don't forward fields Gufo rejects
+        - model_name: gemma-4-26b
+          litellm_params:
+            model: openai/gemma-4-26b
+            api_base: https://gemma-4.homelab.rivetcode.com/v1
+            api_key: "none"
+            timeout: 600 # long prompts can take minutes to prefill
+            drop_params: true
       general_settings:
         master_key: os.environ/PROXY_MASTER_KEY
