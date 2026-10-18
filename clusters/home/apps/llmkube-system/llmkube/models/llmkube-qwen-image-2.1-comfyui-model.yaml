@@ -1,0 +1,26 @@
+apiVersion: inference.llmkube.dev/v1alpha1
+kind: Model
+metadata:
+  # name must be all lowercase
+  name: qwen-image-2.1-comfyui
+  namespace: llmkube-system
+spec:
+  # https://huggingface.co/Comfy-Org/Qwen-Image-2.1
+  source: hf://Comfy-Org/Qwen-Image-2.1
+  files:
+    - README.md
+    - "diffusion_models/*.safetensors"
+    - "loras/*.safetensors"
+    - "model_patches/*.safetensors"
+    - "text_encoders/*.safetensors"
+    - "vae/*.safetensors"
+  format: safetensors
+  sourceSecretRef:
+    name: llmkube-hf-read-token-secret
+  hardware:
+    accelerator: rocm
+    gpu:
+      enabled: true
+      count: 1
+      vendor: amd
+      runtime: rocm
