@@ -1,54 +1,54 @@
-apiVersion: inference.llmkube.dev/v1alpha1
-kind: InferenceService
-metadata:
-  # name must be all lowercase
-  name: qwen3.8-27b-gufo-strix
-  namespace: llmkube-system
-spec:
-  # https://github.com/gufo-org/gufo#quickstart
-  modelRef: qwen3.8-27b
-  runtime: generic
-  stageModel: true
-  image: harbor.homelab.rivetcode.com/ghcr-proxy/gufo-org/toolboxes/gufo-runtime:latest
-  args:
-  - gufo
-  - serve
-  - --host
-  - 0.0.0.0
-  - --port
-  - "8080"
-  - llm
-  - --model
-  - $(LLMKUBE_MODEL_PATH)
-  env:
-    - name: HSA_OVERRIDE_GFX_VERSION
-      value: "11.5.1"
-    - name: GGML_HIP_ENABLE_UNIFIED_MEMORY
-      value: "1"
-  containerPort: 8080
-  endpoint:
-    path: /v1/chat/completions
-    port: 8080
-    type: ClusterIP
-  replicas: 1
-  nodeSelector:
-    kubernetes.io/hostname: evo-x2
-  tolerations:
-    # override our taint in order to force scheduling on our worker node evo-x2
-    - key: node-role.kubernetes.io/worker
-      operator: Equal
-      value: ephemeral
-      effect: NoSchedule
-  podSecurityContext:
-    supplementalGroups: [991]
-  resources:
-    cpu: "8"
-    gpu: 1
-    memory: 16Gi
-    memoryLimit: 45Gi
-  probeOverrides:
-    readiness:
-      httpGet: {path: /v1/models, port: 8080}
-      periodSeconds: 10
-      timeoutSeconds: 5
-      failureThreshold: 3
+# apiVersion: inference.llmkube.dev/v1alpha1
+# kind: InferenceService
+# metadata:
+#   # name must be all lowercase
+#   name: qwen3.8-27b-gufo-strix
+#   namespace: llmkube-system
+# spec:
+#   # https://github.com/gufo-org/gufo#quickstart
+#   modelRef: qwen3.8-27b
+#   runtime: generic
+#   stageModel: true
+#   image: harbor.homelab.rivetcode.com/ghcr-proxy/gufo-org/toolboxes/gufo-runtime:latest
+#   args:
+#   - gufo
+#   - serve
+#   - --host
+#   - 0.0.0.0
+#   - --port
+#   - "8080"
+#   - llm
+#   - --model
+#   - $(LLMKUBE_MODEL_PATH)
+#   env:
+#     - name: HSA_OVERRIDE_GFX_VERSION
+#       value: "11.5.1"
+#     - name: GGML_HIP_ENABLE_UNIFIED_MEMORY
+#       value: "1"
+#   containerPort: 8080
+#   endpoint:
+#     path: /v1/chat/completions
+#     port: 8080
+#     type: ClusterIP
+#   replicas: 1
+#   nodeSelector:
+#     kubernetes.io/hostname: evo-x2
+#   tolerations:
+#     # override our taint in order to force scheduling on our worker node evo-x2
+#     - key: node-role.kubernetes.io/worker
+#       operator: Equal
+#       value: ephemeral
+#       effect: NoSchedule
+#   podSecurityContext:
+#     supplementalGroups: [991]
+#   resources:
+#     cpu: "8"
+#     gpu: 1
+#     memory: 16Gi
+#     memoryLimit: 45Gi
+#   probeOverrides:
+#     readiness:
+#       httpGet: {path: /v1/models, port: 8080}
+#       periodSeconds: 10
+#       timeoutSeconds: 5
+#       failureThreshold: 3
