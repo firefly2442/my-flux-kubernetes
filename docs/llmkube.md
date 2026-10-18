@@ -7,7 +7,8 @@ Kubernetes operator for self-hosted LLM inference.
 Primarily setup to run on the Gmktec Strix Halo Evo X-2 device with
 64 GB of unified memory.
 
-This will install a set of Custom Resource Definitions and an Operator.
+This will install a set of [Custom Resource Definitions](https://llmkube.com/docs/concepts/crds)
+and an Operator.
 To list them and make sure it's all running properly:
 
 ```shell
@@ -155,11 +156,13 @@ sudo amdgpu_top
 * [https://llmkube.com/docs/getting-started](https://llmkube.com/docs/getting-started)
 * [https://github.com/defilantech/LLMKube](https://github.com/defilantech/LLMKube)
 * [https://github.com/gufo-org/gufo](https://github.com/gufo-org/gufo)
+* [https://github.com/gufo-org/toolboxes](https://github.com/gufo-org/toolboxes)
 * [https://llmkube.com/docs/labs/qwen38-flash-next-gufo-on-strix-halo](https://llmkube.com/docs/labs/qwen38-flash-next-gufo-on-strix-halo)
 * [https://github.com/defilantech/llmkube-runtimes/pkgs/container/llmkube-gufo-rocm-gfx1151](https://github.com/defilantech/llmkube-runtimes/pkgs/container/llmkube-gufo-rocm-gfx1151)
 * [https://llmkube.com/blog/qwen38-flash-next-gufo-strix-halo](https://llmkube.com/blog/qwen38-flash-next-gufo-strix-halo)
 * [https://github.com/halo-box/strix-llama.cpp](https://github.com/halo-box/strix-llama.cpp)
 * [https://github.com/lemonade-sdk/llamacpp-rocm](https://github.com/lemonade-sdk/llamacpp-rocm)
+* [https://github.com/defilantech/llmkube-runtimes](https://github.com/defilantech/llmkube-runtimes)
 
 ### Model Specific Links
 
