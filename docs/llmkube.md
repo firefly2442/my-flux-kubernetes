@@ -120,6 +120,8 @@ curl https://clef.homelab.rivetcode.com/v1/systemone \
   }'
 ```
 
+See more details [in this blog post](https://huggingface.co/blog/ggml-org/decision-models-in-llamacpp).
+
 ## Debugging
 
 To check the AMD details or other characteristics of the GPU, leverage the
@@ -135,3 +137,5 @@ sudo amdgpu_top
 * [https://llmkube.com/docs/getting-started](https://llmkube.com/docs/getting-started)
 * [https://github.com/defilantech/LLMKube](https://github.com/defilantech/LLMKube)
 * [https://github.com/gufo-org/gufo](https://github.com/gufo-org/gufo)
+* [https://llmkube.com/docs/labs/qwen38-flash-next-gufo-on-strix-halo](https://llmkube.com/docs/labs/qwen38-flash-next-gufo-on-strix-halo)
+* [https://github.com/defilantech/llmkube-runtimes/pkgs/container/llmkube-gufo-rocm-gfx1151](https://github.com/defilantech/llmkube-runtimes/pkgs/container/llmkube-gufo-rocm-gfx1151)
