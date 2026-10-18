@@ -7,14 +7,14 @@ metadata:
 spec:
   # https://huggingface.co/Qwen/Qwen-Image-2.1
   source: hf://Qwen/Qwen-Image-2.1/
-  files:
-    - transformer/diffusion_pytorch_model-00001-of-00002.safetensors
-    - transformer/diffusion_pytorch_model-00002-of-00002.safetensors
-    - text_encoder/model-00001-of-00004.safetensors
-    - text_encoder/model-00002-of-00004.safetensors
-    - text_encoder/model-00003-of-00004.safetensors
-    - text_encoder/model-00004-of-00004.safetensors
-    - vae/diffusion_pytorch_model.safetensors
+  # files:
+  #   - transformer/diffusion_pytorch_model-00001-of-00002.safetensors
+  #   - transformer/diffusion_pytorch_model-00002-of-00002.safetensors
+  #   - text_encoder/model-00001-of-00004.safetensors
+  #   - text_encoder/model-00002-of-00004.safetensors
+  #   - text_encoder/model-00003-of-00004.safetensors
+  #   - text_encoder/model-00004-of-00004.safetensors
+  #   - vae/diffusion_pytorch_model.safetensors
   format: safetensors
   sourceSecretRef:
     name: llmkube-hf-read-token-secret
