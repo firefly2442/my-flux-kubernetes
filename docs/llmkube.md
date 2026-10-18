@@ -163,6 +163,7 @@ sudo amdgpu_top
 * [https://github.com/halo-box/strix-llama.cpp](https://github.com/halo-box/strix-llama.cpp)
 * [https://github.com/lemonade-sdk/llamacpp-rocm](https://github.com/lemonade-sdk/llamacpp-rocm)
 * [https://github.com/defilantech/llmkube-runtimes](https://github.com/defilantech/llmkube-runtimes)
+* [https://github.com/kyuz0/amd-strix-halo-comfyui-toolboxes](https://github.com/kyuz0/amd-strix-halo-comfyui-toolboxes)
 
 ### Model Specific Links
 

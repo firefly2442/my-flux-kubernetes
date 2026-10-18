@@ -1,0 +1,57 @@
+apiVersion: inference.llmkube.dev/v1alpha1
+kind: InferenceService
+metadata:
+  # name must be all lowercase
+  name: qwen-image-2.1-strix
+  namespace: llmkube-system
+spec:
+  modelRef: qwen-image-2.1
+  runtime: generic
+  stageModel: true
+  image: docker.io/kyuz0/amd-strix-halo-comfyui:latest
+  args:
+    - "python"
+    - "/opt/ComfyUI/main.py"
+    - "--listen"
+    - "0.0.0.0"
+    - "--port"
+    - "8080"
+    - "--bf16-vae"
+    - "--disable-mmap"
+    - "--cache-none"
+    - "--models-directory"
+    - $(LLMKUBE_MODEL_DIR)
+  env:
+    - name: HSA_OVERRIDE_GFX_VERSION
+      value: "11.5.1"
+    - name: GGML_HIP_ENABLE_UNIFIED_MEMORY
+      value: "1"
+    - name: GGML_HIP_NO_VMM
+      value: "ON"
+  containerPort: 8080
+  endpoint:
+    path: /v1/images/generations
+    port: 8080
+    type: ClusterIP
+  replicas: 1
+  nodeSelector:
+    kubernetes.io/hostname: evo-x2
+  tolerations:
+    # override our taint in order to force scheduling on our worker node evo-x2
+    - key: node-role.kubernetes.io/worker
+      operator: Equal
+      value: ephemeral
+      effect: NoSchedule
+  podSecurityContext:
+    supplementalGroups: [991]
+  resources:
+    cpu: "8"
+    gpu: 1
+    memory: 16Gi
+    memoryLimit: 35Gi
+  probeOverrides:
+    readiness:
+      httpGet: {path: /v1/models, port: 8080}
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 3
