@@ -479,3 +479,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: gemma-4-external
+          url: https://gemma-4.homelab.rivetcode.com/health
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: gemma-4-internal
+          url: http://gemma-4-26b-strix.llmkube-system.svc.cluster.local:8080/health
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
