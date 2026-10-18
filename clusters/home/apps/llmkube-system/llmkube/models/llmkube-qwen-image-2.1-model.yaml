@@ -9,9 +9,15 @@ spec:
   source: hf://Qwen/Qwen-Image-2.1/
   files:
     - model_index.json
-    - "*.json"
-    - "*.jinja"
-    - "*.safetensors"
+    - "processor/*.json"
+    - "processor/*.jinja"
+    - "scheduler/*.json"
+    - "text_encoder/*.json"
+    - "text_encoder/*.safetensors"
+    - "transformer/*.json"
+    - "transformer/*.safetensors"
+    - "vae/*.json"
+    - "vae/*.safetensors"
   format: safetensors
   sourceSecretRef:
     name: llmkube-hf-read-token-secret
