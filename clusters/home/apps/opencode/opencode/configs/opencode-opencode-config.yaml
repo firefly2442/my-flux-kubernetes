@@ -36,9 +36,9 @@ data:
             "baseURL": "http://gemma-4-26b-strix.llmkube-system.svc.cluster.local:8080/v1"
           },
           "models": {
-            "gemma-4-26b": { "name": "gemma-4-26b" }
+            "gemma-4": { "name": "gemma-4" }
           }
         }
       },
-      "model": "gemma-4/gemma-4-26b"
+      "model": "gemma-4/gemma-4"
     }
