@@ -6,7 +6,7 @@ metadata:
   namespace: llmkube-system
 spec:
   # https://huggingface.co/Qwen/Qwen-Image-2.1
-  source: hf://Qwen/Qwen-Image-2.1/
+  source: hf://Qwen/Qwen-Image-2.1
   files:
     - model_index.json
     - "processor/*.json"
