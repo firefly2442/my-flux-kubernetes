@@ -469,3 +469,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: clef-external
+          url: https://clef.homelab.rivetcode.com/health
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: clef-internal
+          url: http://clef-strix.llmkube-system.svc.cluster.local:8080/health
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"

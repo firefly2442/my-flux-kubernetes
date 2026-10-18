@@ -90,6 +90,36 @@ Remember to add internal and external networking checks to `gatus` for new model
 
 Models can also be added to `litellm`.
 
+## System One and Decision Models
+
+Clef (full model, not flash)
+
+```shell
+curl https://clef.homelab.rivetcode.com/v1/systemone \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "clef-flash:9b",
+    "state": "Checkout has been failing for every customer for the last hour.",
+    "questions": {
+      "urgent": {"type": "noul", "instructions": "Is this support request urgent?"},
+      "team": {
+        "type": "choice",
+        "instructions": "Which team should handle this request?",
+        "criteria": {
+          "billing": "Payments, invoices, and refunds",
+          "technical": "Outages, errors, and configuration",
+          "sales": "Plans and upgrades"
+        }
+      },
+      "severity": {
+        "type": "score",
+        "instructions": "How severe is the customer impact?",
+        "criteria": ["No impact", "Minor", "Major", "Critical"]
+      }
+    }
+  }'
+```
+
 ## Debugging
 
 To check the AMD details or other characteristics of the GPU, leverage the
