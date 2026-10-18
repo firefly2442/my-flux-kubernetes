@@ -18,7 +18,8 @@ spec:
     - $(LLMKUBE_MODEL_PATH)
     - -ngl
     - "99"
-    - --no-mmap
+    - --load-mode
+    - "none"
     - --flash-attn
   env:
     - name: HSA_OVERRIDE_GFX_VERSION
