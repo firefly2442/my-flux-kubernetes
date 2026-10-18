@@ -6,7 +6,12 @@ metadata:
   namespace: llmkube-system
 spec:
   # https://huggingface.co/Qwen/Qwen-Image-2.1
-  source: Qwen/Qwen-Image-2.1
+  source: hf://Qwen/Qwen-Image-2.1/
+  files:
+    - model_index.json
+    - "*.json"
+    - "*.jinja"
+    - "*.safetensors"
   format: safetensors
   sourceSecretRef:
     name: llmkube-hf-read-token-secret
