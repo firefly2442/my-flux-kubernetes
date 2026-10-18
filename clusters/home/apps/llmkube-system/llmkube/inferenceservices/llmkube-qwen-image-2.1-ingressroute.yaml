@@ -9,10 +9,11 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Host(`qwen-image-2.1.homelab.rivetcode.com`)
+  - match: Host(`qwen-image-2-1.homelab.rivetcode.com`)
     kind: Rule
     services:
-    - name: qwen-image-2.1-strix
+    # services cannot have dots in the name
+    - name: qwen-image-2-1-strix
       port: 8080
   tls:
     secretName: llmkube-qwen-image-2.1-certificate-secret
