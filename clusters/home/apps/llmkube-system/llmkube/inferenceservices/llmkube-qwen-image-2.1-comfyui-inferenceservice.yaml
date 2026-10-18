@@ -8,7 +8,7 @@ spec:
   modelRef: qwen-image-2.1
   runtime: generic
   stageModel: true
-  image: docker.io/kyuz0/amd-strix-halo-comfyui:latest
+  image: harbor.homelab.rivetcode.com/dockerhub-proxy/kyuz0/amd-strix-halo-comfyui:latest
   args:
     - "python"
     - "/opt/ComfyUI/main.py"
