@@ -40,5 +40,5 @@
 #   resources:
 #     cpu: "8"
 #     gpu: 1
-#     memory: 16Gi
-#     memoryLimit: 45Gi
+#     memory: 50Gi
+#     memoryLimit: 50Gi

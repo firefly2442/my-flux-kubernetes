@@ -48,7 +48,7 @@
 #   resources:
 #     cpu: "8"
 #     gpu: 1
-#     memory: 36Gi
+#     memory: 50Gi
 #     memoryLimit: 50Gi
 #   probeOverrides:
 #     readiness:
