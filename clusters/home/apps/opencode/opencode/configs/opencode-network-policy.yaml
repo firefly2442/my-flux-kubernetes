@@ -41,9 +41,6 @@ spec:
         - namespaceSelector:
             matchLabels:
               kubernetes.io/metadata.name: llmkube-system
-          podSelector:
-            matchLabels:
-              inference.llmkube.dev/service: qwen3.8-27b-uncensored-strix
       ports:
         - port: 8080
           protocol: TCP
