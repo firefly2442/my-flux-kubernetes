@@ -51,7 +51,7 @@ spec:
     memoryLimit: 35Gi
   probeOverrides:
     readiness:
-      httpGet: {path: /health, port: 8080}
+      httpGet: {path: /system_stats, port: 8080}
       periodSeconds: 10
       timeoutSeconds: 5
       failureThreshold: 3
