@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: llmkube-gemma-4-26b-cert
+  namespace: llmkube-system
+spec:
+  secretName: llmkube-gemma-4-26b-certificate-secret
+  dnsNames:
+    - "gemma-4.homelab.rivetcode.com"
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
