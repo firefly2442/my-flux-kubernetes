@@ -31,6 +31,5 @@ spec:
     services:
       - name: harbor-core
         port: 80
-        timeout: 900s
   tls:
     secretName: harbor-certificate-secret
