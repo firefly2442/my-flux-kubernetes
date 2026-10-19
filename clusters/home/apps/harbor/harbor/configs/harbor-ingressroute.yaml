@@ -26,11 +26,8 @@ spec:
       port: 80
   - match: Host(`harbor.homelab.rivetcode.com`) && (PathPrefix(`/api/`) || PathPrefix(`/c/`) || PathPrefix(`/service/`) || PathPrefix(`/v2/`) || PathPrefix(`/chartrepo/`))
     kind: Rule
-    middlewares:
-      - name: harbor-upload-buffering
     services:
       - name: harbor-core
         port: 80
-        serversTransport: harbor-core-transport
   tls:
     secretName: harbor-certificate-secret
