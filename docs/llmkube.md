@@ -168,6 +168,8 @@ There are various settings like the `bit_depth` of the output image.  I set this
 `megapixels` can also go from `1-4`.  `resolution` can go from `1024-2048`.  There are various
 other settings I didn't change.
 
+Generated images are for non-commercial usage from the license.
+
 ## Debugging
 
 To check the AMD details or other characteristics of the GPU, leverage the
