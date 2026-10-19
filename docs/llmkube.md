@@ -2,6 +2,13 @@
 
 Kubernetes operator for self-hosted LLM inference.
 
+## Overview
+
+For Strix Halo, FP16 is generally preferred as there is hardware support for it.
+The ROCm library is also generally more performant than Vulkan.  In the early days,
+Vulkan was preferred, it perhaps is a bit more stable.  These days though, ROCm
+should be the go-to.
+
 ## Setup
 
 Primarily setup to run on the Gmktec Strix Halo Evo X-2 device with
@@ -164,6 +171,23 @@ sudo amdgpu_top
 * [https://github.com/lemonade-sdk/llamacpp-rocm](https://github.com/lemonade-sdk/llamacpp-rocm)
 * [https://github.com/defilantech/llmkube-runtimes](https://github.com/defilantech/llmkube-runtimes)
 * [https://github.com/kyuz0/amd-strix-halo-comfyui-toolboxes](https://github.com/kyuz0/amd-strix-halo-comfyui-toolboxes)
+* [https://github.com/Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI)
+* [https://github.com/squat/generic-device-plugin](https://github.com/squat/generic-device-plugin)
+* [https://strixhalo.wiki/](https://strixhalo.wiki/)
+* [https://strix-halo-toolboxes.com/](https://strix-halo-toolboxes.com/)
+* [https://github.com/ROCm/TheRock](https://github.com/ROCm/TheRock)
+
+## Videos and Tutorials
+
+* [https://www.youtube.com/@donatocapitella/videos](https://www.youtube.com/@donatocapitella/videos)
+
+## Official AMD Materials
+
+* [https://github.com/amd-enterprise-ai/aim-build](https://github.com/amd-enterprise-ai/aim-build)
+* [https://enterprise-ai.docs.amd.com/en/latest/aims/catalog/models.html](https://enterprise-ai.docs.amd.com/en/latest/aims/catalog/models.html)
+* [https://enterprise-ai.docs.amd.com/en/latest/aims/guides/deployment-guide.html](https://enterprise-ai.docs.amd.com/en/latest/aims/guides/deployment-guide.html)
+* [https://github.com/amd-enterprise-ai/aim-deploy](https://github.com/amd-enterprise-ai/aim-deploy)
+* [https://www.youtube.com/watch?v=eOhfJ0YeYh0](https://www.youtube.com/watch?v=eOhfJ0YeYh0)
 
 ### Model Specific Links
 
@@ -172,8 +196,12 @@ sudo amdgpu_top
   * [https://huggingface.co/Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1)
   * [https://huggingface.co/unsloth/Qwen-Image-2.1-GGUF](https://huggingface.co/unsloth/Qwen-Image-2.1-GGUF)
   * [https://github.com/gufo-org/gufo/tree/main/docs/models/qwen-image-2.1](https://github.com/gufo-org/gufo/tree/main/docs/models/qwen-image-2.1)
+  * [https://huggingface.co/Comfy-Org/Qwen-Image-2.1](https://huggingface.co/Comfy-Org/Qwen-Image-2.1)
+  * [https://www.youtube.com/watch?v=7je-SidZYjE](https://www.youtube.com/watch?v=7je-SidZYjE)
 * MiniMax-H3
   * [https://huggingface.co/MiniMaxAI/MiniMax-H3](https://huggingface.co/MiniMaxAI/MiniMax-H3)
   * [https://github.com/gufo-org/gufo/blob/main/docs/models/minimax-h3/README.md](https://github.com/gufo-org/gufo/blob/main/docs/models/minimax-h3/README.md)
 * Gemma-4
   * [https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF](https://huggingface.co/unsloth/gemma-4-26B-A4B-it-GGUF)
+* MiniMax-H3
+  * [https://huggingface.co/MiniMaxAI/MiniMax-H3](https://huggingface.co/MiniMaxAI/MiniMax-H3)

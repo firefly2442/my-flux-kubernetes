@@ -28,3 +28,4 @@ The only way to get data in and out is via `kubectl cp`.
 ## Links
 
 * [https://opencode.ai/docs/web/](https://opencode.ai/docs/web/)
+* [https://github.com/anomalyco/opencode](https://github.com/anomalyco/opencode)
