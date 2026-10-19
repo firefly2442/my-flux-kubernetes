@@ -31,5 +31,6 @@ spec:
     services:
       - name: harbor-core
         port: 80
+        serversTransport: harbor-core-transport
   tls:
     secretName: harbor-certificate-secret
