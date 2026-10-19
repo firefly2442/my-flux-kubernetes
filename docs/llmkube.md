@@ -148,6 +148,26 @@ curl https://clef.homelab.rivetcode.com/v1/systemone \
 
 See more details [in this blog post](https://huggingface.co/blog/ggml-org/decision-models-in-llamacpp).
 
+## Image Generation
+
+Image generation via Qwen Image 2.1 works well.  There is a custom version of Comfy-UI and model
+weights via `Comfy-Org` made specifically for Comfy-UI.  Use one of the provided
+[workflow templates provided](https://huggingface.co/Comfy-Org/Qwen-Image-2.1).  Save
+the JSON file and drag-and-drop it into the Comfy-UI to load it.  Various settings
+can be tuned.  For the models, use the following:
+
+* `unet_name` - use the `bf16` safetensors or `turbo_bf16` version.  Turbo can be faster but have less quality.
+* `clip_name` - use the `qwen3vl_8b_int8_convrot.safetensors` file or the `bf16` variant.  `bf16` will take longer.
+* `vae_name` - use the file with `vae` in the name.
+* `PE_model` - use the `int8` file either `t2i` for text-to-image or `i2i` for image-to-image depending on the generation.
+
+The prompt enhancement via `refine_prompt` and `thinking_mode` I wasn't able to get working reliably.  It seemed
+to just spit back out the same input image after processing.  Maybe I did something wrong though.
+
+There are various settings like the `bit_depth` of the output image.  I set this to `16-bit`.
+`megapixels` can also go from `1-4`.  `resolution` can go from `1024-2048`.  There are various
+other settings I didn't change.
+
 ## Debugging
 
 To check the AMD details or other characteristics of the GPU, leverage the
