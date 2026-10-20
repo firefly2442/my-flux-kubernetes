@@ -180,6 +180,10 @@ sudo amd-smi
 sudo amdgpu_top
 ```
 
+If there's a run-away process that is sucking up the GPU and not returning
+use `amdgpu_top` and look at the `fdinfo` section.  This lists the processes
+and then you can `sudo kill -9 <process_id>` to stop it immediately.
+
 ## Links
 
 * [https://llmkube.com/docs/getting-started](https://llmkube.com/docs/getting-started)
