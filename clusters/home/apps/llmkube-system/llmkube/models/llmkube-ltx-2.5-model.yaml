@@ -7,7 +7,9 @@ metadata:
 spec:
   # https://huggingface.co/Lightricks/LTX-2.5
   # https://github.com/Lightricks/LTX-2
+  source: hf://Lightricks/LTX-2.5
   files:
+    - "README.md"
     - "https://huggingface.co/Lightricks/LTX-2.5/resolve/main/diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors"
     - "https://huggingface.co/Lightricks/LTX-2.5/resolve/main/latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors"
     - "https://huggingface.co/Lightricks/LTX-2.5/resolve/main/text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors"
