@@ -1,0 +1,27 @@
+apiVersion: inference.llmkube.dev/v1alpha1
+kind: Model
+metadata:
+  # name must be all lowercase
+  name: ltx-2.5
+  namespace: llmkube-system
+spec:
+  # https://huggingface.co/Lightricks/LTX-2.5
+  # https://github.com/Lightricks/LTX-2
+  source: hf://Lightricks/LTX-2.5
+  files:
+    - README.md
+    - "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors"
+    - "latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors"
+    - "text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors"
+    - "vae/ltx-2.5-audio-vae-bf16.safetensors"
+    - "vae/ltx-2.5-video-vae-bf16.safetensors"
+  format: safetensors
+  sourceSecretRef:
+    name: llmkube-hf-read-token-secret
+  hardware:
+    accelerator: rocm
+    gpu:
+      enabled: true
+      count: 1
+      vendor: amd
+      runtime: rocm
