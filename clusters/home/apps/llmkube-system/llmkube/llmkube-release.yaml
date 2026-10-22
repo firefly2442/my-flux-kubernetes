@@ -17,9 +17,6 @@ spec:
       interval: 5m
   # https://github.com/defilantech/LLMKube/blob/main/charts/llmkube/values.yaml
   values:
-    controllerManager:
-      image:
-        pullPolicy: Always
     modelCache:
       # we use NFS to share and mount our local drive where we store the models
       # for the AMD Strix Halo and other machines to use if desired
