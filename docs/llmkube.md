@@ -170,6 +170,32 @@ other settings I didn't change.
 
 Generated images are for non-commercial usage from the license.
 
+## Cache Cleanup
+
+Sometimes models aren't setup properly or are no longer used.  The shared cache still exists and holds
+those files in a folder with the hash of the source name.  Orphaned files can be identified via:
+
+```shell
+$ llmkube cache list -n llmkube-system --orphaned
+
+Model Cache Entries
+═══════════════════════════════════════════════════════════════════════════════
+CACHE KEY         STATUS    SIZE      ISVC    MODELS  SOURCE
+33abf5d8d96edfa2  orphaned  30.8 GiB  shared
+```
+
+Do not shell into the controller, it does not have `sh` or `bash`.  Start up a temporary container
+and mount the shared cache.
+
+```shell
+kubectl -n llmkube-system run cache-clean --rm -it --restart=Never --image=busybox:1.37.0 \
+  --overrides='{"spec":{"volumes":[{"name":"c","persistentVolumeClaim":{"claimName":"llmkube-model-cache"}}],"containers":[{"name":"cache-clean","image":"busybox:1.37.0","stdin":true,"tty":true,"command":["sh"],"volumeMounts":[{"name":"c","mountPath":"/models"}]}]}}'
+
+# then inside the pod:
+du -sh /models/*
+rm -rf /models/<orphaned-key>
+```
+
 ## Debugging
 
 To check the AMD details or other characteristics of the GPU, leverage the
