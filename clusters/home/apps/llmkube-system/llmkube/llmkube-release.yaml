@@ -9,7 +9,7 @@ spec:
     spec:
       chart: llmkube
       # https://defilantech.github.io/LLMKube/index.yaml
-      version: '0.10.5'
+      version: '0.10.6'
       sourceRef:
         kind: HelmRepository
         name: llmkube
