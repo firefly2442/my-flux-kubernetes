@@ -15,7 +15,6 @@ spec:
     - "text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors"
     - "vae/ltx-2.5-audio-vae-bf16.safetensors"
     - "vae/ltx-2.5-video-vae-bf16.safetensors"
-    #- "https://huggingface.co/Comfy-Org/gemma-4/resolve/main/text_encoders/gemma4_e2b_it_int8_convrot.safetensors"
   format: safetensors
   sourceSecretRef:
     name: llmkube-hf-read-token-secret
