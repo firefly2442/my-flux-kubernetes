@@ -11,7 +11,7 @@ spec:
   # the original is manually built and slightly old now
   # image: harbor.homelab.rivetcode.com/dockerhub-proxy/kyuz0/amd-strix-halo-comfyui:latest
   # our custom version re-builds nightly
-  image: harbor.homelab.rivetcode.com/ghcr-proxy/firefly2442/amd-strix-halo-comfyui:nightly@sha256:8c3eb26d49af3e9a3dff5d2fb392db17135780ce25e13755c81c922003433ea6
+  image: harbor.homelab.rivetcode.com/ghcr-proxy/firefly2442/amd-strix-halo-comfyui:nightly@sha256:85eb4180a4d52041c7da1e5fe366eda968bcf9e23a86e7106e3218719ce56805
   args:
     - "python"
     - "/opt/ComfyUI/main.py"
