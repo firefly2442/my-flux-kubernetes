@@ -26,10 +26,7 @@ data:
     # Run proxy on standard port 3128
     http_port 3128
 
-    # Create a tiny 10MB dummy disk cache in the container's /tmp folder
-    # This satisfies the entrypoint script without allocating actual node storage
-    cache_dir rock /tmp 10 slot-size=16384
-
-    # Performance tuning for high-concurrency tools like uv
+    cache deny all
     coredump_dir /var/spool/squid
     access_log stdio:/dev/stdout
+    cache_log stdio:/dev/stderr
