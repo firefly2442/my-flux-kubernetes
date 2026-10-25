@@ -26,6 +26,10 @@ data:
     # Run proxy on standard port 3128
     http_port 3128
 
+    # Disable the disk cache and force memory-only operation
+    cache_dir null /tmp
+    cache mem
+
     # Performance tuning for high-concurrency tools like uv
     coredump_dir /var/spool/squid
     access_log stdio:/dev/stdout
