@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
       - name: squid
-        image: ubuntu/squid:latest # Secure, minimal canonical image
+        image: harbor.homelab.rivetcode.com/dockerhub-proxy/ubuntu/squid:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 3128
           name: proxy-port
