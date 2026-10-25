@@ -9,6 +9,7 @@
 #   runtime: generic
 #   stageModel: true
 #   image: harbor.homelab.rivetcode.com/ghcr-proxy/ggml-org/llama.cpp:server-rocm
+#   imagePullPolicy: Always
 #   args:
 #     - --host
 #     - 0.0.0.0

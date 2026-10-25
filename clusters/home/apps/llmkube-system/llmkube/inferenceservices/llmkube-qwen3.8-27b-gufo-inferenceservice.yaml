@@ -10,6 +10,7 @@
 #   runtime: generic
 #   stageModel: true
 #   image: harbor.homelab.rivetcode.com/ghcr-proxy/gufo-org/toolboxes/gufo-runtime:latest
+#   imagePullPolicy: Always
 #   args:
 #   - gufo
 #   - serve

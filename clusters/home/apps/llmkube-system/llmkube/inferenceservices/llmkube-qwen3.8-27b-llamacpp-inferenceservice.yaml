@@ -8,6 +8,7 @@
 #   modelRef: qwen3.8-27b
 #   runtime: llamacpp
 #   image: harbor.homelab.rivetcode.com/ghcr-proxy/ggml-org/llama.cpp:server-rocm
+#   imagePullPolicy: Always
 #   replicas: 1
 #   contextSize: 32768
 #   parallelSlots: 1
