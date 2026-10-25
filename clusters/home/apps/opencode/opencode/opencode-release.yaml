@@ -26,6 +26,10 @@ spec:
     env:
       - name: OPENCODE_CONFIG
         value: /etc/opencode/opencode.json
+      - name: HTTPS_PROXY
+        value: "http://squid-proxy-service.squid-proxy.svc.cluster.local:3128"
+      - name: HTTP_PROXY
+        value: "http://squid-proxy-service.squid-proxy.svc.cluster.local:3128"
     volumeMounts:
       - name: opencode-config
         mountPath: /etc/opencode
