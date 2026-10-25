@@ -5,6 +5,9 @@ Kubernetes operator for self-hosted LLM inference.
 ## Overview
 
 For Strix Halo, FP16 is generally preferred as there is hardware support for it.
+Strix Halo does not have native FP8 execution support.  The format is supported,
+however, is run through software or frameworks that run it rather than running
+it at a lower level via the hardware.
 The ROCm library is also generally more performant than Vulkan.  In the early days,
 Vulkan was preferred, it perhaps is a bit more stable.  These days though, ROCm
 should be the go-to.
