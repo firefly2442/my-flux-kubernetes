@@ -46,9 +46,9 @@ spec:
           protocol: TCP
     # Allow egress traffic to the internal proxy pod
     - to:
-        - podSelector:
+        - namespaceSelector:
             matchLabels:
-              app: squid-proxy
+              kubernetes.io/metadata.name: squid-proxy
       ports:
         - port: 3128
           protocol: TCP
