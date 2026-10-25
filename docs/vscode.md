@@ -7,7 +7,8 @@ which uses the same image.
 
 ## Setup
 
-`opencode` configuration is setup via a `ConfigMap`.
+`opencode` configuration is setup via a `ConfigMap`.  When making changes to this
+configuration, make the same changes to the `opencode` version.
 
 ## Usage
 

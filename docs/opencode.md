@@ -4,6 +4,11 @@ Opencode is setup with the integrated web server.
 See also the `vscode` namespace and deployment
 which uses the same base image.
 
+## Setup
+
+`opencode` configuration is setup via a `ConfigMap`.  When making changes to this
+configuration, make the same changes to the `vscode` version.
+
 ## Usage
 
 Store files in
