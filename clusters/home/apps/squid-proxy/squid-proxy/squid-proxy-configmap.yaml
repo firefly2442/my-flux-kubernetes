@@ -27,6 +27,3 @@ data:
     http_port 3128
 
     cache deny all
-    coredump_dir /var/spool/squid
-    access_log stdio:/dev/stdout
-    cache_log stdio:/dev/stderr
