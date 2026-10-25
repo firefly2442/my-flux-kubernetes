@@ -61,3 +61,4 @@ resources:
   - ./namespaces/namespace-factorio.yaml
   - ./namespaces/namespace-satisfactory.yaml
   - ./namespaces/namespace-llmkube-system.yaml
+  - ./namespaces/namespace-squid-proxy.yaml

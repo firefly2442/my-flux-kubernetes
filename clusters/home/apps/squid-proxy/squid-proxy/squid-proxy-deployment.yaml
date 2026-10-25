@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: squid-proxy
+  namespace: squid-proxy
+  labels:
+    app: squid-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: squid-proxy
+  template:
+    metadata:
+      labels:
+        app: squid-proxy
+    spec:
+      containers:
+      - name: squid
+        image: ubuntu/squid:latest # Secure, minimal canonical image
+        ports:
+        - containerPort: 3128
+          name: proxy-port
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/squid/squid.conf
+          subPath: squid.conf
+      volumes:
+      - name: config-volume
+        configMap:
+          name: squid-proxy-config
