@@ -22,7 +22,7 @@ spec:
               app.kubernetes.io/name: gatus
       ports:
         - port: 4096
-  egress: # very limited, no internet, only access to local models
+  egress: # very limited, some internet through proxy, only access to local models
     # DNS, only to cluster CoreDNS
     - to:
         - namespaceSelector:
@@ -43,4 +43,12 @@ spec:
               kubernetes.io/metadata.name: llmkube-system
       ports:
         - port: 8080
+          protocol: TCP
+    # Allow egress traffic to the internal proxy pod
+    - to:
+        - podSelector:
+            matchLabels:
+              app: squid-proxy
+      ports:
+        - port: 3128
           protocol: TCP
