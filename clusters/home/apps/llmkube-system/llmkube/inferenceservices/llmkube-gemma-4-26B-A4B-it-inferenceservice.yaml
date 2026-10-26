@@ -21,6 +21,7 @@
 #     - "99"
 #     - --flash-attn
 #     - "on"
+#     - --metrics
 #   env:
 #     - name: HSA_OVERRIDE_GFX_VERSION
 #       value: "11.5.1"
