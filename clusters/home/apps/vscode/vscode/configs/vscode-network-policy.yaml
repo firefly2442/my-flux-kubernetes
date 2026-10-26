@@ -21,7 +21,7 @@ spec:
             matchLabels:
               app.kubernetes.io/name: gatus
       ports:
-        - port: 4096
+        - port: 8443
   egress: # very limited, some internet through proxy, only access to local models
     # DNS, only to cluster CoreDNS
     - to:
