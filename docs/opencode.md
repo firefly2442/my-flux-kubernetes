@@ -24,6 +24,41 @@ kubectl cp <local-path> <namespace>/<pod-name>:<remote-path>
 kubectl cp ~/src/chromadb-photo-organizer opencode/opencode-docker-vscode-customized-59658fdd69-s9k7j:/config/projects/chromadb-photo-organizer
 ```
 
+And copy files back out
+
+```shell
+kubectl cp opencode/opencode-docker-vscode-customized-59658fdd69-s9k7j:/config/projects/chromadb-photo-organizer/README.md ~/src/chromadb-photo-organizer/README.md
+```
+
+To leverage Git commits and bundles to get changes into the pod
+
+```shell
+# workstation
+cd ~/src/<project-name>
+git fetch origin
+git bundle create /tmp/repo.bundle --all
+kubectl -n opencode cp /tmp/repo.bundle <pod>:/tmp/repo.bundle
+
+# in the pod
+cd /config/projects/<project-name>
+git fetch /tmp/repo.bundle 'refs/heads/*:refs/remotes/origin/*'
+git merge origin/main
+```
+
+And to get changes out of the pod using Git commits and bundles
+
+```shell
+# in the pod
+git commit -a # create commit as usual
+git bundle create /tmp/repo.bundle --all
+
+# workstation
+cd ~/src/<project-name>
+kubectl -n opencode cp <pod>:/tmp/repo.bundle /tmp/repo.bundle
+git fetch /tmp/repo.bundle 'refs/heads/*:refs/remotes/origin/*'
+git merge origin/main
+```
+
 ## Sandbox
 
 Most egress traffic is blocked out of the pod.  Ingress traffic through the Traefik
