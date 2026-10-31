@@ -27,6 +27,27 @@ curl https://ollama.homelab.rivetcode.com/api/generate \
   }'
 ```
 
+## MiniCPM5-2B
+
+Pull [the model](https://huggingface.co/openbmb/MiniCPM5-2B) from
+[Ollama](https://ollama.com/openbmb/minicpm5-2b).  There is also
+a 1B parameter size model from the same company.
+
+```shell
+ollama pull openbmb/minicpm5-2b:2b
+```
+
+To test the running model:
+
+```shell
+curl https://ollama.homelab.rivetcode.com/api/generate \
+  -d '{
+    "model": "openbmb/minicpm5-2b:2b",
+    "prompt": "Why is the sky blue?",
+    "stream": false
+  }'
+```
+
 ## System One Decision Models
 
 ```shell
