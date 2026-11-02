@@ -44,6 +44,14 @@ spec:
       ports:
         - port: 8080
           protocol: TCP
+    # The model service in ollama
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: ollama
+      ports:
+        - port: 11434
+          protocol: TCP
     # Allow egress traffic to the internal proxy pod
     - to:
         - namespaceSelector:
