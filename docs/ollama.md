@@ -48,6 +48,17 @@ curl https://ollama.homelab.rivetcode.com/api/generate \
   }'
 ```
 
+Or from within a pod all local
+
+```shell
+curl http://ollama-api.ollama.svc.cluster.local:11434/api/generate \
+  -d '{
+    "model": "openbmb/minicpm5-2b:2b",
+    "prompt": "Why is the sky blue?",
+    "stream": false
+  }'
+```
+
 ## System One Decision Models
 
 ```shell
