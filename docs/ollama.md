@@ -31,10 +31,12 @@ curl https://ollama.homelab.rivetcode.com/api/generate \
 
 Pull [the model](https://huggingface.co/openbmb/MiniCPM5-2B) from
 [Ollama](https://ollama.com/openbmb/minicpm5-2b).  There is also
-a 1B parameter size model from the same company.
+a [1B parameter size model](https://ollama.com/openbmb/minicpm5).
 
 ```shell
 ollama pull openbmb/minicpm5-2b:2b
+# this is 1B parameters
+ollama pull openbmb/minicpm5:latest
 ```
 
 To test the running model:
@@ -46,6 +48,12 @@ curl https://ollama.homelab.rivetcode.com/api/generate \
     "prompt": "Why is the sky blue?",
     "stream": false
   }'
+curl https://ollama.homelab.rivetcode.com/api/generate \
+  -d '{
+    "model": "openbmb/minicpm5:latest",
+    "prompt": "Why is the sky blue?",
+    "stream": false
+  }'
 ```
 
 Or from within a pod all local
@@ -54,6 +62,12 @@ Or from within a pod all local
 curl http://ollama-api.ollama.svc.cluster.local:11434/api/generate \
   -d '{
     "model": "openbmb/minicpm5-2b:2b",
+    "prompt": "Why is the sky blue?",
+    "stream": false
+  }'
+curl http://ollama-api.ollama.svc.cluster.local:11434/api/generate \
+  -d '{
+    "model": "openbmb/minicpm5:latest",
     "prompt": "Why is the sky blue?",
     "stream": false
   }'
