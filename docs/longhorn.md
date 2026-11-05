@@ -199,6 +199,17 @@ no data is lost.
 * Karakeep
 * Steam-Analysis
 
+## Troubleshooting
+
+If `authentik` is down and you need to get into the Longhorn UI to check
+the nodes or status of the volumes, use port forwarding.
+
+```shell
+kubectl -n longhorn-system port-forward svc/longhorn-frontend 8080:80
+```
+
+Then go to `localhost:8080`
+
 ## Links
 
 * [https://longhorn.io/](https://longhorn.io/)
