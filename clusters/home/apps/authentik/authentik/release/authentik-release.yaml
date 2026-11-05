@@ -32,8 +32,6 @@ spec:
       enabled: true
       auth:
         password: "secret"
-      image:
-        tag: "17.11-bookworm"
     redis:
       enabled: true
     global:
