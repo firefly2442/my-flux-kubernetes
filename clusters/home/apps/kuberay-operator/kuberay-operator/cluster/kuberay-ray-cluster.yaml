@@ -7,7 +7,7 @@ metadata:
 spec:
   # https://github.com/ray-project/ray/releases
   # this must match the image tag version below
-  rayVersion: "2.58.0"
+  rayVersion: "2.60.0"
   headGroupSpec:
     serviceType: ClusterIP
     rayStartParams:
