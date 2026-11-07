@@ -35,6 +35,11 @@ spec:
     redis:
       enabled: true
     global:
+      env:
+        # try to prevent issues with authentik postgres failing via
+        # Failed process was running: FETCH FORWARD 100 FROM "_django_curs_136480365278912_sync_14055"
+        - name: AUTHENTIK_POSTGRESQL__DISABLE_SERVER_SIDE_CURSORS
+          value: "true"
       envFrom:
         - secretRef:
             name: authentik-akadmin-credentials
