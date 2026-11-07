@@ -46,6 +46,15 @@ flux reconcile kustomization authentik-setup -n flux-system
 kubectl get jobs -n authentik
 ```
 
+## Troubleshooting
+
+To extract out the secrets and initial token
+
+```shell
+kubectl get secret authentik-akadmin-credentials -n authentik -o json \
+  | jq -r '.data | map_values(@base64d)'
+```
+
 ## Links
 
 * [https://goauthentik.io/](https://goauthentik.io/)
