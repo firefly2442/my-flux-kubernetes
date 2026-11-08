@@ -55,7 +55,7 @@ resources:
   - ./namespaces/namespace-twingate.yaml
   - ./namespaces/namespace-jellyfin.yaml
   - ./namespaces/namespace-convertx.yaml
-  - ./namespaces/namespace-birdnet-go.yaml
+  # - ./namespaces/namespace-birdnet-go.yaml
   - ./namespaces/namespace-vscode.yaml
   - ./namespaces/namespace-opencode.yaml
   - ./namespaces/namespace-factorio.yaml

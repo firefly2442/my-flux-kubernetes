@@ -1,39 +1,39 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
-metadata:
-  name: birdnet-go
-  namespace: birdnet-go
-spec:
-  interval: 5m
-  chart:
-    spec:
-      chart: birdnet-go
-      version: 2.1.0
-      sourceRef:
-        kind: HelmRepository
-        name: birdnet-go
-        namespace: flux-system
-      interval: 5m
-  # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/birdnet-go/values.yaml
-  values:
-    image:
-      repository: harbor.homelab.rivetcode.com/ghcr-proxy/tphakala/birdnet-go
-    persistence:
-      config:
-        enabled: true
-        mountPath: /config
-        storageClass: "longhorn-ha-2"
-        size: 1Gi
-      data:
-        enabled: true
-        mountPath: /data
-        storageClass: "longhorn-ha-2"
-        size: 5Gi
-    workload:
-      main:
-        podSpec:
-          containers:
-            main:
-              env:
-                BIRDNET_LATITUDE: 45.000938
-                BIRDNET_LONGITUDE: -92.880112
+# apiVersion: helm.toolkit.fluxcd.io/v2
+# kind: HelmRelease
+# metadata:
+#   name: birdnet-go
+#   namespace: birdnet-go
+# spec:
+#   interval: 5m
+#   chart:
+#     spec:
+#       chart: birdnet-go
+#       version: 2.1.0
+#       sourceRef:
+#         kind: HelmRepository
+#         name: birdnet-go
+#         namespace: flux-system
+#       interval: 5m
+#   # https://github.com/trueforge-org/truecharts/blob/master/charts/stable/birdnet-go/values.yaml
+#   values:
+#     image:
+#       repository: harbor.homelab.rivetcode.com/ghcr-proxy/tphakala/birdnet-go
+#     persistence:
+#       config:
+#         enabled: true
+#         mountPath: /config
+#         storageClass: "longhorn-ha-2"
+#         size: 1Gi
+#       data:
+#         enabled: true
+#         mountPath: /data
+#         storageClass: "longhorn-ha-2"
+#         size: 5Gi
+#     workload:
+#       main:
+#         podSpec:
+#           containers:
+#             main:
+#               env:
+#                 BIRDNET_LATITUDE: 45.000938
+#                 BIRDNET_LONGITUDE: -92.880112
