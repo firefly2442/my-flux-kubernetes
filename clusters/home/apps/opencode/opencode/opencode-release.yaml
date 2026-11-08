@@ -66,7 +66,7 @@ spec:
       enabled: true
       accessModes:
         - ReadWriteMany
-      size: 2Gi
+      size: 4Gi
       storageClass: "longhorn-ha-2"
       annotations: {}
       mountPath: /config/projects
