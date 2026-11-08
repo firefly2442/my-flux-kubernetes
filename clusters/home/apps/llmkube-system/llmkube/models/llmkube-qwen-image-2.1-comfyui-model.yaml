@@ -11,8 +11,6 @@ spec:
     - README.md
     - "diffusion_models/qwen_image_2.1_bf16.safetensors"
     - "diffusion_models/qwen_image_2.1_int8_convrot.safetensors"
-    - "loras/*.safetensors"
-    - "model_patches/*.safetensors"
     - "text_encoders/*.safetensors"
     - "vae/qwen_image_2.1_vae_bf16.safetensors"
   format: safetensors
