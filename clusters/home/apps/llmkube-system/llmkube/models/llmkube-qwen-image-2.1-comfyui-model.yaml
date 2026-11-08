@@ -9,11 +9,12 @@ spec:
   source: hf://Comfy-Org/Qwen-Image-2.1
   files:
     - README.md
-    - "diffusion_models/*.safetensors"
+    - "diffusion_models/qwen_image_2.1_bf16.safetensors"
+    - "diffusion_models/qwen_image_2.1_int8_convrot.safetensors"
     - "loras/*.safetensors"
     - "model_patches/*.safetensors"
     - "text_encoders/*.safetensors"
-    - "vae/*.safetensors"
+    - "vae/qwen_image_2.1_vae_bf16.safetensors"
   format: safetensors
   sourceSecretRef:
     name: llmkube-hf-read-token-secret
