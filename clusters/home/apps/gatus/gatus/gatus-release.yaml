@@ -429,16 +429,16 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
-        - name: birdnet-go-external
-          url: https://birdnet-go.homelab.rivetcode.com
-          interval: 60s
-          conditions:
-            - "[STATUS] == 200"
-        - name: birdnet-go-internal
-          url: http://birdnet-go.birdnet-go.svc.cluster.local:8080
-          interval: 60s
-          conditions:
-            - "[STATUS] == 200"
+        # - name: birdnet-go-external
+        #   url: https://birdnet-go.homelab.rivetcode.com
+        #   interval: 60s
+        #   conditions:
+        #     - "[STATUS] == 200"
+        # - name: birdnet-go-internal
+        #   url: http://birdnet-go.birdnet-go.svc.cluster.local:8080
+        #   interval: 60s
+        #   conditions:
+        #     - "[STATUS] == 200"
         - name: vscode-external
           url: https://vscode.homelab.rivetcode.com
           interval: 60s
