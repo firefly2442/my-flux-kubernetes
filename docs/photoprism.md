@@ -18,7 +18,7 @@ photoprism users ls
 
 ## Setup
 
-For the initial setup, I copied the origin files over from my existing install.
+For the initial setup, I copied the original files over from my existing install.
 I shelled into the Kubernetes deployed Photoprism container.  I then copied
 the files over.
 
@@ -49,6 +49,14 @@ Kubernetes deployed Photoprism container.
 apt update
 apt-get install openssh-client
 rsync -avzP --delete /photoprism/originals/ carlsonp@192.168.1.114:/data/photosbackup/
+```
+
+## Debugging
+
+To show the existing secret details which include the OIDC client and secret
+
+```shell
+kubectl get secret photoprism-oauth-oidc-secret -n photoprism -o go-template='{{range $k,$v := .data}}{{printf "%s: " $k}}{{base64decode $v}}{{"\n"}}{{end}}'
 ```
 
 ## Links
