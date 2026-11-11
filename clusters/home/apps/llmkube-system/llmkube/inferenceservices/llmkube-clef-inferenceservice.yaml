@@ -20,6 +20,8 @@ spec:
     - -ngl
     - "99"
     - --metrics
+    - --mmproj
+    - $(LLMKUBE_MODEL_DIR)/mmproj-Clef-Q8_0.gguf
   env:
     - name: HSA_OVERRIDE_GFX_VERSION
       value: "11.5.1"

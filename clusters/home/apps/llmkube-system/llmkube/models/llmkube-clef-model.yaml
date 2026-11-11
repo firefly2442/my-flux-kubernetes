@@ -5,7 +5,12 @@ metadata:
   name: clef
   namespace: llmkube-system
 spec:
-  source: https://huggingface.co/ggml-org/Clef-GGUF/resolve/main/Clef-Q8_0.gguf
+  # https://huggingface.co/ggml-org/Clef-GGUF
+  source: hf://ggml-org/Clef-GGUF
+  files:
+    - Clef-Q8_0.gguf
+    # for image processing
+    - mmproj-Clef-Q8_0.gguf
   format: gguf
   sourceSecretRef:
     name: llmkube-hf-read-token-secret
