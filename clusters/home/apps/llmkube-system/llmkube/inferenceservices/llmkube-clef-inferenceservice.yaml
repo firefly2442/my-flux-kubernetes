@@ -22,6 +22,11 @@ spec:
     - --metrics
     - --mmproj
     - $(LLMKUBE_MODEL_DIR)/mmproj-Clef-Q8_0.gguf
+    # Ensure physical batch size allows for large single-pass prompts
+    - -b
+    - "4096"
+    - -ub
+    - "4096"
   env:
     - name: HSA_OVERRIDE_GFX_VERSION
       value: "11.5.1"
