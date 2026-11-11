@@ -127,7 +127,7 @@ Clef (full model, not flash)
 curl https://clef.homelab.rivetcode.com/v1/systemone \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "clef-flash:9b",
+    "model": "clef",
     "state": "Checkout has been failing for every customer for the last hour.",
     "questions": {
       "urgent": {"type": "noul", "instructions": "Is this support request urgent?"},
