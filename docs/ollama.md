@@ -107,6 +107,36 @@ curl -X POST https://ollama.homelab.rivetcode.com/v1/systemone \
   }'
 ```
 
+The model can also process images
+
+```shell
+curl -X POST "https://ollama.homelab.rivetcode.com/v1/systemone" \
+-H "Content-Type: application/json" \
+-d @- <<EOF
+{
+  "model": "clef-flash:9b",
+  "state": "Review the attached receipt.",
+  "images": ["$(base64 -w 0 /home/carlsonp/Pictures/badminton1.jpg)"],
+  "questions": {
+    "blurry": {
+      "type": "noul",
+      "instructions": "Is the image blurry?"
+    },
+    "category": {
+      "type": "choice",
+      "instructions": "What kind of image is this?",
+      "criteria": {
+        "meals": "Food, restaurants, and cafes",
+        "travel": "Flights, hotels, or taxi rides",
+        "office": "Supplies and hardware",
+        "sports": "basketball, football, soccer, badminton"
+      }
+    }
+  }
+}
+EOF
+```
+
 ## Links
 
 * [https://github.com/ollama/ollama](https://github.com/ollama/ollama)
