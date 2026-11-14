@@ -14,7 +14,7 @@ metadata:
     gethomepage.dev/name: Gogs
     # gethomepage.dev/widget.type: "gogs"
     # use .local domain name so we don't get blocked by authentik
-    gethomepage.dev/widget.url: "http://gogs.gogs.svc.cluster.local"
+    # gethomepage.dev/widget.url: "http://gogs.gogs.svc.cluster.local"
     gethomepage.dev/pod-selector: ""
 spec:
   entryPoints:
