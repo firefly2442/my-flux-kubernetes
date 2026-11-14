@@ -114,6 +114,7 @@ Resource `Limits` determine how much a pod is allowed to consume once it is runn
 * [VSCode](https://vscode.homelab.rivetcode.com)
 * [opencode](https://opencode.homelab.rivetcode.com)
 * [gogs](https://gogs.homelab.rivetcode.com)
+* [Godot](https://godot.homelab.rivetcode.com)
 
 ## Debugging
 

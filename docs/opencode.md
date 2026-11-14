@@ -19,7 +19,7 @@ and more available.
 In `opencode` store files in
 `/config/projects` to persist them.
 In `vscode` the same PVC is mounted to `/config/workspace`.
-In `godot` the same PVC is mounted to `/home/web_user/projects`.
+In `godot` the same PVC is mounted to `/config/projects`.
 
 Copy files from the local machine into the running pod
 

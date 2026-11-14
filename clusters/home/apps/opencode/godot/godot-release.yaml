@@ -64,4 +64,4 @@ spec:
       accessModes:
         - ReadWriteMany
       existingClaim: opencode-projects-pvc
-      mountPath: /home/web_user/projects
+      mountPath: /config/projects
