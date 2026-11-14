@@ -499,3 +499,13 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: gogs-external
+          url: https://gogs.homelab.rivetcode.com/healthcheck
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: gogs-internal
+          url: http://gogs.gogs.svc.cluster.local:3000/healthcheck
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
