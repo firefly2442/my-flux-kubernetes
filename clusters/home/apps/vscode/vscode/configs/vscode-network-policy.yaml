@@ -60,3 +60,11 @@ spec:
       ports:
         - port: 3128
           protocol: TCP
+    # Allow egress traffic to the internal gogs git repositories
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: gogs
+      ports:
+        - port: 3000
+          protocol: TCP
