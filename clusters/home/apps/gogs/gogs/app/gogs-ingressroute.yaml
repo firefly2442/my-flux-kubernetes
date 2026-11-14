@@ -24,9 +24,6 @@ spec:
     kind: Rule
     services:
     - name: gogs
-      port: 80
-    middlewares:
-      - name: authentik-service-middleware
-        namespace: authentik
+      port: 3000
   tls:
     secretName: gogs-certificate-secret
