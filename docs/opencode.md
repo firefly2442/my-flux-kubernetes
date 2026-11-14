@@ -4,7 +4,6 @@ Opencode is setup with web-interfaces via a variety of methods.
 
 * The opencode integrated web server.
 * Via VSCode
-* The Godot web editor
 
 All share a singular PVC and storage.  They also share the same
 customized base image with VSCode, git, various tools, Godot, opencode,
@@ -19,7 +18,6 @@ and more available.
 In `opencode` store files in
 `/config/projects` to persist them.
 In `vscode` the same PVC is mounted to `/config/workspace`.
-In `godot` the same PVC is mounted to `/config/projects`.
 
 Copy files from the local machine into the running pod
 
@@ -91,4 +89,3 @@ The only way to get data in and out is via `kubectl cp`.
 * [https://opencode.ai/docs/web/](https://opencode.ai/docs/web/)
 * [https://github.com/anomalyco/opencode](https://github.com/anomalyco/opencode)
 * [https://github.com/firefly2442/docker-vscode-customized](https://github.com/firefly2442/docker-vscode-customized)
-* [https://docs.godotengine.org/en/stable/tutorials/editor/using_the_web_editor.html](https://docs.godotengine.org/en/stable/tutorials/editor/using_the_web_editor.html)
