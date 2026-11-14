@@ -23,6 +23,7 @@ spec:
       ports:
         - port: 4096 # opencode web-ui
         - port: 8443 # vscode
+        - port: 8060 # godot web editor
   egress: # very limited, some internet through proxy, only access to local models
     # DNS, only to cluster CoreDNS
     - to:

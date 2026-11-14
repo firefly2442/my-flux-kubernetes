@@ -4,6 +4,7 @@ Opencode is setup with web-interfaces via a variety of methods.
 
 * The opencode integrated web server.
 * Via VSCode
+* The Godot web editor
 
 All share a singular PVC and storage.  They also share the same
 customized base image with VSCode, git, various tools, Godot, opencode,
@@ -11,14 +12,14 @@ and more available.
 
 ## Setup
 
-`opencode` configuration is setup via a `ConfigMap`.  When making changes to this
-configuration, make the same changes to the `vscode` version.
+`opencode` configuration is setup via a `ConfigMap`.
 
 ## Usage
 
 In `opencode` store files in
 `/config/projects` to persist them.
 In `vscode` the same PVC is mounted to `/config/workspace`.
+In `godot` the same PVC is mounted to `/home/web_user/projects`.
 
 Copy files from the local machine into the running pod
 
