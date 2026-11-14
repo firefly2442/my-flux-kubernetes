@@ -8,20 +8,21 @@ spec:
   policyTypes: [Ingress, Egress]
   ingress:
     - from:
-        - namespaceSelector:
-            matchLabels:
-              kubernetes.io/metadata.name: kube-system # the controller namespace
-          podSelector:
-            matchLabels:
-              app.kubernetes.io/name: traefik
-        - namespaceSelector:
-            matchLabels:
-              kubernetes.io/metadata.name: gatus # Gatus namespace
-          podSelector:
-            matchLabels:
-              app.kubernetes.io/name: gatus
+      - namespaceSelector:
+          matchLabels:
+            kubernetes.io/metadata.name: kube-system
+        podSelector:
+          matchLabels:
+            app.kubernetes.io/name: traefik
+      - namespaceSelector:
+          matchLabels:
+            kubernetes.io/metadata.name: gatus
+        podSelector:
+          matchLabels:
+            app.kubernetes.io/name: gatus
       ports:
-        - port: 4096
+        - port: 4096 # opencode web-ui
+        - port: 8443 # vscode
   egress: # very limited, some internet through proxy, only access to local models
     # DNS, only to cluster CoreDNS
     - to:

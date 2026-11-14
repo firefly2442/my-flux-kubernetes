@@ -16,8 +16,9 @@ configuration, make the same changes to the `vscode` version.
 
 ## Usage
 
-Store files in
+In `opencode` store files in
 `/config/projects` to persist them.
+In `vscode` the same PVC is mounted to `/config/workspace`.
 
 Copy files from the local machine into the running pod
 
