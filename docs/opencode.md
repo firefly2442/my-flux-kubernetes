@@ -91,3 +91,4 @@ The only way to get data in and out is via `kubectl cp`.
 * [https://opencode.ai/docs/web/](https://opencode.ai/docs/web/)
 * [https://github.com/anomalyco/opencode](https://github.com/anomalyco/opencode)
 * [https://github.com/firefly2442/docker-vscode-customized](https://github.com/firefly2442/docker-vscode-customized)
+* [https://docs.godotengine.org/en/stable/tutorials/editor/using_the_web_editor.html](https://docs.godotengine.org/en/stable/tutorials/editor/using_the_web_editor.html)
