@@ -59,6 +59,20 @@ git fetch /tmp/repo.bundle 'refs/heads/*:refs/remotes/origin/*'
 git merge origin/main
 ```
 
+And there is an even better integration with `gogs` for HTTPS git support.
+Go into `gogs` and add the repository.  Then setup the remote url
+and leverage git as usual.
+
+```shell
+cd /config/projects/yourproject
+git remote add gogs http://gogs.gogs.svc.cluster.local:3000/carlsonp/yourproject.git
+git remote update gogs
+git push gogs master
+```
+
+This makes it easier to synchronize changes between a local laptop development
+environment and the opencode container.
+
 ## Sandbox
 
 Most egress traffic is blocked out of the pod.  Ingress traffic through the Traefik

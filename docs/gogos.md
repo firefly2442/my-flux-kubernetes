@@ -9,6 +9,7 @@ container and then delete `/data/gogs/conf/app.ini`.  Then restart the pod
 to force the init to re-create the file.
 
 Whoever registers the first account through the web-ui in Gogs becomes the admin.
+Create a new user called `carlsonp`.
 
 ## Links
 
