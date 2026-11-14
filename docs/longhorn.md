@@ -198,6 +198,7 @@ no data is lost.
 * Linkding
 * Karakeep
 * Steam-Analysis
+* gogs
 
 ## Troubleshooting
 

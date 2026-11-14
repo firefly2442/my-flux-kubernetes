@@ -10,3 +10,6 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  labels:
+    recurring-job.longhorn.io/source: enabled
+    recurring-job-group.longhorn.io/backup: enabled
