@@ -449,6 +449,16 @@ spec:
           interval: 60s
           conditions:
             - "[STATUS] == 200"
+        - name: godot-external
+          url: https://godot.homelab.rivetcode.com
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
+        - name: godot-internal
+          url: http://godot-docker-vscode-customized.opencode.svc.cluster.local:8060
+          interval: 60s
+          conditions:
+            - "[STATUS] == 200"
         - name: opencode-external
           url: https://opencode.homelab.rivetcode.com
           interval: 60s
