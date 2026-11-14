@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: opencode-projects-pvc
+  namespace: opencode
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClass: "longhorn-ha-2"
+  resources:
+    requests:
+      storage: 4Gi
+  labels:
+    recurring-job.longhorn.io/source: enabled
+    recurring-job-group.longhorn.io/backup: enabled

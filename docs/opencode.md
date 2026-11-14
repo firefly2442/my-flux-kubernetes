@@ -1,8 +1,13 @@
 # opencode
 
-Opencode is setup with the integrated web server.
-See also the `vscode` namespace and deployment
-which uses the same base image.
+Opencode is setup with web-interfaces via a variety of methods.
+
+* The opencode integrated web server.
+* Via VSCode
+
+All share a singular PVC and storage.  They also share the same
+customized base image with VSCode, git, various tools, Godot, opencode,
+and more available.
 
 ## Setup
 
@@ -83,3 +88,4 @@ The only way to get data in and out is via `kubectl cp`.
 
 * [https://opencode.ai/docs/web/](https://opencode.ai/docs/web/)
 * [https://github.com/anomalyco/opencode](https://github.com/anomalyco/opencode)
+* [https://github.com/firefly2442/docker-vscode-customized](https://github.com/firefly2442/docker-vscode-customized)

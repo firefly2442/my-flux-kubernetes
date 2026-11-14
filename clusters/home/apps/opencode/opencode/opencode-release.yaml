@@ -33,13 +33,13 @@ spec:
       - name: NO_PROXY
         value: "localhost,127.0.0.1,.cluster.local"
     volumeMounts:
-      - name: opencode-config
+      - name: shared-opencode-config
         mountPath: /etc/opencode
         readOnly: true
     volumes:
-      - name: opencode-config
+      - name: shared-opencode-config
         configMap:
-          name: opencode-config
+          name: shared-opencode-config
     podSecurityContext:
       runAsNonRoot: false
       runAsUser: 0
@@ -66,7 +66,5 @@ spec:
       enabled: true
       accessModes:
         - ReadWriteMany
-      size: 4Gi
-      storageClass: "longhorn-ha-2"
-      annotations: {}
+      existingClaim: opencode-projects-pvc
       mountPath: /config/projects
