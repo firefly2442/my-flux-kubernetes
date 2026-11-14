@@ -1,0 +1,68 @@
+# Used by the init container to seed /data/gogs/conf/app.ini on FIRST start only.
+# After that Gogs owns app.ini on the PVC (it writes to it), so later edits to
+# this ConfigMap do not overwrite it. Change settings by editing app.ini in the PVC.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gogs-init
+  namespace: gogs
+data:
+  app.ini.tpl: |
+    BRAND_NAME = Gogs
+    RUN_USER   = git
+    RUN_MODE   = prod
+
+    [database]
+    TYPE     = postgres
+    HOST     = gogs-db-rw.gogs.svc:5432
+    NAME     = @DB_NAME@
+    USER     = @DB_USER@
+    PASSWD   = @DB_PASS@
+    SSL_MODE = require
+
+    [repository]
+    ROOT = /data/git/gogs-repositories
+
+    [server]
+    DOMAIN           = gogs.homelab.rivetcode.com
+    HTTP_PORT        = 3000
+    EXTERNAL_URL     = https://gogs.homelab.rivetcode.com
+    DISABLE_SSH      = false
+    SSH_PORT         = 22
+    SSH_LISTEN_PORT  = 22
+    START_SSH_SERVER = false
+    OFFLINE_MODE     = false
+
+    [security]
+    INSTALL_LOCK = true
+    SECRET_KEY   = @SECRET_KEY@
+
+    [auth]
+    DISABLE_REGISTRATION   = false
+    REQUIRE_SIGNIN_VIEW    = false
+
+    [session]
+    PROVIDER = file
+
+    [log]
+    MODE      = console
+    LEVEL     = Info
+  init.sh: |
+    #!/bin/sh
+    set -eu
+    CONF_DIR=/data/gogs/conf
+    CONF=$CONF_DIR/app.ini
+    mkdir -p "$CONF_DIR"
+    if [ ! -f "$CONF" ]; then
+      echo "Seeding $CONF"
+      SECRET_KEY=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 32)
+      sed \
+        -e "s|@DB_NAME@|${DB_NAME}|g" \
+        -e "s|@DB_USER@|${DB_USER}|g" \
+        -e "s|@DB_PASS@|${DB_PASS}|g" \
+        -e "s|@SECRET_KEY@|${SECRET_KEY}|g" \
+        /tpl/app.ini.tpl > "$CONF"
+    else
+      echo "$CONF already exists, leaving it alone"
+    fi
+    chown -R 1000:1000 /data

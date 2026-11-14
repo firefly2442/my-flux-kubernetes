@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gogs
+  namespace: gogs
+  labels:
+    app.kubernetes.io/name: gogs
+spec:
+  # For git-over-SSH from outside the cluster, change to LoadBalancer
+  # (MetalLB, kube-vip, etc.) or add a separate LoadBalancer Service for port 22.
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: gogs
+  ports:
+    - { name: http, port: 3000, targetPort: http }
+    - { name: ssh, port: 22, targetPort: ssh }

@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gogs
+  namespace: gogs
+  labels:
+    app.kubernetes.io/name: gogs
+spec:
+  replicas: 1 # Gogs is single-instance with a RWO volume
+  strategy:
+    type: Recreate # avoid two pods fighting over the RWO PVC
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: gogs
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: gogs
+    spec:
+      initContainers:
+        - name: seed-config
+          image: busybox:1.37
+          command: ["/bin/sh", "/tpl/init.sh"]
+          env:
+            - name: DB_NAME
+              valueFrom: { secretKeyRef: { name: gogs-db-app, key: dbname } }
+            - name: DB_USER
+              valueFrom: { secretKeyRef: { name: gogs-db-app, key: username } }
+            - name: DB_PASS
+              valueFrom: { secretKeyRef: { name: gogs-db-app, key: password } }
+          volumeMounts:
+            - { name: data, mountPath: /data }
+            - { name: init, mountPath: /tpl }
+      containers:
+        - name: gogs
+          # https://github.com/gogs/gogs/pkgs/container/gogs
+          image: harbor.homelab.rivetcode.com/ghcr-proxy/gogs/gogs:0.14.4
+          ports:
+            - { name: http, containerPort: 3000 }
+            - { name: ssh, containerPort: 22 }
+          volumeMounts:
+            - { name: data, mountPath: /data }
+          readinessProbe:
+            httpGet: { path: /healthcheck, port: http }
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: { path: /healthcheck, port: http }
+            initialDelaySeconds: 30
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              memory: 512Mi
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: gogs-data
+        - name: init
+          configMap:
+            name: gogs-init
+            defaultMode: 0555

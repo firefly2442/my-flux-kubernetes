@@ -113,6 +113,7 @@ Resource `Limits` determine how much a pod is allowed to consume once it is runn
 * [Birdnet-Go](https://birdnet-go.homelab.rivetcode.com) - disabled
 * [VSCode](https://vscode.homelab.rivetcode.com)
 * [opencode](https://opencode.homelab.rivetcode.com)
+* [gogs](https://gogs.homelab.rivetcode.com)
 
 ## Debugging
 

@@ -62,3 +62,4 @@ resources:
   - ./namespaces/namespace-satisfactory.yaml
   - ./namespaces/namespace-llmkube-system.yaml
   - ./namespaces/namespace-squid-proxy.yaml
+  - ./namespaces/namespace-gogs.yaml

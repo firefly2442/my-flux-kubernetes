@@ -1,0 +1,27 @@
+# CNPG creates the "gogs" database and owner role, and generates a secret
+# named "gogs-db-app" (keys: username, password, dbname, host, uri, ...).
+# The Deployment reads credentials from that secret, so nothing sensitive is in git.
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: gogs-db
+  namespace: gogs
+spec:
+  instances: 1
+  imageName: harbor.homelab.rivetcode.com/ghcr-proxy/cloudnative-pg/postgresql:18
+  storage:
+    size: 1Gi
+    storageClass: "longhorn-ha-2"
+  bootstrap:
+    initdb:
+      database: gogs
+      owner: gogs
+      encoding: UTF8
+      localeCollate: C
+      localeCType: C
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      memory: 512Mi
